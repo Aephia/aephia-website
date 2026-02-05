@@ -1,0 +1,80 @@
+---
+title: "Secure Guild Referrals"
+date: "2023-09-20T16:52:06"
+modified: "2023-10-14T21:00:04"
+type: "news"
+slug: "secure-guild-referrals"
+description: "With the launch of Starpath V2, the new incarnation of Star Atlas’ referral program, we thought it would be good to have a referral link for our guild, Aephia Industries. Before we go any further, we encourage everyone to click the referral link of the actual person who got them into Star Atlas. However, we [&hellip;]"
+image: "https://assets.aephia.com/wp-assets/7dd2daf6d2d0ccc93b6444e0182a8863c0d78f9eafc9f65a41a7f3eaf3a5e5b9.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 12558
+categories: ["news","Uncategorized"]
+---
+
+With the launch of [Starpath V2](https://aephia.com/star-atlas/starpath-v2-everything-you-need-to-know/), the new incarnation of Star Atlas’ referral program, we thought it would be good to have a referral link for our guild, Aephia Industries.
+
+_Before we go any further, we encourage everyone to click the referral link of the actual person who got them into Star Atlas. However, we want to provide a backup option that may help build out our guild’s treasury._
+
+Now, it was clear from the outset that referral kickbacks should not end up in the wallet of any one person. Instead, they should end up in a multi-sig, preferably the one we use for our Guild Treasury.
+
+![Starpath V2 For Guilds](https://assets.aephia.com/wp-assets/611cbddf445576e044524f3c17ae581d84b0cadbba0d3cd1ffcfc34dc173c916.jpg)
+
+Starpath V2 for Guilds
+
+## Custom Solution
+
+However, as official support for DACS (Star Atlas guilds) is not yet live, there currently is no support for such a feature from the team. If we wanted to get this done, we had to find a different path.
+
+So, we reached out to **Squads**, the most popular multi-sig solution on Solana, and **Buddy Link**, the providers of the new referral system.
+
+Now, it just so happens that the Squads team is on the verge of launching a completely overhauled new multi-sig solution: **version 4**. As our treasury still runs on version 2 of Squads, we were due for an upgrade.
+
+With help from both teams, we were able to conjure up a (command-line) script, that does two things:
+
+1. Create a brand new Squad V4 MultiSig
+2. Create a Buddy Link referral account and hook it up to the Squad, ensuring kickbacks will flow to the Squad’s Vault
+
+### Squads V4
+
+Squads V4 is not _officially_ live yet. However, the programs are already deployed to _mainnet_!
+
+Furthermore, Squads V4 is about to go live any day now. The team assured us that they are releasing V4 this month (September). 
+
+![Squads logotype black](https://assets.aephia.com/wp-assets/059dd5346f31039e67bf5e48221af50da0c56ec9da3bef42b84f0cc04794f868.png)
+
+## We Are Star Atlas
+
+Now, we do not want to keep this script just to ourselves. Other guilds and organizations in the Star Atlas community may want to create a referral link in a similar fashion.
+
+For that reason, we have _open-sourced_ our code base and provided instructions to make sure you can set this up in a similar fashion as well!
+
+_One additional perk of running this script: you get to choose your own referral link_ 😉
+
+You can find the source and instructions on [our GitHub](https://github.com/Aephia/squads-v4-buddylink)!
+
+### Important Caveats
+
+* ~~There currently is no way to claim rewards (come again?! Yep..). The short-term goal is to extend the script so you can choose to create multi-sig proposals to claim your pending rewards. This should not be too much work, but there simply was not enough time left.~~ – _Update October 14th: this has been resolved since then. See the README.md. for instructions!_
+* The script requires you to pass along the private key of one of your accounts. The account only needs 0.07 SOL, but as with all 3rd party software, best to walk through the code and have a good look before trusting it. And, of course, make a brand new account with only 0.07 SOL!
+
+![1500x500](https://assets.aephia.com/wp-assets/4f01727128108196d147a057aef8663a2792d5ef5ba5a7b75d228965949e8a5d.jpg)
+
+Buddy Link is coming to Star Atlas!
+
+## Credits
+
+Major thanks go to the Squads and BuddyLink teams for dedicating their time and brains to help this solution come to fruition! Work went on day and night, even though both teams are/were in crunch mode to get V4 and the setup for Star Atlas out of the door at the very same time. Without their help, we would not have made it in time, or even gotten close!
+
+Special thanks go to:
+
+* Valentin (Squads)
+* Jo (Buddy Link)
+* Danny (Buddy Link)
+
+Check these projects out here:
+
+* [Squads](https://squads.so/)
+* [Buddy Link](https://buddy.link/)
