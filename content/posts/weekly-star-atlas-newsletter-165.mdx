@@ -1,0 +1,145 @@
+---
+title: "Weekly Star Atlas Newsletter #165"
+date: "2025-02-03T16:16:23"
+modified: "2025-02-03T16:18:44"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-165"
+description: "A new Unreal Engine 5 patch is on the way, bringing bug fixes, improvements, and extra polish to last year’s release. Meanwhile, the Golden Carnival is moving through its last 4-week cycle, with the grand finale now less than three weeks away. Lastly, we&#8217;ve got some quick updates on the pending SDU Install Timer change (still in the works) and Combat coming with Sage C4!"
+image: "https://assets.aephia.com/wp-assets/fc4df014331878ccd095b29c53ee0f75d1dbed1a007cfccd822e105451f048d9.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 16059
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 165th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we try to aggregate all the newsworthy tidbits revealed \[mainly by the team\] throughout the past week._
+
+---
+
+A new **Unreal Engine 5 patch** is on the way, bringing bug fixes, improvements, and extra polish to last year’s release. Meanwhile, the **Golden Carnival** is moving through its last 4-week cycle, with the grand finale now less than three weeks away. Lastly, we’ve got some quick updates on the pending **SDU Install Timer change** (still in the works) and **Combat** coming with Sage C4!
+
+_Let’s dive right in!_
+
+![Star Atlas - UE5 Preseason Patch Update](https://assets.aephia.com/wp-assets/5d04044afc0a63cdf1b4b57dc8a44cbd7af7850e2a47c71b3268421da47729c8.webp)
+
+Star Atlas – UE5 Preseason Patch Update
+
+## UE5 Patch Incoming
+
+The team plans to roll out a new patch to their flagship UE5 product this **Wednesday, February 5th**. They published a [Medium article](https://medium.com/star-atlas/game-update-star-atlas-releases-new-patch-with-enhanced-game-modes-f3b2ebd6f74d) this past week that goes into the expected changes, which we’ll summarize below before listing the full changelog.
+
+The key highlights include:
+
+* **Gunplay**—Bots now spawn furthest away from players & improved grenades in multiplayer sessions
+* **Wallet improvements**—Such as no longer needing to log in with a wallet before getting access to gameplay
+* **Fleet Command improvements**—Mostly visual ones and some things to prepare for actual gameplay
+* **Play with your friends!**—A big one: Players can now create private or friend-only lobbies for exclusive multiplayer experiences in Unreal Engine 5.
+
+Below, we’ve copied the full changelog for your convenience.
+
+### **General Updates**
+
+* **Species Specifics Stats:** The system now supports species-specific HP (health points) and Movement Speed. All characters currently equip the same shield.
+* **Kill Animation:** New crosshair animations on hit-and-kill.
+* **Ships HUD:** New Ship HUD notification when failing to switch to hover mode in microgravity.
+* **Hit animation:** New damage direction indicators in Player HUD
+* **Death VFX:** New death, kills, hit sounds.
+* **Waypoint Markers:** Waypoint markers now have screen edge persistence.
+* **Spectator:** Improved camera behavior on player death.
+* **Bots Spawn points:** Bots in Gunplay Trainer no longer spawn randomly but at the furthest spawn point from existing players.
+* **Bot Racing:** Remove Racing bots from time trials until they are more performant/competitive.
+* **Environment Refactoring:** Refactor Openable Objects (doors, ramps, elevators) for better multiplayer support and easier interactions.
+* **Grenade Refactoring:** Refactor grenades for better performance during multiplayer latency.
+* **Grenade Effects:** New grenade explosion VFX.
+* **Ragdolls Animation:** Animation update on ragdolls for better visuals.
+* **Ship Steering Animation:** Polish pass on movement and steering animations for all XXS and XS ships.
+* **Art and Physics Enhancement:** Various art, collision, and performance improvements across all Maps.
+* **Collision:** Various art/collision/camera issues on spawnable ships.
+* **Optimization of The UI:** Optimization pass on most UI screens/elements.
+
+### Wallet UX Enhancements
+
+* **No Wallet Login:** Logging into your wallet is now optional for Unreal Engine 5 game modes, simplifying onboarding for those new to blockchain.
+* **Mnemonic Recovery**: Issues preventing mnemonic recovery have been resolved.
+* **Password Recognition**: Fixed password recognition problems.
+* **Wallet Creation**: Streamlined the wallet creation process. Players won’t be prompted to create a new wallet every time they log in.
+* **Auto Login**: Enhanced auto-login for quicker access to previously used wallets.
+
+### Fleet Command Visualization Enhancements
+
+* **Optimized Ship VFX**: thrusters, scanning, mining, warping.
+* **Updated Cataclysm hero asset:** New art for the area on the center of the map, where the secrets of the Cataclysm lay hidden.
+* **Map enhancement**: Updated lighting and art in galaxy and sector views.
+* **Celestial Bodies Art:** Planet shader improvements.
+* **User Interface and User Experience Quality of Life:** Updated UI screens with more data and improved UX.
+* **New Camera System:** Augmentation of the user experience while exploring the map.
+* **Modularity:** Decoupled various asset classes for better interface.
+
+### Private & Friend Lobbies
+
+* **Private Gameplay:** Add support for Private, Friends Only P2P session
+* **Multiplayer Sessions ID:** Add support for joining P2P sessions by Session ID
+* **Deathmatch Ranking:** Add Rank screen at the end of a Deathmatch.
+* **Minimap updates:** Deathmatch minimap no longer shows all players as friendly
+* **Optimization:** General networking optimizations for characters and ships
+* **Fleet Controls:** Enable Power Triangle and Ship Boost in Multiplayer.
+* **Mounting ships:** Clean up replication visuals when mounting ships
+
+### Optimizations, Polish, and Bug Fixes
+
+* Restore the ability to link a wallet using 12-word pneumonic.
+* Restore the ability to post Photos to discord from UE Client.
+* Fix the issue where previously used wallets would not unlock given the correct password.
+* Fix the issue where the player would not respawn correctly in Galia.
+* Fix Pickups Invisible on Track B.
+* Fix the issue where the HVT Crystal minimap marker would persist as a static gray icon.
+* Fix the issue where race pickup sounds were loud and didn’t adhere to the volume settings.
+* Fix the issue where the player can lose the ability to shoot after throwing a grenade.
+* Fix issues where the ship can drift during a racing countdown.
+* Fix Racing results screen “new record” and rank indicators.
+* Fix the issue where the character would not enter the correct animation state when running and shooting automatic weapons.
+* Fix the issue where the holstered weapon would appear on the hip when ADSing a sighted weapon after swapping.
+* Fix the issue where the player could sometimes respawn in T-pose.
+* Fix the issue where a free look in certain camera angles would not restore the default camera position when released.
+* Bots can now correctly aim at species of shorter stature.
+* Remove unused Ship model text from racing leaderboards
+* Remove the change team option in the pause menu during a death match.
+* Fix sound attenuation issues in certain corners of the Paizul map.
+* Added Compakt Hero proxy mesh when viewing at a distance.
+* The Play Now menu button works when the selected mode is Volant Exp.
+* Fix an issue where grenade explosion could cause damage through walls/obstacles.
+<YouTube id="GpGbzqEIovI" title="Star Atlas - What's Coming in 2025?"  />
+ 
+
+## Roadmap 2025 Video
+
+Dominic (Community Manager) published [a video](https://www.youtube.com/watch?v=GpGbzqEIovI) last week where he goes over the roadmap for 2025, particularly the first half. Though it does not contain new information, it’s a nice and short recap of what to expect!
+
+During the Atlas Brew, Santi (Director of Community & Ecosystem) shared that the team plans to publish regular updates through Dominic’s video channel on YouTube, so you may want to subscribe to ensure you are staying up to date. Of course, we’ll make sure to share the best with you through this newsletter as well.
+
+![Star Atlas - Golden Carnival 2024 - Schedule](https://assets.aephia.com/wp-assets/bc773d68b31960a1d2b72d3bb5d29f967a28ed4fc45a7c25a6904792a06d16a4.png)
+
+Star Atlas – Golden Carnival 2024 – Schedule
+
+## Golden Carnival
+
+The last 4-week cycle kicked off a week ago, and the [last Pearce & Calico sponsored week](https://staratlas.hedgehog.markets/star-atlas/2tzJoxfhHzFi2qYuKGmssBVsgRPZnEQZtjQYJ68ts5Mv) of this season saw a total of 2,368,227 tickets submitted. This past Friday, the 199 prizes found their way to the lucky ones!
+
+Meanwhile, Week 14, a [Busan and Ogrika-sponsored week](https://staratlas.hedgehog.markets/star-atlas/BNB8wwoNGSSHSWHf6ew6xW2awiDhjhs3sNgik134EcDf) has opened up! Two weeks from now, the Golden Carnival will conclude with a final Mega Week, which has been dubbed “Mega Mystery Week” by the team.
+
+### “Leaderboard”
+
+Aephia’s Data Runners created a [new dashboard](https://flipsidecrypto.xyz/Aephia/star-atlas---gameplay-analytics-7pEAEk) showing off the biggest winners (and losers) of the Golden Carnival (so far). In a new Leaderboard table (on the _Golden_ _Carnival_ tab), you can view, per wallet, the total cost of the tickets submitted compared to the cumulative value of the winnings.
+
+If you are curious if participating has been profitable for you, you can enter your wallet address there and have a look!
+
+## News Bits
+
+Lastly, here are a few small tidbits to wrap up the week:
+
+* The [anticipated](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-164/) SDU Install Timer change did not come to fruition last week. The team did not mention this in their communications, so it is unclear when they plan to enact this update.
+* Danny (CPO) mentioned in the new, open Foundation Room that combat will consist of ship-vs-ship and ship-vs-starbase only. Claim Stakes and planets won’t be attackable at this first stage. However, when a Starbase is destroyed, all Claim Stakes in that system will be returned to their owners, alongside a portion of the materials used to build the various buildings therein. You won’t get back the full amount, so you better defend those Starbases!
+
+_You’ve reached the end of this week’s issue! Thank you for reading!_
