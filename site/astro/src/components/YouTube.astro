@@ -1,0 +1,91 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+}
+
+const { id, title = "YouTube Video" } = Astro.props;
+const posterUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+
+<lite-youtube videoid={id} style={`background-image: url('${posterUrl}');`} title={title}>
+  <a href={`https://youtube.com/watch?v=${id}`} class="lty-playbtn" title="Play Video">
+    <span class="sr-only">Play Video: {title}</span>
+  </a>
+</lite-youtube>
+
+<script>
+  // Simple custom element for lite-youtube functionality without external library dependency
+  // Based on paulirish/lite-youtube-embed
+  class LiteYTEmbed extends HTMLElement {
+    connectedCallback() {
+      this.videoId = this.getAttribute('videoid');
+      this.playBtn = this.querySelector('.lty-playbtn');
+      if (this.playBtn) {
+        this.playBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.addIframe();
+        });
+      }
+    }
+
+    addIframe() {
+      const iframeHTML = `
+        <iframe width="100%" height="100%" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen src="https://www.youtube.com/embed/${this.videoId}?autoplay=1">
+        </iframe>`;
+      this.innerHTML = iframeHTML;
+      this.classList.add('lyt-activated');
+    }
+  }
+  customElements.define('lite-youtube', LiteYTEmbed);
+</script>
+
+<style>
+  lite-youtube {
+    background-color: #000;
+    position: relative;
+    display: block;
+    contain: content;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+
+  /* Play Button */
+  .lty-playbtn {
+    width: 68px;
+    height: 48px;
+    background-color: #212121;
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 14%;
+    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: block;
+  }
+
+  .lty-playbtn:before {
+    content: "";
+    border-style: solid;
+    border-width: 11px 0 11px 19px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  lite-youtube:hover .lty-playbtn {
+    background-color: #f00;
+    opacity: 1;
+  }
+</style>

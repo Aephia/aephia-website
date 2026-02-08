@@ -1,0 +1,171 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostMeta from './PostMeta.astro';
+import TagList from './TagList.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, date, description, tags, author, type } = post.data;
+const { slug } = post;
+
+// Map Content type (singular) to URL type (plural)
+const contentTypeToUrl: Record<string, string> = {
+  newsletter: 'newsletters',
+  guide: 'guides',
+  news: 'news',
+  aephia: 'aephia'
+};
+
+const normalizedType = type.toLowerCase();
+const urlType = contentTypeToUrl[normalizedType] || 'news';
+const url = `/${urlType}/${slug}/`;
+---
+
+<article class="post-card">
+  {post.data.image && (
+    <div class="image-container">
+      <a href={url}>
+        <img src={post.data.image} alt={title} loading="lazy" />
+      </a>
+    </div>
+  )}
+  <div class="content">
+    <div class="meta-wrapper">
+      <PostMeta date={date} author={author} />
+    </div>
+    <h3><a href={url}>{title}</a></h3>
+    {description && <p class="description">{description}</p>}
+    {tags && tags.length > 0 && <div class="tags-container"><TagList tags={tags.slice(0, 3)} /></div>}
+  </div>
+</article>
+
+<style>
+  /* Sci-Fi / Space Theme Styles */
+  .post-card {
+    /* Slightly lighter than black to stand out, with blue tint */
+    background: #0f1219; 
+    /* Cyan border with low opacity */
+    border: 1px solid rgba(0, 210, 255, 0.2); 
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    /* Subtle neon backdrop */
+    backdrop-filter: blur(10px);
+  }
+
+  /* Stronger Sci-fi glow effect on hover */
+  .post-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    /* Brighter cyan border */
+    border-color: rgba(0, 210, 255, 0.8); 
+    /* Blue/Cyan glow */
+    box-shadow: 0 10px 40px rgba(0, 100, 255, 0.2), 0 0 15px rgba(0, 210, 255, 0.3);
+    z-index: 10;
+  }
+  
+  /* Corner accents for tech feel */
+  .post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+    z-index: 20;
+  }
+  
+  .post-card:hover::before {
+    width: 30px;
+    height: 30px;
+    border-top-color: #00d2ff;
+    border-left-color: #00d2ff;
+  }
+
+  .image-container {
+    width: 100%;
+    /* Enforce 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+    background: #050505; /* Black placeholder */
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: block;
+  }
+
+  .post-card:hover .image-container img {
+    transform: scale(1.1);
+  }
+
+  .content {
+    /* Padding only for content, image is full width */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: linear-gradient(180deg, rgba(15,18,25,0) 0%, rgba(5,8,12,0.5) 100%);
+  }
+
+  .meta-wrapper {
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    color: #00d2ff; /* Cyan text for meta */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono, monospace);
+    opacity: 0.8;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem; /* Slightly larger */
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  h3 a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .post-card:hover h3 a {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+  }
+
+  .description {
+    color: #a0aab8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .tags-container {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }

@@ -1,0 +1,107 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #e0e0e0;
+  --color-primary: #00d4ff;
+  --color-secondary: #ff00d4;
+  --color-accent: #2d2d2d;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --max-width: 1440px;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  margin-top: 2rem;
+  line-height: 1.2;
+}
+
+/* Post Content Styles */
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+article blockquote {
+  border-left: 4px solid var(--color-primary);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  color: #bbb;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (max-width: 400px) {
+  main {
+    /* Linearly interpolate from 2rem at 400px to 0.5rem at 320px for safety, or 0 if desired */
+    /* User asked for 0 at 320px. 
+       Formula: (100vw - 320px) * (2rem / (400 - 320)) 
+       2rem = 32px. Range = 80px. Factor = 0.4.
+    */
+    padding: clamp(0px, calc((100vw - 320px) * 0.4), 2rem);
+  }
+
+  .container {
+    /* Apply same logic to container side padding */
+    padding: 0 clamp(0px, calc((100vw - 320px) * 0.4), 2rem);
+  }
+}

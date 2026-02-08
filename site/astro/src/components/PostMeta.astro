@@ -1,0 +1,41 @@
+---
+interface Props {
+  date: Date;
+  author?: {
+    name: string;
+    url?: string;
+  };
+}
+
+const { date, author } = Astro.props;
+
+// Format date: "July 27, 2024"
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<div class="post-meta">
+  <time datetime={date.toISOString()}>{formattedDate}</time>
+  {author && (
+    <span class="author">
+      by {author.url ? <a href={author.url}>{author.name}</a> : author.name}
+    </span>
+  )}
+</div>
+
+<style>
+  .post-meta {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .author {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid #444;
+  }
+</style>

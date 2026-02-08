@@ -1,0 +1,61 @@
+---
+interface Props {
+  prevUrl?: string;
+  nextUrl?: string;
+  currentPage: number;
+}
+
+const { prevUrl, nextUrl, currentPage } = Astro.props;
+---
+
+<nav class="pagination" aria-label="Pagination">
+  {prevUrl ? (
+    <a href={prevUrl} class="btn">← Newer Posts</a>
+  ) : (
+    <span class="btn disabled">← Newer Posts</span>
+  )}
+  
+  <span class="current">Page {currentPage}</span>
+
+  {nextUrl ? (
+    <a href={nextUrl} class="btn">Older Posts →</a>
+  ) : (
+    <span class="btn disabled">Older Posts →</span>
+  )}
+</nav>
+
+<style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .btn:not(.disabled):hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: default;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .current {
+    font-size: 0.9rem;
+    color: #888;
+  }
+</style>

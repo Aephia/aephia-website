@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+
+export async function getStaticPaths() {
+  const types = ['newsletters', 'guides', 'news', 'aephia'];
+  return types.map((type) => ({ params: { type } }));
+}
+
+const { type } = Astro.params;
+const allPosts = await getCollection('posts');
+
+// Map URL type (plural) to Content type (singular)
+const urlToContentType = {
+  newsletters: 'newsletter',
+  guides: 'guide',
+  news: 'news',
+  aephia: 'aephia'
+};
+
+const contentType = urlToContentType[type];
+
+// Filter by type (case insensitive matching)
+const posts = allPosts.filter((post) => post.data.type?.toLowerCase() === contentType);
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Pagination for page 1
+const pageSize = 20;
+const totalPages = Math.ceil(sortedPosts.length / pageSize);
+const paginatedPosts = sortedPosts.slice(0, pageSize);
+
+const titleMap = {
+  newsletters: 'Star Atlas Weekly Newsletters',
+  guides: 'Guides',
+  news: 'Other News',
+  aephia: 'Aephia Industries'
+};
+
+const title = titleMap[type] || (type.charAt(0).toUpperCase() + type.slice(1) + (type.endsWith('s') ? '' : 's'));
+const nextUrl = totalPages > 1 ? `/${type}/page/2/` : undefined;
+---
+
+<Layout title={`Aephia Industries - ${title}`}>
+  <div class="container">
+    <section class="intro">
+      <h1>{title}</h1>
+    </section>
+
+    <div class="post-grid">
+      {paginatedPosts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    {totalPages > 1 && (
+      <Pagination currentPage={1} nextUrl={nextUrl} />
+    )}
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .post-grid {
+    display: grid;
+    /* Min 400px (or 100% on small screens), fill space */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 3rem; 
+    /* row-gap specific just in case, though gap covers it */
+    row-gap: 4rem;
+  }
+</style>

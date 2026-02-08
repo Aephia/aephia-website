@@ -1,0 +1,31 @@
+---
+interface Props {
+  id: string; // Tweet ID
+  url?: string;
+  authorName?: string;
+  authorHandle?: string;
+  date?: string;
+}
+
+const { id, url, authorName, authorHandle, date } = Astro.props;
+const tweetUrl = url || `https://twitter.com/i/web/status/${id}`;
+---
+
+<div class="tweet-embed">
+  <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark">
+    <p lang="en" dir="ltr">
+      <slot /> {/* The tweet text usually passed as children from MDX */}
+    </p>
+    &mdash; {authorName} (@{authorHandle}) <a href={tweetUrl}>{date}</a>
+  </blockquote>
+  
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<style>
+  .tweet-embed {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+</style>

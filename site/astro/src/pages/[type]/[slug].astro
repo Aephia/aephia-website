@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import PostMeta from '../../components/PostMeta.astro';
+import TagList from '../../components/TagList.astro';
+import YouTube from '../../components/YouTube.astro';
+import XTweet from '../../components/XTweet.astro';
+import WpEmbed from '../../components/WpEmbed.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  
+  const contentTypeToUrl = {
+    newsletter: 'newsletters',
+    guide: 'guides',
+    news: 'news',
+    aephia: 'aephia'
+  };
+
+  return posts.map((post) => {
+    const type = post.data.type?.toLowerCase();
+    const urlType = contentTypeToUrl[type] || 'news'; // Default fallback just in case
+    
+    return {
+      params: { type: urlType, slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { title, description, date, author, tags, canonical } = post.data;
+const { Content } = await post.render();
+
+// Embed components available to MDX
+const components = {
+  YouTube,
+  XTweet,
+  WpEmbed,
+};
+---
+
+<Layout title={`${title} - Aephia Industries`} description={description}>
+  {canonical && <link slot="head" rel="canonical" href={canonical} />}
+  
+  <article class="container post-detail">
+    <header class="post-header">
+      <h1>{title}</h1>
+      <PostMeta date={date} author={author} />
+    </header>
+
+    <div class="post-content">
+      <Content components={components} />
+    </div>
+
+    {tags && tags.length > 0 && (
+      <footer class="post-footer">
+        <h3>Tags:</h3>
+        <TagList tags={tags} />
+      </footer>
+    )}
+  </article>
+</Layout>
+
+<style>
+  .post-detail {
+    max-width: 800px; /* Narrower for reading */
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+
+  .post-content :global(h2) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content :global(a) {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+  }
+
+  .post-content :global(ul), .post-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+  
+  .post-footer h3 {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../components/Layout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const allPosts = await getCollection('posts');
+
+// Sort by date desc
+const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestPosts = sortedPosts.slice(0, 20); // Show latest 20
+---
+
+<Layout title="Aephia Industries - Latest Posts">
+  <div class="container">
+    <section class="intro">
+      <h1>Latest Updates</h1>
+      <p>News, Guides, and Updates from Aephia Industries.</p>
+    </section>
+
+    <div class="post-grid">
+      {latestPosts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  p {
+    color: #888;
+    font-size: 1.1rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

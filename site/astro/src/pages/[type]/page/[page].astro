@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../components/Layout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts');
+  // Define plural URL types
+  const types = ['newsletters', 'guides', 'news', 'aephia'];
+  
+  const urlToContentType = {
+    newsletters: 'newsletter',
+    guides: 'guide',
+    news: 'news',
+    aephia: 'aephia'
+  };
+  
+  return types.flatMap((type) => {
+    const contentType = urlToContentType[type];
+    const filteredPosts = allPosts.filter((post) => post.data.type?.toLowerCase() === contentType);
+    const sortedPosts = filteredPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    
+    return paginate(sortedPosts, {
+      params: { type },
+      pageSize: 20
+    });
+  }).filter((item) => item.props.page.currentPage > 1); // Only generate pages > 1 here, index.astro handles page 1
+}
+
+const { page, type } = Astro.props; // page prop from paginate()
+// Need to grab type from params if it was not passed in props (paginate passes props, but type is in params)
+const paramsType = Astro.params.type; 
+
+// Fix page URL generation
+const titleMap = {
+  newsletters: 'Star Atlas Weekly Newsletters',
+  guides: 'Guides',
+  news: 'Other News',
+  aephia: 'Aephia Industries'
+};
+
+const title = titleMap[paramsType] || (paramsType.charAt(0).toUpperCase() + paramsType.slice(1) + (paramsType.endsWith('s') ? '' : 's'));
+
+// Override prev URL for page 2 to go to /type/ instead of /type/page/1
+const prevUrl = page.currentPage === 2 ? `/${paramsType}/` : page.url.prev;
+const nextUrl = page.url.next;
+---
+
+<Layout title={`Aephia Industries - ${title} - Page ${page.currentPage}`}>
+  <div class="container">
+    <section class="intro">
+      <h1>{title} <span class="page-num">Page {page.currentPage}</span></h1>
+    </section>
+
+    <div class="post-grid">
+      {page.data.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    <Pagination 
+      currentPage={page.currentPage} 
+      prevUrl={prevUrl} 
+      nextUrl={nextUrl} 
+    />
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .page-num {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: normal;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

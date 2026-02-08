@@ -1,0 +1,72 @@
+---
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <span class="logo-aephia">Aephia</span> 
+      <span class="logo-industries">Industries</span>
+    </a>
+    <nav>
+      <a href="/newsletters/">Newsletters</a>
+      <a href="/guides/">Guides</a>
+      <a href="/news/">Other</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: #000;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .logo-aephia {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif; /* Fallback for heavy sans */
+    letter-spacing: 0.05em;
+  }
+
+  .logo-industries {
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Industry', 'Microgramma', 'Eurostile', sans-serif; /* Tech font fallback */
+    letter-spacing: 0.05em;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: #aaa;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  nav a:hover, nav a[aria-current="page"] {
+    color: #fff;
+  }
+</style>
