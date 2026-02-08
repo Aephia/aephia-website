@@ -1,4 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import PostMeta from '../../components/PostMeta.astro';
+import TagList from '../../components/TagList.astro';
+import YouTube from '../../components/YouTube.astro';
+import XTweet from '../../components/XTweet.astro';
+import WpEmbed from '../../components/WpEmbed.astro';
 import Vimeo from '../../components/Vimeo.astro';
 
 export async function getStaticPaths() {
