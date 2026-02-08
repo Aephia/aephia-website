@@ -1,0 +1,292 @@
+---
+title: "SAGE: Resource Extraction & Crafting – A Guide"
+date: "2023-07-09T13:41:40"
+modified: "2023-09-06T19:21:02"
+type: "aephia"
+slug: "sage-resource-extraction-crafting"
+description: "SAGE: Resource Extraction &#038; Crafting is on its way! Get up to speed on the first official SAGE gameplay!"
+image: "https://assets.aephia.com/wp-assets/9ea7d24e9d19ab11d278754c7365418ac2ae5f611dba1767fc17a5d3224fff0a.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 11429
+categories: ["Guides"]
+tags: ["rec","sage","star atlas"]
+---
+
+> **With REC (now named “Starbased”) being postponed, and SAGE Labs being released prior to it, please consider checking out or [SAGE Labs Guide](https://aephia.com/star-atlas/sage-labs-a-guide/) instead**
+> 
+> Updated – August 17th, 2023
+
+With Escape Velocity behind us, let’s look forward to what comes next for SAGE (Star Atlas Golden Era)!
+
+## Introduction
+
+Though the name “SAGE” was announced during Breakpoint, the game itself was announced (back then under the temporary name SCREAM) back in February 2022.
+
+The development of this new WebGL project turned out to be harder than expected, leading to SAGE being delayed considerably. At the beginning of 2023, the team decided to cut the game into multiple parts and adopt a more iterative approach.
+
+### Escape Velocity
+
+The first module, Escape Velocity, was released to the public on April 26th, 2023\. This “game” was more of a gamified test environment with the express intent to test movement, or rather, the performance of the team’s middle layer (server program between game-client and the Solana blockchain) with all the movement going on.
+
+This test came with a treasure hunt to encourage people to help out, move through the map and scan for loot. We wrote a [guide on Escape Velocity](https://aephia.com/star-atlas/sage-escape-velocity-everything-we-know/) for those who would like to get a better idea of what went on there.
+
+On July 7th, a little over two months after launch, the team wound down Escape Velocity. The grand prize of Escape Velocity, the Fimbul BYOS Tankship, remained undiscovered and will therefore be making its way to REC.
+
+### Resource Extraction & Crafting
+
+Now that the chapter of Escape Velocity has closed, all eyes are on the next release, which will be all about Resource Extraction & Crafting.
+
+## The Manual
+
+In late 2022, the team released [two manuals](https://staratlas.com/newsroom/game-manuals) on SAGE, of which the [second one](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure) describes the gameplay we can expect in the various version of SAGE. Since then, the EV and REC iterations have been added, and some other details have changed as well. Regardless, it is still largely on point and definitely worth a read. In this article, we sometimes refer to the manual, as REC is the first iteration of the gameplay described in it.
+
+![MUD CSS as seen in SAGE](https://assets.aephia.com/wp-assets/1fac6ff4d612c9ae813684e4519455bae261de6031f1dad71687eef7b424acd1.png)
+
+MUD CSS as seen in SAGE \[Concept Art\]
+
+## SAGE: REC
+
+REC will be the **first iteration** of the actual game. As such, it will look more polished and feel more like a game than EV did.
+
+EV was meant to stress-test the team’s architecture and used a simplified on-chain Movement program. Unlike EV, REC is really closer to how things will be in the full SAGE game. As such, the iterations that come after won’t really change REC, but will rather build on top of it.
+
+### Gameplay
+
+In REC, you will control fleets composed of ships you own, scouring the galaxy in search of loot and asteroids to mine. With the resources mined this way, you will travel to the Central Space Station of your faction, or a Starbase controlled by your faction, to craft a variety of components.
+
+These components can then be sold to others or stored for future use. They can also be exchanged for loot.
+
+### On-chain
+
+This next release will use on-chain programs that every iteration of SAGE will be using going forward. 
+
+To facilitate REC’s gameplay, the team created 5 new on-chain programs:
+
+* Movement (overhauled)
+* Extraction
+* Crafting
+* Cargo/Inventory
+* Fleet Manager
+
+Not in this list, but another requirement for REC, is the Star Atlas Account (Player Profile) program. Though a key program for SAGE (and, by extension: REC), it really is a key component of the Star Atlas ecosystem as a whole. This program is a foundational pillar of all game experiences and many more ancillary systems. Therefore it deserves special mention.
+
+### Availability
+
+It is not yet known when REC will be released. There are signals that it could come in late July/early August, but the team has not provided a target date so far. Others expect a late August/early September launch instead. This seems less likely, as in that case, the team could have let EV run its course for two more months, as plenty of loot in the table remained unfound. 
+
+As for how long REC may be available, Michael (CEO) shared that he could see REC being around for up to 6 months. Note that this is not at all set in stone, and much will depend on the speed of development on the next version: Combat & Starbases (aka SAGE Light).
+
+## The Map
+
+For those of you who have played EV, the map in SAGE stays exactly the same in two aspects:
+
+* The map will (still) be a 101 x 101 cartesian grid. Every cell in the grid represents a single sector in the Galia Expanse (the part of the galaxy in which the game unfolds).
+* Movement from sector to sector will require your fleet to (sub-)warp.
+
+There are a good few differences as well:
+
+* The sectors will be displayed bigger, their graphical fidelity has been improved, and there is more to see inside a sector.
+* Movement within a sector is now available as well, using _sub-warp_ movement (see Movement section).
+* Sectors will no longer be (all) empty. There will be things to see and do within them.
+* You will see other players’ fleets, though you won’t see all of them on the map. Unfortunately, this would decrease performance too much. You will see all other ships that are within your sector, however.
+* There will be Starbases. In REC, you won’t (yet) be able to construct or upgrade Starbases; they will simply _be_ there.
+* Moving across the map, from one edge to the opposite, will take about 24 hours in REC, compared to less than an hour in EV.
+
+![SAGE Fleet Viewer](https://assets.aephia.com/wp-assets/3be431c801929a7cb5c6139dbc1ed4ac1a403f632036af461ca4e5df3f9f6161.png)
+
+Star Atlas – Fleet Viewer (separate [tool](https://hangar.staratlas.com/); uses the SAGE Graphical User Interface)
+
+## Fleets
+
+In REC, you will have to assemble a fleet at the Central Space Station (CSS) or Starbase, using ships you own that are _docked_ there. You will not control every ship individually, but instead group them in fleets, which you can then move throughout the Galia Expanse.
+
+In EV, this was also happening under the hood, but every fleet consisted of a single ship only. Of course, you can still create fleets like these if you want.
+
+You will be able to bring all of your ships into REC and create any amount of fleets you desire. Contrary to later iterations of SAGE, there is no limit on the type or amount of ships you will be able to bring into REC. The Council Rank system (see the [manual](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure)) is not yet activated for this release. In other words, you can bring all of your Pearce C11s into the game on day one.
+
+However, ships come with a point value, and the size of a single fleet will be restricted to a certain number of points. So, while you can create an unlimited number of fleets, you may be unable to put all your ships into one fleet.
+
+Note that hangars on ships in your fleet do not provide any bonus to this max point value in REC.
+
+### Shared Space
+
+Ships inside of a fleet share everything they need to function, be it fuel, ammo, or food. As such, you can add up the capacity each ship offers for storing such items and regard these sums when preparing for your voyage.
+
+The same goes for the total available cargo hold. The amount of resources you can mine depends on the sum of all cargo space on the individual ships that make up a fleet.
+
+### Starting Out
+
+To get started in the game, you will need to get ships into REC and form fleets at your faction’s Central Space Station (CSS). If your ships are enlisted in Faction Fleet (aka SCORE), you must first delist them. Only delist the ships you want to use in REC.
+
+When your ships enter REC, they will appear at the CSS, and you will be able to form fleets of the ships present. Besides ships, you can also move R4 (Fuel, Ammunition, Toolkits, and Food) into REC, which you can use to equip your fleet(s). Any R4 not used to equip will stay available at the CSS.
+
+Now your fleet(s) can move out and start exploring the Galia Expanse!
+
+![SAGE](https://assets.aephia.com/wp-assets/12c8fa89d324690369afae66aab86c963c9b52a28468e9825f4d770a6fc694c6.png)
+
+SAGE – Hangar View \[Concept Art\]
+
+## Movement
+
+In Escape Velocity, there was only the option to _warp_ from sector to sector. In REC, there will be two modes of movement available.
+
+### Sub-warp
+
+The [SAGE Manual](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure) talks about _impulse_ movement, but since that was written, the team adopted the term _sub-warp_ to denote the slowest type of movement.
+
+You can move around a sector using sub-warp movement, which will cost you nothing. However, you can also use it to move to any other point (sector) on the map. In that case, you will pay _**fuel**_ whenever you move across a sector boundary (to another sector).
+
+Sub-warping your fleets across the map is a lot slower than warping (next section). Using this mode of movement, you can move as far as you want as long you have the fuel to do so. Do note that no fuel-security measure is in place, meaning you could run out of fuel while traveling this way!
+
+#### Running out of Fuel
+
+If you run out of fuel, your only hope is that you have some fuel in your fleet’s cargo hold and that the amount there is sufficient to bring you to a nearby Starbase (of your faction). Fuel stored in your cargo hold can be transferred into your fuel tank at any time. This gives you a backup tank of sorts.
+
+If you don’t have any fuel in your cargo hold: tough luck! There is no other way to refuel in mid-space. Other fleets will not be able to help you out! 
+
+If you run completely out, you will be forced to respawn your fleet, losing all items in your cargo hold. These items will not spawn on the position you occupied on the map. Instead, they will be burned (this will change with future iterations of SAGE). It’s not yet clear if respawning resets your fleet’s location to the nearest faction-owned Starbase or CSS.
+
+### Warp
+
+Warp movement consumes more fuel, but also allows you to move more quickly. It can only be used for moving from one sector to another, and it will consume the fuel required to do so immediately. This means that you can not run out of fuel while warping. Of course, it can mean that the fuel that remains is insufficient to return you to a faction-owned Starbase, so you will still have to keep a sharp eye on your fuel supply and consumption!
+
+### Starpath
+
+The third mode of movement, using the Starpath Network, is **not available in REC**. When introduced during the next iterations, it will offer the quickest way to travel, though it only allows you to move between two sectors that are owned by your faction. This is the case when there is a faction-owned Starbase in that sector.
+
+Note that this mode of travel will both cost fuel _and_ ATLAS.
+
+![SAGE UI 1](https://assets.aephia.com/wp-assets/d61203642131556aeb96c9a59e5aedaa51b651720e7fcb36c393e667add1ca05.png)
+
+SAGE – UI \[Concept Art\]
+
+## Scanning
+
+When in a sector, you will be able to perform a Scan action in order to potentially find assets.
+
+Scanning will remain important in REC, as one object is required for (some) crafting recipes that can only be found through scanning!
+
+### Benefitting Smaller Ships
+
+Mining greatly benefits from bigger ships and fleet sizes. As such, the team envisions people with smaller ships/fleets, for whom mining may not be very efficient (e.g., XXS ships have very limited cargo space, but still need to travel the same distance to a Starbase as the big ships/fleets), may choose to go out and scan instead. This may prove to be more valuable for them than to mine resources. The opposite will likely be true for big ships and big fleets.
+
+In the absence of the Council Rank system, this scanning mechanism will give more of an opportunity to those with smaller ships in REC.
+
+_No further information on Scanning has been shared by the team at this time._
+
+## Mining
+
+Resource Extraction is a major component of REC. There are many different Asteroids on the game map, and each one of these provides resources. You can send your fleet to one in order to extract those resources. Note that asteroids do not move through the galaxy and have a fixed position.
+
+In the game, there are **8 different resources** that can be found. Not all of these will be present on a single asteroid. Most asteroids only have a select few resources available for extraction. You will be able to see the resources available and select which one you want to mine. Your fleet will only be able to extract one resource at any point in time. The cargo space of your fleet will then slowly fill up with the resource selected. You can start and stop that at any point and select a different resource to extract.
+
+### Resource Limits
+
+Asteroids do not run out of resources. There are no limits to the capacity or emission rate of resources on an asteroid. The amount you can gather is restricted by your cargo capacity only, which is determined by the ship composition of your fleet.
+
+There is also no limit to the amount of fleets that can extract simultaneously. More importantly: the pace at which resources are extracted does not change if more fleets are extracting the same resource at that very same asteroid at the same time.
+
+_Note_: Michael would like to see this mechanic changed, so that resource extraction is negatively influenced when a lot of fleets are mining the same asteroid simultaneously.
+
+### Costs
+
+Your fleet and crew are consuming food and ammo while they are busy extracting resources from asteroids. When you run out of either of these, you will have to return to a starbase to resupply.
+
+Note that the Armstrong IMP ships do not consume any ammunition while mining, so you only require food to be present in that case.
+
+### Active Process
+
+When you extract a resource, you must sign a transaction; when you want to stop, you will sign another. However, your fleet does not simply extract resources in the meantime without any other required user interaction.
+
+Though we have no information on what this will look like, extracting resources will be an active process. In other words, it will only be possible to extract while playing.
+
+### Increased Rarity
+
+Given every asteroid’s unlimited resources, why would you ever move to an asteroid that is further away?
+
+You may want to do so because asteroids located further away from the CSS offer resources with increased “rarity”. Note that rarity is in quotes here because the real rarity depends on how many people will go for these, but you get the point.
+
+![Star Atlas - Starbase](https://assets.aephia.com/wp-assets/fd33d566bdb69aeb0a07f3eaec522d6458114b29e5e59cd1c1f35b9ea9169e59.png)
+
+Star Atlas – Starbase \[Concept Art\]
+
+## Starbases
+
+The map comes with star systems that each will have a starbase. There is no need to create or upgrade these in REC, though that will come with later iterations of SAGE.
+
+Starbases are important to the game, as they serve as forward bases for you, the player. You have access to local storage on any of your faction’s Starbase that _no one else can access_. Here you can offload the R8 found while mining, but you may also want to store Fuel and other R4 here to ensure you do not run out of these!
+
+If you do run out of Fuel but do manage to make it back to a Starbase where you have no Fuel stored, you will have to rely on another one of your fleets to transport Fuel to the Starbase in order to re-activate. the fleet that got stranded You can, of course, do the same with Ammo and Food. Alternatively, since you can unload your good into your storage at the Starbase, you may opt to respawn your fleet instead.
+
+Note that **Toolkits are not being used in REC,** as these are only used to repair ships. There is no combat in REC and no way to damage ships. So best to leave your Toolkits at home.
+
+Besides storage, there is one more major function being fulfilled by Starbases. They offer the facilities needed to craft components using the resources you found!
+
+_Note:_ You are **unable** to dock your fleet at an opposing faction’s starbase, which means you can’t refuel/resupply there. 
+
+![SAGE UI 2](https://assets.aephia.com/wp-assets/fa9b91ffe01d9148e75ade671c0d55602daf4332838af4855e96eb2e1f8e6c97.png)
+
+SAGE – UI \[Concept Art\]
+
+## Crafting
+
+REC will allow about 25-30 different items to be crafted. Among these are Fuel, Ammunition, Food & Toolkits (aka R4), and certain items required to obtain loot (see Loot section below). Do note that these do **not** include ship components!
+
+Crafting is done by the crew members of your fleets that are docked to a Starbase. Each ship comes with a number of crew members that match the crew member configuration listed on each ship’s details on the Galactic Marketplace. As your crewmembers are tied to their ships, they are only available for crafting when their ships (or rather, the fleet they belong to) are docked at the Starbase.
+
+### No limits
+
+You can have unlimited parallel crafting processes going on, and you can add as many crew members to these processes as you like. Note, however, that more crew members do **not shorten the time** to craft, but instead increase the output of the process!
+
+This means that for most, crafting will be constrained by the amount of resources you bring with you, not by the number of crew members you can muster. As such, buying hundreds of cheap Airbikes to get a good many crewmembers may not be the soundest tactic here.
+
+### Costs
+
+Besides the R8 needed to craft specific components, according to their recipes, you will also have to pay a small amount of ATLAS for each component you craft. This will provide an ATLAS sink in the game, which most, no doubt, will agree is a good thing.
+
+## Loot
+
+When people scanned in Escape Velocity, they had a chance of finding loot. Now that EV has wound down, there is still some loot left. In REC, there will be a loot table as well! However, scanning alone is insufficient to get your hands on any loot. You will need to deposit crafted items in order to get your hands on specific loot items. Conversion rates will determine the type of loot you’ll get in return.
+
+_More information to come as get it!_
+
+![SAGE - UI [Concept Art]](https://assets.aephia.com/wp-assets/80db405fd1c0694e58ca7874ae7118f37cac42b20182316f714e6d0a8e3a92e7.png)
+
+SAGE – UI \[Concept Art\]
+
+## Exporting Goods
+
+Moving resources extracted to Starbases and crafting items there is all well and good, but at some point, you may want to sell some stuff as well, or at least move them to your wallet.
+
+Everything you want to take out of REC, including your ships, has to go through your faction’s CSS. This means you will have to load any items you want to export out of the game into your cargo hold and have that fleet move back to the CSS.
+
+At the CSS, you can move any items from your wallet into the game, and any items present at the CSS, out of the game.
+
+## Faction Fleet
+
+Ships used in REC can not be enlisted in Faction Fleet at the same time. You will therefore have to carefully choose which ships you want to deploy where.
+
+Additionally, given that mining requires you to be online, you may want to head back to the CSS and exit REC with your ships for the night, so that you can re-enlist them in Faction Fleet, where they can earn some ATLAS meanwhile.
+
+## Final Notes
+
+Some final, loose notes that don’t really fit anywhere else:
+
+* There is no cooperative flow provided by the game. If people want to collaborate on the creation of components, they will have to do so through Discord or other means.
+* There is no option for peer-to-peer trading in REC.
+* Besides mining ships, none of the other ship specializations have any influence on ship performance in REC.
+
+According to Michael, there will be reasons to traverse the map to other starbases. We have no idea yet what he is alluding to.
+
+## Future
+
+Earlier this year, the team mentioned that they are planning one more release to come after REC, before launching SAGE V0 (see the [manual](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure)). This release would introduce Combat & Starbases (creation & upgrading). Michael recently mentioned that he is unsure if this will happen as a separate release (also dubbed “SAGE Light”), or that the team will move directly to SAGE V0.
+
+We’ll have to wait and see. One thing is for sure: Combat is next on the list! By then, we will also have DAC support, which will undoubtedly lead to some very interesting gameplay!
+
+## WIP
+
+This guide is in active development and will be updated with new information as it comes in! Everything mentioned in this guide is subject to change, as REC has not yet been launched yet.

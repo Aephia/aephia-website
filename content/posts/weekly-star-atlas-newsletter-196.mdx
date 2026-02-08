@@ -1,0 +1,179 @@
+---
+title: "Weekly Star Atlas Newsletter #196"
+date: "2025-09-08T16:23:23"
+modified: "2025-09-08T18:40:02"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-196"
+description: "After a busy Star Atlas Summer, with three Town Halls, the dust is slowly settling! That means there wasn&#8217;t much news this past week, though the Econ Forum proved to be the big exception. Beyond covering this, we have a short list of items that we think are worthy of your attention, and we&#8217;ll cover the past two weeks of Chip&#8217;s developer blog!"
+image: "https://assets.aephia.com/wp-assets/42c9f8d580ec70ed78f8d9a435091cb1a7c6ff0ca5abe779f779e1a5cc49d038.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 17230
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 196th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+After a busy Star Atlas Summer, with three Town Halls, the dust is slowly settling! That means there wasn’t much news this past week, though the Econ Forum proved to be the big exception. Beyond covering this, we have a short list of items that we think are worthy of your attention, and we’ll cover the past two weeks of Chip’s developer blog!
+
+_Let’s dive in!_
+
+## Economic Forum September 2025
+
+The Economic Forum from last week started by providing some Holosim stats:
+
+* 4175 Players on the Leaderboard (6000 unfiltered, meaning with no quest progress at all)
+* 1400 DAO (7-day average, this is higher than UE5 or SAGE on mainnet)
+* 88k quests completed to date
+* Only 23 players have completed the storyline (HOLD STRONG)
+* 409 Battlepasses were purchased
+
+Then Chris (VP Game Economy) and Gareth (Econ Analyst) dove into Combat statistics:
+
+* 23,120 Combat Encounters
+* Over 25 Million Damage Dealt
+* 4120 Fleet Kills
+
+The map below shows where the combat encounters took place, who was involved, and how extensive the fighting at these locations was.
+
+![Economic Forum September 2025 - Holosim Attacks](https://assets.aephia.com/wp-assets/ff918da7481d7d41b0f77a9fa8d0116fb98adcb2b49d99f757903b5986798321.png)
+
+Economic Forum September 2025 – Holosim Attacks
+
+They continued to show various charts illustrating the progress of combat since Chapter 1 went live. Make sure to check out the [recording](https://www.youtube.com/live/pShbkekgxwE?si=HsOhxITA8vL7yuSc) for all the details.
+
+After Holosim, they continued with z.ink Airdrop information, which we’ve extracted and presented to you in the next section.
+
+## Z.ink Airdrop Season #1
+
+The z.ink airdrop campaign will launch later in September, or possibly October (see [previous issue](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-195/)). When it does, various activities related to Star Atlas will be rewarded with points (zXP). During the Econ Forum, the team shared the following table, listing the activities that will reward these points:
+
+![z.ink Airdrop Season #1 - Points / zXP](https://assets.aephia.com/wp-assets/2c65795c006c3bcf1de26933dbd64c8ce34d6eaa4c5e5caee93122874542eb39.png)
+
+z.ink Airdrop Season #1 – Points / zXP
+
+Note that the table does not list actual point values, as the team prefers not to divulge that level of information. Chris did share the following important information:
+
+* There is not (necessarily) a linear relationship between points (zXP) earned and the resulting airdrop.
+* There is no difference between someone who locked their polis 5 years ago, or on day 1 of the point season.  
+_The goal is to keep a level playing field for newcomers. This is also why there are no streak bonuses. People joining in the middle of the point season should not be discouraged from participating because they can only earn a slice of the 10% remaining, instead of the 50%._
+* Atlas locker rewards people for the number of days they have the Atlas locked. Taking it out and putting it back in will only hurt this, not boost it.
+* Locker bonuses have been set up such that they are not gameable, and there is no bonus to using multiple wallets in any way.
+* As to mainnet activity, the team is specifically monitoring for a specific transaction archetype and rewarding those. Without sharing these, it will be difficult to game right from the start. Also, the way they chose this should prevent multi-accounting from giving any benefit whatsoever.
+* Only actions that burn stuff that has marketplace value earn you zXP
+* It doesn’t matter whether you rent the fleet or own it.
+* In SAGE, the team aims to reward engagement, not asset value. Therefore, it does not matter if you use a capital or xxs ship for a specific action.
+* Locker zXP does, however, scale with the total value locked.
+* The team is striving not to artificially limit the amount of zXP that any single person can earn.
+* Currently, there are no plans to reward claim stakes. Faction Fleet will definitely see no rewards.
+
+### Planned architecture for wallet/profile system on z.ink
+
+Besides the Econ Forum, the team internally discussed some of the architecture needed for the wallet/profile system on z.ink this past week. Michael shared the following summary \[_EN: we polished it a little_\] on Discord afterwards:
+
+* You start with a wallet
+* You then already have or create a player profile (Z)
+* From here on out, the player profile (Z) is the centerpiece.
+* You can link additional wallets to this player profile.
+
+So imagine you’re a power user:
+
+* Wallet A is for playing SAGE — this one created the player profile and controls it
+* Wallet B for your staked POLIS
+* Wallet C for your staked ATLAS
+* Wallet D, E, F, G, H for all kinds of crypto trading, etc
+
+_(ignore any thoughts on whether the above spread of assets makes sense)_
+
+You might even have 10+ Ledgers lying around the house to manage all these wallets.
+
+**You can connect each of these wallets one by one to that single profile (Z) by signing a message/dummy transaction.** (The team may build a “Manage Linked Wallets” page/dialog for this.)
+
+For everything you do with any of these wallets in the SA ecosystem, **zXP** accumulates on the profile (Z)
+
+* If you play SAGE with that profile, it’s simple: zXP is gained with that profile.
+* If you do a primary market purchase with wallet G, zXP is awarded to profile Z, because it’s associated with profile Z.
+* If you stake additional POLIS with wallet B, zXP is awarded to profile Z.
+
+“And for Holosim, we’ll have to make a _Link to z.ink Profile_ button/dialog somewhere where you have to copy/paste in your profile’s (Z) public key or something so you can sign a message with the in-browser wallet and link your Holosim to the profile in that way. We might want to limit that to a single Holosim profile.”
+
+## News Bits
+
+Here are some bits we got (mostly) from the Atlas Brew of last week:
+
+* The next UE5 patch is expected in October. Chip and the team are pushing hard to get that in. The team is also working on an art pass on the new Exinade race track, although it is unclear if that will be done by then.
+* Core Act 3 is launching soon (426), according to both Santi and Michael. Michael added that there is an issue with_eReader_, the team hasn’t been able to fix it yet.
+* Holosim Chapter 2 may be postponed by a few weeks while the team is getting additional performance improvements in.
+* Brad (Gameplay Engineer) is working on some pretty cool updates for the Galia Open World mode (single player) for the end of the year, according to Jose (Lead Lore Writer), during the Brew. Separately, Chip commented something similar as part of his dev blog.
+
+![Star Atlas - UE5 Pending Updates](https://assets.aephia.com/wp-assets/3a33187fd829ca7c9609423ef978654f1dcbeeeb680b89446414794b89b095ce.jpg)
+
+Star Atlas – UE5 Pending Updates
+
+## From the Engineering Bay
+
+Chip (VP of Game Product) has managed to keep up with his daily development updates. We listed the first 17 [two weeks ago](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-195/), and below you can find the new posts of the past two weeks:
+
+<XTweet id="1960098392975024333" url="https://twitter.com/Chypto_/status/1960098392975024333" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-25">
+Star Atlas Dev Log 18: We were able to do a multiplayer race on Volant. Turned out the issue was our server containers weren&#39;t large enough for the map. Looks like next patch will allow for XP races on Volant. Though, we took a note to prioritize looking into the size of Volant,…
+</XTweet>
+ <XTweet id="1960452155946754579" url="https://twitter.com/Chypto_/status/1960452155946754579" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-26">
+Star Atlas Dev Log 19: Meeting heavy day. A lot of prep and playtesting surrounding our next patch. I wrote up the patch notes today. Tested a new feature, alpha hidden in the screen cap. [pic.twitter.com/imuOj1KLmF](https://t.co/imuOj1KLmF)
+</XTweet>
+ <XTweet id="1960829187868013005" url="https://twitter.com/Chypto_/status/1960829187868013005" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-27">
+Star Atlas Dev Log 20: Mostly playtesting today to get the patch out tomorrow. Ledger fix is working. We are cleaning up a few more things with racing still, but thats the only things holding up the release at this point. After this next patch, we are heads down until ~October…
+</XTweet>
+ <XTweet id="1961172060907958747" url="https://twitter.com/Chypto_/status/1961172060907958747" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-28">
+Star Atlas Dev Log 21: New patch is live! Took a screen shot from our UE5 discord channel. This is why all my Dev Logs lately have been about performance. Nowhere near done optimizing, but seeing this makes me really happy. Enjoy earning Ink everyone! [pic.twitter.com/zfUD2qgdcm](https://t.co/zfUD2qgdcm)
+</XTweet>
+ <XTweet id="1961488514425454707" url="https://twitter.com/Chypto_/status/1961488514425454707" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-29">
+Star Atlas Dev Log 22: Noticed Shotgun was being abused, too OP. Pushed a hot fix for it. Shotgun is now considered a power weapon and requires purple ammo. Had a team morale event this morning! We all got together and played with the community while earning double XP/Ink. Was a… [pic.twitter.com/rzBlx4pVHs](https://t.co/rzBlx4pVHs)
+</XTweet>
+ <XTweet id="1961812310747402659" url="https://twitter.com/Chypto_/status/1961812310747402659" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-30">
+Star Atlas Dev Log 23: Some good progress today. I fixed the wallet UI issues surrounding exporting private key, renaming, etc. Fixed issue where Long Rifle is incorrectly set to need purple ammo. Will try to set up a branch this next week to push these fixes ahead of any ink… [pic.twitter.com/SXZMrpaL3o](https://t.co/SXZMrpaL3o)
+</XTweet>
+ <XTweet id="1962248921939415410" url="https://twitter.com/Chypto_/status/1962248921939415410" authorName="Chypto" authorHandle="@Chypto_" date="2025-08-31">
+Star Atlas Dev Log 24: Spent most of today going through Tom Looman&#39;s Performance and Optimization Course. Got to the section on using World Position Offset (WPO) for Animating Meshes via their material. This takes the transform updates off the CPU and moves it to the GPU.… [pic.twitter.com/rVUSCtj4uV](https://t.co/rVUSCtj4uV)
+</XTweet>
+ <XTweet id="1962570976043876678" url="https://twitter.com/Chypto_/status/1962570976043876678" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-01">
+Star Atlas Dev Log 25: Not too exciting today, US-based team is out for labor day. I continued work on the Audio Volume performance refactor, getting close to finishing it, synced with a couple of our engineering leads, and continued worked on the Tom Looman Optimization course.
+</XTweet>
+ <XTweet id="1962960184461951330" url="https://twitter.com/Chypto_/status/1962960184461951330" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-02">
+Star Atlas Dev Log 26: Continuing my performance and optimization binge, I enabled the Animation Budget Allocator Plugin in our project and set it up on our character SKMs:[https://t.co/n913ZaZGD1](https://t.co/n913ZaZGD1)
+
+Will be tuning the significance bucket settings this week. Huge CPU savings… [pic.twitter.com/neeOsPGyfZ](https://t.co/neeOsPGyfZ)
+</XTweet>
+ <XTweet id="1963041728308359234" url="https://twitter.com/Chypto_/status/1963041728308359234" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-03">
+Star Atlas Dev Log 27: I spent this evening optimizing the Skeletal Mesh (SKM) ticking on our firearms. Pretty happy with this system. Now firearm SKMs only tick when animating. Gatling gun is only exception since its our only weapon with an ABP, so that must tick. However, we… [pic.twitter.com/I0YTxT0QST](https://t.co/I0YTxT0QST)
+</XTweet>
+ <XTweet id="1963362115437096999" url="https://twitter.com/Chypto_/status/1963362115437096999" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-03">
+Star Atlas Dev Log 28: Spent all day on Optimizations. I researched and enabled PSO Precaching for our project. This will help reduce GPU stutter/hitches, particularly for initial launches of the game. [https://t.co/vLueneGjeO](https://t.co/vLueneGjeO)
+
+Received new mockups for future… [pic.twitter.com/iiupUJpjOD](https://t.co/iiupUJpjOD)
+</XTweet>
+ <XTweet id="1963695057111797918" url="https://twitter.com/Chypto_/status/1963695057111797918" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-04">
+Star Atlas Dev Log 29: Converted nearly all our Skeletal Meshes to Budgeted versions. Still working on Vehicles, its hard because we have to make an editor script that migrates all the relevant settings on the old SKMs in all the ship BPs. 
+
+Did a good amount of research on…
+</XTweet>
+ <XTweet id="1963748141343064486" url="https://twitter.com/Chypto_/status/1963748141343064486" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-04">
+Star Atlas Dev Log 30: Initial tests enabling Global Invalidation yielded significant CPU savings spent on painting UI elements. This setting makes it so UI that doesnt change doesn&#39;t get repainted unless it changes (Invalidates). See video, heavy UI screen goes from spending 5ms… [pic.twitter.com/C0op2qiadh](https://t.co/C0op2qiadh)
+</XTweet>
+ <XTweet id="1964092945864302679" url="https://twitter.com/Chypto_/status/1964092945864302679" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-05">
+Star Atlas Dev Log 31: My CPU performance enhancements are mostly complete. Did some profiling today, generally seeing a 30-40% improvement on game thread across game modes and menus. My Game Thread (CPU) in Paizul went from 10+ down to ~6ms (see video). I&#39;m pretty happy with the… [pic.twitter.com/JLjYgbjj33](https://t.co/JLjYgbjj33)
+</XTweet>
+ <XTweet id="1964340118317101341" url="https://twitter.com/Chypto_/status/1964340118317101341" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-06">
+Star Atlas Dev Log 32: Been reading [@DruidMechanics](https://twitter.com/DruidMechanics?ref_src=twsrc%5Etfw)&#39;s UE5 Collision Essentials book. Thank you for consolidating this info into such a readable/compact format! 
+
+Can&#39;t agree more that this topic is often misunderstood and can be the source of a lot of bugs. Been learning a lot!… [pic.twitter.com/OBwgF3WfaN](https://t.co/OBwgF3WfaN)
+</XTweet>
+ <XTweet id="1964780767919407606" url="https://twitter.com/Chypto_/status/1964780767919407606" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-07">
+Star Atlas Dev Log 33: Lots of random clean up today while things are quiet. Submitted a code review cleaning up some of our project collision settings. I fixed the server not disabling the character capsule collision during ragdoll. This caused some movement desync in… [pic.twitter.com/Y1r67w72Ym](https://t.co/Y1r67w72Ym)
+</XTweet>
+ 
+
+_You’ve reached the end of this week’s newsletter! Thanks for reading, and until next week!_

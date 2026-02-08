@@ -1,0 +1,99 @@
+---
+title: "Weekly Star Atlas Newsletter #133"
+date: "2024-06-10T16:20:32"
+modified: "2024-06-17T10:44:56"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-133"
+description: "Another week went by, and the flow of news has not really increased compared to last week. However, Michael (CEO) and the team have hinted at a Town Hall being organized as you read this, and it looks likely that we&#8217;ll get a barrage of news during that (as of yet, unannounced) event!
+That said, we had our first Star Atlas Economic Forum (Brew) last week, so we&#8217;ll get into that! We also got a statement from Michael on the game that we&#8217;ve included in full here. It&#8217;ll be short but sweet!"
+image: "https://assets.aephia.com/wp-assets/8e52c3f41b3e43296aea8a3dbebd79c7da26aac7b5b153ff29c2ebe100e2621e.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 14650
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 133rd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we try to aggregate all the newsworthy tidbits revealed \[mainly by the team\] throughout the past week._
+
+---
+
+Another week went by, and the flow of news has not really increased compared to last week. However, Michael (CEO) and the team have hinted at a Town Hall being organized as you read this, and it looks likely that we’ll get a barrage of news during that (as of yet, unannounced) event!
+
+That said, we had our first Star Atlas Economic Forum (Brew) last week, so we’ll get into that! We also got a statement from Michael on the topic of small players that we’ve included in full below. It’ll be short but sweet!
+
+_Let’s dive in!_
+
+![Pearce X5 – Old (but newly revealed) Concept Art [by Gary Sanchez]](https://assets.aephia.com/wp-assets/c0a8f0e142527a06aab28aed68d1190e30712f1c447b8a5151b2a4605e628a1a.jpg)
+
+Pearce X5 – Old (but newly revealed) Concept Art \[by [Gary Sanchez](https://www.artstation.com/artwork/DvzQvE)\]
+
+## Star Atlas Economic Forum
+
+During the Brew last week, the Econ team kicked off the inaugural episode of their new monthly Star Atlas Economic Forum. 
+
+Going forward, this update will be its own separate event, but to kick things off, they decided to dedicate a Brew to the event instead. During the update, Chris (Head of Game Economy) and Gareth (Economic Analyst) were present to discuss the state of the economy and present various charts to back them up.
+
+In short, the duo went over the following topics:
+
+* Various aspects of the economy, focusing specifically on pre and post Starbased behavior
+* An upcoming dashboard that the team will offer in the future (ETA: end of the year)
+* Solana Fees over time
+* ATLAS valuation in SOL and their value in USD
+* Small Player struggles due to ATLAS/USD decline and SOL/USD climbing
+* Export timer/tax is not being pursued anymore (and reasons why)
+* What is coming instead: auto-deploy LP the moment it is earned
+
+We won’t summarize the entire Brew here; if you are interested in such things, we recommend you check out the [recording](https://www.youtube.com/watch?v=ssZMgNwNFX4) (or [Beth’s summary](https://x.com/bnBeth_solvax/status/1798922475654279507)) instead.
+
+### Auto-deploy LP
+
+Let’s dive a little deeper into that last topic!
+
+The idea here is that players will automatically contribute their Loyalty Points (LP) to buy ATLAS in the same transaction that claims the LP. This means there is no way to save up LP to do this at a later point in time. In fact, LP will be more or less disconnected from ATLAS earnings, in the sense that you will also still get your LP added to your account. At this point, you have to spend your earned Loyalty Points to get ATLAS. Instead of buying ATLAS with your LP, the game will simply add you to the ATLAS buyer list with the amount of LP received, while still also giving you the LP. So, instead, as originally planned (see the [Game Manual](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure)), you will still earn LP but will _likely_ no longer have the option to buy ATLAS with it.
+
+To ensure you can use your LP in some fashion, the team will add an LP store where you can buy limited edition skins and (at some point) usables to improve your game somewhat. During the meeting, Chris said that the team had figured out a way to do such sales without whales being able to buy up the entire limited collection. He did not yet want to share more details.
+
+So, when is this coming? The team has given us no ETA, but it will at least take a number of weeks. The team does not want to launch this new mechanism without the store, so that has to be created and added first.
+
+### Which problems does Auto-deploying LP solve?
+
+According to Chris, the goal is to prevent people from converting a large chunk of LP into ATLAS right before an epoch ends, thereby suddenly significantly reducing the ATLAS earnings people were expecting up until that time. 
+
+This will still be possible, but it will be more difficult–or at least more expensive–to execute. It would, after all, require keeping the crew locked into a crafting job until you claim it close to the epoch’s end. Not impossible to do, but most likely not the best use of those crew members.
+
+Notably, it does not combat moving components to other factions to gain LP (and more ATLAS) there, nor does it do anything against the component sniping, which some community members have taken issue with.
+
+### Quarterly Report
+
+Chris and Gareth also shared that they are contemplating sunsetting the Quarterly Econ report when the new Dashboard goes live, as the charts there would provide a (closer to) real-time view of the economy. In addition, the new monthly meeting would allow them to provide additional guidance and comments.
+
+![Pearce X5 – Old (but newly revealed) Concept Art [by Gary Sanchez]](https://assets.aephia.com/wp-assets/fbaf7aaac376695d5356b35f83ff1893a9a6749c230750bf49609ebb80f99889.jpg)
+
+Pearce X5 – Old (but newly revealed) Concept Art \[by [Gary Sanchez](https://www.artstation.com/artwork/DvzQvE)\]
+
+## News Bits
+
+Some smaller news bits you may find interesting:
+
+* The team patched a feature that was inaccessible through their UI, but was available directly on-chain and through automation tools such as the SLY tool. This feature allowed players to already supply components for the subsequent Tier upgrade of a Starbase, even before the current one was finished. It would then complete that job the moment the current Tier upgrade would have finished. Now doing this will simply return the input components and no LP.
+* A Town Hall is brewing. No date yet, but Michael (and other team members) have hinted at one coming relatively soon.
+* Due to the low ATLAS/USDC value and persistent demand for Crew members in SAGE, the team’s offering of the Fimbul Arirbike on the ATLAS side of the market has sold out.
+* The team updated their RPC setup for SAGE. The application will call one endpoint always, which is backed by a pool of RPCs. It will then attempt to send it through to the most responsive one, ensuring the best user experience possible at all times.
+
+## The Game, Small Players, and the Future
+
+Michael answered a question concerning the game not being profitably playable by players with a small collection of ships (or small ships), which we included (with permission) verbatim below for everyone:
+
+> A few people from the team have also asked me about issues with smaller players, particularly as it relates to tx fee issues. That separately needs to be resolved. But I also want to emphasize something I’ve said countless times on interviews. 
+> 
+> The long-term success of the SA economy requires sufficiently complex systems to enable specialization. Right now, big players can do all things; smaller asset players can’t. Until we can have a blend of game activities that makes it impossible for everyone to do everything, the current dynamic will persist. I’ve commented on various tie-ins to the UE experience that _should_ create some big impacts to the economy. i.e. Skill based betting races in UE5 that consume food and ammo. In that model, it is zero inflationary from an ATLAS standpoint. We don’t have ATLAS emissions. Players pay an ante for a chance to win from the race pool, if they’re good enough. But they also need resources. So either they go in SAGE to farm them, or buy it from someone else.
+> 
+> The key point is that I think I/we need to be better at communicating is that long term, there is no reason for people to be so fired up about competition for the ATLAS emissions in SAGE. The emission curve is literally a bootstrapping mechanism for this phase of the economy. It kicks everything off. But players should _really_ be focusing on how they can develop an operation that is in demand from other players. Because those other players **are** your P2E income source. People purchasing resources for skin crafting, gameplay, convenience, or necessity. You’re the producer. That’s the big gift we’re giving you. We don’t sit in the middle and say ATMTA is the only entity that can sell those items to players. In fact, we don’t sell any of them, just like how R4 works today.
+> 
+> And a final note on this, because it was also asked. Right now it might not feel like much of an incentive to bring new players in because then they “take” from your share of daily emissions. But even now, it’s healthy for the ecosystem to see player growth. For all of the assets you already own. For network effect. But also because having a larger player base will also lead to greater demand (alongside supply) throughout the economy. A higher GDP, and more trade activity, and more pockets of opportunity.
+> 
+> Michael (CEO)
+
+_That’s it for this week! Thanks for reading, and see you next issue!_

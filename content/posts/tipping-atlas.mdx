@@ -1,0 +1,99 @@
+---
+title: "Tipping ATLAS"
+date: "2022-01-24T20:45:07"
+modified: "2022-01-28T16:07:11"
+type: "aephia"
+slug: "tipping-atlas"
+description: "Now that Star Atlas is enabling us to earn ATLAS with SCORE, it’s time to enable you all to easily distribute those earnings to others 😜 Or in other words: To allow you to tip/gift some of your hard-earned cash to those you fancy, would like to show your appreciation, or just for fun! Microtransactions [&hellip;]"
+image: "https://assets.aephia.com/wp-assets/e2206afc97311599e6d11c1ace8390d3321a85ace5382ff28c2f25ba8ffc7f9a.gif"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 7064
+categories: ["Guides"]
+tags: ["atlas","star atlas","tipping"]
+---
+
+Now that Star Atlas is enabling us to earn ATLAS with SCORE, it’s time to enable you all to easily distribute those earnings to others 😜 Or in other words: To allow you to tip/gift some of your hard-earned cash to those you fancy, would like to show your appreciation, or just for fun!
+
+Microtransactions have been in vogue for quite a few years now, as people embraced this approach to show their gratitude in a more direct, meaningful way. And now you can do so on the Solana chain, with the Star Atlas token!
+
+### SolStar
+
+Over the course of 2021, SolStar built the first proper tipping bot on the Solana chain. For the majority of last year, it has been running on the devnet (since May 26th), with it finally going live on mainnet on October 6th, 2021\. What’s more, these past few weeks the team added the option to tip in both ATLAS and POLIS 🥳
+
+An audit of their code is underway, but as it has been running in the wild for quite some time, we feel confident in adding the bot to our Discord server already.
+
+That said: it’s always a good practice to not have more tokens in the bot’s custodial wallet than you are comfortable with losing.
+
+![SolStar logo](https://cdn-images-1.medium.com/max/1600/1*Nkv6jbxrYqHo3keuH2nVDg.png)
+
+### Tipping
+
+The bot has been added to all channels, so you can tip no matter where you are. To get up to speed and (potentially) **fund your wallet**, please check [their documentation](https://documentation.solstar.finance/solstar-tip-bot-guide/user-guide).
+
+#### Fees
+
+There are two fees you need to take into account here:
+
+* The standard transaction fee (gas) — this you pay for all Solana transactions, tipping is not magically excluded
+* A setup (rental/account creation) fee — if you are sending tokens to someone that that person does not already own
+
+Note that this setup fee might have to be paid regularly at first, as most people will not have connected a non-custodial wallet to the bot, and will neither have received (ATLAS) tokens before. Keep this in mind when tipping someone!
+
+> It’s also important to realize you can not reclaim this rental fee as the account is being created on someone else’s account!
+
+These fees are:
+
+* Transaction fee: 0.000005 SOL
+* Account creation: 0.002 SOL
+
+With that said: _If you are using the custodial wallet (which is the default), make sure to have funded this wallet with SOL as well, so you can pay the fees mentioned here._
+
+### Non-custodial
+
+By default, the bot is set to run in a custodial mode. This means that they create a wallet on the fly for everyone who receives a tip, with **them controlling the keys**. This allows everyone to send, and receive tips **without any setup**. It just works, recipients won’t have to do a thing!
+
+However, being the security-minded community that we are, we only add this bot here because it also comes with **non-custodial** options.
+
+There are two processes here that matter:
+
+1. You can configure the bot to drop all tips received straight to **your** wallet.
+2. You can send a tip from your own wallet instead of from your custodial one.
+
+#### Receiving tips in your own wallet
+
+Head over to the [SolStar website](https://solstar.finance/manage), log in with your Discord credentials, and navigate to the [Account page](https://solstar.finance/manage). You will see something similar to the image below:
+
+![](https://cdn-images-1.medium.com/max/1600/1*8L39cBD_iD4Fb0ac_UzYXw.png)
+
+Copy/paste the wallet address you want to use into the input box at the bottom of the page, and click “save”.
+
+If all went well, it should have been updated to:
+
+![](https://cdn-images-1.medium.com/max/1600/1*fXiAYFmCqAzPIZXQgvuPEQ.png)
+
+Note that your external wallet key was stored in your profile. Additionally, your active wallet was right away set to your external wallet.
+
+If at any point you want to change which wallet receives tips, you can come back here and **click the button beneath the active wallet**.
+
+#### Sending tips from your own wallet
+
+Sending tips from your own wallet is — at the time of writing — something you’ll have to let the bot know, every time you want to tip somebody.
+
+![](https://cdn-images-1.medium.com/max/1600/1*siNHcibv5Q_6_WaEQuIvPg.png)
+
+When tipping, there are a few optional arguments you can provide to the bot. One of these arguments is called `external`, which you can set to `True` to signal that you want to tip from an external (your own, non-custodial) wallet. The default value for this parameter is `False`, meaning the custodial will be used.
+
+When you give the bot this command, you will receive a response containing an URL. Clicking this link will open a webpage, where you can connect your own wallet to approve the tip being sent out.
+
+### Custodial
+
+Though non-custodial sounds appealing — it’s your keys, so your money, after all — there really are pros and cons to choosing _non-custodial_ over _custodial_. The latter is clearly easier and faster. Though the account is custodial, you can always move some of your funds therein to your main wallet whenever you want. It also prevents you from having to approve the tipping contract every time, which means you are less exposed to potential malignant forces if the bot ever gets hacked.
+
+### Final Words
+
+All that said, you might conclude this tipping bot is very risky to use. Rest assured that is of course not the case, else you would not be reading this article right now. Tipping-bots have been around for years and thousands of people use them daily. We would not add the bot if we did not think it could be used safely. However, as with everything in crypto, it’s always best to get a good understanding of what is happening under the hood. We want to make sure you understand what options this bot offers you, so you can make an informed decision. We are glad to see that the SolStar bot has non-custodial options for those of you who would not think about using it any other way.
+
+Happy tipping everybody!

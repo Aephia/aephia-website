@@ -1,0 +1,235 @@
+---
+title: "Town Hall Report – August 27th, 2025"
+date: "2025-08-27T20:06:42"
+modified: "2025-09-01T13:53:06"
+type: "news"
+slug: "town-hall-report-august-27th-2025"
+description: "The third and final Town Hall of the Star Atlas Summer 2025 just wrapped up. Check out this written report to get up to speed on all that was shared!"
+image: "https://assets.aephia.com/wp-assets/ece579538da2f2696a8d9592f26c418f81c548a0582bacf3fe12074dd5200982.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 17127
+categories: ["news"]
+---
+
+The _third and final_ Town Hall the team planned for Star Atlas Summer just wrapped up! Below, we provide a summary/report of the entire event, capturing all the news shared.
+
+If you missed any of the previous two Town Halls, here are the reports we wrote on them:
+
+* [Summer Town Hall #1](https://aephia.com/star-atlas/town-hall-report-july-30th-2025/)
+* [Summer Town Hall #2](https://aephia.com/star-atlas/town-hall-report-august-13th-2025/)
+
+![Star Atlas Summer - Town Hall Part 3](https://assets.aephia.com/wp-assets/ffd55d8a9fc23c5f5fb20ccec9c17552e5711438b605f243deb0302eda995f30.png)
+
+Star Atlas Summer – Town Hall Part 3
+
+_On stage are Santi (VP of Community & Ecosystem) and Michael (CEO)._ The first topic discussed is some of the noteworthy events that took place since the previous Town Hall.
+
+## Noteworthy News
+
+* Quick mention of Iris Quest this past weekend, and the new teams that popped up since the last tournament.
+* The Star Atlas Comet Community Meetup, which took place in Cologne this past weekend, was also briefly mentioned.
+* The Galia Cup starts on September 1st. This is a fully community-driven league that spans 1-2 months.
+* Michael chimes in to say that seeing teams from outside the community join, and even sponsor tournaments, is very encouraging with respect to the future growth of Star Atlas.
+
+## Holosim
+
+_John, better known as XCod_ _e (Product Manager at Star Atlas), takes the stage to discuss Holosim._
+
+He begins by discussing the current state of Holosim and then proceeds to the roadmap and the next chapter.
+
+### Current State
+
+During beta, the team began replacing the Starcomm V2 infrastructure with direct RPC calls (similar to the Community’s approach to their tools and services), as they had already observed Starcomm struggling with the load. And since Holosim is running on a Solana/z.ink testnet operated by the team, using RPCs is much cheaper than doing this on Solana mainnet.
+
+When they launched Chapter 1 and experienced a player load much higher than during the beta, it essentially overloaded the infrastructure. The team scrambled to fix things by replacing Starcomm code with direct RPC calls. However, whenever the team fixed one thing, another thing would break.
+
+Fast-forward to today, and they managed to replace enough of the Starcomm infrastructure to reach a more stable state. In other words, it’s now in a playable state. The team will continue to replace every remaining Starcomm call with direct RPC calls systematically.
+
+With the transition to RPC calls, a queue now cycles through all transactions. For example, the _Roadmanager_ is a serial action. It takes a fleet and takes that through an entire cycle. Then it will go to the next fleet in the list. This means it is not as responsive as players would like. The team could improve this through parallelization, but at this point, this has a lower priority than removing the last Starcomm bits.
+
+Note that the team is not pursuing this for SAGE C4\. They will be using an upgraded and much-improved Starcomm V2.1 (essentially a V3).
+
+![Star Atlas - Holosim Roadmap](https://assets.aephia.com/wp-assets/e93df82f46749cf8cc130621390a945664388bd0a3208ce03fd928d823fd89fe.png)
+
+Star Atlas – Holosim Roadmap
+
+### Roadmap
+
+John briefly reviews the individual items shown in the above roadmap. The colors in the picture above have the following meaning:
+
+* Green: done
+* Yellow: in progress
+* Gray: to do
+
+The team achieved a 26% conversion rate from completing the first quest to purchasing the battle pass.
+
+In total, approximately 7,000 people created an account, with 2,500 completing their first quest. They are now tracking 1429 daily active users, which means Holosim has more daily players than UE5 and SAGE.
+
+### Chapter 2
+
+John then delves into what is to come in Chapter 2\. He notes that when Chapter 1 ends, the team will need some time to build Chapter 2.
+
+* The goal is to have the content build on Chapter 1  
+  * Players will start with a starter pack of ships, so they do not have to go through the early grind all over again.
+* Getting into bigger ships sooner will aid the Territorial Control aspect
+* They want to add the ability to zoom in on the map and show a different UI at different zoom levels
+* Factions will only start with Safe Zone bases. Players will need to overtake MRZ bases, which is one of the ways they can earn points for the leaderboard.
+* Another way to earn these points is by upgrading Starbases. John notes that the LP mechanic will get refreshed.
+* Enhanced battle UI
+* Experiment with micro-transactions
+* Battle pass will become part of the z.ink subscription
+* Work done on Territorial control will ultimately result in an NPC Faction
+
+![Screenshot 2025 08 27 at 20.22.16](https://assets.aephia.com/wp-assets/8497fc401afca727f899503ceadfa0628bd424b689e9fc42f76b68a577f5b61f.png)
+
+Star Atlas Holosim – Combat Encounters in Chapter 1 (so far)
+
+John shows off a quick graphic that depicts where combat has taken place since the launch of Chapter 1.
+
+### Expose by Michael
+
+Michael reiterates the goals of Holosim. Generally speaking, he believes Holosim can bring a much wider audience to Star Atlas. He believes there will be some conversion from Holosim to mainnet (SAGE). Holosim contains numerous tools to teach people how to play the game. SAGE lacks these features and is quite challenging to access. As such, Holosim is a great way to teach everyone how to play the game before they may want to explore SAGE.
+
+It’s not about achieving a high conversion rate, however. It’s also a great opportunity to generate a new revenue stream for the team. So far, conversion has been quite good (talking about battle passes). The team is still eyeing the opportunity to bring this to mobile, which would open up the potential for even further adoption.
+
+This alternative revenue stream created a unique opportunity to drive value back into the Holosim product, as well as into ATLAS and POLIS. One way to achieve this would be to allocate 20% of battle pass revenue to the Holosim competition rewards. On top, they could also use a portion to repurchase tokens from the open market. If nothing else, this may allow the team to stop selling tokens themselves.
+
+## Starbased
+
+Starbased, the current version of SAGE is getting a bit long in the tooth, at least from the economic perspective.
+
+There is a _nice little update_ (Michael’s words) that the team is **rolling out today**.
+
+The team is introducing an **Infinite Starbase update**. This will add a single _phantom starbase_ to each of the three factions. It will sit somewhere on the border between the Safe Zone and the Medium Risk Zone.
+
+These will start at Tier 1 and stay there forever. The upgrade recipes will be modified so that they can be used an infinite number of times. This allows players to deposit as many upgrade materials as they can craft into these. These Starbases will never reach Tier 2\. There will be recipes for _all_ the different Tier (1-5) updates. In other words, there will be recipes normally only available at higher Tier Starbases, so you can keep providing materials normally needed to upgrade to tier 5 (for example) as well. These will allow players to keep producing LP.
+
+Lore-wise, these _ephemeral_ starbases come from an alternative dimension, and they are going to go away. Jose (Lead Lore Writer) is cooking a story for this.
+
+For now, FICs will stay in the game. There may be a phase-out, but it appears that these won’t be removed soon. Michael also shared that there are discussions of introducing combat to Starbased. This may trigger the phase out of FICs over time.
+
+Michael repeats that any Tier 5 Starbases will become a _King System_ in C4\. On top of that, all the other Core systems will come with a Tier 1 Starbase owned by the faction as well.
+
+![STAR FRAME ANNOUNCEMENT 4x5 2](https://assets.aephia.com/wp-assets/07df9d30dff16aef6afa332694d7e6b74703977a682c0d09556d4d2163bb896d.png)
+
+STAR FRAME ANNOUNCEMENT 4×5 2
+
+## Star Frame
+
+_Bryan (Blockchain Dev) and Sammy (Blockchain Dev) from the team are joining (their first time on stage at a Town Hall)._
+
+Bryan has been working on the blockchain side of things since July 2021\. Sammy joined 2.5 years ago to work on this as well.
+
+Bryan starts by explaining how they have been using Anchor to develop their on-chain programs, but that it was really created with simpler programs in mind. The team quickly pushed into its boundaries. They made some changes to accommodate their development, but they continued to hit Anchor’s limits.
+
+![Star Frame Presentation (slide 1)](https://assets.aephia.com/wp-assets/780e47054eaefb6c5a0e8ba844d530460e5cc1f014b396c5f53fe20fa479aa07.png)
+
+Star Frame Presentation (slide 1)
+
+Enter _Star Frame_. The goals were to reduce the complexity of program development, make it more modifiable, and eliminate potential developer errors.
+
+Bryan then provides a high-level, yet quite technical, description of how on-chain programs work in Anchor, before contrasting this with Star Frame. If you’re interested in this type of content, please check out the [video recording](https://www.youtube.com/watch?v=AKvbmSHZNgo).
+
+![Screenshot 2025 08 27 at 20.50.47](https://assets.aephia.com/wp-assets/c010d5016a57b4ab8f122c9df1931c4764ebf387295bb3b893e0d0ca01c51db5.png)
+
+The Fleet program breakdown in Anchor
+
+![Screenshot 2025 08 27 at 20.52.05](https://assets.aephia.com/wp-assets/1949f7b5792bad73955f44a27060bc8d999546a803b3884b2f8f6f88a62b3abb.png)
+
+The Fleet program breakdown in Star Frame (much simpler)
+
+Sammy jumps in to explain that it took a lot of trial and error to get to this point. They started work on this 2 years ago.
+
+They will be open-sourcing Star Frame very soon.
+
+Star Frame allows them to process 1000 orders in a single transaction. They use this system for the new local marketplaces that will come with C4.
+
+Because they can now store dynamic data within an account, your fleet has its own cargo. There is no need to create multiple accounts, **saving** a significant amount of development time and **money on rent**.
+
+Star Frame is [Pinocchio](https://github.com/anza-xyz/pinocchio)\-based! It’s the first framework to adopt this dependency-free library for creating Solana programs**.**
+
+Michael: This is a valuable contribution to the Solana ecosystem. This is not very visible to the community, but a tremendous amount of work and innovation is required in the background to pioneer having fully on-chain game systems.
+
+The team released a [Medium article](https://medium.com/star-atlas/open-sourcing-star-frame-building-the-next-generation-of-solana-programs-87fa9b375338), especially for Star Frame!
+
+## UE5
+
+Dominic (Marketing Manager) comes on stage to talk about the new UE5 update that is coming later this week!
+
+The patch notes will be much more detailed, but he is going over the highlights:
+
+* Hardware wallet authentication — Allowing you to use your Ledger
+* Balance updates  
+  * Shotgun buff (damage & projectile size, reduction in range)
+  * Changing how the Gatling Gun works — Shoot while it’s spinning up
+  * Heavy weapons will no longer start with ammo (incl. Sniper Rifle)
+  * Improved team balancing — Can only choose a team after a round
+* Fixed: Jittery character movement
+* You can now descend while jetpacking around
+* The addition of Spectating mode to Racing
+* Ink, a new resource that is tradable on the marketplace — A new exclusive resource only obtainable through playing UE5.
+
+![Star Atlas - Ink - Double XP Weekend](https://assets.aephia.com/wp-assets/adc3577ab4e26769e08afa2bebbe3c17055edd0067a6966a8adf97e5915b8136.png)
+
+Star Atlas – Ink – Double XP Weekend
+
+### **Inter-nanite Kinematics** – INK
+
+You get 1 INK for every 100XP earned during a match, and you can track the ink you have accumulated on your rewards page. However, ink will be airdropped periodically; it will **not** be distributed in real-time.
+
+Ink will be usable in SAGE Labs. You can import Ink (which has a weight of 1) into the game, bring it to your new faction’s phantom Starbase, and deposit it there: **100k LP per unit**.
+
+To celebrate the arrival of Ink, **this weekend will be a double XP weekend in UE5**. This, of course, means double the Ink as well!
+
+Michael is enthusiastic about this cross-pollination between UE5 and the Economy. If you earn this in UE5, you will need some ships and crew to be able to redeem it.
+
+Michael chimes in to say that the blockchain has the potential to be the substrate of the metaverse. There is an opportunity for dApps to have a physical representation in Star Atlas. In the lore of the game, the _Star Atlas_ is the blockchain.
+
+## SAGE C4 – SAGE Editor Suite
+
+Danny (CPO) is joining the stage alongside Joseph (one of Danny’s brothers — Not to be confused with Jacob, who is another brother, co-founder, and the CTO).
+
+Demo time! The purpose of this demo is to demonstrate the progress the team has made with the Sage editor suite of tools.
+
+![Star Atlas Sage C4 Tool Suite](https://assets.aephia.com/wp-assets/d3275c195b57d26c287cf386371c09de071c5b707def7045ef2880507cae4f62.png)
+
+Star Atlas Sage C4 Tool Suite
+
+Compared to the previous demo, the Coming Soon section is now gone. All the tools are there now.
+
+The team will release these tools to the community right after the presentation! This means that all the live data (which the team is still working on) will be accessible to the community.
+
+![C4 - Ship Configurator - Battle Simulator](https://assets.aephia.com/wp-assets/d26d25ffadbd072629a8992305475fad6c0f3f23bb2b3d20b31b19843a2b8cba.png)
+
+C4 – Ship Configurator – Battle Simulator
+
+Danny and Joseph review the various tools available here. Below, we picked some highlights shared, but they went pretty deep into some examples.
+
+* **Loot Matrix** — Conditional Listing Tool
+* **Ship Configurator** — Loads the latest data. Select ships and compare their stats and components. You can also take a deep dive into the components. Comes with a very advanced and detailed combat simulator as well.
+* **Map Editor** — Loads the latest map. Now with King and Core systems (currently assuming every existing Starbase in SAGE Labs is getting upgraded to T5). You can also now jump into a system to see available resources. King systems got the most warp lanes connected within each system.
+* **Claim Stakes** — This tool and the next two are tightly integrated. Select planet, see what Claim stake tiers are available (based on Starbase level – and can be adjusted). Plan your buildings within a Claim Stake. Btw: Claim Stakes come with a building that can extract some materials at a low rate.
+* **Crafting Habs** — See available plots for Crafting habs. Select one and start building. It is very similar to how Claim Stakes work. Comes with slots you can assign a crafting job to. You can increase slots and speed. Once you have a slot, you can look at what you can craft with your inventory on the Starbase. The slots are fee-free slots, with no crafting cost.
+* **Crafting Recipes** — Select a recipe and visualize it. You can plan out how to get a recipe. You can visualize the recipe tree and also search for recipes by ingredient. There are also some Achievements for fun, if you like to play around with these crafting tools (not related to the actual C4 game).
+* **Research Nodes** — Skill trees for all the Career points you earn. You can simulate earning career points and spending them. Earning 6 points over the various careers earns you 1 Renown point. These can be spent in the Council Rank Skill tree.
+
+The team will continue tweaking these numbers all the way up until launch.
+
+![C4 - Map Editor](https://assets.aephia.com/wp-assets/a0f97c9e23da465b29eda4d561d1741194913998f60ae54c15d19207dbf4cec1.png)
+
+C4 – Map Editor
+
+![C4 - Claim Stakes](https://assets.aephia.com/wp-assets/9a2f853e2d06c098b04a6045491e8c7c0c9ddb87471e3086d4121b059a06fe16.png)
+
+C4 – Claim Stakes
+
+**You can use these tools right now by visiting [https://ses.staratlas.com](https://ses.staratlas.com).**
+
+This may not yet be the PTR, but it is all the data used by the PTR. Enough to start planning and experimenting!
+
+That is it for this 3rd and final Star Atlas Summer Town Hall!
+
+That is.. Santi and Michael wrapped up the event with a video advertisement for Enigma42’s 3D-printed Star Atlas assets. You can find those on [his website](https://staratlassian.com/shop/)!

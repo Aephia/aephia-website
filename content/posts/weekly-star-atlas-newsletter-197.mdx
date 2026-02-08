@@ -1,0 +1,142 @@
+---
+title: "Weekly Star Atlas Newsletter #197"
+date: "2025-09-15T16:13:32"
+modified: "2025-09-15T16:18:32"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-197"
+description: "It’s been a relatively quiet week in Star Atlas, though not without highlights! The Atlas Brew brought some fresh revelations, the first INK drop has landed, and Chip shared his latest round of developer updates. To wrap it up, the sneak peek section is back with some Calico Scud eyecandy!"
+image: "https://assets.aephia.com/wp-assets/13741ee46f2994b1df9975ebd61c5320c88a6e438c8e51d559a6708134b2b1be.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 17248
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 197th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+It’s been a relatively quiet week in Star Atlas, though not without highlights! The Atlas Brew brought some fresh revelations, the first INK drop has landed, and Chip shared his latest round of developer updates. To wrap it up, the sneak peek section is back with some Calico Scud eyecandy!
+
+_Let’s dive in!_
+
+![Calico Scud - Side [by RenderDock Studio]](https://assets.aephia.com/wp-assets/fddef2ee5fac602b708d54029a457c04083b9a82fc9e1d060f967289e46edc38.jpg)
+
+Calico Scud – Side \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+## C4 Revelations
+
+This past week, during the Atlas Brew, Joseph from the team, alongside our very own Viktor, joined the Community Team on the Brew to discuss the recently released SAGE Editor Suite.
+
+It was no surprise that some C4 revelations were shared there, and we did our best to list them for your reading pleasure below. That said, it was an interesting one, so consider checking the recording as well!
+
+Before we kick things off, the following definitions are used below:
+
+* **Raw Materials**: Things you mine
+* **Final Components**: Usables, the final step in a production chain (e.g., ship components)
+* **Ingredients**: Anything directly contributing to a Final Component (there are 150 of these planned, currently)
+* **Components**: Anything between Raw Materials and Ingredients
+
+Using these definitions, the production flow looks like this:
+_Raw materials -&gt; Components -&gt; Ingredients -&gt; Final component_
+
+Now, without further ado, here is what we’ve learned:
+
+**Faction Specific Resources**
+
+* There will be eight faction-specific resources within each faction’s initial territory. Three of these will exclusively be used for cosmetic improvements only. The remaining five will focus on the Faction’s core strengths.
+* Certain _ship configs_ will rely on these 15 faction-specific resources (5 per faction), meaning that to craft them, a faction would need to:  
+  * Conquer systems that contain the required resource from another faction
+  * Trade the resource, or any intermediate component, on the galactic marketplace
+* The team is considering making these resources mandatory for crafting specific ship weapons and/or countermeasures that deal a certain type of damage. Perhaps a faction is unable to counter a particular type of damage unless it gets its hands on the resources required to craft the related ship components.
+
+**New Players / Small Players**
+
+A lot of care is taken to ensure that new players, or those with only a few assets, can have a fulfilling game experience. To this end:
+
+* Of the top 10 most used resources (in final goods), eight can be mined with a T1 claim stake. This means that (for example) your T1 Copper Miner will be highly relevant in the game economy. It will also stay that way throughout the game, as Copper is still needed even to craft components for Titan-class ships.
+* Most of the XXS ship components rely **solely** on resources that can be mined with a T1 claim stake. This gives new/small players something to work towards, a clear goal they can achieve by themselves. There is an immediate use for the resources they mined.
+
+**Claim Stakes**
+
+* Claim Stakes have a limit on how far you can go into any production chain. There is no claim stake building for anything taking more than two production steps to build. For example, you can go from _Copper Ore_ to _Copper Wire_, but you can not get past that on a Claim Stake. You would need to go crafting at the Starbase (Habs)
+* This means the game won’t allow you to automate the creation of any final component that is used in a ship config.
+* Higher-tier claim stakes are needed to access all resources available on a planet. Council rank plays a role here as well.
+* A Claim Stake T1 has access to approximately 60-80% of all resources. Sometimes, a T5 claim stake only opens up a single resource.
+
+**Asteroid Mining**
+
+* All of the resources available on planets in a star system will also be available in the Asteroid belt, albeit at a lower richness. In other words, every resource available through claim stakes will also be accessible to mining fleets.
+* Miner fleets will also be able, perhaps more importantly, to mine asteroids in other systems and asteroids that are free-floating in space.
+
+**Miscelaneous**
+
+* **INK** will be an ingredient for some of the recipes. It could work similarly to the faction-specific resources, providing a bonus (through its end-products) to those who possess it, while limiting access to effective counters for those who do not.
+* **Drones** are OP at the moment (according to Danny), but this may change, of course.
+
+## News Bits
+
+Two more small tidbits from last week:
+
+* The long-awaited INK drop occurred this past Wednesday. If you played UE5 and earned INK there, go claim it in your _Inventory_ on the Star Atlas Play-portal.
+* The team had some fun last week by jumping into Holosim with a “pirate” fleet and causing havoc. Particularly, players close to their safe zone borders (but just outside of it) had to suffer. In the future, the plan is to introduce true NPC fleets. This event could be regarded as a showcase of what to expect.
+
+## From the Engineering Bay
+
+Chip (VP of Game Product) has been posting daily development updates for well over a month. Below you can find his new additions from the past week:
+
+<XTweet id="1965165911838462322" url="https://twitter.com/Chypto_/status/1965165911838462322" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-08">
+Star Atlas Dev Log 34: I think I finally fixed an elusive issue causing intermittent jittery character movement speed in multiplayer. Server was checking a boolean it doesnt have access to, so client and server would sometimes set the max character speeds to different values.… [pic.twitter.com/qhOCMQAPPr](https://t.co/qhOCMQAPPr)
+</XTweet>
+ <XTweet id="1965519923461099803" url="https://twitter.com/Chypto_/status/1965519923461099803" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-09">
+Star Atlas Dev Log 35: Busy meeting day. In between meetings, I worked on moving some Blueprint code up to C++. Focusing on our Animation Blueprint as its very frequently used.
+
+Internally testing a change for increasing weapon inaccuracy while running to offset our fast paced… [pic.twitter.com/Tpw4Ec8fGS](https://t.co/Tpw4Ec8fGS)
+</XTweet>
+ <XTweet id="1965898636727824830" url="https://twitter.com/Chypto_/status/1965898636727824830" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-10">
+Star Atlas Dev Log 36: Did another round or profiling in Paizul today. We still have a problem with sound consuming a lot of CPU. Unfortunately, Wwise Ak components dont have a lot of build in optimization. I went ahead and subclassed the Ak Component and added manage… [pic.twitter.com/3nwkMVf0NP](https://t.co/3nwkMVf0NP)
+</XTweet>
+ <XTweet id="1966252472638513301" url="https://twitter.com/Chypto_/status/1966252472638513301" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-11">
+Star Atlas Dev Log 37: After profiling in Paizul today, my fixes yesterday got us closer, but didnt solve the root of the problem. I spent a good amount of time today peeling back the onion on what what going on in the Wwise plugin. Ended up finding a bug in their code, which… [pic.twitter.com/mVzGGDzk7w](https://t.co/mVzGGDzk7w)
+</XTweet>
+ <XTweet id="1966600494044111059" url="https://twitter.com/Chypto_/status/1966600494044111059" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-12">
+Star Atlas Dev Log 38: I fixed an issue with our Character Blueprint that caused our editor to crash whenever a Dev tried to test a change to it in PIE. This one was soft blocking the team for a few weeks. Was very tedious to fix, had to slowly move ABP logic bit by bit up to…
+</XTweet>
+ <XTweet id="1966844316615405710" url="https://twitter.com/Chypto_/status/1966844316615405710" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-13">
+Star Atlas Dev Log 39: Before playing more Borderlands 4, sticking to my habit of improving something everyday. Woke up a little earlier this morning. Decided to try something fun from my todo list. Taking a tip from Hogwarts Legacy, I added better camera support for tall thin… [pic.twitter.com/m8Eqxpn9qA](https://t.co/m8Eqxpn9qA)
+</XTweet>
+ 
+
+## Sneak Peeks
+
+It’s been a while since we had some new art to share, but thanks to RenderDock Studio completing (and sharing) some nice renders of the Calico Scud ship, we’ve got some for you!
+
+Note that RenderDock also features some cool video clips, so it’s definitely worth checking out [their ArtStation page](https://www.artstation.com/artwork/mAbYA1)! It looks like we may expect a new Calico Scud beauty video to be released soon.
+
+![Calico Scud - Side [by RenderDock Studio]](https://assets.aephia.com/wp-assets/5a019675b7fc8b6741ee7b9e62ba5b383e775bcacc8e22430e4a2016f86078d2.jpg)
+
+Calico Scud – Side \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+![Calico Scud - Front [by RenderDock Studio]](https://assets.aephia.com/wp-assets/f454fc1d35019ef04345b08cc71770071cc9933f28ea0a2af064c9cf611926e2.jpg)
+
+Calico Scud – Front \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+![Calico Scud - Back [by RenderDock Studio]](https://assets.aephia.com/wp-assets/4e48fa257ddcc6a11cbcaf28225afba3bb009963e4109094204782121c0b53fd.jpg)
+
+Calico Scud – Back \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+![Calico Scud - Top/Cockpit [by RenderDock Studio]](https://assets.aephia.com/wp-assets/df76c7f882c3e7e9380e46f16ef2a990eebde9480e6a30a6289429be59caa744.jpg)
+
+Calico Scud – Top/Cockpit \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+![Calico Scud - Top/Cockpit [by RenderDock Studio]](https://assets.aephia.com/wp-assets/55adcfb5423400f321b4e5d0342314c9f0e23732cb013530646c4e2a3dedbff5.jpg)
+
+Calico Scud – Top/Cockpit \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+![Calico Scud - Cockpit [by RenderDock Studio]](https://assets.aephia.com/wp-assets/76f33fbb873644011fd72e2b178366fe2c1352794d91653871408f08c7a404d3.jpg)
+
+Calico Scud – Cockpit \[by [RenderDock Studio](https://www.artstation.com/artwork/mAbYA1)\]
+
+_That is it for this week! Thanks for reading, and until the next!_

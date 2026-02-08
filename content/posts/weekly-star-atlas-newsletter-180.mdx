@@ -1,0 +1,138 @@
+---
+title: "Weekly Star Atlas Newsletter #180"
+date: "2025-05-19T16:39:50"
+modified: "2025-05-19T17:32:09"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-180"
+description: "The past week brought us major developments across both UE5 and SAGE Labs. The May UE5 Patch is now live, introducing dedicated servers for Gunplay, co-op dogfighting, and improved multiplayer features, though a few game-breaking bugs were introduced as well.
+In SAGE Labs, the team rolled out the first phase of food consumption and crafting updates, with more balance changes expected soon. A new approach to FIC refills is also in the works.
+Meanwhile, two DAO proposals—one for local meetups and another supporting Eveeye—are nearing the end of their voting period."
+image: "https://assets.aephia.com/wp-assets/1ae217e2e2f58072a057069683457a9166de1e1960157d1faece4d53a8942f7a.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 16416
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 180th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+The past week brought us major developments across both UE5 and SAGE Labs. The **May UE5 Patch** is now live, introducing dedicated servers for Gunplay, co-op dogfighting, and improved multiplayer features, though a few game-breaking bugs were introduced as well.
+In SAGE Labs, the team rolled out the first phase of **food consumption and crafting updates**, with more balance changes expected soon. A new approach to **FIC refills** is also in the works.
+Meanwhile, two **DAO proposals**—one for local meetups and another supporting Eveeye—are nearing the end of their voting period.
+
+_Let’s dive in!_
+
+## UE5 May Patch is Live
+
+The team launched their UE5 May update patch this past Wednesday, mostly successfully. There are a few game-crashing bugs that they hope to fix shortly (see below).
+
+You can find the full patch notes on the [team’s Medium](https://medium.com/star-atlas/star-atlas-may-2025-patch-dedicated-servers-pearce-x5-and-paizuls-arena-gets-a-level-up-394dd63a996d). Below are the major highlights (emphasis ours):
+
+* **Dedicated servers for gunplay** lobbies with 4 or more players
+* New multiplayer hosting/joining lobby flow
+* **Paizul’s Arena overhaul** & Gateway redesign
+* Pearce X5 in-game model completion
+* **Custom keybind remapping and improved controller support**
+* **Co-op Dogfighting**
+* Multiplayer racing improvements
+* Mining minigame improvements
+
+Dominic (Senior Community Manager) also recorded a [rundown video](https://www.youtube.com/watch?v=rmihJPv_3ck) to bring you up to speed on the major highlights of this patch. Instead of posting it on his own channel, this was posted on the team’s YouTube account. The team is attempting to reinvigorate that channel, so it’s worth keeping an eye on it from now on.
+
+<YouTube id="rmihJPv_3ck" title="Star Atlas - May Patch Rundown"  />
+ 
+
+### Dedicated Servers for Gunplay
+
+One of the biggest updates inside this patch is that the team now provides virtual game servers to Gunplay matches that start with at least 4 players. If there are 3 or fewer in the lobby when you start, you will fall back to self-hosting. Also, at this time, only Gunplay is supported. The team is likely working on expanding support to other game modes, such as Racing and Dogfighting, but it’s not clear when this will go live.
+
+### Bugs
+
+The team is aware of bugs plaguing the UE5 game after the May patch rollout. They hope/plan to address the following bugs early this week:
+
+* Issue where players might crash when launching Galia,
+* Issue where players might crash on exiting Fleet Command (And the entire game),
+* Issue where the shotgun spawner gives a broken weapon,
+* Issue where players might not see wallet-owned ships
+
+### Pearce X5
+
+The Pearce X5 ship is in-game, but it is still lacking its transformations. The team offered a [sneak peek](https://x.com/staratlas/status/1921310823399485610?s=46&t=RK-bKH-sy9Xy2YuOiRlRow) of what these will look like:
+
+<XTweet id="1921310823399485610" url="https://twitter.com/staratlas/status/1921310823399485610" authorName="Star Atlas" authorHandle="@staratlas" date="2025-05-10">
+Take a look at some work-in-progress animation on the shapeshifting fighter. [pic.twitter.com/rqXffAcrZU](https://t.co/rqXffAcrZU)
+</XTweet>
+ 
+
+## SAGE Labs Update
+
+After [running into issues](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-179/), the team has managed to roll out the first set of changes that they [announced last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-179/). It was a bumpy roll-out, primarily due to the hosting solution going haywire right after. Meanwhile, most issues have been resolved!
+
+### Food Consumption
+
+The big ticket item was this one: **Food consumption for all actions will now scale with a ship’s VWAP**.
+
+After going live, it was discovered that this title is not really accurate. Food consumption did not scale with a ship’s VWAP, but with its _size class_. It is still dependent on the amount of crew required, but now a multiplier is applied that seems to rely on the size of the ship. These multipliers are **_roughly_** as follows:
+
+* XXS: 1x
+* XS: 2x
+* Small: 4x
+* Medium: 5x
+* Large: 7x
+* Capital: 10x
+* Commander: 10x
+* Titan: 15x
+
+There is no distinction between different ships of the same size class, with the same number of required crew positions.
+
+Interestingly, bigger ships are still more efficient with their Food consumption than smaller ships. For example, a Titan’s mining rate is 10,000 times that of an XXS ship, but its food consumption is “only” 3,800 times as much.
+
+### Food – Crafting Speed
+
+Late last week, the team also attempted to roll out the highly anticipated change (especially after the major Food cost increase) to Starbases to disconnect the Food Upkeep from the crafting speed.
+
+Unfortunately, that did not go well. Food consumption has been lowered substantially, but Food is still required to be crafted at 100%. Before the weekend started, the team attempted to send fleets with Food to as many Starbases as possible to reduce the impact of this, but they unfortunately did not manage to reach all of them.
+
+Fortunately, it is now possible for a small player to supply enough Food in the interim to get the Crafting speed to 100% for a considerable amount of time.
+
+The team hopes to address this issue this week.
+
+### FIC Refill Changes Coming
+
+At the moment, FICs are being refilled at random locations every 2 weeks, and when both orders run out within a Faction, the last known locations will get an additional batch of these. 
+
+The team is working on changing this. Chris shared the following in the Foundation Room: “Currently, it’s the same, but we are working on doing a random shuffle. We’d also remove the bi-weekly refill in this model.”
+
+In short, not only will every refill become random, but the 2-weekly refill will also disappear. This is not live yet, and there has been no official announcement, but this could go live sooner rather than later.
+
+![GALIA GAME NIGHTS 16x9](https://assets.aephia.com/wp-assets/d1eb2e6ebc103fe4ef81330038f09fb4e345e220ca45d78cc2fadbf9293beef7.jpg)
+
+Star Atlas – Galia Game Nights – The event poster from last Friday
+
+## Galia Game Nights
+
+Now that Dedicated servers are a thing, the Community Team has started a new weekly recurring event: _Galia Game Nights_! Every Friday, around the same time as the Golden Carnival drawings previously, the team hosts a multiplayer session using their UE5 game client.
+
+This is open to all and will exclusively focus on Gunplay for now. As soon as the dedicated servers support this, they may start varying game modes, including racing and dogfighting.
+
+If you like a good time, then be sure to join!
+
+## DAO Updates
+
+As mentioned last week, there are two PIPs live for voting right now, and voting will remain open for only a few more days:
+
+**[PIP 15: In-Person Community Platform](https://govern.staratlas.com/proposals/bd065ad2-5e75-4e47-a696-a1efe06382da)** — The proposal aims to strengthen the Star Atlas community by facilitating and promoting local connections and events. It will create a website-based platform for organizing Star Atlas community in-person meetups worldwide. The platform will handle event organization, ticketing, and host support, inspired by the Star Citizen community’s “Bar Citizen” initiative. Funding is requested to create the platform for a total of $9540 USD.
+
+**Results around time of publication:** 28.35% For | 70.35% Against | 1.3% Abstain
+**Closes:** Thursday, May 22nd, end-of-day UTC
+
+[**PIP-16: Ryden Systems**](https://govern.staratlas.com/proposals/b11ced4b-a6a5-4211-a0e6-060eadc4bd22) — Risingson has been developing Eveeye for 1.5+ years while living off a savings account, providing gaming depth and real economic value to the Star Atlas community for free. While loving working on the tools, he cannot continue without a sustainable income and therefore will convert to a paid system. This funding request supports Eveeye in keeping running until a sustainable income can be generated, hopefully.
+
+**Results around time of publication:** 89% For | 11% Against
+**Closes:** Thursday, May 22nd, end-of-day UTC
+
+_You reached the end of this week’s newsletter. Thanks for reading, and until the next!_

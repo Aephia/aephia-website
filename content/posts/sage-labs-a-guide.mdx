@@ -1,0 +1,590 @@
+---
+title: "SAGE Labs – A Guide"
+date: "2023-08-14T22:56:15"
+modified: "2023-09-22T16:58:46"
+type: "aephia"
+slug: "sage-labs-a-guide"
+description: "SAGE Labs is the first iteration of the browser-base game created by the Star Atlas team. It comes with a simplified (temporary) interface, but real on-chain, economic gameplay!
+This guide will get you up to speed on everything you need to know!"
+image: "https://assets.aephia.com/wp-assets/8b99d1e9a58ac127bce69212e54f608aa0bff78165030f5d9d34cdeb3b3252fc.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 11985
+categories: ["Guides"]
+---
+
+Welcome to our guide on SAGE Labs! It has been a long journey to get here, so let’s start off with a little refresher regarding SAGE itself, its manuals, and SAGE: Starbased (aka SAGE: REC)!
+
+![Star Atlas Sage Labs SOON](https://assets.aephia.com/wp-assets/5666b547ae36c4c40dd96a7fd6066b107c39dfeca90b8256c87deb6f1f66364b.png)
+
+Star Atlas Sage Labs – Coming Soon!
+
+## Star Atlas Golden Era
+
+**Star Atlas Golden Era**, or _SAGE_ for short, is the name of the browser game that is under development by ATMTA, the team that is bringing us all the Star Atlas games (and future metaverse).
+
+Its present incarnation was announced in early March 2022 -under its project name, SCREAM- as a 3D (using WebGL) **Grand-Strategy** Game. The official name, **SAGE**, was announced at Breakpoint in November 2022.
+
+Several iterative versions of SAGE are planned, and in early 2023, the team announced it would break the first version down even further, to get SAGE into our hands faster.
+
+These iterations are currently known/expected:
+
+* **SAGE: Escape Velocity** – This movement/stress test was live between April 26th, 2023, and July 7th, 2023.
+* **SAGE Labs** – Resource extraction & crafting. This is the first iteration of the real game and, as such, unlocks the on-chain economy. It does come with a temporary, much simpler (2D) user interface. More on this game in this guide!
+* **SAGE: Starbased** (previously known as SAGE: REC) – Same as SAGE Labs, but with the WebGL user interface.
+* **SAGE Pre-alpha**: Adds combat and starbase construction (and destruction), unlocking the grand-strategy gameplay
+* **SAGE V0** and beyond – See the official manuals for the current information on subsequent releases.
+
+## Official Manual
+
+In late 2022, the team released [two manuals](https://staratlas.com/newsroom/game-manuals) for SAGE, of which the [second one](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure) describes the gameplay we can expect in the various versions of SAGE. Since then, the EV, Labs, and Starbased iterations have been added, and some other details have changed as well. Regardless, it is still largely on point and definitely worth a read. Do note that it describes a scenario in which SAGE Labs and Starbased did not exist. As such, it describes what SAGE is to one day become, and not what can be found in Labs today.
+
+![MUD CSS as seen in SAGE](https://assets.aephia.com/wp-assets/1fac6ff4d612c9ae813684e4519455bae261de6031f1dad71687eef7b424acd1.png)
+
+MUD Central Space Station in SAGE \[Concept Art – Not available in Labs\]
+
+## SAGE: Starbased
+
+With Escape Velocity over, anticipation started building for the next SAGE release, which was referred to by its project name: Resource Extraction & Crafting (SAGE: REC). During the PlayGG event in mid-July 2023, the team announced the official name: Starbased.
+
+We wrote a [guide for SAGE: REC/Starbased](https://aephia.com/star-atlas/sage-resource-extraction-crafting/), based on the information shared up till that point. Most of it is still valid, but we’ve learned a great deal more since it was published.
+
+### Labs
+
+Of course, the most recent information from the team was that REC/Starbased would take a few more months to finalize. Instead of having us wait that long, the team is planning to launch the on-chain programs very soon and get gameplay going through a severely trimmed-down user interface.
+
+This guide contains all the information we have on SAGE Labs.
+
+![SAGE Labs - Welcome Screen](https://assets.aephia.com/wp-assets/c45d742dac639ef053a1e5272b62c5639eee829b846f43182bd75059bfd64152.png)
+
+SAGE Labs – Welcome Screen
+
+## SAGE Labs
+
+SAGE Labs is everything that was promised for SAGE REC/Starbased, but with a temporary, 2D user interface that is more akin to OGame than it is to the screenshots shared for SAGE so far.
+
+To make their work simpler, the developers responsible for the on-chain programs and Starcomm had been developing a simplified user interface, to allow them to test the programs and the gameplay. It does not use WebGL and, therefore, won’t come with a full-blown Galaxy map. 
+
+Since the announcement, the team has spent two weeks improving the user interface by introducing menus, pop-ups, and other visual elements that were originally created for Escape Velocity and Starbased. This means that interface will look a lot cleaner and is at least partially reminiscent of Escape Velocity.
+
+It will, however, consist of images, text, input elements, and pop-ups only. There is no interactive map, which means you can’t select your fleet on the map and send it somewhere. This will be done by selecting your fleet in a list and telling it where to go differently.
+
+### On-chain
+
+SAGE Labs is fully on-chain on Solana mainnet. Future iterations of SAGE will use these same programs and a few more.
+
+To facilitate SAGE Labs/Starbased gameplay, the team created a good many new on-chain programs, including:
+
+* Movement (overhauled)
+* Fleet Manager
+* Extraction
+* Crafting
+* Cargo/Inventory
+
+### Core Gameplay
+
+In SAGE Labs, you will send your fleets across the Galia Expanse to find Survey Data Units (SDUs), mine asteroids for precious resources, and craft components you can redeem for Star Atlas assets. 
+
+In short, there are three important actions you can undertake in SAGE Labs:
+
+1. Scanning
+2. Mining
+3. Crafting
+
+This guide will cover each of these extensively. But first, let’s go over some of the basics.
+
+### Release
+
+SAGE Labs was released on September 21st, 2023!
+
+![Sage Labs Cargo](https://assets.aephia.com/wp-assets/cd3aedfb0233e26a72b256ce8ec90dce157a47b4a62901d34ff0d7d0b1caef72.png)
+
+SAGE Labs – Fleet Management Screen (UX)
+
+## Contents
+
+Below is a short list of the sections that come up next. Unfortunately, these can not be linked, but hopefully, they help you quickly find the section you are looking for.
+
+* Fleets
+* The Galaxy Map
+* Movement
+* Resources
+* Scanning
+* Mining
+* Starbases
+* Crafting
+* Ship Stats
+* Redeemable Rewards
+* ATLAS Fee Payer
+* Faction Selection
+
+## Fleets
+
+In order to use your ships in SAGE, you will have to stake them in SAGE’s Fleet Formation program. When you do, these ships are no longer available outside of SAGE, meaning you can not have ships enlisted into Faction Fleet (SCORE) and inside the game at the same time. It also means that any ships you want to use in SAGE must first be delisted in Faction Fleet (aka SCORE). Only delist the ships you want to use in SAGE!
+
+### Fleet Formation
+
+When you stake ships into SAGE, they will show up at your faction’s _Central Space Station_ (CSS). This gigantic space station lies at the heart of your faction’s so-called “Safe Zone”.
+
+Before taking your ships out for a spin, you will have to combine them into _fleets_. In SAGE, you are not operating individual ships; instead, you are operating different fleets, each composed of one or several ships.
+
+At the CSS, and at every faction-owned _Starbase_ in the Galia Expanse (more on those later), you can form and disband your fleets, allowing you to reconfigure the composition of your fleets. To make your fleet stand out, you are able to assign a custom name to it as well.
+
+If you want to take ships out of the game and regain control over them again in your wallet, you will have to dock the fleet(s) those ships are part of at the Central Space Station and disband them. Now you can select which ships you want to take out and do so through a transaction.
+
+### Size Limitations
+
+When you dock a fleet to the CSS or a Starbase or add new ships into SAGE (CSS – also docked), you can form and reform your fleets to your heart’s content. However, there is a limitation. Each ship has a point value associated with it, and a **fleet can only contain up to 145 points worth of ships**.
+
+Below is an overview of the various ship size classes and the points a ship from that size will represent within a fleet:
+
+| **Size Class #** | **Size Class Name** | **Points** |
+| ---------------- | ------------------- | ---------- |
+| 1                | XX-Small            | 1          |
+| 2                | X-Small             | 4          |
+| 3                | Small               | 9          |
+| 4                | Medium              | 16         |
+| 5                | Large               | 25         |
+| 6                | Capital             | 36         |
+| 7                | Commander           | 49         |
+| 8                | —                   | 64         |
+| 9                | Titan               | 81         |
+
+Ship Class Fleet Points
+
+### Unlimited Fleets
+
+The good news is that you can create unlimited fleets in this iteration of SAGE. In later iterations, the Council Rank system (see the manual) will be active, limiting the number of ships and fleets you can use in SAGE and requiring you to unlock things through progress made in-game.
+
+In short: In Labs, you can bring all of your ships into SAGE and create as many fleets as you desire. 
+
+Note that _Hangar Bays_, which are present on some of the bigger ships, do not provide any bonuses in SAGE Labs (or Starbased).
+
+### Shared Space
+
+Ships inside of a fleet share everything they need to function, be it fuel, ammo, or food. As such, you can add up the capacity each ship offers for storing such items and regard these sums when preparing for your voyage.
+
+The same goes for the total available cargo hold. The amount of resources you can mine depends on the sum of all cargo space on the individual ships that make up a fleet.
+
+![SAGE Labs - User Interface](https://assets.aephia.com/wp-assets/7f03fdcace0b31866c022af56507ffa498dad52a6ee28aa045a8e5b13c6702aa.png)
+
+SAGE Labs – User Interface
+
+## The Galaxy Map
+
+For those of you who have played Escape Velocity (EV), the map in SAGE is exactly the same in three aspects:
+
+* The map will (still) be a 101 x 101 cartesian grid. Every cell in the grid represents a single sector in the Galia Expanse (the part of the galaxy in which the game unfolds). Most sectors are empty, but some contain a star system or an asteroid.
+* There are 51 stars present on the map.
+* Movement from sector to sector will require your fleet to (sub-)warp.
+
+There are a good few differences as well:
+
+* The biggest one: The map is a far cry from EV. It’s a simple **2-dimensional top-down grid that does not offer options to zoom or move** **around**. This is probably the most notable difference between Labs and Starbased.
+* Each star actually represents a star system containing planets and a Starbase. In Starbased, this will be displayed in glorious 3D, but for Labs, this will have to be rendered by your imagination.
+* Mobility within a sector is possible using _sub-warp_ movement (see _Movement_ section below). It’s, however, unclear if this will play a role in the Labs user interface. Despite this, sub-warp will be an available option to move between sectors.
+* Moving from one edge of the map to the opposite one took less than an hour in EV. It will take longer in SAGE Labs, likely a couple of hours. However, it won’t take 24 hours as was originally suggested for SAGE Starbased.
+* Fleet movement will now cost fuel, and a few ships won’t be able to make the trip from one edge to the opposite one without refueling along the way.
+
+In addition, it is good to know that:
+
+* The map is not clickable. Instead, you will use the table below (see image above) to interact with the game.
+
+### Star Systems
+
+There are 51 star systems present on the map as a whole. Each faction controls 5 of these star systems that form their _Safe Zone_, with a Central Space Station put roughly in the middle of these. Then there are another 36 star systems out there that form the _Medium Risk Zone_.
+
+For the purpose of SAGE Labs (only) these 36 have been divided into 3 equal pools of 12, with one pool assigned to each of the three factions.
+
+This means that beyond the 5 in their starting area (Safe Zone), each faction has access to another 12 starbases in the Medium Risk Zone, bringing the total number of starbases available to each faction to 17.
+
+This risk designation has no meaning for Labs, as combat has not yet been implemented. This means you can safely move around and even move into territory owned by a different faction. Most (if not all) of these systems will have a Starbase, which you can visit if it is owned by your faction. More on this below!
+
+![Screenshot 2023 08 14 at 20.14.12](https://assets.aephia.com/wp-assets/45498bc4a785a6346ef974e62689b9e08992834ac0ae96fe1c50a9bdccd5af67.png)
+
+Star systems (with potential Starpath connections between them?) – By Aephia’s Data Runners
+
+## Movement
+
+In Escape Velocity, there was only the option to _warp_ from sector to sector. In Labs, there will be two modes of movement available.
+
+### Sub-warp
+
+The [SAGE Manual](https://staratlas.com/newsroom/game-manuals/sage-game-manual-part-2-game-structure) still talks about _impulse_ movement, but since then, the team adopted the term _sub-warp_ to denote the slowest type of movement.
+
+You can move around a sector using sub-warp movement, which will cost you nothing. However, you can also use it to move to any other point (sector) on the map. In that case, you will pay _**fuel**_ whenever you move across a sector boundary (to another sector).
+
+Sub-warping your fleets across the map is a lot slower than warping (next section). Using this mode of movement, you can move as far as you want as long you have the fuel to do so. Do note that no fuel-security measure is in place, meaning you could run out of fuel while traveling this way!
+
+The sub-warp speed of a fleet equals the sub-warp speed of the slowest ship in the group. Something to take into consideration when organizing your fleets!
+
+### Warp
+
+Warp movement consumes more fuel, but also allows you to move more quickly. It can only be used for moving from one sector to another, and it will consume the fuel required to do so immediately. This means that you can not run out of fuel while warping. Of course, it could mean that any fuel that remains is insufficient to return you to a faction-owned Starbase. Keeping a sharp eye on your fuel supply and consumption is crucial in SAGE!
+
+The max warp distance equals the longest warp range of the ships in your fleet. The explanation for this is that this ship will form a bubble while warping, which will allow the other ships, no matter how small, to make the exact same jump with it.
+
+### Running out of Fuel
+
+If you run out of fuel, your only hope is that you have some fuel in your fleet’s cargo hold and that the amount there is sufficient to bring you to a nearby Starbase (of your faction). Fuel stored in your cargo hold can be transferred into your fuel tank, but only by moving it through a Starbase. This gives you a backup tank of sorts, but not while in flight!
+
+Suppose you don’t have any fuel in your cargo hold: tough luck! There is no other way to refuel in mid-space. Other fleets will not be able to help you out!
+
+### Respawning
+
+If you run completely out of fuel, you have no other option in Labs but to respawn your fleet, losing all items in your cargo hold. These items will not spawn on the position you occupied on the map, but will be burned instead (this will change with future iterations of SAGE). 
+
+Respawning a fleet will cost a fixed amount of ATLAS, providing another ATLAS sink to the game. In the future, this fee will likely be dynamic and based on the actual fleet’s composition, to account for increased towing costs in such cases. For Labs, every fleet will be charged the same flat fee. Any fees paid this way will be sent to the Star Atlas DAO’s treasury.
+
+Respawning will always return your ship to your faction’s CSS.
+
+### Starpath
+
+The third mode of movement, using the Starpath Network, is **not available in Labs**. When introduced into SAGE in the future, it will offer the quickest way to travel, though it only allows you to move between two sectors that are owned by your faction. This is the case when there is a faction-owned Starbase in that sector.
+
+Note that this mode of travel will both cost fuel _and_ ATLAS.
+
+### In-Sector Movement
+
+In SAGE Starbased, you will be able to move ships around within a sector (using subwarp), without spending fuel. This is a purely cosmetic, off-chain animation, as the Movement program only stores the sector a fleet is in, and not its position within a sector. It’s unclear if this movement animation will come with an artificial delay between you being able to interact with different objects within a sector -to make it feel more realistic. However, for Labs, where movement is not visualized at all, any interactions with objects in the sector will be immediate.
+
+This is a long-winded way of saying that _moving a fleet from mining an asteroid, to docking with the nearby Starbase will be resolved instantaneously._ There is no “travel”-time or artificial delay between such actions.
+
+That said, in the interest of realism, there will be a small Fuel cost to leaving an asteroid.
+
+## Resources
+
+There are 9 minable resources available in SAGE Labs. In the future, this number will increase (to 20, it looks like) with the addition of the High-Risk Zone. These resources can be used to craft any of the 18 items available through crafting in SAGE Labs.
+
+The following resources can be mined in SAGE Labs:
+
+* Copper Ore (metal)
+* Iron Ore (metal)
+* Lumanite (crystal)
+* Rochinol (_ONI-specific_ crystal)
+* Diamond (_MUD-specific_ crystal)
+* Arco (_Ustur-specific_ crystal)
+* Hydrogen (gas)
+* Carbon (carbon-based)
+* Biomass (carbon-based
+
+### R4
+
+In Faction Fleet (aka SCORE),you need to supply your ships with Fuel, Ammunition, Toolkits, and Food, also dubbed the **R4** (as there are four resources). In Faction Claims, where you can stake Claim Stakes, your stakes assets produce these very same R4 (resources).
+
+In Labs, your ships will not use Toolkits. This means that only Food, Fuel, and Ammunition are necessary, and Ammunition only if you want to mine.
+
+In one of the next iterations that will bring combat, Toolkits will become important again to repair your fleet after having taken damage.
+
+### Exporting/Importing Resources
+
+If you want to sell resources that you gathered in SAGE, you will have to transport these to your faction’s Central Space Station (CSS) first. Similar to your ships, this is the only location where you can take them out, into your wallet.
+
+The same goes the other way around. If you want to put more resources into SAGE, from outside (your wallet), you can easily add them, and they will become available in the CSS.
+
+## Scanning
+
+Every fleet has the ability to scan the sector it is in. There are 10201 sectors in the Galia Expanse, so there is plenty of space to cover! When a fleet is (not docked to a starbase) inside a sector, it can perform a scan action to search for Survey Data Unit (SDU) deposits. These can only be found through scanning; they can not be mined or crafted.
+
+A scan is instantaneous and will, if successful, immediately reward you with SDUs. If unsuccessful, which will be the case the majority of the time, you will end up with nothing. A short notice will let you know the scan’s result. Like in Escape Velocity, there will be a short cooldown period before the fleet will be able to perform another scan.
+
+### SDUs
+
+SDUs can be found throughout the Galia Expanse. The team is configuring the game’s parameters so that _up to_ 25% of the map’s sectors contain an SDU at any given time. If an SDU is found, that sector won’t spawn another batch for at least 2 minutes. Neither your fleet nor someone else’s will be able to find an SDU deposit during that time.
+
+The team will repeatedly spawn a fixed quantity of new SDUs (randomly) on the map as the game is going. They have not disclosed the exact time period between respawns. For reference: In Escape Velocity, this happened every minute.
+
+Another global limitation that is in place is that the game does not allow for more than 1500 SDUs to be found every minute.
+
+All of these numbers (levers) can be tweaked by the Econ team to steer the economy away from the abyss.
+
+### Gathering SDUs
+
+If your scan is successful, the amount of SDUs found depends on the size of your fleet. The (pseudo) formula for this is:
+
+(number of XX-Small ships in fleet * 1) + (number of X-Small ships in fleet * 2) + (number of Small ships in fleet * 3) + ...
+
+Though this scales very rapidly, **a fleet can not find more than 10 SDUs per scan**. This means that a fleet of 10 Pearce X4s can find as many SDUs as a fleet of 10 Pearce C9s. Note that the C9s burn a lot more fuel while hunting for SDUs, making the fleet of Pearce X4s the more optimal one for gathering SDUs at first glance.
+
+However, note that the Pearce X4 fleet will run out of fuel faster. Assembling the optimal fleet for the task at hand is going to be one of the fun challenges SAGE will offer!
+
+SDUs take up storage space, but not a lot. This means a fleet that is focused on scanning should not run out of storage very quickly.
+
+### Benefitting Smaller Ships
+
+The way the Scanning mechanics have been set up, it benefits smaller fleets and people with smaller ships. Mining, as we shall see, benefits greater ships and greater fleets. To make sure there is rewarding gameplay available for those with a smaller ship collection, scanning was crafted in such as way as to disadvantage bigger fleets.
+
+### Beyond Labs & Starbased
+
+SDUs are here to stay. In the future, scanners and ship specs will play a role in finding these. It’s not yet clear what their purpose will be when there are no redeemable rewards anymore (more on that later), but no doubt the team will come up with something good.
+
+![SL SectorView Mining After](https://assets.aephia.com/wp-assets/181f8a00ebf657bded9e96d5718992f0028e3d94734c0b52ff90c7ed2f19126e.png)
+
+SAGE Labs – SectorView – Mining
+
+## Mining
+
+Resource extraction is a major component of SAGE. Though planets can not be mined in this version, _each of the 51 star systems is home to one **asteroid**_ **_belt_**. These asteroids can be mined for resources (the R9) in SAGE for now.
+
+You won’t find an asteroid that offers all minable resources (R9) at once. Most asteroids only have a select few of these raw resources available for extraction. For those resources available, the asteroid will offer an unlimited quantity at this time. In other words: resources will never run out!
+
+You can send your fleet to an asteroid in order to extract its resources. You will be able to see the resources available and select which one you want to mine. Your fleet will only be able to extract one resource at any point in time. The cargo space of your fleet will then slowly fill up with the resources selected. You can start and stop that at any point and select a different resource to extract. 
+
+### Resource Limits
+
+Asteroids do not run out of resources. There are no limits to the capacity or emission rate of resources on an asteroid. The amount you can gather is restricted by your cargo capacity only, which is determined by the ship composition of your fleet.
+
+There is also no limit to the amount of fleets that can extract simultaneously. More importantly, the pace at which resources are extracted does not change if more fleets are extracting the same resource at that very same asteroid at the same time.
+
+_Note_: Michael would like to see this mechanic changed so that resource extraction is negatively influenced when a lot of fleets are mining the same asteroid simultaneously.
+
+### Costs
+
+Your fleet and crew are consuming **Food and Ammo** while they are busy extracting resources from asteroids. When you run out of either of these, you will have to return to a Starbase to resupply.
+
+Note that the Armstrong IMP ships do not consume any ammunition while mining, so you can leave that at home if your fleet consists of such ships exclusively.
+
+### Fleet Considerations
+
+The speed of mining depends on the ships that are a part of the fleet. The bigger ships generally perform better than the smaller ones, but -Miner-specced ships excluded- you will generally want to focus on sending ships with a high [combat tier](https://lore.staratlas.com/ship-manufacturers-configurations-and-politics/ship-configuration/components/combat-components), such as Fighters, Bombers, and Bounty Hunters. The higher the combat tier of a ship, the higher its mining rate.
+
+On the other hand, you will need cargo space. No ship is better for this than a Freight-specced ship, but Salvage-, and Miner-specced ships get big bonuses to any storage space they come with as well.
+
+One would almost think those Armstrong IMP ships were made for this!
+
+### Passive Process
+
+When you have started mining, your fleet will keep doing so until either:
+
+* the cargo hold is full
+* Food runs out
+* Ammo runs out
+* you command your fleet to stop
+
+This means that you will be able to do something else for a bit, while your fleet is busy extracting resources.
+
+In general, mining will fill up cargo space relatively quickly. Expect your cargo hold to fill up within minutes, or at least within the hour.
+
+### Increased Rarity
+
+Given every asteroid’s unlimited resources, why would you ever move to an asteroid that is further away?
+
+You may want to do so because asteroids located further away from the CSS offer increased “rarity” resources. Note that rarity is in quotes here because the real rarity depends on how many people will go for these, but the team is at least ensuring the good stuff requires more effort.
+
+![SAGE Labs – SectorView – Starbase Controls](https://assets.aephia.com/wp-assets/05f608cf4c1dfdc7ee2f7892fe73814e5a6bffa2ef69a358914d20551531bb65.jpg)
+
+SAGE Labs – SectorView – Starbase Controls
+
+## Starbases
+
+There are 51 Star Systems that each contain a Starbase. These have been divided into 3 equal groups of 17 star systems/starbases, one group for each of the three factions. Each Starbase offers three primary functions:
+
+* Storage
+* Crafting
+* Redeeming
+
+We’ll discuss Storage here, but Crafting and Redeeming both deserve a section of their own.
+
+### Storage
+
+Starbases are important to the game, as they serve as forward bases for you, the player. You have access to local storage on any of your faction’s Starbase that _no one but you can access_. Here, you can offload the R9 found while mining, but you may also want to store R4 (Fuel in particular) here to ensure you do not run out of these (with the exception of Toolkits)!
+
+If you run out of Fuel but at least manage to make it back to a Starbase (where you have no Fuel stored), you can send another fleet with a surplus of Fuel to that Starbase to re-activate the fleet that got stranded there. You can, of course, do the same with Ammo and Food, to keep your mining processes going. Alternatively, since you can unload your goods into your storage at the Starbase, you may opt to respawn your fleet instead (see “Running out of Fuel” in the Movement section above).
+
+So, the question that remains now is: “_How much storage do I get?_“
+
+The answer: _An unlimited amount_! How cool is that? You can store whatever goods you have at a Starbase, to your heart’s content. Do note that you will need to transport all of it to the CSS sooner or later, though, unless you will use all of it in-game.
+
+Besides storage, one more major function is being fulfilled by Starbases (in addition to Central Space Stations): They offer the facilities needed to craft items using the R9 and SDUs you gathered!
+
+_Note:_ You are **unable** to dock your fleet at an opposing faction’s starbase, which means you can’t refuel/resupply there. 
+
+![Starbase T4](https://assets.aephia.com/wp-assets/fd33d566bdb69aeb0a07f3eaec522d6458114b29e5e59cd1c1f35b9ea9169e59.png)
+
+Star Atlas – Tier 4 Starbase \[Concept Art\]
+
+## Crafting
+
+You will be able to craft items at every Starbase and Central Space Station owned by your faction. In total, there are 18 items that can be crafted. Not all can be crafted using R9 directly; some require other crafted items as their input, creating a multi-layered crafting system. 
+
+Among items that can be crafted are the R4: Fuel, Ammunition, Food & Toolkits. The other 14 items appear to have no immediate purpose, but will be necessary to accomplish certain objectives in future versions of SAGE expands (e.g. Starbase crafting & upgrading). The team did make sure these materials have a purpose in Labs/Starbased as well, and you can read more about this in the next section, _Redeemable Rewards_.
+
+In the future, the tier of a Starbase will limit the amount and type of recipes available there. In SAGE Labs, however, all Starbases are max tier (Tier 4). In other words: All starbases offer all recipes! 
+
+Below you can see which resources are required for crafting in SAGE Labs (many require the product of other crafting paths):
+
+![SageLabs CraftingCompletion complete color](https://assets.aephia.com/wp-assets/570e98a54d1fff2642e6aadffb27b6fbf6435f496e692ba8ade373d607b0a287.png)
+
+SAGE Labs – Crafting Paths
+
+### Crew Requirement
+
+Crafting is done by the crew members of your fleets that are docked to a Starbase (or CSS). Or rather, each fleet that was disbanded while being docked at a Starbase. Only ships that are not part of a fleet can supply their crew members to help with crafting.
+
+Each ship has its available crew members listed in their details on the Galactic Marketplace. This is the number of crew members you will have at your disposal. As your crewmembers are tied to their ships, they are only available for crafting when their ships remain docked at the Starbase, while not being part of a fleet.
+
+### Crew Limits
+
+You can have unlimited parallel crafting processes going on and add as many crew members to these processes as you like. Each crafting process will require a minimum of 1 crew member. Adding more crewmembers can bring down the time it costs to craft, but this is not without limit:
+
+If you are crafting multiple items of the same type, adding more crew members will shorten the time spent crafting these up to the number of actual items being crafted.
+
+For example:
+
+* You need 1 Biomass (one of the R9) to craft one Food, which will take 1 crew member 1 second to complete.
+* If you craft 100 Food, this will take the 1 crew member 100 seconds
+* If you commit 100 crew members to this, they will craft 100 food in 1 second
+* If you commit 200 crew members to this, **they will craft 100 food in 1 second**
+
+No, that is not a typo.
+
+Adding more crew will benefit the crafting process, _as long as the number of crew members committed does **not** exceed the number of items crafted_. This is likely not very relevant, as the number of crew members will usually be dwarfed by the number of items you are crafting.
+
+Note that crafting numbers are very much subject to change. The econ team will closely monitor the markets and tweak these when necessary to keep gameplay fun and the economy sustainable.
+
+### Costs
+
+Besides the R9 needed to craft specific items, and SDUs (see below), you will also have to pay a small amount of ATLAS for each component you craft.
+
+These fees will be relatively small and are meant as placeholders for a future wherein players will control the means of production (and are assumed to charge others for their crafting services). It also provides an additional ATLAS sink to the game. Any fees paid this way will be sent to the Star Atlas DAO’s treasury.
+
+### Fleet considerations
+
+Clearly, ships with many crew members are beneficial to speedy crafting processes. If you are in the market for new ships, it will be good to know that Passenger modules will add additional crew members available for crafting. The exact number that a single module offers is not yet known at this time (it seems smart to expect no more than 1 per module). 
+
+## Ship Stats
+
+Though the Ships Config V2 has [recently](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-92/) seen an update, the team is preparing a pretty radical change to the way ship stats are determined. The hull, components, and modules of a ship determine the base efficiency, or score, of a ship. In the current Ship Config V2, these numbers would then be altered using three different tables:
+
+* [Make Component Variance](https://lore.staratlas.com/ship-manufacturers-configurations-and-politics/ship-configuration/components/core-components): Each of the ship manufacturers has a core component specialty as well as a weakness. Effectively, this means that each ship’s manufacturer puts in oversized components (one size category bigger than the hull) and an equal amount of undersized components (one size category lower than the hull) to balance things out.
+* [Spec Bonus](https://lore.staratlas.com/ship-manufacturers-configurations-and-politics/ship-configuration/make-spec-bonuses): Each ship has a certain “spec”, such as fighter, bounty hunter, or freighter. To ensure a ship stands out in that specific type of gameplay, the team applies bonuses to certain stats depending on a ship’s spec.
+* [Make Bonus](https://lore.staratlas.com/ship-manufacturers-configurations-and-politics/ship-configuration/make-spec-bonuses): To further distinguish between manufacturers, the team introduced another set of bonuses solely based on the manufacturer. These come on top of the “Make Component Variance”.
+
+The big change that is coming is that the _Make Component Variance_ table has been dropped, meaning ships do not come with any over-/undersized components any longer. Here are some of the reasons the team (in the person of Chip) gave for this. The old system:
+
+* led to some existing ship specs being too crippled because the manufacturer variance conflicted with the spec of the ship. For example, using Ship Config V2 as it is published today leads to some stealthy bounty hunters/data runners with undersized heat sinks, which was counterproductive.
+* caused expectation management to be quite hard. Accounting for ships with oversized/undersized components where the expectations that those components are 2-3x more/less powerful was challenging, if not impossible, without collapsing the power spectrum. Doing this would devalue larger ships.
+* The power and heat management system the team set up had difficulty accounting for components that generated/consumed 2-3x more power/heat than the other components in the correct class.
+
+_What is the alternative looking like?_ To ensure ships are actually good in the type of gameplay their spec dictates, the team will tweak the tiers of the ship’s components instead.
+
+Let’s take a step back: The _Spec Bonus_ is a fixed bonus that depends solely on the ship’s hull. It is a constant bonus that is not dependent on anything else. The _Make Bonus_, however, applies to the individual components that make up the rest of the ship. These can be swapped out for different ones, including higher-tier versions.
+
+The latter is exactly how the team is planning to tweak each ship’s stats from here on out. By providing higher-tier components they will be able to make sure a ship performs well in the type of gameplay associated with its spec, while also making sure the prices that each ship sold at originally are reflected in the ship’s component makeup.
+
+To help offset the implications of this change, the team has also boosted the bonuses provided by the _spec_ and _make_ of a ship, making these more important for SAGE gameplay.
+
+### Stats in SAGE Labs
+
+For Labs, however, this new system is only _half_ in play. The _Make Component Variances_ have been dropped, but all ships still come with Tier 1 components. This will change further down the line, possibly even during the lifetime of Labs.
+
+### Raw Stats
+
+The team released a [spreadsheet](https://docs.google.com/spreadsheets/d/1cfzW3uiqkbnfJexBysh0MAzZYRhiRwQg8WlsFWfuKgs) containing all the numbers used to determine each ship’s capabilities in SAGE. In it, they define mining rate, food/ammo consumption while mining, warp distance & speed, and much more. This sheet is definitely worth a look if you do not mind going over a big spreadsheet.
+
+However, we also updated our [NANCY tool](https://aephia.com/nancy/) to make life easier for you. Here you can play around and create your own fleet(s), and optionally save it.
+
+Furthermore, we also made a number of new additions using these specs, combined with on-chain pricing data, to our [analytics dashboard](https://flipsidecrypto.xyz/Aephia/star-atlas-economy-gm-insights-dJhgb_). You can view the new charts and insights by clicking on the _SAGE Labs_ tab.
+
+## Redemption Rewards
+
+In future versions of SAGE, there will be a clear use case for the items you craft. These will be usable to construct and upgrade Starbases, plus other items that will provide temporary benefits to you in the game.
+
+But of course, this kind of gameplay is not yet available for Labs. This meant the team had to create a different incentive for this version of SAGE. They came up with two solutions:
+
+1. Offer a _prize table_ with a fixed supply of assets, which you can obtain by supplying considerable numbers of crafted materials. The team will add **$300k worth of Star Atlas assets** (expressed in VWAP) to this table when Labs goes live.
+2. Organize raffles and allow the entry tickets, so-called _Golden Tickets_, to be redeemable in exchange for crafted items.
+
+The Golden Tickets and the Assets from the fixed prize table can be acquired by redeeming a specific assortment of crafted items at a Starbase or CSS.
+
+### Fixed Redemption Table
+
+The team has not yet divulged which assets will be available through this route, but they did mention these will include:
+
+* Claim Stakes
+* CSS Habitats
+* Ships that were rewarded as part of the [Start Sequence](https://medium.com/star-atlas/star-atlas-golden-era-start-sequence-our-path-towards-tomorrow-cb7d51f19c84) campaign (that have to this date, not been sold by the team).
+
+When the full table is available, we will include that here!
+
+Oneimportant aspect of these redeemable assets is that they **require SDUs as part of the recipe to acquire them**.
+
+### Exclusive Ships
+
+The team is planning to offer ships through the redemption process that have never before been put on sale. More importantly, they plan for these ships to be **exclusively** available through this process, until their max supply is hit.
+
+In other words: The team is **not planning to sell** these ships at any point in the future. The only way to get your hands on one is through crafting and redeeming (and the Marketplace, of course).
+
+There will be three different ship models available this way, among which is the Fimbul Mamba EX. The other two have not yet been announced.
+
+### Golden Ticket Raffles
+
+SAGE Labs has a redeemable recipe requiring all 18 craftable and one SDU. Its output: one Golden Ticket!
+
+When SAGE Labs goes live, there will be a 4-week period where players can start collecting Golden Tickets, but no raffle will be held. After this period is over, weekly raffles will be organized for 8 straight weeks. This will give everybody the time to accumulate these tickets and then choose which raffle to spend them on. Once spent, they are burned, whether you win or lose.
+
+To participate in a raffle, you will need to bring your Golden Tickets outside of SAGE, through the CSS.
+
+Every raffle comes with a different set of prizes, totaling roughly **$150k in VWAP** value. At this moment, it looks like the team won’t publish the full table for all eight weeks in advance, but will only release a prize overview a few days before each raffle.
+
+As to the sort of prizes that can be won: The very same that are part of the fixed loot table (see previous section), and more. We know that capital ships, and sometimes commander ships, will be part of the prize table. In addition, there will be (not every week) a grand prize of 5.6 million ATLAS among the prizes. When locked in the [ATLAS Locker](https://govern.staratlas.com/lockers/atlas), this would be enough to reach [Tier 4](https://govern.staratlas.com/lockers/atlas), resulting in a 45% reduction on any fees paid when selling items on the Galactic Marketplace.
+
+As with everything else: Golden Tickets will be tradable on the Galactic Marketplace.
+
+## ATLAS Fee Payer
+
+SAGE Labs will be the first product where you don’t need any SOL to pay for your on-chain transactions! Instead, Solana’s mandatory transaction fee can be paid entirely in ATLAS!
+
+This means that once you are set up and have everything you want in SAGE, you just need to worry about having enough ATLAS in your wallet.
+
+This is possible because the team has deployed a new on-chain program and assigned it the responsibility for paying the SOL fee of any transaction you make. Before it does so, however, it will first charge you an ATLAS equivalent to ensure the team can keep this up forever.
+
+## Faction Selection
+
+The first time you enter SAGE Labs, you will have (again, if you have already done so in the past) to select which Faction you want to be a part of. The reason for this is the introduction of the Star Atlas Account system (also known as Player Profile), which supersedes the old system for tying information to a Solana account.
+
+Let’s briefly go over what this system is about. 
+
+### Star Atlas Account
+
+When SAGE Labs goes live, the Star Atlas Account system (aka Player Profile) will go live as well. Unfortunately, this only goes for the on-chain program(s). There won’t be a user interface (front-end) available yet to benefit from, or use, its power.
+
+In the future, when the user interface is live as well, the Star Atlas Account system will allow you to combine several Solana accounts (wallets) under 1 account and set privileges for these. Without going into too much detail, let’s give a clear example of its power:
+
+> You can have one Solana account (aka wallet) which contains (owns) all of your Star Atlas ships (preferable on cold storage and/or a hardwarde device like a Ledger). You then set up another account in a hot wallet such as Phantom or Solfare, with which you want to actually play the game. You will add both accounts to your Star Atlas Account (SAA) and then through its user interface allow the hot wallet to use these ships in SAGE. You can allow it to move ships around the map and do things like scanning, mining and crafting, without requiring additional approval. However, to engage in combat (in the future) you want it to ask for on-chain approval first. 
+> 
+> Now you can play the game through your hot wallet, using ships it itself does not own, and which it is not capable of transferring anywhere else. It only has the rights to use them in SAGE, and even there you have set up some limitations (Combat).
+> 
+> \[Star Atlas Account – example\]
+
+Powerful stuff! We clearly want this. However, it does require the team to throw overboard the old way of tying things to one specific Solana account and introduce this new system throughout their services.
+
+### Selecting a new Faction
+
+Fortunately, not much is attached to a Solana account yet, but if you chose a Faction previously, you would have noticed this was an on-chain transaction. The Faction program actually stored your choice, along with your Solana account used/.
+
+This is not going to fly with the new system, and that is why your first order of business in SAGE Labs is choosing a (new) Faction. This is important as this will determine where you start, and in the future, will determine for which Faction you are fighting.
+
+Note: You are allowed to choose a different faction this time around. This is your one-time chance to change your faction selection, so take advantage of this!
+
+## Final Notes
+
+Some final, loose notes that don’t really fit anywhere else:
+
+* You can park/leave your fleet anywhere you want and call it a day. They will still be there when you return the next day. They won’t consume any resources unless you leave them while they are busy mining or crafting.
+* The game provides no cooperative flow. If people want to team up with regard to scanning, mining, or crafting, they will have to do so through Discord or other means.
+* There is no option for peer-to-peer trading in Labs or Starbased.
+
+## Updates
+
+_17/08/23_ – Clarified that each faction “owns” 17 Starbases. All MRZ Starbase are faction-owned. 
+
+_16/08/23_ – Added screenshots, Fleet size calculation, Faction (re)selection, User Interface details, and a release target window
+
+_24/08/23_ – Added in-sector movement, fleet naming & fuel cost to exit asteroids.
+
+_30/08/23_ – Added additional UI shots and a section on Ship Stats + tools
+
+_02/09/23_ – Add Crafting Paths

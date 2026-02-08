@@ -1,0 +1,478 @@
+---
+title: "Town Hall Report – June 4, 2025"
+date: "2025-06-04T21:22:31"
+modified: "2025-06-12T12:34:28"
+type: "news"
+slug: "town-hall-report-june-4-2025"
+description: "Michael (CEO) and Santi (VP of Community &amp; Ecosystem) joined the stage to host the first Town Hall of the year, almost 6 months after the last one! While on stage, they were joined by various other team members to go over most of the alpha related to the topic at hand: If you missed [&hellip;]"
+image: "https://assets.aephia.com/wp-assets/502901a87f8d769c6d8d2aef25774f9ff54579c76d14d57b71eb45ac86720bdf.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 16472
+categories: ["news"]
+---
+
+Michael (CEO) and Santi (VP of Community & Ecosystem) joined the stage to host the first Town Hall of the year, almost[ 6 months](https://aephia.com/star-atlas/town-hall-report-december-18-2024/) after the last one! While on stage, they were joined by various other team members to go over most of the alpha related to the topic at hand:
+
+* **SAGE C4** — Danny (CPO) & Brett (VP of Engineering)
+* **UE5** — Chip (VP of Game Design) & Dominic (Sr. Community Manager)
+* **Holosim** — John (Product Manager) & José (Lead Noot)
+
+If you missed the Town Hall and want to watch the full event, then be sure to check out [the recording](https://www.youtube.com/live/ZritNok3f3A?si=CntNpNFB2lGnJPC5)!
+
+In addition to the lengthy report below, the team has also composed a shorter summary of the event, which can be found on their [Medium account](https://medium.com/star-atlas/star-atlas-town-hall-recap-the-new-web3-era-is-upon-us-faa04d92ca6f). Note that our report also takes into account some clarifications and extensions provided on Discord and the [Economic Forum](https://www.youtube.com/live/OxbO8m7H4C8?si=6zeCfEmU390ZikOn) that took place the following day.
+
+---
+
+## TLDR
+
+* **SAGE** — The team shared an _incredible_ amount of details on SAGE C4\. It will take a few more months before it makes its way to a public beta-test (PTR), which itself will likely run for a few months. With this release, the team will drop “Labs” from the name; it will simply be called SAGE after launch.
+* **UE5** — The team shared details about the upcoming July release and the progression ideas they are working on.
+* **Holosim** — The free-to-play version of SAGE **is live** right now! It comes with a lot of experimental features that may make their way into SAGE at a later point. Examples: Quests, AI chat,
+
+---
+
+## Report
+
+Santi kicked off by letting us know that they will spill every bit of information on C4 that they currently have. Additionally, a variety of Atlas Brews in multiple languages will be organized to cover the content of this Town Hall over the coming week.
+
+Michael takes over to share that after Breakpoint and the Impact meeting, the team came together and asked themselves:
+
+> What does a solid 2025 look like for us? What do we want to build? What do we think is going to have the largest impact? And what are the timelines around those things?
+
+The team’s philosophy for 2025 is to simplify use onboarding, create great experiences, and reduce the overall barrier to entry.
+
+## SAGE – C4
+
+The team consciously decided to extend the timeline for the next feature release of SAGE, allowing them to incorporate more features in one go and make a bigger impact.
+
+As a reminder, C4 stands for:
+
+* Claim Stakes
+* Combat (systems)
+* Council Rank
+* Crafting Habs
+
+![Screenshot 2025 06 04 at 20.26.28](https://assets.aephia.com/wp-assets/70b644e6f027c5244528d97c5c48fa60e8157a17b8e54a4635f28e60b5fcc4b1.png)
+
+Star Atas Golden Era – Custom Development Tools
+
+Danny explains that C4 is where SAGE turns into a _full 4X_ game (eXplore, eXpand, eXploit, eXterminate). He then showcases a new Development Editor Suite that the team has created to develop and maintain the game. These were mostly vibe-coded by Danny. Even the website that hosts them took only about 1 hour to create.
+
+### Expanded Map
+
+To kick things off for C4, Danny jumps into the Map Editor he created himself. In there, he shows off the new map for Galia Expanse, which has grown drastically! There will be 315 star systems per Faction (945 in total), though most will be neutral at the start (meaning, not faction-owned). These star systems are all grouped into regions. In total, there are 3656 planets in the new map.
+
+![SAGE C4 Dev Tool - Map Editor](https://assets.aephia.com/wp-assets/7a1af239361a6bee45aa939f29eddca3586116bec4392b107a622ba86d5d5cae.png)
+
+SAGE C4 Dev Tool – Map Editor
+
+![SAGE C4 Dev Tool - Map Editor](https://assets.aephia.com/wp-assets/f187a671fe579658c3a18e624221ae4a0e8aef60272d1e96144913422443028e.png)
+
+SAGE C4 Dev Tool – Map Editor
+
+Currently, there are 51 star systems that will become Core systems of their own region when C4 launches. Each region will introduce additional star systems, some of which may be Core systems as well. On top of these 51 regions, another brand new 18 regions will be added (6 per faction), resulting in a total of 69 regions with C4\. Each system in these regions will come with its own starbase.
+
+Brett takes over and digs a little deeper.
+As a faction, to own a region, you need to own all of its Core systems.
+
+Regions are connected through Warp Lanes (formerly known as Warp Lanes). There is a single warp lane between every two neighboring regions. In fact, these inform the players which regions are considered to be _next to one another_. This is important, as regions can be divided into _**safe** regions_ and _**border** regions_, and the adjacency of regions determines this.
+
+* **Safe Region** — If a faction _owns_ this region **plus** all its neighboring systems, then the region is considered safe. This is an important distinction as these can not be attacked by anyone. Safe regions are safe because they are surrounded by other regions owned by the same faction.
+* **Border Region** — A region that has at least one neighboring system that is not under the control of the same faction. This could be a neutral system or owned by another faction. In other words, this is a non-safe region.
+
+Of course, safe regions can become border regions again at a later time, and vice versa. If a border region is lost to another faction, then its adjacent regions will become border regions (if they weren’t already). 
+
+Every faction has its five regions that are permanently safe because they are in the Safe Zone. Essentially, the creation of additional safe regions expands the safe zone.
+
+Note that there are still ways to approach attacks tactically. You do not need to attack the front lines solely. You can also fly around and attack a region from behind.
+
+### Movement & Warp Lanes
+
+You can still go anywhere on the map through subwarp and warp. However, there is now a third option: Warp Lanes (formerly known as Star Path). When your faction owns two neighboring regions, your fleets can use the warp lane between them.
+
+* **Sub Warp**: unchanged
+* **Warp**: Beyond the cool-down at the end, the team added a delay before warping starts as well, called “spooling”. They did this to make it less easy to escape combat.
+* **Warp Lanes**: If you prefer to pay ATLAS instead of Fuel, and travel a lot faster, you can use a warp lane to jump between regions.
+
+It’s good to know that the Atlas fees paid for use of warp lanes will flow to the DAO.
+
+### Miscelaneous
+
+Brett briefly goes over the resources shown in the Map Editor. There are now:
+
+* 86 raw resources
+* 229 intermediate components
+* 145 ingredients
+
+The final but shared is that Starbase upkeep will be gone. There won’t be a need, or even a possibility, to supply Food or Toolkits to a Starbase.
+
+There won’t be a High Risk Zone just yet. It’s all Safe Zone / Low Risk Zone and Medium Risk Zone.
+
+### Combat
+
+Combat will start in a simplified fashion. It’s not going to be very tactical, let alone like ships flying over each other. It is atomic. Combat happens instantly when a fleet attacks another fleet or starbase. Damage will be dealt in both directions, and that’s it. If both fleets are still standing, they can do it again. The damage dealt is based on the fleet stats and a random factor to make it more interesting and less deterministic. There is no benefit to being the attacker or defender. Also, it’s possible for both fleets to be destroyed in an attack action.
+
+When you blow up a ship, its cargo pod will drop. This contains all of their cargo, and you’ll be able to take a portion of those items. Some of them will get burned when you salvage these, but you’ll still get a portion of those items. Salvage ships will be able to get more of those items, giving them a clear purpose in the game as well.
+
+_Good to know:_ Loot is locked to the last hitter for a period of time. Afterwards, it’s open to everyone.
+
+_****Editor’s note:**_ During the [Economic Forum](https://www.youtube.com/live/OxbO8m7H4C8?si=iJrY7kK8k50tbVt4), Chris (VP Game Economy) added that ships will be out of commission for a while after they are blown up as well. However, for a price, you can get these back into action sooner.
+Additionally, he mentioned that LP will drop upon the destruction of a ship, and like the loot, it will go to the player who dealt the final hit. The amount of LP earned will be substantial compared to other LP-earning activities, such as through Upgrading & Upkeep. 
+
+### Action Points & Range
+
+The current map contains sectors, but with C4, the team is dropping this and switching to a 64-bit global coordinate system. Every star system, planet, and fleet will have coordinates on this map.
+
+Previously, you could interact with everything within your sector and navigate to anything outside of it. Now that sectors are no more, the team defined a global (inter)action range. This is currently set to 0.5 AU, and it applies to all ships, big and small (to keep it simple for the blockchain developers). A fleet can interact with anything within that range, including attacking, repairing, and looting.
+
+_Red:_ For those wondering, a square/sector in the current game is 1 AU x 1 AU. If you position a fleet in the middle, you would have a pretty good idea of its action range (though it’s a circle, not a square).
+
+Beyond this action range, there is also a system called Action Points, although this may be abstracted away in the user interface. Every fleet has a number of action points, which can be regarded as an energy bar, that are spent on actions. Some actions deplete all of these, such as performing a repair or when salvaging loot. Other actions only spend some points, such as attacking and defending.
+
+This system ensures that a large fleet cannot attack nonstop. It will need to take breaks to restore action points in between.
+
+### Territory Conquest
+
+Beyond attacking fleets, Starbases can be attacked as well. Starbases are essentially giant statblocks (lots of defense). An interesting feature is that each tier must be defeated _separately_. When you defeat a T4 Starbase, it will become Tier 3, for example. You can of course continue attacking to bring it further down, to Tier 2.
+
+If you blow up a Tier 1 Starbase, it will become a Tier 0 Starbase for your Faction. If you blow up a T0 Starbase, it will become yours without losing another Tier.
+
+If another Faction is upgrading from T0 to T1, you get the Starbase with a portion of these upgrade efforts right away. For example, if the Starbase is 99% on its way to T1, then it will swap factions once defeated, and perhaps it will already be 80% upgraded to T1.
+
+When a Starbase changes hands, any resources in the Starbase are burned (including everything on the **local markets**, in crafting, storage, etc.).
+
+### **Repair**
+
+Repair ships can target ships and star bases. You can pay Toolkits to repair a ship in space or repair a star base. It adds to basically a pending pool. The asset’s health will go up to a certain level based on the toolkits in this pool, but at a certain “healing” rate. So it’s not like an instant repair, but it repairs over time. This means that it can potentially be out-damaged.
+
+### Starbases
+
+The idea is that existing Starbase upgrades will be migrated as is to C4 (in other words, the current upgrades will persist). There are several benefits to leveled-up Starbases. Higher-tier Starbases will lower the fee on warp lanes, plus unlock more Claim Stake and Crafting Hab slots. The Starbases also get a higher stat block (including improved defenses).
+
+Danny chimes in by saying that every region comes with a few Core systems. Owning all Core systems is required to gain ownership of the Region. He is currently contemplating electing one of these Core systems to a so-called _King_\-system. This system is where the local market for that region resides. His idea is that the current Star systems in SAGE Labs would become such _King_ systems.
+
+![SAGE C4 Dev Tool - Ship Configurator](https://assets.aephia.com/wp-assets/b26700e530bf67ca68d6ff4e41757f99d09695ec641e393f3b50c089e0b94b7a.png)
+
+SAGE C4 Dev Tool – Ship Configurator
+
+### Ship Configuration
+
+There are at present 61 ships. You will be able to configure every one of these with custom components in C4, such as components, modules, ship weapons, countermeasures, and missiles. To accomplish this, the team will add \~3,900 recipes to the game, allowing players to craft Tier 1-5 components for each ship and their corresponding component slots. This will include weapons that come in various damage types, such as energy and kinetic weapons.
+
+However, you won’t be able to just apply any one component to any one ship. It’s not fully free-form. Instead, you will be able to build certain sets of components (dubbed: configurations), and then you can apply such a set as a whole only. There will be about 15-20 configs/sets per ship that players can work towards creating, containing both standard sets for each tier, but also sets targeting specific specializations, such as mining.
+
+In the future, you will be able to swap components individually, but for C4, they took this shortcut.
+
+An upgraded ship won’t become a new NFT. This would fragment the market immensely and really hurt liquidity. The ship will stay (the same NFT) as it is today (decked out with non-weapon T0 components) without extras. How this will work is that when you create a fleet, you choose the ship configurations you want to apply to each ship that you add.
+
+To work on these components and their configurations, Danny created an internal Ship Configurator tool that allows the team to configure ships with these components and compare them to each other for balancing.
+
+All of these components will have recipes, and they will be craftable solely by players. The team won’t sell these. There will be a process to convert the current Ship Part Bundles into raw resources, which go into crafting these components.
+
+If a ship is destroyed, you will _lose_ all components, while the ships will respawn at the CSS.
+
+Michael chimes in: 
+
+> \[This is a\] massive enhancement to the way that the player economy is going to work because it’s very conceivable that an individual player is not able to craft all of these underlying components that they want to equip on their assets. And then on top of this, when the war machine is rolling and you have combat and you have faction conflict, all of these components are just getting regularly destroyed. And there will be a requirement to rebuild, reconstruct those. And I’m just thinking about the way that that is going to enhance trade and drive peer-to-peer trade and revenue opportunities for players. Absolutely massive as a sink and also as a new way for players to participate in the economy and pick up some revenue by servicing those that require these components.
+
+There will be a heavy weighting of LP to combat systems, encouraging those engagements. On that topic, it will be less rewarding for a larger fleet to destroy a smaller one than for a smaller fleet to destroy a larger one.
+
+### Claim Stakes
+
+To be able to deploy Claim Stakes, your faction needs to not only own the Star System (Starbase) but also the whole Region as well (which means ownership of all Core systems).
+
+Each planet in a system owned by your Faction comes with slots where players can deploy Claim Stakes. Within a deployed Claim Stake, its owner can build a variety of buildings (there will be hundreds of different ones). Once a player claims a spot for their Claim Stake, they can start designing the layout and buildings they want in it. Beyond creating and upgrading buildings, buildings can also be replaced with new ones. Given the numerous building options, players will have the opportunity to spend a considerable amount of time designing their perfect base of operations.
+
+Going over some building options, Brett briefly elaborates on Mining Drills. When drilling for resources, the richness of a resource multiplies the mining rate linearly (e.g., richness 2 means you would get 2x the output compared to richness 1).
+
+There is also a Power resource, which is required by some buildings to function. Power is not an item, instead it can only be generated by buildings within the Claim Stake. There are buildings such as Solar Farms and Power Plants that do this.
+
+Additionally, your crew requires accommodations, so you need to construct _Barracks_. Some of the buildings you can build come with lower crew requirements. In short, optimizing your Claim Stake is an interesting puzzle!
+
+**Automated Production**
+
+Beyond the extraction of resources, Claim Stakes are also able to do _some_ crafting in an automated fashion, depending on the buildings constructed. This production will, unlike crafting at a Starbase, not incur any crafting fees.
+
+In addition, beyond producing resources, your facilities may also require items as input that you are not (sufficiently) able to produce locally, such as Fuel. In these cases, your facilities rely on you transporting these items there.
+
+**Rent**
+
+There is a cost to having a Claim Stake deployed, however. There is a rent players have to pay for each Claim Stake, which is multiplied by the Tier of Starbase and the Tier of Claim Stake. If you run out of rent, there is a grace period where your claim stake stops producing. After it expires, you can be evicted by any other player who wants your spot.
+
+**Destruction**
+
+If a system changes hands, the buildings on the planets in that system will be destroyed, and the Claim Stakes themselves will respawn at the CSS. If a Starbase loses a Tier (due to being partially destroyed), there will be a reduction in the amount of Claim Stakes of each Tier that the system can facilitate. If you were to have a claim stake in an excess slot, you would lose all buildings, and your Claim Stake would end up at that Starbase.
+
+_Example_: There are 200 T1 Claim Stake slots, but due to the Starbase losing a Tier, it goes down to 200\. If you are in slot #102, your slot is lost, your Claim Stake is returned to the Starbase, and your buildings are lost.
+
+**Miscelaneous**
+
+* You won’t be able to build Claim Stakes. You can not upgrade Claim Stakes either. **The team will sell another tranche of Claim Stakes around the time C4 launches.**
+
+**_The recommendation, therefore, is not to go purchase above the original price!_**
+* There are still asteroids out there to mine with ships. That said, excluding mining ships, all ships, especially Fighter ships, will be significantly downgraded in their mining capability.
+
+### Crafting Habs
+
+This will look and behave very similar to Claim Stakes. Players can build these on Starbases instead of on Planets, and like Claim Stakes, they require regular rent payments as well. They do not extract, but have crafting _effects_. When you craft, you can choose a crafting habit for that craft. The chosen habitat will affect factors such as efficiency, the number of crew required, and fee reductions. There will also be new recipes that can be unlocked by building certain structures within crafting habs.
+
+Good to know: Crafting habs can only work on a limited set of crafting jobs at a time.
+
+### Council Ranks
+
+This is the entire progression system for the game. It is used to unlock everything across the game. Beyond the current 4 XP licenses that are in-game right now, C4 will add additional ones, such as for _combat_ and _building_. Any XP you gained so far (and will still gain before C4 launches) will carry over to the new game.
+
+You also earn **_Renown_**, which is your overall council rank.
+
+To unlock new or expand existing functionality, in-game, you will need to unlock **Research Nodes**. Some nodes will have dependencies on each other (requiring others to be unlocked first). Unlocking a new research node may cost:
+
+* Renown
+* XP
+* Resources
+
+Research nodes will unlock, among other things:
+
+* Buildings
+* Ship configs
+* Claim Stake tiers
+* Ship size (how big of a ship can you pilot)
+* Amount of fleets (how many fleets can you have on a single account)
+* New scanning patterns: They will have different costs, come with different (spawn) maps, and have different resource requirements.
+
+You will be able to create fleets regardless of the limitation to use them in-game. This will allow you to rent them out instead.
+
+![SAGE Dev Notion Document](https://assets.aephia.com/wp-assets/079908ff6ad2661212de02528a7ea7e5d55068914461ed1c96a1a945ca50b84d.png)
+
+SAGE Dev Notion Document – Council Rank & Research
+
+### Infrastructure
+
+StarComm has undergone a major rewrite to support C4\. As Brett put it: “With the basically over 100x-ing of the amount of stuff going on in C4, we really need something that can support that”. It’s now far more scalable. It now consists of a single database that stores the current state, with a couple of servers listening for changes. The servers are live, listening to a stream of data, and each of these servers runs an internal SQLite database, allowing them to execute complex queries. Clients connect to these servers.
+
+Both the client code and StarComm code have become a lot simpler as a result. It should therefore perform a lot better than the current version. This new version will roll out with C4.
+
+**Starframe**
+
+Solana’s Anchor framework is great, but to create SAGE, it was not enough. So the team built their own framework, dubbed _Starframe_. This allowed them to say goodbye to a lot of redundant accounts. Additionally, many accounts have been merged, making them extremely fast to access. The team rewrote SAGE in a couple of weeks on top of Starframe.
+
+**Coherent UI**
+
+The team has integrated [Coherent UI](https://coherent-labs.com/Documentation/cpp/) into their Unreal workflow. This allows them to incorporate web code as UI elements in Unreal, which means they can share a wide range of UI elements between Unreal and the web, making everything significantly easier for them. It enables the team to make significantly more progress with significantly less effort.
+
+### Rollout
+
+C4 will be released in a beta state on a Player Test Range/Realm (PTR) on Atlasnet (the team’s internal replica of Solana), where everyone will be able to test it. This will likely run for a couple of months. From there, it will roll out as SAGE (no longer referred to as _Labs_) afterwards, in-browser. Over the course of the year, the team will also work on a full integration and feature parity in Fleet Command.
+
+This will launch on Atlasnet, and testers will likely get a bundle of game assets to play with. Everybody will be able to get access, and playing that beta will not cost anything (no on-chain fees).
+
+There are some longer-term implications regarding Atlasnet. The team is preparing for another big Town Hall, where they will discuss Atlasnet and their plans in more detail.
+
+C4 will come with a new Game ID when it goes live on the mainnet. The team plans to introduce a migration path for the current players.
+
+**_Michael shared that it will likely take the team a couple more months before C4 goes live on the PTR._**
+
+![DataRunner June4](https://assets.aephia.com/wp-assets/b307fd70578fc11731fc4e2cdc50ca105532bd28f48f2c4c3ec27a703f708c08.png)
+
+Star Atlas – Data Runner Sale
+
+## Data Runner Sale
+
+Michael announces that the team just launched a sale of Data Runners ships, specifically 280 Fimbul BYOS Rangers and 400 Opal Rayfams. They are sold at a 50% discount for a limited time. It will run until Monday of next week, unless sold out earlier.
+
+## UE5
+
+Chip (VP Game Product) and Dominic (Sr. Community Manager) are joining the stage for the UE5 session.
+
+The velocity at which the UE5 has been developing has significantly increased this year. The team also chose to release new features more frequently.
+
+Chip will go over the scope of the next major release, which is planned for the middle of the year (**_Ed:_** July, it would seem like). It is going to be the next major push into their multiplayer gameplay, including racing. After that, the team will move on to Fleet Command to ensure they reach feature parity with Sage C4 as soon as possible.
+
+### Progression
+
+The first focus of the mid-year major release is **progression**. The team wants to give players a reason to come back. To do this, they are introducing the concept of a _pre-season character group rank_.
+
+The team will split your crew into character groups by both _species_ and _gender_. So, for instance, High-Punaab males, Sogmian females, or human males. You will progress your character group ranks based on the category the crew member you play with falls within.
+
+Until the team implements full-on-chain progression of individual crew cards or members, they want to provide a way for you to still progress at the crew level. And, because they didn’t want to build out a new server infrastructure that is off-chain, they’ve chosen to use Epic Online Services stats. This comes with limitations, such as only tracking \~1,000 stats per account, but it does allow them to track a player’s human male track or their High-Punaab female track..
+
+Beyond levelling up individual crew members, this is the next best way. So, in short: if you play with a high-Punaab female, any of them that you own, XP that’s earned while playing with them will go towards that group’s track.
+
+Each track comes with 20 levels, and when you reach level 20, your level will be reset again to 1, but you will have earned a _prestige_ _rank_. You can prestige like this up to 10 times. You gain XP _only_ by playing matches on dedicated servers. You will be able to get increased XP based on things such as:
+
+* The rarity of the crew you are playing with
+* Play-streaks (Daily check-ins and consecutive days of play)
+* Your prestige level
+
+![Star Atlas - Designs for UE5](https://assets.aephia.com/wp-assets/5037afea8ab42767426dc39b67c5a421a8f516362d57cf9f89a625a8e0877fbd.png)
+
+Star Atlas – Designs for UE5
+
+![Star Atlas - Designs for UE5](https://assets.aephia.com/wp-assets/502901a87f8d769c6d8d2aef25774f9ff54579c76d14d57b71eb45ac86720bdf.png)
+
+Star Atlas – Designs for UE5
+
+### Progression Rewards
+
+In-game, jetpacks are called _jetties,_ and shields are called _bubby’s_. Characters come with three different slots in-game, including a jettie hand slot, a jettie sole slot, and a bubby slot. You’ll be able to unlock different variants of those equipables as you level up a character group rank.
+
+The plan is to get on-chain rewards as well! At certain leveling thresholds, you will likely get a crewpack airdropped, which may be a special version/tier of the crew packs we all know and love. The team is also looking into rewarding an exclusive UE5 type of resource, likely the nano bots, which would then become a requirement in certain C4 recipes. This will introduce some economic crossovers between UE5 gameplay and the C4 Sage economy.
+
+![Screenshot 2025 06 04 at 22.02.19](https://assets.aephia.com/wp-assets/d51cf08891a5d07885b4d9658ba17ce8f768cf983316a041a24cc893e2200d3a.png)
+
+Star Atlas – UE5 Progression Level Rewards
+
+As you start at level 1, you have a total of 4 weapon slots. Different weapons take up different amounts of slots. Your default equipment, including your Kinetic Pistol and Kinetic Auto Rifle, will take up three slots. At level 2, you unlock a starter grenade, which costs another slot. At level 3, you unlock a sole jettie, allowing you to dash and slide at a lower cost, but perhaps it has less speed for hovering. The goal is to ensure every new item has some trade-offs as well, preventing them from easily becoming the most dominant item in-game. You will continue to unlock weapons, jetpack slots, and weapon slots. Refer to the table above for more information on the rewards currently planned.
+
+If players prefer to play a match outside of this progression system, they can toggle this mode off in the match settings. If they do, weapons will still spawn on the map as they do today. If they, however, opt for this progression game mode, those weapon spawns will be replaced by ammo packs instead. Weapons will then have to be earned.
+
+The team is also working on persistent regional dedicated server lobbies. These will be the XP-enabled ones, and they will feature rotating game modes on a weekly basis.
+
+When you prestige from level 20 to level 1, you keep everything you unlocked. You may unlock new benefits at, for example, prestige 2, level 5.
+
+Chip stresses that this is not solely focused on their gunplay mode right now. They are instead building out foundational game systems that the team wants to use in their open-world game mode as well. Perhaps you will be able to have 30 weapon slots in that mode, but the same principles will hold. They have not shifted focus to these repeatable arena shooters.
+
+### Other Improvements
+
+Next, he is showcasing concepts for a redesigned scoreboard that will provide more detailed, up-to-date statistics for a wider range of players. This is in response to players complaining about the current scoreboard. Additionally, there will also be assists registered there now as well (for team players).
+
+Chip then jumps in-game to perform a live demo of some **_July_** updates.
+
+One of the unique selling points of the shooter the team built is its distinctive movement, which incorporates jetpacks and related movement features. The team is going to lean even more into momentum preservation (something Chip shows off). 
+
+Additionally, the team revised the impulse around sliding. It is faster and more fluid. It feels better, and there will be jetty variants that will alter it. 
+
+In general, movement just feels better with ending hover and jettie boost. Furthermore, sliding is improved, and bunny hopping was added.
+
+Additional features planned:
+
+* Integration of _Easy Anti Cheat_
+* Addition of a Spectator mode
+* Polishing Paizul’s Arena to completion. The crowds will throw confetti and trash at you. More detail will be added to the map (e.g., moss, water) and soundscape (the ships flying around emit sounds as well). The team wants to show off to what level of fidelity they can really build their environment.
+* Replacing race track B with a Sogmian-themed track called Exonade.
+* Refreshing the main menu (making it more compelling)
+* Improving joystick & gamepad support (showing a clip of Brad playing with a Joystick/HOTAS setup)
+
+To close out the UE5 segment, Chip has something cool to show us!
+
+The team decided to prototype another career path in Galia, beyond mining, namely scanning. The team shows a video demonstrating scanning in UE5\. Brad is scanning, and he has found a distress signal. As he gets closer, more details are provided. It looks like a mini-quest where the player is asked to provide assistance. Audio plays when Brad approaches the ship in distress. There is some fun banter going on between the couple that resides on the ship, but after a short while, they get jumped by Jorvik pirates. 
+
+When Brad saves the ship, he gets some credits as a reward. 
+
+Brad has created several of these mini-quests already (also writing the scripts and facilitating the voice acting).
+
+![Star Atlas - Holosim](https://assets.aephia.com/wp-assets/57e23bc48122849abdd790a58d31ca705b294fbb54631bbfecfa08762b2f71d4.png)
+
+Star Atlas – Holosim
+
+## Holosim
+
+The Holosim is themed as an actual in-game “game” simulation running on Atlasnet. As Michael put it: “It is our full free-to-play simulated universe implementation of the Sage feature set.”
+
+Beyond being a free-to-play variant of SAGE, however, it comes with numerous new features (not yet available in SAGE). 
+
+Holosim is meant to facilitate user acquisition and lower the threshold for new players. Michael shared:
+
+> \[…\] in order for us to achieve success and to truly see the fruits of all of the labor here blossom, it’s important for us to grow the user base, the community, the ecosystem substantially.
+
+The team recognizes that SAGE has a steep learning curve and a significant cost of entry. And UE5 is still at a very early stage. Fortunately, Jacob (CTO & co-founder) had started work on a free-to-play product in his spare time. He largely vibe-coded an early version of Holosim in evenings and weekends at first, with some team members jumping in to help. All in all, very few resources have been required to create this version of the game. 
+
+The goal was, first and foremost, to create a fun and engaging experience. As it does not have the benefits of a live, real cash economy like Sage, fun had to be #1\. It also comes with zero barrier to entry. All on-chain actions happen invisibly in the background, including wallet creation. There is no asset requirement either, completely eliminating the barrier to Play. 
+
+This also makes it much easier to port to mobile. It may become a stand-alone app on the iOS and Android stores, and the team actually has this on their roadmap!
+
+By eliminating those friction points, the team hopes to capture a Web2 audience. There are tutorial systems that, in the end, also explain how SAGE works. Holosim teaches them how to play SAGE without any monetary risk.
+
+Additionally, Holosim also allows the team to introduce new features that the team can experiment with. It’s sort of a test environment for the team. It also allows the team to create new sources of monetization, perhaps with battle passes or such. 
+
+Xcode and José have joined the stage.
+
+José takes over from Michael. He starts by explaining that Holosim is a space for the team to experiment and go wild. 
+
+It is a simulator of realities in Star Atlas. There will be seasons, and every season will be based on a scenario with a specific set of rules. The players will compete according to the rules of that season and try to perform across the leaderboards.
+
+Seasons could alter game rules drastically, even merging factions into one to fight HRZ threats.
+
+![Holosim - UI](https://assets.aephia.com/wp-assets/05325120eeca40c3906d6d2dfc80b5775fad96f9f62b46a6e4167c389a585469.png)
+
+Holosim – UI
+
+For this early release, there will be a race between factions. In every faction, every player is competing to fulfill faction contracts of different types all across the star systems in Galia.
+
+It seems simple, but appearances are deceiving. Holosim comes with a quest system, allowing players to specialize in 4 different careers (Soldier, Data Runner, Miner, Merchant). You choose a single specialization, and will then start to unlock recipes in that tab. Every specialization is required to fulfill parts of the game.
+
+If you become a soldier, you will be able to craft certain combat-focused ships. Each specialization will excel at its own gameplay loops.
+
+Ships are very different from SAGE ships. Their specialization stats will be far better. The game is designed to highlight differences between ships.
+
+![Holosim - Chat](https://assets.aephia.com/wp-assets/71f68ac76ee0d58403e372bd3fb4da269a0e7c818941ab427544a4e0a5288e7a.png)
+
+Holosim – Chat
+
+There is chat as well! Players need to communicate to achieve the faction objectives and excel on the leaderboard.
+
+Holosim comes with an AI chat buddy, intended to be your ship’s computer. She will help you go through the game and perform in the best way possible.
+
+Finally, there is combat! Combat (v0) allows you to attack other fleets. In this season, combat is High Risk! If you lose, your ships are gone, along with your crew members. 
+
+Holosim is based on the delivery of contracts. If you defeat a fleet carrying those contracts, they can be looted and used for your faction’s benefit.
+
+Miners need to craft the contracts, merchants need to haul them and provide liquidity and resources, data runners acquire SDUs and craft data contracts, and soldiers will defend their fellow crew members and steal contracts from the opponent.
+
+You can be ambushed while in subwarp. You can not be attacked when warping. Jose shows how he destroys one of John’s fleets in 3 hits (or actually, it seems to have fled with 1 hp left). If a subwarping fleet leaves the sector, then combat will end.
+
+![Screenshot 2025 06 04 at 22.50.36](https://assets.aephia.com/wp-assets/fb264d132c17cc17afa8e9529592a6e5ea4699b398ee5ac81368a1a3d0fbf703.png)
+
+Holosim – Combat example
+
+After warp, there will be a cooldown before you can dock with Starbases to make fleets a little more vulnerable.
+
+There are Quests to help introduce new players to the game.
+
+![Holosim - Quests](https://assets.aephia.com/wp-assets/958afc58bbc6434b07a86958a13ad574e1694406293a3fbb81564d522c88a1b2.png)
+
+Holosim – Quests
+
+All quests come with (AI-generated) narration plus text. There are 72 quests for this first version, taking players from forming their first fleet all the way to creating a Titan ship.
+
+The redemption of all contracts in the MRZ is the end-game condition for this first season, and that may happen before a player gets to craft a titan.
+
+Some more details:
+
+* Every fleet you form can be given basic instructions when docking. Example: Every time this fleet docks, it should refuel, rearm, supply some food, and unload its cargo. As there are no transaction costs, this made sense for the team to implement here.
+* At level 5, you unlock the Fleet Route Manager. Choose between mining or transport loop, select a fleet, and select a location, and the fleet will automatically start performing this task continuously.
+* Everybody starts with 21 crew. You receive a daily airdrop of an additional 21 crew members if you complete the daily quest check-in (these numbers may change).
+* You need fewer crew than you would need on the mainnet, but they will die when on a fleet that is destroyed. Crew are the most precious resource in Holosim.
+* Power levels are roughly 3:1 (3 mediums are a match for 1 large fighter, but the large fighter has an advantage).
+* Subwarp is slow. Warp cooldowns are reduced. Warp ranges are a little less as well. If you want to loot cargo, you need to bring a transport ship.
+* You’ll get the majority of your XP through questing and following the storyline. Your level gates the resources and recipes you have access to in-game. Loosely, the Tiers line up with the level you need. See the _Crafting Level Progression_ table below.
+* You need a very recent browser to play the game.
+* **Warning:** Clearing cache and cookies will eliminate your game and all progress. This is where your Atlasnet wallet lives!
+* This is a meta game that exists in Star Atlas. Players will (down the line!) be able to play the holosim directly from within Fleet Command as well.
+
+| **Level** | **Unlock**                              |
+| --------- | --------------------------------------- |
+| 0         | Essential mining and survival materials |
+| 1         | Basic ship components and fuel systems  |
+| 5         | (X)XS Ship crafting & Basic Contracts   |
+| 10        | Small Ship Crafting                     |
+| 15        | MRZ Contracts                           |
+| 20        | Medium Ships                            |
+| 25        | HRZ Contracts                           |
+| 30        | Large Ships                             |
+| 35        | Data/Crystals Contracts                 |
+| 40        | Capital Ships                           |
+| 50        | Commander Ships                         |
+| 61        | MUD/ONI/Ustur Infrastructure Contracts  |
+
+Crafting Level Progression
+
+**Holosim has launched! It is live!**
+
+Turned out that John was demoing on the live server the whole time: [https://holosim.staratlas.com](https://holosim.staratlas.com/).
+
+The plan is to provide some rewards, but they are not yet out on which ones exactly. It could be a mainnet welcome bundle for SAGE. Converting users to _mainnet_ is definitely something the team is looking into.
+
+_That is a wrap!_

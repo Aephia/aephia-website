@@ -1,0 +1,184 @@
+---
+title: "Weekly Star Atlas Newsletter #147"
+date: "2024-09-16T13:21:54"
+modified: "2024-09-20T14:41:18"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-147"
+description: "Crew Cards are live in SAGE Starbased, and Round 1 of the Council Election is underway! Meanwhile, a good chunk of the team is making their (lengthy) way to Singapore! Michael (CEO) will join a panel on Token2049 while there, but the real deal is the IMPACT Summit that will take place later this week. Read on to learn more about what to expect during this one day that is all about Star Atlas!"
+image: "https://assets.aephia.com/wp-assets/2275c0ef393f5c85aefa1d95f28f74e9e89ba5352f26ab40661607f654686b75.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 15438
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 147th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we try to aggregate all the newsworthy tidbits revealed \[mainly by the team\] throughout the past week._
+
+---
+
+Crew Cards are live in SAGE Starbased, and Round 1 of the Council Election is underway! Meanwhile, a good chunk of the team is making their (lengthy) way to Singapore! Michael (CEO) will join a panel on Token2049 while there, but the real deal is the IMPACT Summit that will take place later this week. Read on to learn more about what to expect during this one day that is all about Star Atlas!
+
+Without further ado, let’s dive in!
+
+## Crew & SAGE
+
+This past Thursday, the team spent well over seven hours disbanding all fleets, updating the on-chain programs, and rolling out the front-end changes to Starbased.
+
+Beforehand, the team [released a script](https://www.npmjs.com/package/@staratlas/crew-transporter) for those who are somewhat technical (some NodeJS knowledge would certainly help) to move all their crew through slightly easier. This approach was specifically recommended to folks who have/had to move more than a thousand crew members. That said, there are reports of people who succeeded in a reasonable time even though they sent thousands of crew manually through the website.
+
+As part of the roll-out, the team also decided not to reward any ATLAS for LP earned within the epoch with which the roll-out coincided. Instead, they added/will add that ATLAS reward evenly over the 7 epochs following it (briefly bumping the ALTAS/LP ratio during those days)
+
+The roll-out was a bit bumpy, to say the least, with the team having to fix several issues after the solution went live. Though meanwhile several big issues have been resolved, there are still a few lingering ones.
+
+One such issue, being unable to move certain Crew Cards into SAGE, is something RPC providers will need to fix as it has to do with the local copies of the Merkle tree in which the cNFTS are stored getting corrupted. Unfortunately, the current cNFT-tech was not built to deal with such large collections, which this exercise has clearly demonstrated.
+
+It’s usually a handful of corrupted cards (at most) in the RPC’s cache that are blocking the transition. It’s not clear when this will be fully resolved just yet, but you should be able to work around most of this by trying to send different selections to find the specific card (or cards) that is blocking the transfer.
+
+# Council Elections
+
+The [first round of the council elections](https://govern.staratlas.com/proposals/1b792551-83e1-4998-99a4-6637caa69df8) has officially kicked off! Between September 14th and September 21st, you can now vote for the top 12 Council candidates using a brand new voting mechanism!
+
+The team has introduced a novel semi-on-chain Ranked-choice Voting system, specifically the [Single Transferable Vote](https://en.wikipedia.org/wiki/Single_transferable_vote) variant.
+
+Check out [this great explainer video](https://www.youtube.com/watch?v=l8XOZJkozfI) featuring the animal kingdom if you want to get a good idea of how this works:
+
+<YouTube id="l8XOZJkozfI" title="Politics in the Animal Kingdom: Single Transferable Vote"  />
+ 
+
+**In short:** Any candidate with at least 1/12th of the voting power behind them (because we need 12 people) is automatically in. If no single candidate achieves this, the candidate with the least amount of PVP backing them is removed. The votes of everyone who voted for this person will now be assigned to their number 2 candidate.
+
+This system allows you to vote by submitting an ordered list of your favorite candidates. As 22 candidates compete in this first round, you can submit a list of up to 22 names! This way, your PVP will not go to waste! 
+
+However, there is no requirement to do so! You are welcome to submit your top 5 or any other number. It’s completely up to you!
+
+![Screenshot 2024 09 14 at 18.06.02](https://assets.aephia.com/wp-assets/393b6a81c8ba32b19ba68df753d0f1abfcc8428b0892505a55fc31ecaf06cdef.png)
+
+Star Atlas – Voting UI for the Round 1 of the Council election
+
+Thanks to this system, you can safely vote for the underdog, knowing that if they do not make it in, your vote will–at full strength (PVP)–carry over to the next candidate on your list.
+
+Voting is open to September 21st. The ranking shown next to the PIP is the actual result of STV. That would be the result if the vote would close at the moment you are looking at it.
+
+![Screenshot 2024 09 16 at 21.12.08](https://assets.aephia.com/wp-assets/828a0a88c2c5f2748f19035ed23350d42f1c852903c2c0b542959f5ddc8ecbd9.png)
+
+Star Atlas – (Intermediate) Voting Result Overview \[taken at the time of publication of this issue\]
+
+## IMPACT Summit
+
+A good chunk of the team is en route to Singapore over the coming days, and when there, a lot of prep work needs to take place before the IMPACT Summit kicks off. As such, it may be best to expect a little less communication from the team this week. 
+
+On the topic of IMPACT, the team shared the official schedule for the IMPACT Summit last week, which we included above for your convenience!
+
+![IMPACT - Star Atlas Summit Schedule](https://assets.aephia.com/wp-assets/2e5cc2699e054745f676d79c51682085dc37f3263320c5180ce9a56cfda1b460.jpg)
+
+IMPACT – Star Atlas Summit Schedule
+
+The team announced that [MetaMona](https://x.com/MetaMona_) will host the event throughout the day. You may remember her from the early days when she covered Star Atlas (and Web3 in general) or her recent X Spaces with Michael for [Lizard Labs](https://x.com/LizLabsio).
+
+Doors open on September 21st at 09:30 local Singapore time (UTC + 8), translating to 03:30 AM CEST and 21:30 (September 20th!) EST. If you are attending, do not forget to [register](https://lu.ma/3728vl8l?tk=Pl4XZm) for the event!
+
+The official kick-off will be at 10 AM local, when Michael will get on stage to welcome everyone. We’ll dive deeper into the various scheduled sessions that follow below, but let’s start by highlighting the most anticipated session of the day (conveniently highlighted by the team in their publication):
+
+**12:30 (PM) – BIG BANG – CEO Michael Wagner Keynote**
+Michael, who was not allowed to do so at Breakpoint this year, will give an alpha-filled keynote right before lunch kicks off. This presentation will contain the most reveals of the day, so if you are considering skipping everything else, do not skip this!
+
+### Partners & Builders Morning
+
+Most of the morning (and the very start of the afternoon) has been reserved for partners and builders, including guilds, IP builders, and MetaGravity. All of this starts with a panel!
+
+**10:45 (AM) – Using the Star Atlas IP**
+This panel is moderated by _Santi (Community Director)_ and is the only one of two panels that day where you will not see other team members participate. Instead, you will see some familiar (and unfamiliar?) faces from the community on stage, with the panel further consisting of:
+
+* Arktype (AtlasGrace) / Aaron (Dark Core Roasters)
+* Funcracker (Aephia Industries)
+* Steven (Puri)
+* Njord (Superphoenix DAO)
+* Lordo (Skull & Bones)
+
+**11:10 (AM) – Star Atlas Guild and IP Project Presentations**
+Afterward, all of the above (_in order of that list!_) will have a 10+ minute presentation slot where they will share more about their organization and the IP projects they are working on (if applicable).
+
+**12:15 (PM) – Going Hyperscale with MetaGravity**
+MetaGravity will wrap up this segment in the early afternoon, with Tobin Ireland (Co-founder and CBO) taking the stage to discuss \[we expect\] the fruits and future of their collaboration with Star Atlas.
+
+### Panels
+
+Fortunately, the team also provides plenty of content! A good chunk of this is brought to you through panels. This starts already in the early morning, right after Michael’s welcome.
+
+**10:05 (AM) – Building an Immersive Universe with ATMTA UE5 Directors**
+Here, all four UE5 directors will take the stage to discuss how they are working together to build the game. Expect to see Danny (CPO), Chip (Game Systems Director), Gary (Vehicle Art Director), Martin (Animation Rigging Director).
+**_– moderated by Dominic (Sr. Community Manager)_**
+
+**14:30 – The Star Atlas Vision with the Founders**
+Right after this segment starts what may be the most anticipated event of the day, besides the
+Keynote by Michael earlier: A panel with the three co-founders of ATMTA, Jacob Floyd (CTO), Danny Floyd (CPO), and Michael Wagner (CEO)! They will talk about their vision for Star Atlas.
+**_– moderated by Santi (Community Director)_**
+
+**15:40 – Navigating the Future of Decentralized Governance**
+Next up will be a panel discussing the future of decentralized governance. It will feature Dan Park (Legal Council) and a special guest: the Foundation Director! This is a must-see for everyone who cares about the governance of Star Atlas!
+**_– moderated by José (Chief Noot Nooooot)_**
+
+![IMG 0655](https://assets.aephia.com/wp-assets/ed0ec6d47a941c0d0b18a607b374435afcd93a826271f9086effccca50c83cd0.jpg)
+
+IMPACT – Building on Star Atlas Is Building on Solana
+
+**16:10 – Building on Star Atlas is Building on Solana**
+Going full circle to the building on Star Atlas, one of the last panels of the day will be about building on-chain on Solana for Star Atlas. This panel will feature representatives of the \[corporate\] sponsors of the Naabathon.
+**_– moderated by Miguel (Director of Growth)_**
+
+### And more…
+
+There are two more events we haven’t yet covered:
+
+**14:00 – Disruptive Economics: Founding Digital Nation State**
+A fireside chat with Michael and Chris (Head of Game Economy), where Michael and Chris will explore Star Atlas’ economy together.
+
+**15:10 – Space Exploration: Deep Dive into Project Galia**
+Brad (Gameplay Engineer) will take us through Project Galia–which he kicked off originally–and no doubt show us the latest progress! This project is the birthplace of interstellar travel and the whole connected universe of Star Atlas. As such, this is definitely worth attending/watching!
+
+### Side Events
+
+But that is not all! There is more happening during the IMPACT Summit than just talks!
+
+#### Surge Tournament
+
+There is a Surge tournament taking place in the afternoon, which starts at 14:00 in the area where you enter, dubbed Summit 1\. This tournament is open to whoever is around and will take place on the brand-new mini-Surge map called Gateway. On this map, 12 players will try to score points in a _4-vs-4-vs-4_, faction-vs-faction game, much like the mass-multiplayer Surge test the community participated in several months ago.
+
+The tournament, as well as the IMPACT Summit, will wrap up at 18:00!
+
+#### Naabathon
+
+Though not technically taking place that day, the Naabathon winners will be announced during the Summit at 16:30! Furthermore, you can expect a demonstration of the winning projects. That said, it is unclear if this will only go for winners who are present. The team could also show pre-recorded videos instead (e.g., those that were already part of the submission). 
+
+#### Booths
+
+There will be several booths and partners present at the summit. The IP Builders all have a booth, and there will be plenty of merchandise to go around!
+
+Small promo bit: You will be able to play a physical version of _Cataclysm: Battle for Iris_ at the Aephia booth! See you there!
+
+## Breakpoint
+
+And then there is, of course, the Solana Breakpoint conference! Though Michael won’t appear on stage this year, the team will maintain a significant presence in the Gamer Village during the day.
+
+This is well worth a visit if you want to hang out and get some glimpses of new trailers. Rumour has it there may also be some early merch waiting for you!
+
+## Token2049
+
+IMPACT & Breakpoint is not the only event where the team will make an appearance this week. Though Breakpoint had no slot for him this year (shockingly), [Michael](https://sg2024.token2049.com/agenda/speakers/3302872?widget=true) will join a panel on Wednesday morning (Singapore time), September 18th, at Token2049\. The topic of the discussion is **Building the Open Metaverse: The Role of Web3 Gaming**.
+
+![Screenshot 2024 09 16 at 18.32.59](https://assets.aephia.com/wp-assets/a6fb1add5c2b9ec4a5d315b0fcb00149db0294b79134ef80f715ced43effaece.png)
+
+Token2049 – Panel with Michael Wagner – 9:30 AM SGT / 9:30 PM EST
+
+Joining him on that panel are:
+
+* [Yat Siu](https://sg2024.token2049.com/agenda/speakers/3316486?widget=true) – Co-Founder and Chairman Animoca Brands
+* [Aleksander Leonard Larsen](https://sg2024.token2049.com/agenda/speakers/3200145?widget=true)–Co-Founder Sky Mavis/ Ronin Network
+* [Adeniyi Abiodun](https://sg2024.token2049.com/agenda/speakers/3302734?widget=true)– Co-Founder and CPO Mysten Labs
+
+The moderator is [Carlos Pereira](https://sg2024.token2049.com/agenda/speakers/3301300?widget=true) (Partner BITKRAFT)
+
+**It’s going to be an exciting week!**
+_You’ve reached the end of this week’s issue! Thanks for reading!_

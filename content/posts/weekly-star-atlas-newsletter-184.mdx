@@ -1,0 +1,136 @@
+---
+title: "Weekly Star Atlas Newsletter #184"
+date: "2025-06-16T16:11:42"
+modified: "2025-06-16T16:13:39"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-184"
+description: "This week brings two new FICs and a rework of how buy orders spawn to SAGE Labs, along with confirmation that Tier 5 Starbases will secure early control of Core Systems in the upcoming C4 release. Meanwhile, last week’s Atlas Brew revealed key C4 mechanics, covering system control, repairs, and storage. StarPath V2 is officially being phased out, with a new referral system expected in the future. Finally, PIP-17 was approved!"
+image: "https://assets.aephia.com/wp-assets/376ac4d10161a682903c0c3b7086349fc902cc5f3581c17f9c5ed9aa82903a45.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 16622
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 184th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This week brings two new FICs and a rework of how buy orders spawn to SAGE Labs, along with confirmation that Tier 5 Starbases will secure early control of Core Systems in the upcoming C4 release. Meanwhile, last week’s Atlas Brew revealed key C4 mechanics, covering system control, repairs, and storage. StarPath V2 is officially being phased out, with a new referral system expected in the future. Finally, PIP-17 was approved!
+
+_Let’s dive in!_
+
+## SAGE Update – FIC 3 & 4
+
+On Monday, June 16th (the day this newsletter is published, so today), the team will roll out an important update to SAGE Labs:
+
+* Two new Faction Infrastructure Contracts will be added to the game, named Quantum Nodes and Starpath Cells.
+* FIC buy orders can now randomly spawn across all non-CSS Starbases within a faction. Before, the Econ team had picked 6 systems, but this limitation will now be lifted.
+
+The other rules stay the same: All FIC orders have to be fulfilled before any are refreshed. This has now become significantly more complicated to achieve, which is the idea, as the team is trying to reduce the ATLAS emissions released every day.
+
+The recipes for the new FICs are:
+
+* **Quantum Nodes**: 30x Particle Accelerators + 167x Electromagnets + 1x SDU
+* **Starpath Cells**: 48x Radiation Absorber + 159x Power Source + 1x SDU  
+Like FIC 1 & 2, they can be sold for 2 Atlas each .
+
+Beyond the above change, the team rectified some of the Starbase Tier Requirements for certain recipes that were incorrectly updated in a previous patch.
+
+![ONI CSS - View on the Central Area](https://assets.aephia.com/wp-assets/9ee12eef9d909ca61f382a4463804df924af90eb131631876206e6a4881daa37.png)
+
+ONI CSS – View on the Central Area
+
+## Sage C4 – Starbase Transition
+
+Now that everyone is up to speed on roughly where the team is on the SAGE C4 update, the team shared an interesting announcement this past week to raise the stakes!
+
+The team is planning for the current Starbases to transition to the new C4 map (meaning, they will remain the same Tier). Any efforts to upgrade to the next Tier will be discarded, however.
+Danny (CPO) previously shared that he is considering transitioning the current Starbases into each region’s “King” system, resulting in only these systems offering a Local Marketplace within their respective region.
+
+Beyond the one system inheriting the current Starbase, every region will come with additional star systems, containing a Starbase each. When C4 starts, these will not be under the control of the Faction. Instead, these will be controlled by neutral entities (minor factions and pirates, most likely), and they have to be conquered to bring them into the faction’s fold.
+
+This comes with significant consequences, as without having ownership of the Core Systems in a region, the faction does not control the region. And when a faction is not controlling a faction, it is not a _Safe Region_, but it also isn’t even a _Border Region_. It’s not blocking enemy fleets from passing straight through to whatever regions are positioned next to it.
+
+Enter the new announcement from the team: Starbases that have been upgraded to Tier 5 will not only be transitioned as is, but all Core Systems in their respective regions will also be owned by the faction from the get-go. These systems will likely come with Tier 0 Starbases, but this will allow the Faction to start upgrading them right away, without having to conquer them one by one.
+
+![SAGE C4  - Map (Editor)](https://assets.aephia.com/wp-assets/7a1af239361a6bee45aa939f29eddca3586116bec4392b107a622ba86d5d5cae.png)
+
+SAGE C4 – Map (Editor)
+
+## Atlas Brew – C4 Revelations
+
+During last week’s Atlas Brew, Brett (VP of Engineering) joined to answer C4-specific questions. Below, we go over these new reveals, categorized by topic.
+
+### Starbase Destruction
+
+When a Star system _falls_ (T0 Starbase is “destroyed” and switches ownership to the attacking faction), all assets stored there will be burned. This includes any items previously offered on its Local Marketplace.
+
+Fleets that are docked in a T0 Starbase that falls will be undocked. These will become targets right away, but it’s arguably better than them being destroyed along with the Starbase (and respawning at the CSS). Also, this grants attacking fleets a chance to score some Loyalty Points.
+
+If a Starbase falls that was being upgraded to T1, a portion of those efforts will carry over to the Starbase when it changes hands.
+
+### Local Markets
+
+Local Markets will use a new on-chain program in C4, no longer being built on copies of the Galactic Marketplace.
+
+This allows the team to adjust their approach as well. One change that is coming is that trades will be automatically executed in the best interest of the client. Meaning that if you, for example, buy anything, you will always do so at the best price available.
+
+Furthermore, Claim Stakes and Ships will also be tradable on Local Markets. These won’t ever be destroyed, however. Instead, they will respawn at the Central Space Station (CSS).
+
+The plan is to only have one Local Marketplace per region, on the so-called King System.
+
+### Repair
+
+Starbases can only be repaired by repair ships. Ships can be repaired by repair ships as well, but also while docked at a Starbase. However, there will be advantages to being repaired by repair ships. Both toolkits’ costs will be lower, and they allow the repaired fleet to remain active.
+Note that some other ships (multi-role make an obvious choice) may be able to make repairs as well, but at a lesser efficiency.
+
+### Mining
+
+A Mining Drill’s extraction rate is multiplied by the target resource’s richness.
+
+Every planet has a list of resources available, and a specific richness for each such resource. Players who deployed a claim stake there can instruct their extractors (such as a Ming Drill ) to start mining one of these resources. It’s not possible to mine multiple resources with a single extractor, though players can build multiple extractors to do so.
+
+### Storage & Crafting
+
+Starbases will continue to offer unlimited storage facilities to the players. Claim Stakes, however, will only offer limited storage. Once this is full, production operations will cease.
+
+Storage on Crafting Habs will, at least initially, not provide additional storage, but instead will increase the number of concurrent crafting pipelines that the player can use.
+
+Example: If you have 100 storage on your crafting Hab, you can only have 100 concurrent crafting jobs run through that Hab.
+
+### Miscelaneous
+
+Fleets will need to dock with every claim stake separately, in order to exchange goods. Docking does not provide access to all your Claim Stakes on a planet at once.
+
+Starbase upgrade recipes will change with the launch of C4\. The team has the option to define custom recipes for all the different Starbases, plus the option to assign Starbases different stat blocks. Core systems may also prove more expensive to upgrade, with the King system being the most expensive, potentially.
+
+Claim Stakes will not (yet) free you to build with defense-oriented buildings, as Planets, let alone individual Claim Stakes, cannot yet be targeted.
+
+Crew can not be lost. Similar to ships and claim stakes, they will respawn back at the CSS.
+
+![Starpath Star Atlas x Buddy Link](https://assets.aephia.com/wp-assets/e0e2e14a84c92d61898eac1948daa716f823d60cc8d34821540c7b5b849ccf47.jpg)
+
+Starpath Star Atlas x Buddy Link
+
+## StarPath v2 Phasing Out
+
+After having introduced StarPath V2 [on September 20th, 2023](https://aephia.com/star-atlas/starpath-v2-everything-you-need-to-know/), the team is now phasing out this referral program. It was considered a major upgrade to the first version of the program. However, almost from day one, it turned into a discount system, which the vast majority of players abused for their own gain by controlling two accounts.
+
+On **June 23rd**, Starpath V2 will sunset, and the associated discounts will no longer be applied to marketplace purchases. You will still be able to claim your pending rewards afterwards through Buddylink.
+
+Work is ongoing to introduce a renewed referral program “that better rewards the people it was made for”, but it is not clear when this will go live.
+
+The Community Team hinted that this new version may be more limited, allowing only key opinion leaders to apply.
+
+## DAO Update
+
+PIP-17, one of the most contentious proposals so far, has been approved! 
+
+**[PIP-17: Star Atlas Ecosystem Media Expansion](https://govern.staratlas.com/proposals/4df4c199-e888-4fdc-a666-7f82d6cf2de7)** — This proposal seeks 10 million ATLAS to begin funding an expansive, DAO-aligned content initiative including short-form video, music integration, educational one-pagers, player engagement, and a professional short film tied to the Star Atlas metaverse over the next four months. All ATLAS will be held within the ecosystem and not converted into USDC. The funding will directly support content creation, in-game activity, and long-term value generation for the DAO.
+
+**End Result:** **60.61% For** | 38.84% Against | 0.55% Abstain
+
+_You’ve reached the end of this week’s issue. Thanks for reading!_

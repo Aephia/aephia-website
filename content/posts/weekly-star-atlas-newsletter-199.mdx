@@ -1,0 +1,183 @@
+---
+title: "Weekly Star Atlas Newsletter #199"
+date: "2025-09-29T14:53:16"
+modified: "2025-09-29T15:07:15"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-199"
+description: "This week brought plenty of developments across both SAGE and Holosim. In SAGE, crafting fees were reduced, ship recipes returned, and Loyalty Point rewards were adjusted. Holosim Chapter 1 came to a close with ONI taking the crown, but not without its share of technical hurdles. Chapter 2 promises major changes to address them. Finally, governance proposal PIP-19 remains open for voting, and we have the latest dev log posts from Chip."
+image: "https://assets.aephia.com/wp-assets/0dcbe7e75d51b91e3535558efcce6b0c2a7d5fc836a6d82511527eab5468c9b5.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 17283
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 199th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This week brought plenty of developments across both SAGE and Holosim. In SAGE, crafting fees were reduced, ship recipes returned, and Loyalty Point rewards were adjusted. Holosim Chapter 1 came to a close with ONI taking the crown, but not without its share of technical hurdles. Chapter 2 promises major changes to address them. Finally, governance proposal PIP-19 remains open for voting, and we have the latest dev log posts from Chip.
+
+## SAGE Updates
+
+The team rolled out three changes to SAGE this past week:
+
+* Loyalty Points (LP) earnings for Starbase upgrades were changed
+* Crafting fees went down
+* Ship recipes are back
+
+We’ll dive into each of these below.
+
+### LP Earnings
+
+The community team initially shared an LP earnings update that caused a lot of pushback from the community. This prompted Chris to re-evaluate the numbers and make some tweaks. In the end, the following LP earnings changes went live:
+
+* Electromagnet Upgrade: 132 (was 135)
+* Electronics Upgrade: 107 (was 76)
+* Field Stabilizer Upgrade: 217 (was 255)
+* Framework Upgrade: 113 (was 48)
+* Particle Accelerator Upgrade: 506 (was 480)
+* Power Source Upgrade: 96 (was 108)
+* Radiation Absorber Upgrade: 333 (was 324)
+* SDU Upgrade: 1325 (was 1100)
+
+Chris shared the following statement when asked about these changes:
+
+> Most of the changes are quite mild in percentage terms. Frameworks is by far the most substantial increase. But we were seeing virtually no usage of that asset at Phantom Starbases. 
+> 
+> One potential benefit of increasing FW and SDUs is that it might help the most unattractive assets for normal Starbases increase in their value a bit. If the change is found to be far over-weight FW, then we will simply post another update to adjust the values again. And I’ll know within a week whether or not the values need to be adjusted again.
+> 
+> We are considering changing LP rewards on a regular cadence to keep the meta fresh and to reward active participation.
+
+### Ship Recipes
+
+The team brought back the **Fimbul Mamba EX** recipe, meaning the ship can once more be crafted in SAGE. That said, the ingredient cost has increased once more, this time by a whopping 20x!
+
+The team provided the following arguments for this:
+
+1. They are working towards a more sustainable SAGE economy over the coming weeks and months. (more changes may be on the way!)
+2. The Fimbul Mamba EX’s value has declined over time, and the team wants to bolster its value.
+3. The entire ship crafting loop is being reintroduced as a fun gameplay feature, rather than one meant to compete with other mechanics, such as contracts and Loyalty Points.
+
+### Crafting Fees
+
+The announcement stated: Crafting fees will decrease from 7% to 5%.
+
+This looks good on paper, but the reality is even better! In general, marketplace prices for many crafts have decreased, resulting in a further lowering of the fees beyond the percentage change.
+
+Crafting has become a viable entry into the game again for players with a smaller portfolio. Of course, larger players also benefit from this.
+
+![Holosim - Season 1 / Chapter 1 Rewards](https://assets.aephia.com/wp-assets/5e802883df22b03865d126916a51f78452edc4b25478c4a68e276e28848b9996.jpg)
+
+Holosim – Season 1 / Chapter 1 Rewards
+
+## Holosim
+
+Holosim Chapter 1 ended this past Wednesday, with the ONI faction being the first to reach 10million in redeemed Contracts. ONI members who contributed will receive a commemorative NFT celebrating their victory!
+
+Every player has a **few days left** to ensure they connect their Solana wallet through the in-game settings menu. _If you do not do this, you will not receive any rewards!_ If you link your wallet, you will get at least one exclusive reward guaranteed.
+
+This chapter will remain open for another 6-8 weeks, allowing players to complete the main storyline and earn the _VZUS solos_ ship and custom Solflare skin.
+
+### Alt Issues
+
+The nature of Holosim Season 1 – Chapter 1, with each player account starting with a Fimbul Airbike and a decent amount of resources, meant that a good few competitive players created many alt accounts (secondary/temporary accounts) to boost their main one.
+
+The team has learned from this experience, and changes will be implemented in Chapter 2 to mitigate this issue (see section below). A new option has been added to the Settings menu, allowing players to tag an account as an alt account. 
+
+![Holosim - New Alt Account setting](https://assets.aephia.com/wp-assets/13d8b2d051a1d8e6550e6a563fd8b429a09fa2590d1bc6adee5343fc7fe8c4ea.png)
+
+Holosim – New _Alt Account_ setting
+
+Doing this will remove the account from the leaderboard, in the sense that it will not participate in the prize pool, allowing other accounts to move up and potentially receive better prizes than their current leaderboard standing suggests.
+
+The team is asking Holosim participants who used alt accounts to toggle this over the **next few days**. This is an entirely optional thing to do, but it is the honorable thing to do. The team suggested they may soon start using the data they have gathered to identify and weed out the bad actors themselves.
+
+### Technical Hurdles
+
+Holosim Chapter 1 was plagued throughout its entire lifetime by technical issues, which ultimately led many to abandon it early on. The team will spend the next few weeks addressing these issues before launching Chapter 2.
+
+During the Atlas Brew, which was entirely dedicated to Holosim, John (Product Manager) and Jose (Lore Lead) shared that they underestimated the number of people who would play, or rather, they overestimated the team’s infrastructure, thinking it could handle that growth. After the beta, they thought they had it under control.
+
+Some other related remarks from the Brew:
+
+* **Data Inconsistencies** — There are still data inconsistencies due to both Starcomm and RPCs delivering data to the client.
+* **Optimize RPC Calls** — Your CPU is working hard right now as the RPC route delivers large chunks of data that your browser must filter through.
+* **Route Manager** **Improvements** — The team is continuing to work on optimizing the Route Manager. The data inconsistencies mentioned above are the primary reason why transport fleets often fail to perform as intended.
+
+The goal is to fix the former and tune the latter so that less information is fetched. One more optimization the team is exploring is reducing the number of fleets displayed in your UI. Currently, all of them are displayed. The team is exploring ways to filter this intelligently and only display fleets that may be relevant to you.
+
+### Chapter 2
+
+Chapter 2 will not launch until the team resolves the remaining issues and implements some of the new features that are coming. Given statements from John, it seems likely the new chapter will not launch for the next 6-8 weeks.
+
+When it does launch, beyond fixes for all the issues plaguing Chapter 1, it will come with some feature-overhauls and important changes:
+
+* **New Leaderboard** — Chapter 1 focused too much on the grind, instead of on strategic objectives. Chapter 2 will no longer focus on XP; instead, the team will reward specific _player & faction_ _achievements_, and this is how points are earned for the competition.  
+  * The team is introducing 100s to 1000s of achievements, spanning the full breadth of the game’s mechanics, such as mining, scanning, and combat.
+  * During Chapter 1, players would attack Starbases solely to farm XP and resources. They were not focused on territorial conquest for their faction, meaning occupation was not the goal. The team wants to change this in Chapter 2\. As such, things like Starbase occupation (e.g., for 24 hours) or recapturing a Starbase will reward achievements.
+* **Mining Changes**:  
+  * **Mining Achievements** — To earn mining achievements, you would have to go and mine in the Medium Risk Zone. Mining in the Safe Risk Zone won’t cut it.
+  * **Faction NPC Fleets** — Mining in the MRZ will aggro new Faction NPC fleets, who will come to destroy your fleets (e.g., every 100k resources mined will aggro an enemy). In other words, you will need to bring protection.
+* **Starbase Upgrading**:  
+  * Upgrading a Starbase will require 1-2 contracts. Depending on the tier, the specific contracts required will vary. There is no longer a need to craft components to upgrade them, marking a major deviation from SAGE.
+  * **Lower Cost** – The team wants to ensure that a single individual can upgrade a Starbase.
+* **Revenge of the Starbase** — In chapter 2, Starbases will return fire
+* **Combat UI Overhaul** — The team has designed a new combat UI, but they require FE dev capacity to be assigned to them to build it
+* **Crew & Permit Overhaul** — Crew will work differently in Chapter 2\. They will be more readily available, but you will have to pay them wages in order to work for you.
+* **Fleet Reduction** — The team is trying to reduce the number of fleets needed to play the game optimally. This will help with performance.  
+  * One way they are doing this is by placing all core resources in a single system in the Safe Zone (the CSS?), so mining will be significantly faster.
+* **Selling Ships** — You will be able to sell back any of your ships to NPC offers on the Galactic Market at the CSS.
+
+Other changes coming:
+
+* **Policy Rules** — When making an account, you will have to agree to a policy that will (among other things) declare multi-accounting to be illegal.
+* **Asset Trades are Blocked** — Another measure to reduce multi-accounting is that the team is looking to block taking assets out of the game (into your wallet). Additionally, they will freeze accounts doing this outside of the game. You can, of course, still use local markets to trade or move items in-game.
+* **Battle Pass** — Assuming the z.ink aidrop season will be live, the Chapter 2 Battle Pass will be integrated into the z.ink pass. If this is not the case, there will be a new Battle Pass for Chapter 2, like there was for Chapter 1.
+
+## Star Atlas DAO: PIP-19
+
+PIP-19 has been open for voting for a little over a week and will remain open until **Sunday, October 5th** (end-of-day UTC).
+
+**[PIP-19: Funding Independent Economic Research and Maintenance of Critical Data Resources](https://govern.staratlas.com/proposals/1eb3d15e-645e-4c34-8a69-00d304ecfc4f)**
+
+> This proposal requests 44,800,000 ATLAS over the period of 360 days in funding from the Star Atlas Ecosystem Fund to provide investors and players with transparent economic and financial information surrounding the Star Atlas Ecosystem. This amount will be distributed in four 11,200,000 ATLAS increments over four sub-PIPs, each with a span of 90 days. The funding is meant to ensure that the Star ATLAS community continues to have economic data resources, even in the face of structural breaks in data resources and in the face of uncertainty from rising costs.
+
+After one week of voting, the numbers are looking as follows:
+
+* **For**: 31%
+* **Against**: 68.6%
+* **Abstain**: 0.4%
+
+You have until the end of the day on Sunday, October 5th, to [vote](https://govern.staratlas.com/proposals/1eb3d15e-645e-4c34-8a69-00d304ecfc4f)!
+
+## From the Engineering Bay
+
+Chip has been posting development updates near-daily for a while. Below we list Chip’s (VP of Game Product) posts since last week:
+
+<XTweet id="1968077724867531094" url="https://twitter.com/Chypto_/status/1968077724867531094" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-16">
+Star Atlas Dev Log 41: Meeting heavy day. Got some really cool demos from the team today: Firearm/Vehicle skins, new racetrack blockout, and Bots navigating in Paizul.
+
+Today I started my efforts to reduce our package size. I unpacked the pak files and used WinDirSat to audit the… [pic.twitter.com/Zdwrd2n8ol](https://t.co/Zdwrd2n8ol)
+</XTweet>
+ <XTweet id="1968428930748051484" url="https://twitter.com/Chypto_/status/1968428930748051484" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-17">
+Star Atlas Dev Log 42: Playtested new Firearm/Ship mastery today, working well. Racing leaderboard nearly fixed. Started testing combat racing now that projectiles are properly networked.
+
+Personally spent most of today on package size. Got it down 1.6 GB. My goal is 30GB. Have a… [pic.twitter.com/KwBmpjFVQ5](https://t.co/KwBmpjFVQ5)
+</XTweet>
+ <XTweet id="1968814389332517085" url="https://twitter.com/Chypto_/status/1968814389332517085" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-18">
+Star Atlas Dev Log 43: Bit of a slower day today. In trying to reduce the package size, I identified a data layer in Volant we no longer need. Trying to delete kept crashing my editor. Issue is a corrupted cinematic level sequence that needs to get moved. Should be sorted… [pic.twitter.com/G6jRvEY77s](https://t.co/G6jRvEY77s)
+</XTweet>
+ <XTweet id="1969143247722152129" url="https://twitter.com/Chypto_/status/1969143247722152129" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-19">
+Star Atlas Dev Log 44: Most of the day I had my manager hat on conducting check-ins with my team. Outside of that, I knocked out some tech debt in the racing code. Volant station racing is getting more and more stable by the day. Here&#39;s a fun friday sneak peak of Cynosure. [pic.twitter.com/nDRH1nXzHr](https://t.co/nDRH1nXzHr)
+</XTweet>
+ <XTweet id="1969414843263299718" url="https://twitter.com/Chypto_/status/1969414843263299718" authorName="Chypto" authorHandle="@Chypto_" date="2025-09-20">
+Star Atlas Dev Log 45: This morning we are undergoing an engine upgrade up to UE5.6.1. We need some of the new features for our Character locomotion upgrade.
+
+I also took some time this morning to drastically simplify are Race Gate&#39;s Scene component tree and code. Much cleaner… [pic.twitter.com/L6E2UnegsE](https://t.co/L6E2UnegsE)
+</XTweet>
+ 
+
+_That is it for this week. Thank you for reading, and until next time!_
