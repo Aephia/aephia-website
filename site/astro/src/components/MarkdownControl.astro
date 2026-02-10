@@ -1,0 +1,291 @@
+---
+interface Props {
+  markdown: string;
+}
+
+const { markdown } = Astro.props;
+---
+
+<div class="markdown-control-wrapper">
+  <div class="split-button">
+    <!-- Main Copy Button -->
+    <button id="main-copy-btn" class="btn btn-left" aria-label="Copy Markdown">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" class="icon">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor">
+          <path d="m10.75,6.25v-2c0-.8284-.6716-1.5-1.5-1.5h-1"></path>
+          <path d="m4.25,2.75h-1c-.8284,0-1.5.6716-1.5,1.5v7.5c0,.8284.6716,1.5,1.5,1.5h3.75"></path>
+          <rect x="4.5" y="1.75" width="3.5" height="2" rx=".5" ry=".5" fill="currentColor" fill-opacity="0.2"></rect>
+          <rect x="7.25" y="6.25" width="9" height="10" rx="1.5" ry="1.5"></rect>
+          <line x1="10.25" y1="9.75" x2="13.25" y2="9.75"></line>
+          <line x1="10.25" y1="12.75" x2="13.25" y2="12.75"></line>
+        </g>
+      </svg>
+      <span>Copy</span>
+    </button>
+    
+    <!-- Dropdown Trigger -->
+    <button id="dropdown-trigger" class="btn btn-right" aria-label="More options" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div id="dropdown-menu" class="dropdown-menu" hidden>
+    <button id="menu-copy-btn" class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" class="icon">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="currentColor">
+          <path d="m10.75,6.25v-2c0-.8284-.6716-1.5-1.5-1.5h-1"></path>
+          <path d="m4.25,2.75h-1c-.8284,0-1.5.6716-1.5,1.5v7.5c0,.8284.6716,1.5,1.5,1.5h3.75"></path>
+          <rect x="4.5" y="1.75" width="3.5" height="2" rx=".5" ry=".5" fill="currentColor" fill-opacity="0.2"></rect>
+          <rect x="7.25" y="6.25" width="9" height="10" rx="1.5" ry="1.5"></rect>
+          <line x1="10.25" y1="9.75" x2="13.25" y2="9.75"></line>
+          <line x1="10.25" y1="12.75" x2="13.25" y2="12.75"></line>
+        </g>
+      </svg>
+      <span>Copy page</span>
+    </button>
+    <button id="menu-view-btn" class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" class="icon">
+        <g fill="currentColor">
+          <path d="M15.25,3H2.75c-1.517,0-2.75,1.233-2.75,2.75v6.5c0,1.517,1.233,2.75,2.75,2.75H15.25c1.517,0,2.75-1.233,2.75-2.75V5.75c0-1.517-1.233-2.75-2.75-2.75Zm-5.75,8.25c0,.414-.336,.75-.75,.75s-.75-.336-.75-.75v-2.801l-1.155,1.507c-.283,.37-.907,.37-1.19,0l-1.155-1.507v2.801c0,.414-.336,.75-.75,.75s-.75-.336-.75-.75V6.75c0-.414,.336-.75,.75-.75h.394c.233,0,.454,.109,.595,.294l1.511,1.973,1.511-1.973c.142-.185,.362-.294,.595-.294h.394c.414,0,.75,.336,.75,.75v4.5Zm6.03-1.22l-1.75,1.75c-.146,.146-.338,.22-.53,.22s-.384-.073-.53-.22l-1.75-1.75c-.293-.293-.293-.768,0-1.061s.768-.293,1.061,0l.47,.47v-2.689c0-.414,.336,.75-.75,.75s.75,.336,.75,.75v2.689l.47-.47c.293-.293,.768-.293,1.061,0s.293,.768,0,1.061Z"></path>
+        </g>
+      </svg>
+      <span>View as Markdown</span>
+    </button>
+  </div>
+</div>
+
+<textarea id="raw-markdown" hidden>{markdown}</textarea>
+
+<script>
+  import { computePosition, flip, shift, offset, autoUpdate } from '@floating-ui/dom';
+
+  const rawMarkdown = document.getElementById('raw-markdown') as HTMLTextAreaElement;
+  
+  // Triggers
+  const mainCopyBtn = document.getElementById('main-copy-btn');
+  const triggerBtn = document.getElementById('dropdown-trigger');
+  const dropdown = document.getElementById('dropdown-menu');
+  
+  // Menu items
+  const menuCopyBtn = document.getElementById('menu-copy-btn');
+  const menuViewBtn = document.getElementById('menu-view-btn');
+
+  // Logic
+  async function copyToClipboard(button: HTMLElement | null) {
+    if (!rawMarkdown || !button) return;
+    try {
+      await navigator.clipboard.writeText(rawMarkdown.value);
+      
+      const originalContent = button.innerHTML;
+      const originalClasses = button.className;
+      
+      // Feedback
+      button.classList.add('success');
+      const span = button.querySelector('span');
+      if (span) span.innerText = 'Copied!';
+      
+      setTimeout(() => {
+        button.innerHTML = originalContent;
+        button.className = originalClasses;
+      }, 2000);
+    } catch (err) {
+      console.error('Copy failed', err);
+    }
+  }
+
+  // Event Listeners
+  if (mainCopyBtn) {
+    mainCopyBtn.addEventListener('click', () => copyToClipboard(mainCopyBtn));
+  }
+
+  if (menuCopyBtn) {
+    menuCopyBtn.addEventListener('click', () => {
+      copyToClipboard(menuCopyBtn);
+      hideDropdown();
+    });
+  }
+
+  if (menuViewBtn) {
+    menuViewBtn.addEventListener('click', () => {
+       const win = window.open("", "Markdown View", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=600");
+       if (win) {
+         win.document.body.style.backgroundColor = "#0f1219";
+         win.document.body.style.color = "#e2e8f0";
+         win.document.body.style.fontFamily = "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace";
+         win.document.body.style.whiteSpace = "pre-wrap";
+         win.document.body.style.padding = "2rem";
+         win.document.body.style.fontSize = "14px";
+         win.document.body.style.lineHeight = "1.5";
+         win.document.body.innerText = rawMarkdown.value;
+         win.document.title = "Raw Markdown View";
+       }
+       hideDropdown();
+    });
+  }
+
+  // Positioning
+  let cleanup: (() => void) | undefined;
+
+  function updatePosition() {
+    if (!triggerBtn || !dropdown) return;
+    computePosition(triggerBtn, dropdown, {
+      placement: 'bottom-end',
+      middleware: [
+        offset(6),
+        flip(),
+        shift({ padding: 10 })
+      ]
+    }).then(({ x, y }) => {
+      Object.assign(dropdown.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+    });
+  }
+
+  function showDropdown() {
+    if (!dropdown || !triggerBtn) return;
+    dropdown.hidden = false;
+    triggerBtn.setAttribute('aria-expanded', 'true');
+    cleanup = autoUpdate(triggerBtn, dropdown, updatePosition);
+  }
+
+  function hideDropdown() {
+    if (!dropdown || !triggerBtn) return;
+    dropdown.hidden = true;
+    triggerBtn.setAttribute('aria-expanded', 'false');
+    if (cleanup) cleanup();
+    cleanup = undefined;
+  }
+
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (dropdown?.hidden) {
+        showDropdown();
+      } else {
+        hideDropdown();
+      }
+    });
+  }
+
+  // Click outside
+  document.addEventListener('click', (e) => {
+    if (dropdown && !dropdown.hidden && !triggerBtn?.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
+      hideDropdown();
+    }
+  });
+</script>
+
+<style>
+  .markdown-control-wrapper {
+    position: relative;
+    /* Wrapper ensures relative context if needed, but Floating UI uses absolute to body usually, checking styles */
+  }
+
+  .split-button {
+    display: flex;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .split-button:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+
+  }
+
+  .btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05); /* Slight highlight on hover specific part */
+  }
+  
+  .btn.success {
+    color: #4ade80;
+  }
+
+  .btn-left {
+    padding-right: 0.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-right {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    width: max-content;
+    min-width: 200px;
+    top: 0;
+    left: 0;
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .dropdown-menu[hidden] {
+    display: none;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-align: left;
+    transition: all 0.2s;
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+  
+  .menu-item.success {
+    color: #4ade80;
+  }
+
+  .icon {
+    flex-shrink: 0;
+  }
+  
+  textarea[hidden] {
+    display: none;
+  }
+</style>

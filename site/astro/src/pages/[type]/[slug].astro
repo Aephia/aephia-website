@@ -7,6 +7,7 @@ import YouTube from '../../components/YouTube.astro';
 import XTweet from '../../components/XTweet.astro';
 import WpEmbed from '../../components/WpEmbed.astro';
 import Vimeo from '../../components/Vimeo.astro';
+import MarkdownControl from '../../components/MarkdownControl.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -47,7 +48,10 @@ const components = {
   
   <article class="container post-detail">
     <header class="post-header">
-      <h1>{title}</h1>
+      <div class="header-meta-row">
+         <h1 class="post-title">{title}</h1>
+         <MarkdownControl markdown={post.body} />
+      </div>
       <PostMeta date={date} author={author} />
     </header>
 
@@ -69,16 +73,24 @@ const components = {
     max-width: 800px; /* Narrower for reading */
   }
 
-  .post-header {
+   .post-header {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid #222;
   }
 
-  h1 {
+  .header-meta-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 2rem;
+     margin-bottom: 1rem;
+  }
+
+  .post-title {
     font-size: 3rem;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin: 0;
     color: #fff;
   }
 
