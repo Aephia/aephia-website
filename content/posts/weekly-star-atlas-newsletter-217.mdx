@@ -1,0 +1,279 @@
+---
+title: "Weekly Star Atlas Newsletter #217"
+date: "2026-02-16T17:55:21"
+modified: "2026-02-16T17:55:21"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-217"
+description: "This week’s issue is headlined by the launch of Holosim Chapter 2 later this week, the free-to-play Star Atlas browser game. Alongside that, SAGE C4 development has hit a major milestone, new ship recipes and a buyback program are expected to launch any day now, zProfile bug fixes are on the way, a fresh UE5 patch is live, and a few interesting sneak peeks round out the issue."
+image: "https://assets.aephia.com/wp-assets/69e9099f3a5138ce97fbbd0d320cd3e1d1de3f59553f8d55ae842b5751e23b03.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18182
+categories: ["news","Newsletter"]
+tags: ["Chapter 2","holosim","SAGE C4","UE5"]
+---
+
+_Welcome to our 217th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+
+This week’s issue is headlined by the launch of Holosim Chapter 2 later this week, the free-to-play Star Atlas browser game. Alongside that, SAGE C4 development has hit a major milestone, new ship recipes and a buyback program are expected to launch any day now, zProfile bug fixes are on the way, a fresh UE5 patch is live, and a few interesting sneak peeks round out the issue.
+
+_Let’s dive in!_
+
+![Star Atlas - Holosim Chapter 2 - Initializing](https://assets.aephia.com/wp-assets/b2913497aae9d7a936760cefa4505a1df5d712419100a1204384f4abddb3a156.png)
+
+Star Atlas – Holosim Chapter 2 – Initializing
+
+## Holosim Chapter 2
+
+[Holosim](https://holosim.staratlas.com/), Season 1, Chapter 2 will launch this **Thursday, February 19th**. It will put the focus squarely on Mining & Territorial Control, and will last **5 weeks**, start to finish.
+
+For those who played Chapter 1, it’s good to know that _Faction Contracts_ are no more! These were meant to encourage territorial control, but in Chapter 2, scoring will be tied to that mechanic in a very direct way.
+
+Chapter 2 will focus on **Dominion Points** (DP). Every epoch (1 hour, but this could change), every faction is awarded DP based on the number of Starbases they control and their Tiers.
+
+This means your faction can earn more DP by conquering additional Starbases, but also by upgrading existing ones.
+
+After 5 weeks, the faction with the most DP will win, with its players receiving a bigger share of the prize pool. The other factions will get less, or even _nothing at all_, if that faction does not meet a specific minimum threshold. The prize pool contains $25k worth of assets (we assume origination prizes for now).
+
+### Achievements
+
+Beyond working for your faction, you also want to work for yourself. Gaining more XP, zXP (z.ink XP for the [O.RIGIN campaign](https://z.ink/dashboard)), and moving up on the leaderboard is all tied to one thing: **Mining**.
+
+Each star system has an asteroid belt. Mining one, whether in the Safe Zone or the Medium Risk Zone, will unlock **achievements** at certain thresholds (of quantity of mined resources). Each asteroid belt rewards its own achievements, so spreading out and mining multiple belts will earn you achievements faster.
+
+Those achievements are the source of your **XP**, **zXP**, and are a major contributor to your leaderboard position.
+
+The team wants you to spend the majority of your time venturing into the MRZ to mine, earn achievements, build more ships, and conquer starbases. For that reason, the main quests will be less focused on pacing your progress and throwing up roadblocks in this chapter.
+
+This is also why mining in the Safe Zone (SZ), while entirely possible, is discouraged. All resources are available in the SZ, but at a very low extraction rate. This means you can get everything you need there, but mining it will be at a near-loss. On the plus side, you _can_ earn achievements, and enemies won’t bother you here.
+
+### NPC Aggression
+
+As players mine ore in the MRZ, they will attract the attention of the ECOS faction and its fleets. They will come to oppose you with a fleet that scales directly with your fleet’s mining rate.
+
+Now, SAGE, and by extension Holosim, does not have actual support for a 4th (ECOS) Faction in-game. Due to this, NPC will spawn under the flag of whichever Faction is furthest away from the star systems’ location.
+
+John (Product Manager) shared that these NPC fleets will spawn 2 sectors away and then subwarp towards the fleet that triggered them.
+
+### Agentic NPCs
+
+The team is also working on a threat system (expressed in stars – think GTA – the more stars the higher your threat rating), that will take into account your leaderboard position, and that of your faction, along with several other datapoints.
+
+This threat score will become publicly visible at some point, though it’s not certain if this will happen during Chapter 2.
+
+The team is busy transferring the NPC (spawn and engage) logic to an agentic system that will, in addition to your fleet’s mining rate, also consider your threat level before deciding what to send your way. Over the course of the chapter, we should see that this new system takes over from the hardcoded responses it will start with.
+
+During Chapter 2, the team will tweak the agent’s responses in a subtle attempt to restore faction balance. Concretely, this means that if your faction is leading, ECOS’s response will be stronger to members of that faction. The other way around, if your faction is running far enough behind, then airdrops of items, even ships, (to individual players) are to be expected!
+
+Another way this agentic NPC orchestrator will help the weaker factions is by supporting the defense of their Starbases. When a faction already lost a good bit of territory, and a Starbase is under attack, the agent will spawn NPC fleets at that Starbase to help with its defenses. Basically, it will increasingly help a faction’s automated defenses as they lose more territory. 
+
+All of the above is not yet in place, however, and will be introduced with the aforementioned AI agent.
+
+The goal with all these systems is to have a fun and exciting game!
+
+![Star Atlas - Holosim Chapter 2 - Side Quest example](https://assets.aephia.com/wp-assets/38d3b024136a20704c2bded30efe73cbf235bab86d9b04d910cdb27d2f75c34a.png)
+
+Star Atlas – Holosim Chapter 2 – Side Quest example
+
+### Quests
+
+One of the biggest eye-catchers in this Chapter is the upgrade that quests have received. Not only do all three factions now get their own storyline to progress through, but all quests will now be presented by animated NPC avatars with spoken text.
+
+Note that quests are not (or hardly) asking you to engage in player-vs-player combat (PVP). Instead, expect a fair bit of PVE, player-vs-environment (NPCs, in this case).
+
+The tutorial quests have not materially changed, except for the new videos accompanying them. Daily quests are not live at launch, and are currently not planned. That said, the team could always add them if they deem this an improvement.
+
+### Alt Accounts
+
+Competition in Chapter 1 was derailed to some extent by players using so-called “alt” accounts. These are accounts they register beyond their “primary” account, usually to beef up the latter.
+
+In Chapter 2, the team has taken several measures to reduce this problem. 
+
+1. First off, the game’s interface (UI) won’t let you withdraw assets from the game to your local wallet. Any account that does this programmatically will get removed from the leaderboard and will no longer qualify for any rewards.
+2. Secondly, guardrails have been added to the marketplace. The NPCs will have buy and sell orders at opposite ends of the order books, preventing players from wash trading. This means everyone will have a minimum they have to buy and sell for. John admitted that this is likely not the best solution, but it will do for now, as they needed to combat this.
+
+![Star Atlas - Holosim Chapter 2 - Storyline Quest example](https://assets.aephia.com/wp-assets/4090cd2872f9bf8f75941288beffe5724619729f0059db7f414adba011eb6e80.png)
+
+Star Atlas – Holosim Chapter 2 – Storyline Quest example
+
+### Automation
+
+Player-side automation has been greatly improved, but it is meant to abstract away boring stuff. The goal is _not_ to play the game _for_ the players.
+
+One aspect that demonstrates this approach is mining. Mining takes much longer in this new chapter (the game’s pace has been slowed down compared to Chapter 1). It can take anywhere between 20 minutes and an hour to fill your storage with mined resources. If you plan to go offline while mining, you’d best make sure you bring enough fighters for defense, as the ECOS will attack roughly every 5-10 minutes. And those fighter ships will need ammo, so make sure to load the fleet up with that as well.
+
+![Star Atlas - Holosim Chapter 2 - Tutorial Quest example](https://assets.aephia.com/wp-assets/9c50ff76f6cedd3a021598c19839c282fc37d37671b62c5318c5910302504a43.webp)
+
+Star Atlas – Holosim Chapter 2 – Tutorial Quest example
+
+### Combat
+
+There is a new combat interface, but it’s not yet clear whether it will go live at launch or shortly thereafter.
+
+Patrol is still a fleet-activity in-game, but its implementation isn’t complete yet.
+
+### Roadmap
+
+In the postseason, between Chapter 2 and Chapter 3, the team plans to pick up and work on one of their top priorities, which includes:
+
+* Combat revamp
+* Crew revamp
+* Map & zoomlevels
+
+John shared that they may actually already start work on the combat revamp during Chapter 2.
+
+They also hope to start working on some lower priorities, such as:
+
+* Redo crafting
+* scanning
+* add repair & rescue ships
+* DAC support & Cooperative gameplay
+* NPC evolution
+
+The team now has a functioning pipeline allowing them to produce new chapters more easily. They should be able to keep new chapters rolling out throughout 2026 while refining the features that work best and removing those that do not.
+
+Every chapter will come with a new story and new quests to divulge it. For chapter 3, the team is also considering adding faction-specific ships.
+
+After SAGE C4 is live, the team will start building a new Holosim experience on the same stack. When finished, that will mark the start of Season 2.
+
+![Star Atlas - Holosim Battle Pass - Chapter 2](https://assets.aephia.com/wp-assets/f4b789d9828af4efb677cdcef63219816094ae2e9993013ce448cb939c650066.webp)
+
+Star Atlas – Holosim Battle Pass – Chapter 2
+
+### Battle Pass
+
+Like Chapter 1, this chapter comes with an optional Battle Pass that can be purchased as well. Benefits include:
+
+* 10x zATLAS Daily Reward
+* 2x Crew Daily Reward
+* +35% Increase in Daily Streak Rewards
+* Exclusive Avatar Border
+
+These can be yours for 9.99 USD! If you own a z.ink subscription, you already own a Holosim battlepass!
+
+### Wrapping Up
+
+To wrap this section up, some loose bits of info that were dropped:
+
+* **Permits** are still required, but are offered on the marketplace by NPCs
+* You can buy and sell all resources at all Starbases – this means there is no blocking of player progress, though this won’t be the most cost-effective way of getting resources
+* The galactic marketplace will have buy and sell orders for ships. Any ships you grow out of can now be easily sold.
+
+## Econ Update
+
+This past Wednesday, following up on the Economic Forum from [the week before](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-216/), Chris (VP of Game Economy) announced a number of changes coming to ship recipes, along with the introduction of the ship buyback program.
+
+Though his intent was to get this live on _Thursday, February 12th_, that did not come to fruition. Below, we pasted a modified version of his announcement verbatim, stripping all references to that date.
+
+* **SAGE Ship Recipe Update** — Here are the upcoming new redemption recipes.  
+  * **Calico Maxhog** (MUD / USTUR / ONI) — Value: 19,032 ATLAS Titanium: 2,389,695 | Power Source: 964,696 | Crystal Lattice: 906,263 Faction Infrastructure Contract: 2,378
+  * **Fimbul Mamba Ex** (MUD / USTUR / ONI) — Value: 267,203 ATLAS Titanium: 24,401,027 | Steel: 21,621,026 | Power Source: 9,850,455 Faction Infrastructure Contract: 24,291 Contract – Gott’s Favor/Voar’s Order/Opos’ Request: 24,291 Survey Data Unit: 303,640
+  * **Fimbul BYOS Butch** (MUD / USTUR / ONI) — Value: 6,945,058 ATLAS Titanium: 465,096,830 | Steel: 412,108,495 | Field Stabilizer: 71,176,617 Faction Infrastructure Contract: 463,003 Contract – Gott’s Favor/Voar’s Order/Opos’ Request: 463,003 Infra Contract – Quantum Nodes: 463,003 Infra Contract – Starpath Cells: 463,003 Survey Data Unit: 5,787,548
+* **Fimbul Mamba Ex Buy Back Program** — We will be conducting a buyback of the Fimbul Mamba Ex at 425,000 ATLAS, split across 50 buy orders on the marketplace. This will go live alongside the recipe update. We appreciate your patience.
+
+No new launch date has been shared, but expectations are that this could go live any day now.
+
+## Z.ink Platform Update
+
+During [last week’s Atlas Brew](https://www.youtube.com/watch?v=j_LQuhrfezk), Jim (Senrio Web Director) shared that the team has been working on three updates for the zProfile. Two of these are bugfixes, and the third one is a change to how SAGE XP is processed:
+
+* **Bug**: Linking wallets had about 6 different bugs (mostly during switching and linking additional wallets).
+* **Bug**: Linking multiple SAGE Wallets has been impossible so far. This update will introduce a new button labeled _“L_ _ink SAGE,”_ not too dissimilar from how you link your Epic Games Account. You can then switch to a SAGE wallet and link it. Beyond linking multiple SAGE wallets, this also allows you to finally link your SAGE progress to your zProfile if you originally created your z.ink Profile with a different (non-SAGE-playing) wallet.
+* **Change**: SAGE XP events are currently recorded during the day in near real-time. This update will change that. The events will still be logged as they come in, but a process that runs every day around 1 AM will then process this list and assign the actual XP for that (past) day. As part of that processing, it will run an algorithm that will toss out things like pointless fleet movement. This was specifically done as some people just move fleets around for no other reason than to grind zXP
+
+These updates are not live yet. They are currently being tested by a small group of community members. When no bugs remain, they will go live.
+
+## SAGE C4 Update
+
+Wrapping up the alpha we received during the [Atlas Brew](https://www.youtube.com/watch?v=j_LQuhrfezk), Jim shared that the gameplay for all four C’s of SAGE C4 has been fully implemented and is live in the (internal) game right now. With all the features now complete, the team is moving on to bug fixing and polishing.
+
+They are now awaiting an internal z.ink upgrade that will include support for the latest Metaplex NFT standards, after which they plan to kick off an internal playtest. Once all bugs have been squashed (or the most brutal ones, at least), they will open it up to the whole team, so Chris and Danny (CPO) can test everything properly.
+
+After that, it will go live for player testing on the z.ink devnet (the so-called PTR).
+
+This does not have to take weeks, but we’ll likely learn more once the internal playtest is underway.
+
+Jim also shared that the Faction Chat and the SAGE AI in Holosim were refactored completely, so that they can bring them to C4 as well. The team found that in Holosim, many players used the AI chat to translate quests into their native language. Allowing players to ask things in their own language will be very practical in SAGE C4 as well.
+
+## UE5 Patch
+
+On February 13th, a new patch full of bug fixes and balance changes was deployed to Star Atlas’ Unreal Engine 5 game on the Epic Games Store. Below we pasted the patch notes verbatim:
+
+**Galia**
+
+* Complete rework of enemy ship AI with proper behavior tree and obstacle avoidance. They should now perform as expected, both in Galia and Dogfight.
+* Overhauled sub warp markers  
+  * Sub warp marker selected from Locations tab can now be seen before entering sub warp  
+    * Markers are hidden based on distance to clean up the screen. Planets from any distance, moons from 50Mm, stations from 30Mm
+    * When a location is selected, all other markers will be hidden
+    * Fixed bug where multiple markers could appear to be selected
+* Fixed bug where amount of lift during jettie was affected by which way player was facing while on a planet
+* Fixed bug where airlock could be interacted with multiple times, spawning multiple copies of station interiors
+
+**Gunplay**
+
+* Restored Gunplay 2 kills per gun level
+* Added additional logging to track down invincibility bug
+
+**Matchmaking and Main Menu**
+
+* Cancel private lobby server spin up if players leave the lobby
+* Adjusted matchmaking logic to reduce cases of player waiting more than a few minutes
+* Fixed issue surrounding copying session ID in Lobbies
+* Fixed bike sometimes drifting in the ship configurator scene
+
+**Ship Play**
+
+* Updated Inactivity timer (5 min) to also work while in spectator and in a ship
+* Refactored equipment activation logic to support reloading semi-auto weapons (eg. Missile bays) in multiplayer
+* Refactored Power Triangle logic to be more robust and better handle edge cases. This should mitigate issue where boost multiplier from triangle gets out of sync
+* Fixed issue where dismounting a bike put the player stuck inside the ship
+* Fixed issue where destroyed and spectator ships still had invisible collision
+* Fixed issue where opening pause menu would cause your ship to lose its custom skin
+
+**Siege**
+
+* Added Zone Capturing
+* Adjust Siege mode Ship boost to still allow an increase in speed when power to thrusters is 0 in the power triangle similar to Hover mode
+* Fixed issue where ship would lose ability to shoot when using the pause menu
+* Fixed issue where pressing F would put player into a broken state
+
+**Racing**
+
+* Added new Tab Racing Session scoreboard with last race times
+* Disabled shooting in racing until we create a more balanced combat racing game mode
+* Removed vertical thrust while in Hover mode
+* Fixed issue when starting race while in photo mode, vehicle would be invisible
+* Fixed an issue where exiting photo mode would sometimes have the player fall through the floor
+* Added Zoom to Spectator mode
+* Sped up Spectator free flight camera speed in racing
+* Fixed issue where exiting spectator mode in racing would cause you to lose the ability to target
+* In racing spectator, if the racer you are viewing gets destroyed, continue to spectate them instead of potentially getting forced into free flight
+
+![https://www.youtube.com/watch?v=j_LQuhrfezk](https://assets.aephia.com/wp-assets/254b6eb47b8f2d623ec370e699607be7ee0e9d650f85bd37b6801eb6a8675fa1.png)
+
+Iris’ Blessing – Month 5
+
+## News Bits
+
+* This past Friday, the 4th **Iris’ Blessing raffle** took place during the first Galia Game Night event. All winners have been posted in the [#monthly-drawing](https://discord.com/channels/789226204980707409/1438946183677612054)\-channel on the Star Atlas Discord
+* The next double-XP weekend will be at the end of this month, from February 27th to March 1st. The next raffle will take place on March 13th.
+
+## Sneak Peeks
+
+Artists hired by Star Atlas often post, sooner or later, their work on ArtStation. This past week, we did not just get art, we got a whole story from a freelance artist who worked on creating a good part of the Mierese crew character outfits and decorations.
+
+[Miguel Nogueira](https://www.artstation.com/migno) (Freelance Concept Artist) posted an extensive [behind-the-scenes story](https://www.artstation.com/artwork/qJDxaD) about how he was approached by the team and how he approached the task he was assigned. This is rare, so definitely worth a look!
+
+![Star Atlas - Mierese Concept Art - by Miguel Nogueira](https://assets.aephia.com/wp-assets/bacec7a7d9ff57202b5665aa975bda4a0c9e42763e442391aac1be8dd4983b85.webp)
+
+![Star Atlas - Mierese Concept Art - by Miguel Nogueira](https://assets.aephia.com/wp-assets/cdaa74dc5433602c989ec71096e2114e52bfed362ae547adbb2e8bc7ca79d43e.png)
+
+Star Atlas – [Mierese Concept Art](https://www.artstation.com/artwork/qJDxaD) \[by [Miguel Nogueira](https://www.artstation.com/migno)\]
+
+_You’ve reached the end of this week’s newsletter. Thanks for reading!_
