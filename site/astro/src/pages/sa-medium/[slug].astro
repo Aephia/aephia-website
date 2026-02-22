@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import PostMeta from '../../components/PostMeta.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('sa-medium');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug || post.slug || post.id.replace(/\.mdx?$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, description, date, author, source } = post.data;
+const { Content } = await post.render();
+---
+
+<Layout title={`${title} - Star Atlas Medium Archive`} description={description}>
+  <article class="container post-detail">
+    <div class="archive-badge">
+      <span class="badge-icon">📰</span> Star Atlas Medium Archive
+    </div>
+
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
+      <PostMeta date={date} author={author} />
+      {source && (
+        <a href={source} target="_blank" rel="noopener noreferrer" class="source-link">🔗 See original article</a>
+      )}
+    </header>
+
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post-detail {
+    max-width: 800px;
+  }
+
+  .archive-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .source-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    margin-top: 0.75rem;
+  }
+
+  .source-link:hover {
+    text-decoration: underline;
+  }
+
+  .badge-icon {
+    font-size: 0.9rem;
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+  }
+
+  .post-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    color: #fff;
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+
+  .post-content :global(h2) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content :global(a) {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+  }
+
+  .post-content :global(ul), .post-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+</style>

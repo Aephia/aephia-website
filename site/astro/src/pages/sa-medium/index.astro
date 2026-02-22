@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import SaMediumCard from '../../components/SaMediumCard.astro';
+import Pagination from '../../components/Pagination.astro';
+
+const allPosts = await getCollection('sa-medium');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const pageSize = 20;
+const totalPages = Math.ceil(sortedPosts.length / pageSize);
+const paginatedPosts = sortedPosts.slice(0, pageSize);
+const nextUrl = totalPages > 1 ? `/sa-medium/page/2/` : undefined;
+---
+
+<Layout title="Star Atlas Medium Archive - Aephia Industries">
+  <div class="container">
+    <section class="intro">
+      <h1>Star Atlas Medium Archive</h1>
+      <p class="subtitle">Archived articles from the official Star Atlas Medium publication</p>
+    </section>
+
+    <div class="post-grid">
+      {paginatedPosts.map((post) => (
+        <SaMediumCard post={post} />
+      ))}
+    </div>
+
+    {totalPages > 1 && (
+      <Pagination currentPage={1} nextUrl={nextUrl} />
+    )}
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 3rem;
+    row-gap: 4rem;
+  }
+</style>

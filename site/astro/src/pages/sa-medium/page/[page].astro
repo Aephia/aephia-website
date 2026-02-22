@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../components/Layout.astro';
+import SaMediumCard from '../../../components/SaMediumCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('sa-medium');
+  const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return paginate(sortedPosts, { pageSize: 20 })
+    .filter((item) => item.props.page.currentPage > 1);
+}
+
+const { page } = Astro.props;
+const prevUrl = page.currentPage === 2 ? `/sa-medium/` : page.url.prev;
+const nextUrl = page.url.next;
+---
+
+<Layout title={`Star Atlas Medium Archive - Page ${page.currentPage}`}>
+  <div class="container">
+    <section class="intro">
+      <h1>Star Atlas Medium Archive <span class="page-num">Page {page.currentPage}</span></h1>
+    </section>
+
+    <div class="post-grid">
+      {page.data.map((post) => (
+        <SaMediumCard post={post} />
+      ))}
+    </div>
+
+    <Pagination
+      currentPage={page.currentPage}
+      prevUrl={prevUrl}
+      nextUrl={nextUrl}
+    />
+  </div>
+</Layout>
+
+<style>
+  .intro {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .page-num {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: normal;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>
