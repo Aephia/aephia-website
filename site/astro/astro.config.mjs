@@ -14,4 +14,11 @@ export default defineConfig({
       theme: 'dracula',
     },
   },
+  vite: {
+    server: {
+      fs: {
+        allow: ['../..', '../../../../staratlas/medium'],
+      },
+    },
+  },
 });
