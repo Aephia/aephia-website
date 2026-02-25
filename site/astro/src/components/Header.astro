@@ -11,6 +11,8 @@
       <a href="/newsletters/">Newsletters</a>
       <a href="/guides/">Guides</a>
       <a href="/news/">Other</a>
+      <span class="nav-separator"></span>
+      <a href="/sa-medium/" class="nav-secondary">SA Medium</a>
     </nav>
   </div>
 </header>
@@ -68,5 +70,22 @@
 
   nav a:hover, nav a[aria-current="page"] {
     color: #fff;
+  }
+
+  .nav-separator {
+    width: 1px;
+    height: 1rem;
+    background: #333;
+    align-self: center;
+    margin: 0 0.5rem;
+  }
+
+  nav a.nav-secondary {
+    color: #555;
+    font-size: 0.8rem;
+  }
+
+  nav a.nav-secondary:hover {
+    color: #aaa;
   }
 </style>

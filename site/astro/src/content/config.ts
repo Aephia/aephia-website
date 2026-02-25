@@ -24,6 +24,24 @@ const postsCollection = defineCollection({
   }),
 });
 
+const saMediumCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    type: z.string().optional(),
+    slug: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    author: z.object({
+      name: z.string(),
+    }).optional(),
+    categories: z.array(z.string()).optional(),
+    source: z.string().optional(),
+  }),
+});
+
 export const collections = {
   posts: postsCollection,
+  'sa-medium': saMediumCollection,
 };

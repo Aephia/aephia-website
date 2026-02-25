@@ -41,29 +41,10 @@ const components = {
   WpEmbed,
   Vimeo,
 };
-
-// Metadata URL logic
-const contentTypeToUrl: Record<string, string> = {
-    newsletter: 'newsletters',
-    guide: 'guides',
-    news: 'news',
-    aephia: 'aephia'
-};
-const urlType = contentTypeToUrl[post.data.type?.toLowerCase()] || 'news';
-
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
-const origin = Astro.site?.origin || Astro.url.origin; // Robust fallback
-const rawUrl = `${origin}/raw${currentPath}.md`;
-const rssUrl = `${origin}/${urlType}/rss.xml`;
-const canonicalUrl = canonical || new URL(Astro.url.pathname, origin).href;
 ---
 
 <Layout title={`${title} - Aephia Industries`} description={description}>
-  <fragment slot="head">
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" type="text/markdown" href={rawUrl} />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href={rssUrl} />
-  </fragment>
+  {canonical && <link slot="head" rel="canonical" href={canonical} />}
   
   <article class="container post-detail">
     <header class="post-header">
