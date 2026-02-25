@@ -44,7 +44,10 @@ const { markdown } = Astro.props;
           <line x1="10.25" y1="12.75" x2="13.25" y2="12.75"></line>
         </g>
       </svg>
-      <span>Copy page</span>
+      <div class="menu-item-content">
+        <span class="menu-item-title">Copy page</span>
+        <span class="menu-item-desc">Copy page as Markdown for LLMs</span>
+      </div>
     </button>
     <button id="menu-view-btn" class="menu-item">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" class="icon">
@@ -94,8 +97,12 @@ const { markdown } = Astro.props;
   const dropdown = document.getElementById('dropdown-menu');
   
   // Menu items
-  const menuCopyBtn = document.getElementById('menu-copy-btn');
-  const menuViewBtn = document.getElementById('menu-view-btn');
+  const menuButtons = {
+    copy: document.getElementById('menu-copy-btn'),
+    view: document.getElementById('menu-view-btn'),
+    gpt: document.getElementById('menu-gpt-btn'),
+    claude: document.getElementById('menu-claude-btn')
+  };
 
   // Logic
   async function copyToClipboard(button: HTMLElement | null) {
@@ -120,20 +127,44 @@ const { markdown } = Astro.props;
     }
   }
 
+  function openInAI(service: 'gpt' | 'claude') {
+    // Construct the raw markdown URL
+    // Current URL: /type/slug/
+    // Raw URL: /raw/type/slug.md
+    
+    const path = window.location.pathname.replace(/\/$/, '');
+    const rawUrl = `${window.location.origin}/raw${path}.md`;
+    
+    // Prompt for the AI
+    const prompt = `Read ${rawUrl} and answer questions about the content.`;
+    const encoded = encodeURIComponent(prompt);
+    
+    let targetUrl = '';
+    if (service === 'gpt') {
+      targetUrl = `https://chatgpt.com/?q=${encoded}`;
+    } else if (service === 'claude') {
+      targetUrl = `https://claude.ai/new?q=${encoded}`;
+    }
+    
+    window.open(targetUrl, '_blank');
+    hideDropdown();
+  }
+
   // Event Listeners
   if (mainCopyBtn) {
     mainCopyBtn.addEventListener('click', () => copyToClipboard(mainCopyBtn));
   }
 
-  if (menuCopyBtn) {
-    menuCopyBtn.addEventListener('click', () => {
-      copyToClipboard(menuCopyBtn);
-      hideDropdown();
+  if (menuButtons.copy) {
+    menuButtons.copy.addEventListener('click', async () => {
+      await copyToClipboard(menuButtons.copy);
+      // Wait 1 second (1000ms) before starting the fade out
+      setTimeout(hideDropdown, 1000);
     });
   }
 
-  if (menuViewBtn) {
-    menuViewBtn.addEventListener('click', () => {
+  if (menuButtons.view) {
+    menuButtons.view.addEventListener('click', () => {
        const win = window.open("", "Markdown View", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=600");
        if (win) {
          win.document.body.style.backgroundColor = "#0f1219";
@@ -148,6 +179,14 @@ const { markdown } = Astro.props;
        }
        hideDropdown();
     });
+  }
+  
+  if (menuButtons.gpt) {
+    menuButtons.gpt.addEventListener('click', () => openInAI('gpt'));
+  }
+  
+  if (menuButtons.claude) {
+    menuButtons.claude.addEventListener('click', () => openInAI('claude'));
   }
 
   // Positioning
@@ -173,16 +212,29 @@ const { markdown } = Astro.props;
   function showDropdown() {
     if (!dropdown || !triggerBtn) return;
     dropdown.hidden = false;
+    // Slight delay to allow display:block to apply before opacity transition
+    requestAnimationFrame(() => {
+      dropdown.classList.add('show');
+    });
     triggerBtn.setAttribute('aria-expanded', 'true');
     cleanup = autoUpdate(triggerBtn, dropdown, updatePosition);
   }
 
   function hideDropdown() {
     if (!dropdown || !triggerBtn) return;
-    dropdown.hidden = true;
-    triggerBtn.setAttribute('aria-expanded', 'false');
-    if (cleanup) cleanup();
-    cleanup = undefined;
+    
+    // Start fade out
+    dropdown.classList.remove('show');
+    dropdown.classList.add('hiding');
+    
+    // Wait for transition to finish before setting hidden
+    setTimeout(() => {
+      dropdown.hidden = true;
+      dropdown.classList.remove('hiding');
+      triggerBtn.setAttribute('aria-expanded', 'false');
+      if (cleanup) cleanup();
+      cleanup = undefined;
+    }, 200); // Match CSS transition duration
   }
 
   if (triggerBtn) {
@@ -274,15 +326,34 @@ const { markdown } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    visibility: hidden; /* Use visibility controls instead of display:none to allow transitions */
   }
   
+  /* Visible state */
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  /* Hiding state (used for fade out) */
+  .dropdown-menu.hiding {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  /* Override the [hidden] attribute to rely on class state for animation flexibility, 
+     but keeping it for accessibility/fallback if JS fails or initial state */
   .dropdown-menu[hidden] {
     display: none;
   }
 
   .menu-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align to top for multiline */
     gap: 0.75rem;
     width: 100%;
     padding: 0.6rem 0.75rem;
@@ -305,8 +376,36 @@ const { markdown } = Astro.props;
     color: #4ade80;
   }
 
+  .menu-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .menu-item-title {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .menu-item-desc {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.3;
+  }
+
+  .menu-item:hover .menu-item-desc {
+    color: #cbd5e1;
+  }
+
+  .menu-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.25rem 0;
+  }
+
   .icon {
     flex-shrink: 0;
+    margin-top: 0.1rem; /* Align icon with first line of text */
   }
   
   textarea[hidden] {
