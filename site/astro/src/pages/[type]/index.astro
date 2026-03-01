@@ -48,6 +48,60 @@ const nextUrl = totalPages > 1 ? `/${type}/page/2/` : undefined;
       <h1>{title}</h1>
     </section>
 
+    <div class="search-section">
+      <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+      <script src="/pagefind/pagefind-ui.js" is:inline></script>
+      <div id="search" data-type={contentType}></div>
+      <script is:inline>
+        window.addEventListener('DOMContentLoaded', () => {
+          if (typeof PagefindUI !== 'undefined') {
+            const el = document.getElementById('search');
+            const typeFilter = el.getAttribute('data-type');
+            
+            // Pluralize strictly for the placeholder text
+            const pluralType = typeFilter.endsWith('s') ? typeFilter : typeFilter + 's';
+            
+            const search = new PagefindUI({ 
+              element: "#search", 
+              showSubResults: true,
+              sort: { date: "desc" },
+              translations: { placeholder: "Search " + pluralType + "..." }
+            });
+
+            // Initialize the pre-selected filter to constrain results
+            search.triggerFilters({ type: [typeFilter] });
+
+            // Hide the default post grid when searching
+            const postGrid = document.querySelector('.post-grid');
+            const pagination = document.querySelector('.pagination');
+            
+            const observer = new MutationObserver(() => {
+              const input = el.querySelector('.pagefind-ui__search-input');
+              const clearBtn = el.querySelector('.pagefind-ui__search-clear');
+              
+              if (input) {
+                input.addEventListener('input', (e) => {
+                  const hasQuery = e.target.value.trim().length > 0;
+                  if (postGrid) postGrid.style.display = hasQuery ? 'none' : '';
+                  if (pagination) pagination.style.display = hasQuery ? 'none' : '';
+                });
+                
+                if (clearBtn) {
+                  clearBtn.addEventListener('click', () => {
+                    if (postGrid) postGrid.style.display = '';
+                    if (pagination) pagination.style.display = '';
+                  });
+                }
+                
+                observer.disconnect();
+              }
+            });
+            observer.observe(el, { childList: true, subtree: true });
+          }
+        });
+      </script>
+    </div>
+
     <div class="post-grid">
       {paginatedPosts.map((post) => (
         <PostCard post={post} />
@@ -80,5 +134,109 @@ const nextUrl = totalPages > 1 ? `/${type}/page/2/` : undefined;
     gap: 3rem; 
     /* row-gap specific just in case, though gap covers it */
     row-gap: 4rem;
+  }
+
+  .search-section {
+    margin-bottom: 3rem;
+  }
+
+  /* Global overwrite for Pagefind to match dark theme */
+  :global(.pagefind-ui) {
+    --pagefind-ui-primary: var(--color-primary);
+    --pagefind-ui-text: #ddd;
+    --pagefind-ui-background: #111;
+    --pagefind-ui-border: #333;
+    --pagefind-ui-tag: #222;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 4px;
+    --pagefind-ui-font: inherit;
+    --pagefind-ui-image-box-ratio: 4 / 3;
+  }
+  
+  :global(.pagefind-ui .pagefind-ui__result-image) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__search-input) {
+    color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  :global(.pagefind-ui .pagefind-ui__search-input:focus) {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-primary);
+  }
+
+  /* Hide the filter sidebar since we handle filtering contextually */
+  :global(.pagefind-ui__filter-panel) {
+    display: none !important;
+  }
+
+  /* Style the search results into cards */
+  :global(.pagefind-ui .pagefind-ui__result) {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--pagefind-ui-border) !important;
+    border-radius: 8px;
+    padding: 1.5rem !important;
+    margin-top: 1rem !important;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__result:hover) {
+    border-color: var(--color-primary) !important;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Stretch the title link to make the whole card clickable */
+  :global(.pagefind-ui .pagefind-ui__result-link::after) {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  /* Style search result highlights */
+  :global(.pagefind-ui mark) {
+    background-color: transparent !important;
+    color: var(--color-primary) !important;
+    font-weight: bold !important;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__result-title) {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__result-title .pagefind-ui__result-link) {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__result-title .pagefind-ui__result-link:hover) {
+    color: var(--color-primary);
+  }
+
+  :global(.pagefind-ui .pagefind-ui__result-excerpt) {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 0;
+  }
+
+  :global(.pagefind-ui .pagefind-ui__message) {
+    color: #888;
+    font-weight: normal;
+    padding: 1rem 0 0.5rem 0;
   }
 </style>

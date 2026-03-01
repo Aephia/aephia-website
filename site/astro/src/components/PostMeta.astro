@@ -18,7 +18,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 ---
 
 <div class="post-meta">
-  <time datetime={date.toISOString()}>{formattedDate}</time>
+  <time datetime={date.toISOString()} data-pagefind-sort={`date:${date.toISOString()}`} data-pagefind-meta="date">{formattedDate}</time>
   {author && (
     <span class="author">
       by {author.url ? <a href={author.url}>{author.name}</a> : author.name}

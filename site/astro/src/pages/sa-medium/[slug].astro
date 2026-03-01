@@ -18,7 +18,8 @@ const { Content } = await post.render();
 ---
 
 <Layout title={`${title} - Star Atlas Medium Archive`} description={description}>
-  <article class="container post-detail">
+  <article class="container post-detail" data-pagefind-body>
+    <div data-pagefind-filter="type" hidden>sa-medium</div>
     <div class="archive-badge">
       <span class="badge-icon">📰</span> Star Atlas Medium Archive
     </div>

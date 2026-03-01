@@ -46,7 +46,8 @@ const components = {
 <Layout title={`${title} - Aephia Industries`} description={description}>
   {canonical && <link slot="head" rel="canonical" href={canonical} />}
   
-  <article class="container post-detail">
+  <article class="container post-detail" data-pagefind-body>
+    <div data-pagefind-filter="type" hidden>{post.data.type || 'None'}</div>
     <header class="post-header">
       <div class="header-meta-row">
          <h1 class="post-title">{title}</h1>
