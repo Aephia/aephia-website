@@ -1,12 +1,21 @@
 ---
 ---
 
-<header class="site-header">
+<site-header class="site-header">
   <div class="container">
     <a href="/" class="logo">
       <span class="logo-aephia">Aephia</span> 
       <span class="logo-industries">Industries</span>
     </a>
+    
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+        <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+        <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+      </svg>
+    </button>
+
     <nav>
       <a href="/newsletters/">Newsletters</a>
       <a href="/guides/">Guides</a>
@@ -15,13 +24,16 @@
       <a href="/sa-medium/" class="nav-secondary">SA Medium</a>
     </nav>
   </div>
-</header>
+</site-header>
 
 <style>
   .site-header {
+    display: block;
     background: #000;
     padding: 1.5rem 0;
     border-bottom: 1px solid #1a1a1a;
+    position: relative;
+    z-index: 100;
   }
   
   .container {
@@ -36,23 +48,25 @@
     gap: 0.5rem;
     text-decoration: none;
     line-height: 1;
+    position: relative;
+    z-index: 101;
   }
 
   .logo-aephia {
     font-weight: 900;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, calc(5.5vw), 1.8rem);
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif; /* Fallback for heavy sans */
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.05em;
   }
 
   .logo-industries {
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, calc(5.5vw), 1.8rem);
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Industry', 'Microgramma', 'Eurostile', sans-serif; /* Tech font fallback */
+    font-family: 'Industry', 'Microgramma', 'Eurostile', sans-serif;
     letter-spacing: 0.05em;
   }
 
@@ -82,10 +96,139 @@
 
   nav a.nav-secondary {
     color: #555;
-    font-size: 0.8rem;
+    /* font-size matched to 0.9rem by inheriting */
   }
 
   nav a.nav-secondary:hover {
     color: #aaa;
   }
+
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+    position: relative;
+  }
+
+  .menu-toggle svg line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  button[aria-expanded="true"] .line-top {
+    transform: translateY(6px) rotate(45deg);
+  }
+  button[aria-expanded="true"] .line-middle {
+    opacity: 0;
+  }
+  button[aria-expanded="true"] .line-bottom {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media (max-width: 950px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      right: 1.5rem;
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid #1a1a1a;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      gap: 0;
+      min-width: 250px;
+      
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    site-header[data-mobile-open="true"] nav {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+      padding-bottom: 0.5rem; /* Add padding when open for the menu items to breathe inside the border radius */
+    }
+
+    nav a {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.9rem;
+      display: block;
+    }
+    
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    nav a:hover, nav a[aria-current="page"] {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-separator {
+      display: none;
+    }
+
+    nav a.nav-secondary {
+      background: rgba(0, 0, 0, 0.4);
+      margin-top: 0.5rem;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05); /* separate it clearly at the bottom */
+    }
+    
+    nav a.nav-secondary:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      right: 0;
+      left: 0;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+    }
+ 
+    .logo {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding-left: 0.75rem
+    }
+  }
 </style>
+
+<script>
+  class SiteHeader extends HTMLElement {
+    constructor() {
+      super();
+      
+      const toggleBtn = this.querySelector('.menu-toggle');
+      if (!toggleBtn) return;
+      
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = this.getAttribute('data-mobile-open') === 'true';
+        this.setAttribute('data-mobile-open', String(!isOpen));
+        toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  }
+
+  if (!customElements.get('site-header')) {
+    customElements.define('site-header', SiteHeader);
+  }
+</script>
