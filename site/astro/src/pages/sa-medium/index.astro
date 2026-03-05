@@ -78,7 +78,7 @@ const nextUrl = totalPages > 1 ? `/sa-medium/page/2/` : undefined;
     </div>
 
     {totalPages > 1 && (
-      <Pagination currentPage={1} nextUrl={nextUrl} />
+      <Pagination currentPage={1} totalPages={totalPages} baseUrl="/sa-medium" />
     )}
   </div>
 </Layout>

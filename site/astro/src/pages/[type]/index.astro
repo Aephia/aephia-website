@@ -109,7 +109,7 @@ const nextUrl = totalPages > 1 ? `/${type}/page/2/` : undefined;
     </div>
 
     {totalPages > 1 && (
-      <Pagination currentPage={1} nextUrl={nextUrl} />
+      <Pagination currentPage={1} totalPages={totalPages} baseUrl={`/${type}`} />
     )}
   </div>
 </Layout>

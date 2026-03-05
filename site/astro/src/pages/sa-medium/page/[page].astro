@@ -31,8 +31,8 @@ const nextUrl = page.url.next;
 
     <Pagination
       currentPage={page.currentPage}
-      prevUrl={prevUrl}
-      nextUrl={nextUrl}
+      totalPages={page.lastPage}
+      baseUrl="/sa-medium"
     />
   </div>
 </Layout>
