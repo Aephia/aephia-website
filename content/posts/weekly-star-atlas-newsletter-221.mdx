@@ -1,0 +1,156 @@
+---
+title: "Weekly Star Atlas Newsletter #221"
+date: "2026-03-16T19:27:44"
+modified: "2026-03-16T19:27:44"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-221"
+description: "Holosim Chapter 2 went live last week. Only 15 minutes late! Since its release, patches have kept rolling out at a fast pace. Other than that, the week was light on newsworthy events. Some light was shed on potential Holosim Chapter 3 improvements, and we&#8217;ve got two more PIPs that will open for voting soon."
+image: "https://assets.aephia.com/wp-assets/90fd067f46892ebe8f6fad6692e7c70f5873a64127bdee7284aead33b5836622.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18288
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 221st newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Holosim Chapter 2 went live last week. Only 15 minutes late! Since its release, patches have kept rolling out at a fast pace. Other than that, the week was light on newsworthy events. Some light was shed on potential Holosim Chapter 3 improvements, and we’ve got two more PIPs that will open for voting soon.
+
+_Let’s dive in!_
+
+## Holosim Chapter 2 is Live!
+
+The launch happened on Tuesday, March 10th. José’s line on the Brew said it all: “We broke our internal records.” Given that Chapter 2 had [slipped out of February](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-218/) before finally landing this week, 15 minutes late was considered a win!
+
+During [Atlas Brew 195](https://youtu.be/pTVq5LSSsJk), José and John (Product Manager) walked through the first 24 hours, while going over mechanics, community questions, and trying to give honest answers.
+
+Below are some of the first learnings and important details shared during this:
+
+* The safe zone earns you nothing. It exists for tutorial and achievement runs only. Profitable play starts in the medium zone.
+* NPC threat fleets spawn once your mining rate crosses 32, and they spawn in on a roughly 10-minute randomised timer. Stay below that and nothing touches you, which is useful for cross-map achievement runs with a small fleet.
+* Fleet Orders are not autopilot, and that is by design. John was clear about it: “I do not want to make Holosim a game you just completely automate and walk away.” Automated fleets in the medium zone are valid NPC targets. That is the point.
+* Story XP counts for roughly 10% of your total leaderboard rank. The other 90% has to be earned through achievements.
+* The end-of-chapter prize window is not settled yet. John floated splitting it into bi-weekly or monthly intervals rather than one payout at the end, so there is something to compete for beyond just the final sprint. No firm call yet.
+* The NPC system is being tuned deliberately. Roaming AI exists, but it was switched off at launch to avoid day-one chaos. Coming later: leaderboard-based targeting, where high-ranked players get followed across sectors.
+
+### Connecting your zProfile
+
+Connecting your zProfile so you can enjoy the Battle Pass associated with your z.ink subscription has to be done (for the moment) through the Holosim interface.
+
+![Step 1 — Alternatively, find this button in your Account menu (top left)](https://assets.aephia.com/wp-assets/af526e97db92b56e0086009b493ac324501821dd4d8dc6ea87f0d3cc066128eb.webp)
+
+Step 1 — Alternatively, find this button in your Account menu (top left)
+
+![Step 2 — Make sure you are logged in](https://assets.aephia.com/wp-assets/33f03ca8c45625802f7ef351ad885f18df784a688535bed814cd05c0cf8f1454.png)
+
+Step 2 — Make sure you are logged in
+
+![Step 3 — This button should say "Quick Link". Anything else (like "Link") means something went wrong.](https://assets.aephia.com/wp-assets/f8f413d95cd262c3a580661400896177c19148b099ce6f537eb13ae9d130116c.webp)
+
+Step 3 — This button should say “Quick Link”. Anything else (like “Link”) means something went wrong. Click it to connect Holosim to your zProfile.
+
+Note that the above is relevant only if you have an active subscription. It will unlock the Holosim Battle Pass for you.
+
+**Note:** If you have no subscription but still want to connect your zProfile to earn extra zXP through your Holosim achievements, the above approach works for you as well. But in that case, you can also start the connection from your zProfile directly.
+
+![Screenshot 2026 03 16 at 15.49.33](https://assets.aephia.com/wp-assets/02d9aee4f6cbe3c7850a7b1ea60605d3219324c603acdd8c82b52d143f2414a9.webp)
+
+Star Atlas Holosim S1C2 – The new Fleet Composer
+
+### Holosim Changelog
+
+Fixes and updates have been coming fast this past week. 
+
+Two of the more impactful updates:
+
+1. An updated **Fleet Composer UI** — This new view clearly shows you the key stats of the fleet you are forming. This makes it more obvious what your fleet may be lacking.
+2. The **removal of ammo** from the mining loop — Previously, ammo was required to mine, for all ships (including ships we know as dedicated mining ships from SAGE). With the removal, mining is not as easily disrupted by attacking ECOS hostiles, as shooting back (which happens automatically) also consumes ammo.
+
+Below is the full list of changes released since the game’s launch:
+
+**v1.2.1**
+
+* Improved identification of hostile fleets from the Command View
+* Faction CSS now display fleets with a cleaner layout
+
+**v1.2.2**
+
+* Fixed quest progress being lost when importing a keypair on a new device
+* Fixed crew passenger management — disembarking crew from fleets works correctly again
+* Disembark All now removes all passengers in one click
+* Quest progress tracking is now more reliable and recovers from interrupted connections
+* Mining quest amounts are now tracked more accurately
+
+**v1.2.3**
+
+* Mining no longer requires ammo — ammo is now used for defense only
+* Fleet Orders arms fleets with ammo for defense when docked, but never delays mining for it
+* If a starbase cannot fully arm a fleet, Fleet Orders logs the partial load and continues
+* Fleet Orders no longer returns to starbase solely because ammo is low
+
+**v1.2.4**
+
+* Fixed daily check-in getting stuck when the reward claim is interrupted — clicking Report for Duty now recovers automatically
+
+**v1.2.5**
+
+* Patrol fleets now self-repair in the field before returning home for resupply
+* Fixed patrol fleets not attacking when patrol sector and home base are the same sector
+* Patrol fleets now repair after undocking at home base when HP drops below 25% with no toolkits
+* Self-repair threshold set to 75% — fleets use toolkits in the field when HP drops below 75%
+* Return-home HP threshold set to 25% — fleets only head home for HP when critically damaged and out of toolkits
+* Added Terms of Service and Privacy Policy links to the Holosim landing page
+
+**v1.2.6**
+
+* Fleets with incomplete disbands now appear in the hangar with a warning badge
+* Clicking an incomplete disband fleet recovers stuck ships back to the starbase hangar
+* Mining fleet orders no longer get stuck when the starbase runs out of fuel
+
+### What Comes Next
+
+During the Atlas Brew 195, the roadmap was covered in some detail.
+
+Probably the biggest news: The Holosim team has already been working on a **mobile version**. In fact, a working version exists, but the quest and achievement views still don’t render correctly. The team is targeting late chapter 2 or chapter 3 for release.
+
+**Chapter 3** is planned as a big UX overhaul. Fleet stats, ship stats, and quest tracking views are being rebuilt. The quest system itself also needs a rework. The current tracking is too unreliable to support faction-based NPC quests, which is the direction John wants to go: accept a quest from an NPC inside a starbase, tied to achievements.
+
+**Crew cards** are flagged as high priority for the next chapter. Scanning is also on John’s short list, though the direction has shifted away from SDUs entirely. The plan now involves hidden asteroid fields and spawned threats when you scan, with achievements tied to what you find.
+
+The goal is four chapters in 2026\. With “each building on this one,” John said. A dedicated Holosim pipeline is being stood up, separate from portal and DAO work, with a smaller team focused on faster iteration.
+
+On Season 2: it starts when Season 1 wraps and moves onto the C4 game engine. John left open the possibility of both seasons running in parallel if players are still engaged with the current system.
+
+## The Lore Wiki
+
+As we reported last week, José anticipated the Star Atlas lore wiki would go public late last week. However, during the Brew on Wednesday, he announced plans to launch it during the Lore Keepers event this week Thursday.
+
+José said there’s “a lot of effort going on there” and that he’s genuinely looking forward to the community reading it. He confirmed the wiki was built with AI assistance, joking that this is his “vibe-coding arc”. The content — species, factions, manufacturers, lore that’s mostly never been public before — sounds like it’ll be worth the wait!
+
+![Star Atlas DAO](https://assets.aephia.com/wp-assets/13f597febd466859c4c568d40c78f549a4338a26b1d90b5add7f40f20da105d4.png)
+
+Star Atlas DAO
+
+## DAO Update
+
+Two new PIPs are ready to go live for voting later this week! You will be able to cast your vote starting March 19th (UTC), and you have until the end of the day (UTC) on April 1st to do so.
+
+Here are the summaries of both PIPs:
+
+### PIP-29: [Star Atlas Relay Program (Pilot)](https://govern.staratlas.com/proposals/8e761702-ee81-4509-b627-9cadb5897c1b)
+
+> This proposal seeks **up to 13,143,639 ATLAS** in Ecosystem Fund funding to run a **time- and budget-bounded pilot** that incentivizes authentic, player-created short-form Star Atlas gameplay videos and distributes the strongest submissions through official/community social channels, using a human review process and a lightweight web platform for submissions, scoring, and weekly leaderboards.
+
+### PIP-30: [ATOM Cloud Infrastructure Sustainability — DAO Funding Pilot](https://govern.staratlas.com/proposals/3ba029f2-65e8-4637-b6ad-ae86284ff714)
+
+> This proposal seeks $2,200 USDC or up to 13,143,639 in ATLAS ($550/month × 4 months) from the DAO Ecosystem fund to keep ATOM Cloud operational through C4\. ATOM Cloud currently processes \~100,000 transactions/day for 104 daily active accounts. Users currently pay 0.000005 SOL per taxable transaction (\~half of all operations). If this proposal passes, ATOM Cloud becomes completely **free for all users** until C4\. Without funding, the service shuts down in 30 days. This is a pure sustainability request — no new features, no profit of any kind for ATOM Team.
+
+## Sneak Peeks
+
+No sneak peeks this week, but [Gary Sanchez](https://www.artstation.com/garysanchez) (Vehicle Art Director) did post some **early concept** work for both [vzus](https://www.artstation.com/artwork/RK1J9W) and [Busan](https://www.artstation.com/artwork/Jr4kYz) over the past two weeks. So, go ahead and check these out if you like to see some early-stage exploration of the visual language for both ship manufacturers!
+
+_That is it for this week! Thanks for reading, and until the next!_
