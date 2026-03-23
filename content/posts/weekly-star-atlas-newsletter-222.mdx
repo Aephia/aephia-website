@@ -1,0 +1,151 @@
+---
+title: "Weekly Star Atlas Newsletter #222"
+date: "2026-03-23T17:01:03"
+modified: "2026-03-23T17:01:03"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-222"
+description: "Last week was light on news, but Holosim Chapter 2 is moving full steam ahead, with the team rolling out patches near daily! Beyond that, there are two PIPs currently open for you to vote on! Lastly, on a more somber note, the team lost some notable individuals due to the recent cost-saving measures."
+image: "https://assets.aephia.com/wp-assets/bf2393e9ac69b35a9859b3c16cd86620133fd49d597ef10414aff0c4d012d53d.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18305
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 222nd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Last week was light on news, but Holosim Chapter 2 is moving full steam ahead, with the team rolling out patches near daily! Beyond that, there are two PIPs currently open for you to vote on! Lastly, on a more somber note, the team lost some notable individuals due to the recent cost-saving measures.
+
+_Let’s dive in!_
+
+![image](https://assets.aephia.com/wp-assets/3eadabfbe3353a3bfe8711f08c15fabb9f0d885c5b8294758e4161119358aff2.png)
+
+Star Atlas – Fimbul Quadro ship \[[Concept Art](https://www.artstation.com/artwork/1Nek2L) by [Gary Sanchez](https://www.artstation.com/antarktik)\]
+
+## Holosim S1 – Chapter 2
+
+Fleet respawn timers are back. After the change that made MRZ much more difficult due to having NPCs also target players that did not trigger them, John (Product Manager) had temporarily disabled the timers after a lot of people lost their fleets. Now, this has been reverted, meaning destroyed fleets are towed back to the CSS and take between 30 minutes and 18 hours to respawn, depending on fleet size. 
+
+During the Atlas Brew, John shared that the NPC system now has a name: the **Nemesis Engine**.
+
+John also confirmed that an **in-app purchases page** is a few weeks out. Players will be able to buy a limited number of crew via Stripe. What you buy stays in Holosim and can’t be transferred to mainnet. End-of-chapter mainnet rewards are unchanged. Crew doesn’t carry between chapters; daily check-ins remain the main source, late starters can still reach the cap, and social quests will add another path once they go live.
+
+### Holosim Changelog
+
+Holosim saw near-daily releases bringing various fixes and improvements. Below are all the changelogs for patches that were rolled out since our previous newsletter.
+
+**v1.2.7**
+
+* Redesigned Command View fleet layout — hostile fleets are now separated into a distinct zone from passive enemy fleets for easier target identification
+* Locked loot piles are no longer shown in the Command View — only salvageable loot is displayed
+* Fleets exceeding the initial viewport now spread into the zoomable world space instead of clustering
+* Player-involved combat events are now highlighted in the tactical feed
+* Improved Command View performance when 50+ fleets are present in a sector
+* Galaxy map attack flash no longer occasionally covers the entire map
+
+**v1.2.8**
+
+* Battle pass holders now see only their battle pass rewards in Account Settings instead of z.ink subscription details
+* Added Link Z.Ink button for battle pass holders to connect their z.ink account directly from Account Settings
+
+**v1.2.9**
+
+* Major Command View performance improvements — reduced CPU usage and smoother gameplay in busy sectors
+* Fixed zATLAS balance not loading when first connecting a wallet
+
+**v1.2.10**
+
+* Fixed automated mining Fleet Orders getting stuck after completing a mining run — state transitions now resolve immediately instead of waiting up to 5 seconds
+* Fixed cancelling a crafting job mid-run not returning resources, Atlas fee, or crew — cancel now reliably completes in two steps to avoid transaction size limits
+* Fixed crafting jobs that silently consumed resources and crew without appearing in the Workshop UI — jobs now always appear and can be started or cancelled from the Workshop
+* Added ‘Ready to Start’ status in the Workshop for crafting jobs where ingredients are locked but the job hasn’t started — click Start to begin or Cancel to recover your resources
+* Added Refresh Workshop button to the Workshop idle state — use this if a crafting job isn’t showing up after a transaction
+* Added ‘Hostile NPCs Only’ patrol behavior — patrol fleets now have a mode that only engages NPC fleets actively targeting your fleets, ignoring other players
+* Fixed patrol fleets freezing when their attack target is destroyed by another fleet mid-engagement — patrol now re-scans and picks a new target immediately
+* Fixed Zink subscription ‘Unlocked’ badge not showing in Account Settings after linking a Z.Ink account
+* Fixed ship crafting permanently losing resources on recipes with 5 or more ingredients — each ingredient is now deposited in its own transaction, eliminating transaction size overflow
+* Fixed tracked mission panel being unclickable when a fleet is selected — the quest panel now always appears above the fleet window
+* Fixed battle log showing SHIPS X0 for destroyed or despawned fleets — displays a dash when ship count data is unavailable
+
+**v1.2.11**
+
+* Command View fleet cards now show Fuel Tank, Ammo Bank, and Cargo Hold with food/toolkit breakdown
+* Added Reload Weapons button (W hotkey) to quickly reload ammo from the Command View
+* Fleet docking, undocking, warping, and destruction now update in real-time during Command View sessions
+* Fleet counts in the Command View header now stay accurate as fleets enter and leave the sector
+* Destroyed fleets are now properly removed from the Command View
+* Counterstrike missiles now land before damage numbers appear
+* Command View overlay performance improved — smoother frame rates in sectors with 50+ fleets
+* Fleet cargo loading reduced from 5 seconds to under 1 second
+
+**v1.2.12**
+
+* Hostile Fleet Indicator — a new panel above your fleet card shows all fleets currently attacking you with live HP/SP/AP bars, cooldown status, and missile-in-flight indicators
+* Click any hostile fleet card to instantly select it as your target without panning the map
+* Fleet cards now show the owner name — your name on Your Fleet, player names on targets, and Spawned by Nemesis Engine for NPC fleets
+* HP, Shield, and AP icons now appear above the stat values on fleet ring markers for clearer at-a-glance readability
+
+## Staff Reductions
+
+Michael (CEO) confirmed further staff reductions had taken place recently. Chip, VP of Game Product and one of the more well-known team members, was among those let go.
+
+> “Chip was a big loss, and I’m sad to see him go. But we have to continue reducing positions to manage costs. It’s as straightforward as that.”
+
+On priorities: **Holosim, C4, and z.ink** are the focus. Michael also confirmed that work continues on Galia mode and **Tangential Worlds**. As announced during the [December Town Hall](https://aephia.com/star-atlas/town-hall-report-december-17th-2025/), a third-party team has been working on the latter. Lastly, he added that things will be slow on the UE5 side for a while.
+
+## DAO Updates
+
+Two new PIPs opened for voting last week, both running until 1 April 2026:
+
+### PIP-29: [Star Atlas Relay Program (Pilot)](https://govern.staratlas.com/proposals/8e761702-ee81-4509-b627-9cadb5897c1b)
+
+> This proposal seeks up to 13,143,639 ATLAS in Ecosystem Fund funding to run a time- and budget-bounded pilot that incentivizes authentic, player-created short-form Star Atlas gameplay videos and distributes the strongest submissions through official and community social channels, using a human review process and a lightweight web platform for submissions, scoring, and weekly leaderboards.
+
+Structure:
+
+* **Requested funding:** 13,143,639 ATLAS (from Ecosystem Fund)
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18th
+* **Voting Closes**: Wednesday, April 1st (end-of-day UTC)
+
+Early results (\~5 days in, \~41.9M PVP committed):
+
+* **For**: 89.8%
+* **Against**: 10.1%
+* **Abstain**: 0.0%
+
+### PIP-30: [ATOM Cloud Infrastructure Sustainability — DAO Funding Pilot](https://govern.staratlas.com/proposals/3ba029f2-65e8-4637-b6ad-ae86284ff714)
+
+> This proposal seeks $2,200 USDC or up to 13,143,639 in ATLAS ($550/month × 4 months) from the DAO Ecosystem Fund to keep ATOM Cloud operational through C4\. ATOM Cloud currently processes \~100,000 transactions per day for 104 daily active accounts.
+
+Structure:
+
+* **Requested funding:** $2,200 USDC (or equivalent ATLAS)
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18th
+* **Voting Closes**: Wednesday, April 1st (end-of-day UTC)
+
+Early results (\~5 days in, \~42.6M PVP committed):
+
+* **For**: 29.0%
+* **Against**: 71.0%
+* **Abstain**: 0.0%
+
+![Star Atlas - Iris' Blessing - Month 6](https://assets.aephia.com/wp-assets/51d351efb4c1098205a0eb676965c1a622a7f3976f5ce8009d46ec27dcc99640.png)
+
+Star Atlas – Iris’ Blessing – Month 6
+
+## News Bits
+
+Here are some small news bits to round out this week’s issue
+
+* This coming weekend is a **double XP weekend**! Make sure to play official UE5 matches to double your XP, Ink, and zXP all at once!
+* There have been issues with SAGE Starbased, especially with the SLYA automations, over the past few days, but it appears a fix in SLYA has now solved this.
+* Star Atlas is **[collaborating](https://x.com/staratlas/status/2034334660764000318)** with [swap.io](https://swap.io/), a new DEX on Solana that also acts as a meta-aggregator. Trading ATLAS and POLIS on their platform earns you up to 5x more XP for Season Zero of swap.io’s earnings campaign.
+* Community member James from the Alice Arcade community [created a tool](https://x.com/staratlas/status/2034011691508503020) to help optimize Holosim operations. Be sure to check it out!
+
+_That is it for this week! Thanks for reading, and until the next!_
