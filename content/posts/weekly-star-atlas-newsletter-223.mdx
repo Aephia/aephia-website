@@ -1,0 +1,161 @@
+---
+title: "Weekly Star Atlas Newsletter #223"
+date: "2026-03-30T19:30:56"
+modified: "2026-03-30T19:30:56"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-223"
+description: "This past week, Holosim Chapter 2 received an additional five patches to improve gameplay and fix bugs. Simultaneously, AI discovered a long-standing bug in the z.ink subscriptions, which was fixed as well and retroactively corrected. Finally, two PIPs are still open for a few more days. Cast your votes today, before it is too late!"
+image: "https://assets.aephia.com/wp-assets/e2ccef9305c1360e4f28d40931c16625b05afa7c4d895eaafd9bb4b59228e809.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18323
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 223rd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This past week, Holosim Chapter 2 received an additional five patches to improve gameplay and fix bugs. Simultaneously, AI discovered a long-standing bug in the z.ink subscriptions, which was fixed as well and retroactively corrected. Finally, two PIPs are still open for a few more days. Cast your votes today, before it is too late!
+
+_Let’s dive in!_
+
+## Holosim
+
+Five patches landed last week, the most consequential being **v1.2.17**. It closed the combat cooldown loop that had been letting players use starbases as a health-recovery revolving door. Fleets on AP cooldown can no longer dock or move until that window clears. Healer fleets get a two-minute cooldown after a field repair. Attacking while mid-repair is blocked. John (Product Manager) made the intent clear: leaving a fight is fine, cycling indefinitely through Starbase repair is not.
+
+Closing that loop surfaced a related problem. Starbase repair costs are too low. In serious fleet-loss scenarios, they should be as high as 80% of a fleet’s value in toolkits, but the fix is not straightforward. Starbase repair and fleet-to-fleet repair share the same stats while applying different logic, so there is no clean single solution. A two-stage fix or an on-chain program change may be required.
+
+In other important news, Territory control went live this week! The frontend display is now also correctly displaying actual Faction control of the star systems (Dominion bar in the top left). John did mention that the points counter may need to be reset due to earlier Starbase upgrade issues. 
+
+John also shared the first concrete Chapter 2 timeline, with the caveat that nothing is confirmed yet. The tentative structure: 
+
+* **Part 1** ends April 5th
+* **Part 2** runs from April 6th to May 3rd
+* **Post-season** runs from May 4th to June 1st
+
+The plan is for Crew purchases to open at the start of Part 2\. The **crew purchase pack** is still being finalised. The proposed purchase cap is 243 crew, enough to field one additional capital miner, with pricing to be decided with Chris (VP of Game Economy). The broader Chapter 2 crew cap is tightening to 800–900, and social quests and campaign rewards will add crew paths alongside daily check-ins.
+
+On the product side, Holosim’s conversion rate to paid actions, including both z.ink subscriptions and battle passes, is roughly 50%. John called that unusually strong for free-to-play. 
+
+![Star Atlas - Holosim S1C2 Geographic Distribution](https://assets.aephia.com/wp-assets/5ea426dfd80276cf80389a7bda99de7c8ed38efee4a12db741af5419ce563ffb.webp)
+
+Star Atlas – Holosim S1C2 Geographic Distribution \[[Source](https://x.com/staratlas/status/2037668549939073043)\]
+
+### Coming Up Next
+
+**Scanning** is confirmed as the centrepiece of Chapter 3, with summer as the target window, [signalled as a post-Chapter 2 priority since early this year](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-217/). Mechanically, scanning replaces the SDU system: instead of passive resource extraction, players will trigger finds by scanning tiles. Expect to find asteroids with rare materials, derelict ships, and quest hooks. John also floated a wages-style system to replace daily check-ins as crew progression.
+
+For Chapter 4, he is considering a larger UX overhaul with multi-fleet select, while also mentioning faction reputation for NPCs as a longer-term idea beyond that.
+
+Separately, John shared an early **fleet agility prototype** — a system that gives XXS-class ships fast-recharging shields and a short delay before shields can be broken. The idea: small ships in large numbers become a viable counter to heavier fleets, because larger ships cannot reliably one-shot a swarm before the shields come back. John called the initial results “very encouraging.” This is prototype work, not confirmed for release.
+
+### Holosim Changelog
+
+**v1.2.13**
+
+* Fixed starbase upgrades silently failing and returning materials for starbases captured during testing — upgrade ingredient validation now correctly resolves the current upgrade recipe
+
+**v1.2.14**
+
+* Fixed starbase upgrade showing a duplicate entry with an incorrect 800+ hour timer — upgrades now correctly display in a single location with accurate countdown
+* Fixed completed starbase upgrades not appearing as installable when toolkit supply was depleted — installation now works regardless of upkeep resource status
+* Removed misleading upkeep maintenance UI from the Upgrade tab — food and toolkit supply no longer affect crafting or upgrade speed (on-chain change)
+* Removed false Paused status on upgrade jobs when toolkit balance was zero — upgrades now show real-time progress continuously
+
+**v1.2.15**
+
+* Daily crew rewards are now capped at 20 check-ins — after reaching the cap, you can still check in for ATLAS and XP rewards
+* Streak milestone bonuses continue through day 30 regardless of the daily crew cap
+* Added crew check-in counter showing progress toward the cap (X/20) in the daily login UI
+* Added crew cap reached banner when daily crew check-ins are exhausted
+
+**v1.2.16**
+
+* Fixed crafting jobs silently disappearing when deposit transactions partially fail — orphaned crafts now appear in the Workshop with cancel/retry options instead of vanishing with crew and resources locked
+* Added notification volume slider in Game Settings — controls volume for NPC notification videos, quest briefing videos, quest audio, and UI sounds
+* Moved the tracked quests mini bar to the right side of the screen — no longer shifts position when the sidebar or fleet panel opens
+
+**v1.2.17**
+
+* Fleets on AP cooldown (recently in combat) can no longer dock at a starbase or move until the cooldown expires — the dock button is now visually greyed out during this window
+* ~~Fleets with pending HP (currently being repaired) can no longer dock, undock, or move until the repair completes~~ — receiving a repair no longer blocks docking
+* Healer fleets now have a 2-minute cooldown after performing a field repair — they cannot dock, undock, or move during this window
+* Attacking with a fleet that is on AP cooldown or mid-repair is now blocked
+* Fixed patrol orders breaking after combat — patrol now waits for AP to reload before selecting the next target instead of looping with ‘no enemies in range’
+* Fixed patrol fleets getting stuck when needing to dock, move, or undock while AP is reloading or a repair is in progress — all movement actions now wait for cooldowns to clear before proceeding
+
+### Known Issues
+
+Several issues remain open. The full list is maintained at the [Holosim Known Issues](https://staratlas.notion.site/Holosim-Known-Issues-2a3c619086e980e1bf1dee75727e263f) page.
+
+* **BUG-025** — Stuck Crew Crafting
+* **BUG-026** — Mass Crew Disappearance / Asset Loss (URGENT)
+* **BUG-027** — Ghost Ship / Stuck Craft (Ogrika Jod) (URGENT)
+* **BUG-028** — Missing Crew (Systemic Pattern) (URGENT)
+* **BUG-029** — Cargo / Reward Sync Mismatch
+* **BUG-030** — Can’t Warp to Sector While Another Fleet is Subwarping Through It
+* **BUG-031** — Crafting Jobs Show as Complete After Hard Refresh
+* **BUG-033** — Scanning Stack Overflow (All Scanning Broken) — P0, awaiting on-chain program redeploy
+
+![Star Atlas DAO](https://assets.aephia.com/wp-assets/13f597febd466859c4c568d40c78f549a4338a26b1d90b5add7f40f20da105d4.png)
+
+Star Atlas DAO
+
+## DAO Update
+
+Both PIPs from [last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-222/) remain open, closing on April 1st. PIP-30 in particular has swung significantly since we last reported.
+
+### PIP-29: [Star Atlas Relay Program (Pilot)](https://govern.staratlas.com/proposals/8e761702-ee81-4509-b627-9cadb5897c1b)
+
+> This proposal seeks up to 13,143,639 ATLAS in Ecosystem Fund funding to run a time- and budget-bounded pilot that incentivizes authentic, player-created short-form Star Atlas gameplay videos and distributes the strongest submissions through official/community social channels, using a human review process and a lightweight web platform for submissions, scoring, and weekly leaderboards.
+
+Structure:
+
+* **Requested funding:** 13,143,639 ATLAS (from Ecosystem Fund)
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18th
+* **Voting Closes**: Wednesday, April 1st (end-of-day UTC)
+
+Early results (\~11 days in, \~88M PVP committed):
+
+* **For**: 93.5%
+* **Against**: 5.4%
+* **Abstain**: 1.1%
+
+The numbers have barely moved. This one is heading to a comfortable pass.
+
+### PIP-30: [ATOM Cloud Infrastructure Sustainability — DAO Funding Pilot](https://govern.staratlas.com/proposals/3ba029f2-65e8-4637-b6ad-ae86284ff714)
+
+> This proposal seeks $2,200 USDC or up to 13,143,639 in ATLAS ($550/month × 4 months) from the DAO Ecosystem fund to keep ATOM Cloud operational through C4\. ATOM Cloud currently processes \~100,000 transactions/day for 104 daily active accounts.
+
+Structure:
+
+* **Requested funding:** $2,200 USDC (or equivalent ATLAS)
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18th
+* **Voting Closes**: Wednesday, April 1st (end-of-day UTC)
+
+Early results (\~11 days in, \~88M PVP committed):
+
+* **For**: 59.3%
+* **Against**: 39.3%
+* **Abstain**: 1.4%
+
+A sharp reversal from last week’s 29% For. It is now ahead, but narrowly, with a few days left.
+
+![z.ink](https://assets.aephia.com/wp-assets/b3b8f228d55599249438307a43695c4b4e65ecabe09e996f8a532452df0e6626.webp)
+
+## Z.ink
+
+Michael (CEO) shared that a zXP calculation bug has been fixed that has been live since launch. Alpha subscribers (1.25x multiplier) and Aura subscribers (1.5x) had their multipliers swapped the entire time. The fix removed approximately 8.2 million zXP from 100 Alpha profiles and added roughly 3.6 million to 28 Aura profiles. Airdrop and multipass season progress were recalculated for both groups. If you are anywhere near the top of the leaderboard, this matters.
+
+Meanwhile, some updates have rolled out to the zProfile / Airdrop campaign platform:
+
+* Displayed Multipass Rank is now correct (and follows the checked rewards below it)
+* XP+ percentage has been corrected, subscriptions no longer add an additional 100% (this was purely a visual glitch)
+* When you manage your Profile, you’ll see a new _Profile Vault_ section that can be safely ignored for now. This is a subscription-related change that won’t take effect until an upcoming update.
+
+_That is it for this week! Thanks for reading, and until the next!_
