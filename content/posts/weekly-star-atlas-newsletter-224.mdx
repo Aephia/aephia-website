@@ -1,0 +1,220 @@
+---
+title: "Weekly Star Atlas Newsletter #224"
+date: "2026-04-06T18:15:45"
+modified: "2026-04-06T18:15:45"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-224"
+description: "This week, the team kept tuning Chapter 2 of Holosim at a relentless pace, showed off the new UI for SAGE C4 footage, and published a fresh quarterly Economic Report. In addition, there was a last-minute surprise Economic Forum, governance to close out, and some good and bad news on the lore side."
+image: "https://assets.aephia.com/wp-assets/96c620f5348f09bb607e77398d6e5068128084335b839e39cbd05034ea946ebb.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18336
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 224th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This week, the team kept tuning Chapter 2 of Holosim at a relentless pace, showed off the new UI for **SAGE C4** footage, and published a fresh quarterly Economic Report. In addition, there was a last-minute surprise Economic Forum, governance to close out, and some good and bad news on the lore side.
+
+_Let’s dive in!_
+
+## Holosim
+
+John (Product Manager) spent much of last week tightening Chapter 2 around combat, repairs, and fleet composition. The clearest change is that smaller ships are no longer meant to be disposable filler. **XXS ships** now hold up far better defensively, fleet command caps are up to **150** per faction, and respawn timing has been reworked again, so it now reflects the subwarp trip back from where a fleet died instead of an arbitrary wait. Small ships are now more difficult to target by capital ships, requiring smaller ships to properly counter them.
+Also, a recent optimization cut about **five minutes** off the game’s loading times, which is the sort of fix players will feel immediately. 
+
+The repair overhaul is also much clearer now than it was when we [wrote about it last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-223/). Fleet-to-fleet healing has become much more expensive, and starbase repair now scales per ship and per point of damage repaired. The intended end state is severe by design. John said a fully destroyed tank ship should cost roughly **80,000 ATLAS worth of toolkits,** plus another **20,000 ATLAS** at the Starbase. That lines up with the wider effort to stop fleets from shrugging off losses too cheaply.
+That said, the last update set the repair cost at 40% of the fleet’s value. A new column, _starbaseRepairCost_, was added to the [ship stats spreadsheet](https://discord.com/channels/789226204980707409/1088509395933085779/1489407839897387189) that shows the repair cost per ship at a starbase.
+
+We also got a firmer roadmap for what comes next. **Chapter 2.1** is meant to close out the current chapter with **mobile support**, marketplace work, and **combat achievements**. After that, **Chapter 3** is planned for June through August 2026, with **Chapter 4** following in September through November. **Scanning** is still the core feature for Chapter 3, **SDUs** are on the way out, and scanned tiles are meant to uncover asteroids, derelicts, and quest hooks.
+
+Before any of that, a mid-season point release is being lined up with quite a bit in it. John confirmed the much-anticipated **Super Phoenix** event (the last storyling quest), a **new store**, and **300+ combat achievements** are all part of the plan, assuming the current balance and lag fixes hold up. Paid crew expansion is close too. A crew booster pack is expected within a week or two and is being sized specifically to let players field a **third Armstrong IMP**. Further out, John said future chapters may split rewards into a mid-season snapshot and an end-of-season payout, and he wants **dynamic local markets** in Chapter 4 or Season 2 so hauling resources across the map actually matters.
+
+![image](https://assets.aephia.com/wp-assets/13cc41d1c169cb283071955645fa136a8a828b30978ccae11e4f0f41ffc9cb62.png)
+
+Star Atlas – Holosim Activity
+
+### Marketing Campaign & Adoption
+
+During the Econ Forum, Chris (VP of Game Economy) shared that the team is currently running a Reddit marketing campaign. And it’s working, as new player numbers are going up, and active users have gone back up as well. Chris later shared analytics on Discord, showing the game’s _second-highest player count_ so far, with new user growth now pushing toward a new high.
+
+John shared that roughly **50% of Holosim players** convert into either a z.ink subscription or a Battle Pass. 
+
+### Holosim Changelog
+
+Here are the changelogs that have been published this past week:
+
+**v1.2.18**
+
+* Fixed mining automation freezing when a miner fleet gets attacked — the fleet now waits for AP reload and repairs to complete before resuming movement
+* Fixed transport automation freezing when a cargo fleet gets attacked — all dock, undock, and move actions now wait for AP and repair cooldowns to clear
+* Fixed transport Fleet Orders resource dropdown not populating — resources now load correctly and show a loading indicator while galaxy data is still being fetched
+* Battle Pass crew check-in progress bar is now hidden for players without an active Battle Pass or Zink subscription
+* Players who purchase a Battle Pass now receive retroactive crew rewards on their next daily check-in, covering all check-ins made before the BP was activated
+
+**v1.2.19**
+
+* Fixed daily crew cap — players were able to receive crew on their 21st check-in due to an off-by-one error. The cap now correctly enforces at 20 check-ins for both base crew and Battle Pass crew
+* Fixed a critical real-time update issue — fleet positions, HP, cargo levels, and crafting status were not updating live due to a browser compatibility error in the WebSocket account handler
+
+**v1.2.20**
+
+* Total Galia crew is currently limited to 508\. Players with fleets containing crew above this cap should move those fleets to the Central Space Station and disband them to avoid disruptions
+* Crew Quarters now displays a ‘Crew Over Cap (Locked)’ indicator at all starbases when a player’s total crew exceeds the maximum
+* Fixed an issue where Battle Pass crew rewards were being distributed incorrectly
+
+**v1.2.21**
+
+* Fixed crew lock double-counting — over-cap crew is now only locked at Central Space Stations instead of every starbase
+* Non-CSS starbases show a hint directing players to disband at CSS when over the crew cap
+
+**v1.2.22**
+
+* Ship stats rebalanced — shield break delay now scales by class (XXS = 20s through Commander = 240s), representing agility advantage for smaller fleets
+* XXS ships buffed for swarm viability — doubled shield pool (SP 18.75→38) and 30× faster shield recharge (0.1→3.0/s)
+* Starbase repair cost is now per-ship with proportional ATLAS fee — you pay based on damage repaired, not toolkit consumption
+* Fleet docking, undocking, and movement state now updates instantly during PvP — combat eligibility is always accurate. HP and shield values continue updating through the combat volley system as before
+* Fleet command cap increased to 150
+
+**v1.2.23**
+
+* Fixed respawn timer to account for subwarp travel time from death location — UI now matches on-chain enforcement so the Respawn button activates at the correct time
+* Fixed transaction retry not catching block height exceeded errors — transactions that expire due to network congestion now properly retry up to 5 times
+
+**v1.2.24**
+
+* Starbase repair ATLAS fee now uses per-ship cost — repair cost scales proportionally to damage and reflects ship value instead of flat per-toolkit fee
+
+### Known Issues
+
+The official [Holosim Known Issues](https://staratlas.notion.site/Holosim-Known-Issues-2a3c619086e980e1bf1dee75727e263f) page still lists several open issues:
+
+* **BUG-025** Stuck Crew Crafting
+* **BUG-026** Mass Crew Disappearance / Asset Loss
+* **BUG-027** Ghost Ship / Stuck Craft (Ogrika Jod)
+* **BUG-028** Missing Crew (Systemic Pattern)
+* **BUG-029** Cargo / Reward Sync Mismatch
+* **BUG-030** Can’t Warp to Sector While Another Fleet is Subwarping Through It
+* **BUG-031** Crafting Jobs Show as Complete After Hard Refresh
+* **BUG-033** Scanning Stack Overflow (All Scanning Broken)
+
+![Star Atlas - SAGE C4 - UI Sneak Peek [shared during the Atlas Brew]](https://assets.aephia.com/wp-assets/cc340ad9cd5da4a1632a0486917b28adcc8622105edf475d5d569c737e759a2e.png)
+
+Star Atlas – SAGE C4 – UI Sneak Peek \[shared during the [Atlas Brew](https://youtu.be/CEy84_tKeX8)\]
+
+## SAGE C4 
+
+The first public **C4 PTR** gameplay footage was shown during [Atlas Brew #198](https://youtu.be/CEy84_tKeX8), before being [shared on X](https://x.com/staratlas/status/2040190030313062502). This gave us our first look at Danny’s AI-assisted redesigned Starbase UI with pinnable tabs, favorites, and a notification system.
+
+<YouTube id="fnvJ6bSxvWw" title="Star Atlas - SAGE C4 - UI Sneak Peek [WIP]" caption="Star Atlas – SAGE C4 – UI Sneak Peek" />
+ 
+
+This was the first time that we saw the product’s interface that players will actually touch. SAGE C4 will first go live on the z.ink testnet in the so-called PTR mode (_Public Test Realm_, as coined by Blizzard during the early World of Warcraft days to signal an unofficial environment for testing only), before being launched on the new z.ink mainnet. Both releases are eagerly anticipated, and the C4 PTR one is expected to roll out sometime in the coming weeks.
+
+![Star Atlas - Economic Report Q1 2026 - Ecosystem Users by Program](https://assets.aephia.com/wp-assets/23fd0c45d00fec5c8d66a860f068f00a26f9d7cf1030bcd4e7a09d462ea78dcd.webp)
+
+Star Atlas – Economic Report Q1 2026 – Ecosystem Users by Program
+
+## Economy Report & Forum
+
+The team released the **[Q1 2026 Economy Report](https://storage.googleapis.com/sa-cdn-prod/dao/economy/2026/q1.pdf)** this past week, starting with a note saying that SAGE numbers were cut short by 10 days because the team had shut down the expensive data streams to lower expenses. This was later reiterated by Chris during the Economic Forum (which unfortunately was not recorded due to the late notice it was going to take place).
+
+For your convenience, we included the entire Executive Summary below.
+
+![Star Atlas - Economic Report Q1 2026 - Gaming Ecosystem Token Price Indices](https://assets.aephia.com/wp-assets/dce524dc5b713bb18ea9bbf8df567d1066467821be2a11985df125f5d277163f.webp)
+
+Star Atlas – Economic Report Q1 2026 – Gaming Ecosystem Token Price Indices
+
+### Executive Summary
+
+> The first quarter of 2026 marks a continuation of the macroeconomic contraction that has defined
+> web3 gaming through 2025 and into the new year. Star Atlas tokens declined approximately 80%
+> over the six-month period ending March 5, 2026, underperforming both SOL (down \~60%) and the
+> broader gaming token index (down \~50%). Despite significant token price headwinds, the core
+> Starbased player base has remained engaged throughout the period, and the broader ecosystem
+> census recorded 8,109 active citizen accounts.
+> 
+> Full-period GDP from September 15, 2025 through March 5, 2026 reached $1,839,185 in USDC terms
+> and approximately 4.22 billion ATLAS. Q1 2026 alone contributed $502,334 in USDC GDP and 1.84
+> billion ATLAS, with token burns remaining the dominant component of economic output. Daily
+> ATLAS emission rates averaged approximately 9–11 million, slightly above 8.5 million per day target.
+> Ecosystem NFT and SFT asset holdings total approximately $27 million across 129,413 tracked
+> accounts, with a mean holding of $208 and a Gini coefficient of 96 — consistent with the structural
+> inequality expected in a game economy. Currency holdings add an additional 55 million across
+> stablecoins, Star Atlas tokens, and SOL.
+> 
+> A pronounced divergence has emerged in asset markets. Non-functional assets — particularly
+> Access passes and Crew — have appreciated strongly in both USDC and ATLAS terms. Resource
+> prices, by contrast, have collapsed approximately 70–85% in USDC terms and 20–40% in ATLAS
+> terms from September 2025 levels. Ship prices declined in USDC but rose in ATLAS, continuing the
+> pattern described in the Q4 2025 report.
+> 
+> Outstanding Faction Infrastructure Contracts total 34.45 million tokens (71.3 million ATLAS
+> equivalent), modestly above the prior quarter’s steady state. OTC trade activity declined from
+> approximately 12% of total volume in H2 2025 to 7.2% over this period, though resources continue
+> to account for a large portion of OTC value at 30.2% of resource market volume. Open Market
+> Operations, deployed in early 2026, appear to have contributed to this modest decline.
+
+### Economic Forum
+
+On Thursday, Chris announced that the monthly Economic Forum would take place mere hours later. After he canceled the previous episode at the last minute, this was not on anyone’s radar, and therefore, unfortunately, it was not recorded by odvb’s [StarAtlasTV](https://www.youtube.com/@staratlastv) (which usually records everything).
+
+During the Forum, he mostly spent time going over the Economic Report and the new Holosim dashboard that he vibecoded himself (see the Holosim Activity screenshot in the Holosim section above). He is trying to figure out if, and how, he can make this dashboard public.
+
+Lastly, Chris shared that his focus will be solely on the monthly Economic Forums, the quarterly Economic Reports, and the economic design for one product at a time, in this case, Holosim. Next on that list: SAGE C4.
+
+## DAO Updates
+
+Two PIPs from [last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-223/) closed during the past week, and both passed. **PIP-29** was comfortable from start to finish. **PIP-30** got over the line too, but only after a much rougher public debate around the proposal’s communication and value proposition.
+
+### PIP-29: [Star Atlas Relay Program (Pilot)](https://govern.staratlas.com/proposals/8e761702-ee81-4509-b627-9cadb5897c1b)
+
+> This proposal seeks up to 13,143,639 ATLAS in Ecosystem Fund funding to run a time- and budget-bounded pilot that incentivizes authentic, player-created short-form Star Atlas gameplay videos and distributes the strongest submissions through official/community social channels, using a human review process and a lightweight web platform for submissions, scoring, and weekly leaderboards.
+
+Structure:
+
+* **Requested funding:** 13,143,639 ATLAS
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18
+* **Voting Closes**: Wednesday, April 1 (end-of-day UTC)
+
+Final results (final, \~162.7M PVP committed):
+
+* **For**: 96.4%
+* **Against**: 2.9%
+* **Abstain**: 0.6%
+
+### PIP-30: [ATOM Cloud Infrastructure Sustainability — DAO Funding Pilot](https://govern.staratlas.com/proposals/3ba029f2-65e8-4637-b6ad-ae86284ff714)
+
+> This proposal seeks $2,200 USDC or up to 13,143,639 in ATLAS ($550/month × 4 months) from the DAO Ecosystem fund to keep ATOM Cloud operational through C4\. ATOM Cloud currently processes \~100,000 transactions/day for 104 daily active accounts. Users currently pay 0.000005 SOL per taxable transaction (\~half of all operations). If this proposal passes, ATOM Cloud becomes completely free for all users until C4\. Without funding, the service shuts down in 30 days. This is a pure sustainability request — no new features, no profit of any kind for ATOM Team.
+
+Structure:
+
+* **Requested funding:** $2,200 USDC
+* **Structure**: 1-off PIP
+* **Voting Opened**: Wednesday, March 18
+* **Voting Closes**: Wednesday, April 1 (end-of-day UTC)
+
+Final results (final, \~182.8M PVP committed):
+
+* **For**: 60.9%
+* **Against**: 38.4%
+* **Abstain**: 0.7%
+
+Triggering a lengthy discussion on Discord during the last week of the voting term, during which the vote went from against to for and back again, this was a highly contentious proposal. However, in the end, it won out, garnering the highest turnout of PVP ever, a whopping \~183 million of it, or 27.34% of the total PVP out there.
+
+![Star Atlas - Embercoil Roleplay Campaign](https://assets.aephia.com/wp-assets/f767b43c65c1620e4b0454f1f4e59e9410bee25752814794f4037f4a2340688c.webp)
+
+Star Atlas – Embercoil Roleplay Campaign
+
+## Lore
+
+The roughest lore update last week came from Michael (CEO), who said **Tim McBurnie’s** work with Star Atlas has been suspended. That puts **CORE Act 3** back on pause. The timing stings a bit, because in the [December Town Hall](https://intel.aephia.com/news/town-hall-report-december-17th-2025), the team was still targeting January for the start of Act 3\. Michael did say the project is not written off, but for now, it has been shelved.
+
+On a much more positive note, José (Lore & Community) used [Atlas Brew #198](https://youtu.be/CEy84_tKeX8) to unveil **Embercoil**, a Star Atlas tabletop RPG campaign set in the ruins of **Harkent**. It uses a custom system rather than D&D, and he wants to start running it through the Lorekeepers over the coming months.
+
+_That is it for this week! Thanks for reading, and until the next!_
