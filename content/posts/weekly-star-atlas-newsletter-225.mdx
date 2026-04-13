@@ -1,0 +1,108 @@
+---
+title: "Weekly Star Atlas Newsletter #225"
+date: "2026-04-13T13:10:19"
+modified: "2026-04-13T13:10:19"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-225"
+description: "This past week, Michael (CEO) briefly addressed the pending z.ink O.RIGINS airdrop, sharing his rough plans to prevent mass dumping on day one. Meanwhile, Holosim continued to receive steady patches to smooth out its roughest edges. We also got a first taste of an upcoming UE5 patch, introducing a new mission type to Galia."
+image: "https://assets.aephia.com/wp-assets/c2d55dbcc778ba86241639a3b93c6747a9aee27ed335fcb1498294789544d8d2.webp"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18363
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 225th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This past week, Michael (CEO) briefly addressed the pending z.ink **O.RIGINS airdrop**, sharing his rough plans to prevent mass dumping on day one. Meanwhile, **Holosim** continued to receive steady patches to smooth out its roughest edges. We also got a first taste of an upcoming **UE5** patch, introducing a new mission type to Galia.
+
+_Let’s dive in!_
+
+![Star Atlas — Michael vibe-coded a "very rough snapshot of the claims portal." [link]
+](https://assets.aephia.com/wp-assets/d9535d16e3a5014ba177e9bc856e9e66c32110bd9da34b2fb41bda0b3dcdc14f.webp)
+
+Star Atlas – Michael vibe-coded a “very rough snapshot of the claims portal.” \[[link](https://discord.com/channels/1416104984818352194/1416104985523130511/1493094136704667658)\]
+
+## Z.ink O.RIGINS Airdrop
+
+Michael (CEO) shared last week that the current thinking is to drop roughly **5% up front** and have the remaining **95%** of each player’s airdrop **vested over six months or more**. There will be an early-claim penalty that sends the forfeited balance **back into the pool** for people willing to vest longer. This should keep the circulating supply relatively tight at the start, while tokenholders will have a great incentive to stake their z.ink tokens given that the chain’s inflation curve is expected to be highest at the start.
+
+![Star Atlas — Holosim S1C2 — Two new recovery options have been added to the hangar menu: Minimum Repair and Remove Crew](https://assets.aephia.com/wp-assets/fd291a36acd7a8045614b2bf1a238755966d3706d93103431ae426e4464bb64d.png)
+
+Star Atlas – Holosim S1C2 – Two new recovery options have been added to the hangar menu: _Minimum Repair_ and _Remove Crew_
+
+## Holosim
+
+John (Product Manager) spent another week sanding down the parts of **Holosim Chapter 2** that had been causing the most friction. The biggest change is simple: destroyed fleets now have more than one bad option. The new **Minimum Repair** button lets players spend a single toolkit to get moving again without fully restoring the fleet, while **Rescue Crew** gives them a way to pull crew out safely instead of being stuck behind a full repair bill. That follows the repair-cost overhaul we [covered in #224](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-224/), but this week’s changes feel more practical and a lot less punitive.
+
+A few other clarifications mattered too. John said **fleet-to-fleet repairs** are now working mechanically, with dedicated repair ships restoring more HP per toolkit through their `repairAbility` stat. He also confirmed that the current **AP cooldowns** are only enforced in the UI for now and can still be bypassed on-chain, because he wants more testing before locking that behavior into the blockchain program itself. The **warp cooldown**, meanwhile, is there to slow excess resource production and inflation, not just to make movement take longer.
+
+Live testing of the last storyline quest has also been moving ahead. The team carved out the middle of the map as a temporary no-fly zone while running tests for the **Superphoenix** event, and that restriction was later extended by another 72 hours. If this testing is successful, we should see the ECOS Superphoenix pop up on the map soon!
+
+### Holosim Changelog
+
+This week saw only one official change going live. We included the changelog below:
+
+**v1.2.25**
+
+* Fleet repairs no longer eat your whole toolkit stack — only the toolkits actually needed are used
+* Repair ATLAS costs now line up correctly with how much HP you repair
+* Added Rescue Crew for destroyed fleets — do a quick minimum repair, then pull crew out safely
+* Added Minimum Repair and Cancel Installation buttons in upgrade/crafting flows so you have a recovery option if something gets stuck
+* Fixed upgrade submit failures caused by out-of-sync points epochs — you now get a retry prompt instead of a hard on-chain error
+
+### Known Issues
+
+The official [Holosim Known Issues](https://staratlas.notion.site/Holosim-Known-Issues-2a3c619086e980e1bf1dee75727e263f) page still lists several open issues:
+
+* **BUG-025** Stuck Crew Crafting
+* **BUG-026** Mass Crew Disappearance / Asset Loss
+* **BUG-027** Ghost Ship / Stuck Craft (Ogrika Jod)
+* **BUG-028** Missing Crew (Systemic Pattern)
+* **BUG-029** Cargo / Reward Sync Mismatch
+* **BUG-030** Can’t Warp to Sector While Another Fleet is Subwarping Through It
+* **BUG-031** Crafting Jobs Show as Complete After Hard Refresh
+* **BUG-033** Scanning Stack Overflow (All Scanning Broken)
+<YouTube id="jz5nbsxi1NA" title="Star Atlas - UE5 Elimination Mission Preview [WIP]"  />
+ 
+
+## UE5
+
+The team shared two short but interesting updates on the ongoing UE5 work. The **Galia single-player** game mode is set to receive an interesting addition soon, so-called **Elimination** missions. This is the first use case of the team’s new AI Navigation on Planet Surfaces. To demonstrate this, they [shared a new video](https://x.com/staratlas/status/2042377135848112129?s=20) \[see below\] on X that shows an outpost (overrun by Jorvik) on the dark side of _Merevia_. Your task: eliminate their leader.
+
+<YouTube id="mzC0M97tFxg" title="Star Atlas - UE5 Minky Steer Hunting [WIP]"  />
+ 
+
+That is not all, though! A second video that was [shared](https://x.com/staratlas/status/2042679532625498527?s=20) shows the player shooting Minky Steers from orbit with his ship. This is the type of combat that we need before being able to see the much-anticipated (but likely delayed) Conquest game mode become a reality.
+
+![VZUS solos with the custom Solflare skin [A Holosim Chapter 1 exclusive]](https://assets.aephia.com/wp-assets/757c7f2defc33e7181b9134a47e570afdc95c3a6df761d530e3f3aff72eaca1c.png)
+
+Star Atlas – VZUS solos with the custom Solflare skin \[A Holosim Chapter 1 exclusive\]
+
+## News Bits
+
+But that is not all! Here are some more news bits that are simply too short to warrant their own section:
+
+* A new PIP, number 31, is close to being published. This will be a proposal to fund the completion and launch of **Star Seekers 2**, a community-created cross-platform mobile space-combat game inspired by the Star Atlas universe, on both iOS App Store and Google Play Store. Stay tuned!
+* **Iris’ Blessing 6th Drawing** did not take place this past Friday, April 10th, as planned. It has been postponed to today, Monday (the date of publication of this newsletter).
+* If you participated in Holosim Chapter 1 and completed the storyline quest-chain, you will have new rewards that are claimable in your inventory, including the **exclusive vzsus Solos skin** (see above).
+* Michael gave a bit more color on how **SAGE C4** is expected to feel once it does arrive. In his view, day-to-day play should be mostly _passive_ inside safer zones, with more _active spikes_ coming from raids, conquest, and combat pushes.
+
+On the topic of ship skins made for special occasions, Gary Sanchez (Vehicle Art Director) [shared](https://www.artstation.com/artwork/NqAwZP) a number of concepts he created for these over the past few years:
+
+![Star Atlas - Special skins concepts [by Gary Sanchez]](https://assets.aephia.com/wp-assets/d6005520872cc169e4635292d7720a8762edcbb9de560989a1581d75d35d030e.png)
+
+Star Atlas – [Special skins concepts](https://www.artstation.com/artwork/NqAwZP) \[by [Gary Sanchez](https://www.artstation.com/antarktik)\]
+
+## DAO Casters
+
+The first season of [DAO Casters](https://govern.staratlas.com/proposals/159cb743-f8cf-4932-8e01-e6f1a0b479ff) is in full swing, and this newsletter is a part of that initiative for the next few weeks. Do check out some of the content of other Star Atlas (DAO Caster) creators:
+
+* [\[STAR ATLAS\] Roadmap to a Digital Civilization](https://www.youtube.com/watch?v=iJUrSMOTvLI)
+* [Star Atlas TV – Giveaway Campaign](https://gleam.io/e2qPz/star-atlas-tv-dao-casters-giveaway)
+
+_That is it for this week! Thanks for reading, and until the next!_
