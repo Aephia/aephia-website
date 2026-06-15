@@ -1,0 +1,221 @@
+---
+title: "Weekly Star Atlas Newsletter #234"
+date: "2026-06-15T17:56:43"
+modified: "2026-06-15T17:56:51"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-234"
+description: "The SAGE C4 PTR may only be a few weeks old, but the team is already working on what comes next. Last week’s Atlas Brew shed light on Combat V2, Regional Governance, AI-powered automation, and several other major systems currently in development. Meanwhile, the first version of the Star Atlas TTRPG handbook is complete, PIP-32 passed, and the promotional sale continues."
+image: "https://assets.aephia.com/wp-assets/564c4540dede8484cbb17a707a1502d60552fb512bf9a9d30d52ddf545718d45.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18580
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 234th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+The **SAGE C4 PTR** may only be a few weeks old, but the team is already working on what comes next. Last week’s Atlas Brew shed light on **Combat V2**, **Regional Governance**, AI-powered automation, and several other major systems currently in development. Meanwhile, the first version of the **Star Atlas TTRPG** handbook is complete, **PIP-32** passed, and the **promotional sale** continues.
+
+_Let’s dive in!_
+
+## SAGE C4
+
+During [last week’s Atlas Brew](https://www.youtube.com/watch?v=hJfyCUhYQoQ), we learned that, in addition to fixing bugs and polishing features, the team has been developing 5 new features, _in addition to_ crucial features such as the full **Cultivation Claim** loop in-game, plus **zXP tracking** for the zink O.RIGIN campaign.
+
+We’ve learned that the following team members are working on these new features:
+
+**Danny** (CPO):
+
+* Improved the **Marketplace UI**
+* Working on **Single Player** tutorial mode
+
+**Jacob** (CTO):
+
+* Working on **Combat V2**
+* Working on **Diplomacy Module**
+
+**John** (Product Manager):
+
+* Working on **Nemesis Engine** (controlling friendly and unfriendly NPC fleets)
+* Picked up José’s work (see next item)
+
+**José** (Lore Creator):
+
+* Worked on making **Crew** (card) skills have an actual in-game effect
+
+**Michael** (CEO):
+
+* Working on getting LLM-based automation in-game with external AI partnerships so users can use actual AI assistants to play the game for them _for a fee_.
+
+Michael shared that the work on **Combat V2** will require a PTR wipe as it targets on-chain programs. At this point, it’s probably still one to two weeks away. The **Nemesis Engine** is expected to land as part of that same package.
+
+He also mentioned that Chris has been on the road for the past 3 weeks, but has returned this past weekend. The team is planning a PTR meeting with him and the Econ Vantarah group somewhere this week or the next.
+
+### Combat V2
+
+You may be wondering what Combat V2 exactly entails, and luckily, Michael dropped the following (WIP) Combat V2 patch notes: 
+
+**What changed from Combat v1**
+
+* Combat is now stat-driven by a much larger ship config surface, not a single flat combat number.
+* Damage is typed: Kinetic, Energy, EMP, Superchill, Shockwave, Gray goo, Heat, Bomb, plus missile damage.
+* Defenses now include typed countermeasure buckets: Decoy, Energy capacitor, Fire suppressor, Flare, Healing nanobots, Mine, Negative REM plating, Warming plates, and Faraday shielding.
+* Attacks now resolve hit/dodge/crit, raw damage, blocked damage, effective damage, and HP damage.
+* Damage has variance, so repeated attacks with the same fleet can produce different outcomes.
+* AP matters more directly: attacks require AP, spend AP, and interact with AP regen/reload timing.
+* Shield/HP behavior is richer: SP absorbs first, shield break delay affects recharge, and HP has pending repair/regeneration behavior.
+* Fleet-vs-fleet combat now resolves attacker and defender outcomes, including counterattack-style damage to the defender.
+* Fleet-vs-starbase combat now includes starbase retaliation, downgrade/destruction flags, sequence id changes, and crafting-hab sync on destruction paths.
+* Outcomes are seeded from recent slot hashes, so they are deterministic on-chain but still feel probabilistic to players.
+* The client now shows Combat v2 stats in more places: fleet info panel, hangar/config selection, form fleet, fleet management, inventory/detail views, and Debug Fleets.
+* The preview build is pointed at the isolated Combat v2 zink SAGE program/game only, not the existing public zink SAGE deployment.
+
+### Diplomacy Module
+
+While he was in a sharing mood, Michael also shared the features for the upcoming diplomacy module _that have been completed_ so far. Though a bit more technical, it may still be of interest to some of you:
+
+* Governable bounded params:  
+  * crafting fee multiplier
+  * local market fee
+  * local treasury share
+  * treasury distribution share
+* Starbase governance account with epoch timing, quorum, weighted vote aggregation, one-epoch pending activation, and starbase level/sequence gating.
+* Voter power, starbase delegation, epoch vote, treasury, and claim-state accounts.
+* Treasury reward-index accounting for ATLAS distributions and claims.
+* Crafting fee snapshots/routing with DAO vs local treasury split.
+* Local market fee routing through optional governance/treasury accounts, with old behavior preserved when governance is inactive/omitted.
+* Regenerated SAGE IDL, Rust SDK/decoder, TypeScript dev-sage clients, and `DO_GOVERNANCE` permission.
+
+### PTR Patch
+
+Beyond looking forward to the new, shiny gameplay features the team is working on, a lot of work is being done daily to make the PTR a more stable and user-friendly place. John shared the following list of changes that were implemented and launched between June 4th and June 8th:
+
+**Marketplace UI overhaul**
+
+* **Local markets** — your faction’s starbases, with faction filters, favorites, and a list of active markets.
+* **Galactic markets** — cross-faction discovery with route intelligence so you can spot price gaps across the galaxy. (Trading is still own-faction only, but you can browse everyone.)
+
+A new **Market tab inside each Starbase Menu** lets you buy, sell, and place orders without leaving the starbase. Deposit and Withdraw ATLAS straight from the market header. Place limit orders, match the best price, or use Quick Buy / Quick Sell. The simplified marketplace UI will be released as an A/B test. Let us know which you prefer and why.
+
+**Crafting improvements**
+
+Two big crafting fixes this week:
+
+* **Recipes no longer disappear after 100 crafts.** Fuel, Ammo, and Food were silently vanishing once the recipe hit a hidden usage cap. That cap is gone, and existing recipes on the testnet have been bumped to unlimited.
+* **The +9900% Tier-2 Crafting Hab exploit is closed.** A Tier-2 Hab was inflating crafting output by a factor of 100\. It’s been corrected back to normal multipliers across the board.
+* **Crafting Habs won’t let you edit buildings while jobs are running** — the Buildings tab + Edit + Deconstruct buttons now show a clear “Complete or cancel active jobs first” message instead of letting you start an edit that would fail.
+* **Crafting Hab routing is fixed** — your selected Hab’s efficiency and speed modifiers actually apply to your crafts now.
+* **Better “no Hab available” messaging** — you’ll see exactly why (“all habs still constructing”, “no recipe unlocked”, “all habs busy”, etc.).
+
+**Fleet actions are smarter**
+
+* **No more silent failures on 0 fuel.** Scan, Warp, Subwarp, and Warp Gate buttons now disable themselves with “No fuel — resupply at a starbase” instead of letting you click and have nothing happen.
+* **Scan hints are clearer** — when a scan is blocked by a uniform cargo shortfall, the UI tells you exactly what cargo to top up.
+* **Fleet info HUDs no longer overlap station flags** on the galaxy map, and the Council Rank panel scrolls properly again.
+
+**Form Fleet improvements**
+
+* **New “Deposit via Port of Entry →” link** when you open Form Fleet with nothing deposited yet — one click takes you straight to PoE.
+* **Starbase player list refreshes** when you switch back to the tab, so you no longer see stale state.
+* **Hull eligibility tags are always visible**, and fitting hulls now sort to the top of the list.
+* **“Upgrade” renamed to “Research”** to match the rest of the interface.
+
+**Starbase quality of life**
+
+* **The CREW tab in the Starbase Menu now works** (previously inert).
+* **The Research Nodes overlay no longer closes your Starbase Menu** when you click inside it — your in-progress Form Fleet config is safe.
+* **Claim Buildings catalog keeps its scroll position** when data refreshes.
+* **Stuck Claim Stake transfers can now be recovered**, and the transfer screen now scopes idle fleets to the correct owner.
+* **Pay Rent button checks rent balance first** — no more silent-failing clicks, and errors come back in plain English instead of raw on-chain codes.
+
+**Small polish**
+
+* **Port of Entry wallet-to-starbase errors** now say what went wrong instead of showing a cryptic `INCORRECT_AUTHORITY` code.
+* **In-game currency labels** — SOL is now ZINK in all user-facing text.
+
+![Star Atlas - The Light of Evisco [AI-created, Fan art contribution]](https://assets.aephia.com/wp-assets/c18d8fe7404579c32096369164ac7ac98b6974530084ff7a4d111b198293efc9.png)
+
+Star Atlas – The Light of Evisco \[AI-created, Fan art contribution\]
+
+## The Light of Evisco
+
+José has finished the first version of the Player Handbook for the _Star Atlas Tabletop Roleplaying Game_ (SA TTRPG).
+
+He has been cranking out chapters over the last few weeks, and though two chapters (24 and 25) still remain, the book is complete for now. The final two chapters will be added after the campaign concludes.
+
+Even without any art and with those last two chapters missing, the book is now a whopping **521** **pages** long!
+
+Though José admitted he used AI to create the book, all the mechanics and details are his. AI assistance was mostly used to organize the chapters and take up the mantle of “book editor”.
+
+This coming Thursday, June 18th, the monthly Lorekeepers session will host a Session 0 with one of the players in the upcoming campaign. This is a special session that will primarily serve as an introduction to the player’s character.
+Additional Session 0s are planned with the other players the day after, but these will likely be private.
+
+## DAO Updates
+
+**PIP-32**, the funding proposal for the **Triad Tournament** esports event, closed with a comfortable pass!
+
+### PIP-32: [Igniting the Star Atlas Triad Tournament – A Super Phoenix Sports Live Esports Event](https://govern.staratlas.com/proposals/0b04ff9b-ff04-45f5-a458-696fea70eda2)
+
+> This proposal seeks funding of the Ecosystem Fund limit (currently 13,576,392 ATLAS) for the production and broadcast of the Star Atlas Triad Tournament in June 2026, a first-ever combined competitive event spanning all three UE5 game modes: Racing Mode (Star Racer), Gun Mode (Star Shooter), Siege Mode (Star Fighter). Funding is to compensate the team only, it is not funding a prize pool.
+
+Structure:
+
+* **Requested funding:** 13,576,392 ATLAS
+* **Structure**: 1-off PIP
+* **Voting Opened**: Thursday, May 28
+* **Voting Closes**: Thursday, June 11 (end-of-day UTC)
+
+Final results (final, \~119.2M PVP committed):
+
+* **For**: 74.1%
+* **Against**: 11.4%
+* **Abstain**: 14.5%
+
+![Star Atlas - Calico Flattop carrying a Calico Guardian [Concept Art]](https://assets.aephia.com/wp-assets/c848f85705a0763dc052ed6aa6efa5855a0398a7c5eb5955e8e0d51f4968f679.png)
+
+Star Atlas – Calico Flattop carrying a Calico Guardian \[Concept Art\]
+
+## Promotional Sale
+
+The special sale is still ongoing, or, well… sort of! The free crew packs that came with every item were removed this past Friday (9 AM PT), and the snapshot for those rewards has been taken.
+
+However, the team shared that the assets will remain available for purchase at the same price points, so the 25% discount will remain in effect. They did not specify how long this offer would last.
+
+As a reminder, these items are currently for sale (now without the crew pack bonus):
+
+**Cultivation Claims:**
+
+* [Tier 1](https://play.staratlas.com/market/CULTyJq7cqCyTxcReRffiGgv3XrKJCfBhYVVrkdNVgSV/?symbol=USDC) @ $15 (1,337x)
+* [Tier 2](https://play.staratlas.com/market/CULTcnNjVLhXDWk62HGXbLb33nDnAZAGmuBCWNBb44bd//?symbol=USDC) @ $75 (400x)
+* [Tier 3](https://play.staratlas.com/market/CULTZhk3zbf2dgbEJfoPKJ9LdjzazK4AHTX3w7Bkm9nD/?symbol=USDC) @ $274 (128x)
+* [Tier 4](https://play.staratlas.com/market/CULTqgwU64SUKC9Q6kC17LLiJgAY9qyv1qKSdUnWXe41/?symbol=USDC) @ $639 (62x)
+* [Tier 5](https://play.staratlas.com/market/CULTjNLRFjYV5nSHQsy2dyDKNyJN2Y5vsYW8R2C1q8XE/?symbol=USDC) @ $1,970 (25x)
+
+**Ships:**
+
+* [VZUS arma](https://play.staratlas.com/market/VZA31QjDrGs6rEXZs6JN2shsG6GbWZZst51qUHNvNnX/?symbol=USDC) @ $81 (185x)
+* [Calico Flattop](https://play.staratlas.com/market/CALHEsUGywdyXybMi3DAUgWCNZwxP55Wj2Ean8wXqho4/?symbol=USDC) @ $3,050 (20x)
+
+The sales numbers so far:
+
+* **3** VZUS arma ships sold
+* **2** Calico Flattop ships sold
+* **69** Tier 1 Cultivation claims sold
+* **35** Tier 2 Cultivation claims sold
+* **12** Tier 3 Cultivation claims sold
+* **7** Tier 4 Cultivation claims sold
+* 0 Tier 5 Cultivation claims sold
+
+## News Bits
+
+Here are a few more smaller news items before we wrap up this issue:
+
+* **UE5** — Star Atlas has not been available on the Epic Games Store for a little over a week for reasons that are unclear, but the team has meanwhile managed to get it back in there. This means the game can once again be downloaded and played.
+* **UE5** — Possibly related, the official hosted multiplayer game servers have been unavailable for nearly 2 weeks, but the team seems to be homing in on a solution.
+* **Iris’ Blessing** — The planned 8th drawing for the Iris’ Blessing campaign did not take place this past Friday, but Jindo (community admin) handled it the next day, on Saturday. If you won anything, you should have received a ping on the Star Atlas Discord server!
+
+_That is it for this week’s news! Thanks for reading!_
