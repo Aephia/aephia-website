@@ -1,7 +1,7 @@
 ---
 title: "Weekly Star Atlas Newsletter #235"
 date: "2026-06-22T18:26:50"
-modified: "2026-06-22T18:26:54"
+modified: "2026-06-22T18:51:41"
 type: "newsletter"
 slug: "weekly-star-atlas-newsletter-235"
 description: "This week’s update is all about what comes next for SAGE C4. During Atlas Brew #209, the team laid out the roadmap for the next PTR phases, including Combat V2, the Nemesis NPC engine, regional governance, and the first real look at how crew may evolve into a gameplay system of their own. Beyond that, we got fresh insights into the team’s Steam ambitions for UE5, two noteworthy DAO proposals, and a handful of smaller updates from across the ecosystem."
@@ -26,10 +26,6 @@ _Let’s dive in!_
 
 During last week’s [Atlas Brew #209](https://youtu.be/D3jgynrrzR0), José (Lore & Community), alongside John (Product Manager) and Michael (CEO), shared the planned 2-phase improvements for the SAGE C4 PTR.
 
-![Star Atlas - Starbase Governance UI in C4 [Work in Progress]](https://assets.aephia.com/wp-assets/08ac52da4a113d4c7573dae860b733baadeb6f3b1acc8a3f37bf1ef4a753a2d5.png)
-
-Star Atlas – Starbase Governance UI in C4 \[Work in Progress\]
-
 ### Phase 2
 
 The next phase, with Phase 1 being the launch of the PTR itself, will bring us the much-anticipated Combat V2, alongside the Nemesis NPC engine, the Diplomacy/Democratic module, and utility for Cultivation Claims output.
@@ -39,6 +35,51 @@ We are still at least one week away from a PTR reset, which will bring Combat V2
 Either before or after this reset (or alongside it), we will also receive the Democracy/Diplomatic module, which will bring **regional governance** into the game. This, in itself, will introduce a player taxation module that allows players to increase the crafting tax within a region and pocket the difference.
 
 Though Michael did mention the Cultivation Claims as well, and he did mention stims when talking about Combat V2, it is not entirely clear if Phase 2 will bring the full Cultivation Facilities loop already.
+
+![Star Atlas - Regional Governance UI in C4 [Work in Progress]](https://assets.aephia.com/wp-assets/08ac52da4a113d4c7573dae860b733baadeb6f3b1acc8a3f37bf1ef4a753a2d5.png)
+
+Star Atlas – Regional Governance UI in C4 \[Work in Progress\]
+
+#### Regional Governance V1
+
+Jacob (CTO) shared the internal summary, which José kindly shared during the Atlas Brew, detailing the current plans for V1 of the Democracy/Diplomatic module. Here are the relevant details he posted:
+
+**New gameplay layer**
+
+* Added starbase-scoped governance as bounded parameter voting, not a full generic DAO system.
+* Governance lives on the selected starbase: STARBASE &gt; Governance.
+* Voters can dedicate verified voting power/PVP to a starbase and vote on that starbase’s economic parameters.
+* Changes are epoch-based: votes aggregate during the epoch, then apply later instead of instantly flipping fees.
+* Low quorum keeps the current config instead of forcing weakly supported changes.
+* Starbase level/sequence gating controls activation; if a starbase falls out of eligibility, governance-backed fee behavior falls back to defaults.
+
+**Voteable parameters**
+
+* Crafting fee multiplier.
+* Local market fee.
+* DAO vs local starbase treasury split.
+* Local treasury distribution share.
+
+**Diplomat crew requirement**
+
+* Delegation is now capped by crew physically present at the starbase.
+* Each locked diplomat crew supports 100 voting power by default.
+* The program reserves diplomat crew through starbase busy\_crew, so those crew cannot be loaded away normally while backing governance.
+* Submit-vote validates the diplomat crew is still present/locked instead of silently clipping voting power.
+* The client now exposes this directly with “Diplomats to lock”, required diplomats, voting cap, available crew, and current diplomats.
+
+**Treasury + rewards**
+
+* Governed crafting and local-market fees can route between DAO treasury and the local starbase treasury.
+* Added starbase treasury accounting plus reward-index based ATLAS claims.
+* Claim state tracks each voter’s reward cursor so rewards settle proportionally to effective delegated power.
+
+**Client UX**
+
+* Added a native Starbase Governance panel in fc-app.
+* Shows active/current vs pending/next epoch fee state, quorum/support, delegated power, treasury/reward state, and claimable rewards.
+* Added actions for init governance, set/update voter power, delegate/update delegation, submit vote, close epoch, init claim state, and claim rewards.
+* UI pass cleaned up the player-facing language around Governance/Epoch, percent inputs, fee labels, and up/down delta indicators.
 
 ### Phase 3 – Crew
 
@@ -104,11 +145,13 @@ Here is the summary:
 > 
 > The funds requested are a total of **30,000 USDC** paid out over 6 months at **5,000 USDC a month**, taken out of the treasury and routed to ATMTA to cover my reduced salary.
 
-It is important to know that Michael has promised to take over José’s salary again if their reimbursement proposal gets approved.
+It is important to know that Michael has promised to take over José’s salary again if their reimbursement proposal gets approved. This PIP will be discarded in that case.
 
 ## Light of Evisco
 
-Last week, every player/character on the TTRPG got a dedicated “Session 0” with Game Master José. The first one with Aaron, who is portraying a MUD human, who is the son of a wealthy merchant family. The event was livestreamed during the [Lore Keepers event](https://www.youtube.com/watch?v=Vc6TfOsp_uc). The others were held privately behind closed doors (no recording, unfortunately).
+Last week, every player/character on the upcoming Star Atlas Tabletop Roleplay Campaign got a dedicated _Session 0_ with Game Master José (a one-on-one, introductory session). The first one with Aaron, who is portraying a MUD human named Theodore, who is the son of a wealthy merchant family.
+
+The event was livestreamed during the second half of the [Lore Keepers event](https://www.youtube.com/watch?v=Vc6TfOsp_uc). The others were held privately in the days after, but unfortunately, they took place behind closed doors. No recordings were made of these either.
 
 ![Star Atlas - SAGE Editor Suite - The latest new tools](https://assets.aephia.com/wp-assets/f27948d75d128f6eaa28583c168e0d5151ea89cdd4b9ce428718ef065765efb3.webp)
 
