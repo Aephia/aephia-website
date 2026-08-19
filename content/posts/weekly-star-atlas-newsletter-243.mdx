@@ -1,0 +1,78 @@
+---
+title: "Weekly Star Atlas Newsletter #243"
+date: "2026-08-17T15:58:39"
+modified: "2026-08-19T13:31:10"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-243"
+description: "This week’s issue looks beyond the current SAGE C4 PTR and toward what comes next. We got our first proper look at base-building in Project Galia, learned more about the roadmap for SAGE C4 Phase 3 and the team’s plans for balancing the economy ahead of mainnet, and saw the launch of Fleet Rentals v2. We wrap up with a few smaller community updates from across the ecosystem."
+image: "https://assets.aephia.com/wp-assets/2495137b97b0f24746130493e2f4bd05e6db52e9e99ba75e4ff5a4e6030ac626.jpg"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18819
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 243rd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+This week’s issue looks beyond the current SAGE C4 PTR and toward what comes next. We got our first proper look at base-building in **Project Galia**, learned more about the roadmap for **SAGE C4 Phase 3** and the team’s plans for balancing the economy ahead of mainnet, and saw the launch of **Fleet Rentals v2**. We wrap up with a few smaller community updates from across the ecosystem.
+
+_Let’s dive in!_
+
+## Project Galia
+
+Brad (Gameplay Engineer) demonstrated Galia’s new Claim Stake base-building during [Atlas Brew #217](https://youtu.be/V1Bq2MAviao). Claim Stakes were already being built for Galia when we [covered them in issue #235](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-235/), but this was the first time we saw the actual system fully working.
+
+Players are expected to obtain a Claim Stake at the final station retaken from the Jorvik during the campaign. Once deployed on a planet or moon, it flattens the selected terrain and switches the player into a top-down building view. Bases then grow through attachment points, starting with a hub and expanding with connectors, mining modules, power generators, hydroponics, storage, a forge, and a landing pad.
+
+The pieces were more than cosmetic. Mining output depends on the planet or moon, power limits how many modules can run, and storage sets the base’s capacity. A ship on the landing pad can be accessed through the base terminal, so resources can move directly between the ship and base inventories.
+
+Production continues in real time while the player is logged out. A fully fuelled power module should run for about a day, after which the player can return, refuel the base, collect the output, and move it by ship. The values shown, including one Lumenite ore every 60 seconds and one food every 65 seconds, came from the demonstration build and should not be treated as final balance.
+
+The base-building system is planned for the next Galia update, together with some multiplayer fixes, but there is no release date yet. After that, the team plans to try an upgrade to **Unreal Engine 5.8**. Brad explained that its broader AI tooling may help the team inspect UI, Gameplay Abilities, and Blueprints while tracking down the remaining multiplayer bugs that have proved difficult to fix manually.
+
+## SAGE C4
+
+The **SAGE C4 PTR** is nearly ready to move beyond Phase 2 bug fixing and into Phase 3\. John (Product Manager) described the next phase as the point at which the team will test game balance and launch feasibility using realistic numbers for income, recipes, XP, ATLAS emissions, NPCs, travel, map size, and resource placement.
+
+Several player-facing changes are already planned as that balancing work begins:
+
+* Travel speeds will be reduced across the board.
+* Mining will require dedicated mining ships or fleets fitted with mining rigs. General fleets can still be configured for mining, but should be less effective.
+* Destroyed fleets will receive respawn fees.
+* Resources will be distributed across more sectors and regions as distances increase, forcing more inter-system trade.
+* A reset is planned so the team can test the economy from a clean starting point.
+
+The single-player campaign is still [targeted for Phase 3](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-237/), although Phase 4 remains the fallback if it misses that window. Last week’s update added the economic work around it, with every Phase 3 test intended to produce data the team needs before mainnet.
+
+José (Lore & Community) currently expects mainnet to follow Phase 3 and said that an added Phase 4 should not block it, though he stressed that this is not certain. The mainnet core is already largely present in Phase 2\. The team is now deciding which additional systems can be added without delaying the release, while individualized crew and ship-to-ship refueling will not be MVP requirements.
+
+![SAGE C4 - Single-player Campaign mode [WIP]](https://assets.aephia.com/wp-assets/25f10800097da2434795d067e91473fa60634ac9b9b4b123d4315528be63cc73.webp)
+
+SAGE C4 – Single-player Campaign mode \[WIP\]
+
+Speaking about the single-player/campaign game, the official Star Atlas account [showed SAGE AI](https://x.com/staratlas/status/2088415378925912170) inside the story interface, interpreting an active signal and giving the player options to continue the exchange or return to the mission.
+
+## Fleet Rentals v2
+
+[Fleet Rentals v2](https://play.staratlas.com/rentals/) went live on August 12th following an announcement from Michael (CEO). V1 required whole-day contracts and tied payments and cancellations to a universal 00:00 UTC window. V2 calculates terms, fees, and refunds to the second.
+
+Owners can set custom schedules and payment intervals, while renters can reserve future windows instead of waiting for a fleet to appear. When several renters want the same next window, reservation bidding can increase the contract rate. Reservations can be paid with ATLAS or loyalty points earned by completing rentals, giving regular renters another way to compete for desirable fleets.
+
+Cancellations can take effect immediately or at a scheduled time, with unused time and unearned fees refunded. Automation is now optional per contract. Antony (Fleet Rentals creator) also described an experimental pricing option that lowers the rent by 2% per day while a fleet remains idle, although some of those controls still need UI work.
+
+The old system had just under 700 active rentals when v2 launched. Existing contracts continue normally, but no new v1 listings or acceptances are possible. Eligible contracts can be moved with the [migration tool](https://sly.rentals/migrate), which requires a connected Solana wallet. Players can also check the [v1 and v2 comparison](https://sly.rentals/legacy) and [full changelog](https://sly.rentals/changelog) before migrating.
+
+Good to know: The new program is no longer tied to a specific SAGE program, leaving room for C4 support later. That integration has no firm timing and may only happen after mainnet.
+
+## News Bits
+
+But that is not all! Here are some more news bits that are simply too short to warrant their own section. That does not mean they are any less important, however!
+
+* **Iris’ Blessing** — The raffle announced for August 14th did not take place that day. The goal is to now hold the raffle on Monday, August 17th (the date this newsletter is published).
+* **DAO Council** — The window for community members to nominate themselves for the 4th DAO Council term has officially closed. It appears only 3 members stepped forward so far, leaving the DAO in a bit of a pickle.
+
+_That is it for this week! Thanks for reading, and until the next!_
