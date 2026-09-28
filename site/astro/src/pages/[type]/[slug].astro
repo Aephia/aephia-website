@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import PostMeta from '../../components/PostMeta.astro';
 import TagList from '../../components/TagList.astro';
@@ -8,27 +7,9 @@ import XTweet from '../../components/XTweet.astro';
 import WpEmbed from '../../components/WpEmbed.astro';
 import Vimeo from '../../components/Vimeo.astro';
 import MarkdownControl from '../../components/MarkdownControl.astro';
+import { postMarkdown, postPaths } from '../../lib/posts';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  
-  const contentTypeToUrl = {
-    newsletter: 'newsletters',
-    guide: 'guides',
-    news: 'news',
-    aephia: 'aephia'
-  };
-
-  return posts.map((post) => {
-    const type = post.data.type?.toLowerCase();
-    const urlType = contentTypeToUrl[type] || 'news'; // Default fallback just in case
-    
-    return {
-      params: { type: urlType, slug: post.slug },
-      props: { post },
-    };
-  });
-}
+export const getStaticPaths = postPaths;
 
 const { post } = Astro.props;
 const { title, description, date, author, tags, canonical } = post.data;
@@ -51,7 +32,7 @@ const components = {
     <header class="post-header">
       <div class="header-meta-row">
          <h1 class="post-title">{title}</h1>
-         <MarkdownControl markdown={post.body} />
+         <MarkdownControl markdown={postMarkdown(post, Astro.site)} />
       </div>
       <PostMeta date={date} author={author} />
     </header>

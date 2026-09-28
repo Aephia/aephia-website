@@ -13,6 +13,17 @@ This directory contains the Astro-based website for Aephia.
 The MDX content is located in `../../../content/posts` and symlinked to `src/content/posts`.
 This allows the Astro site to consume the existing content repository.
 
+## Posts as Markdown
+
+Every post is also served as plain Markdown, at its own address with `.md` appended:
+`/news/five-years-of-aephia-industries.md`. The "Copy" button on each post copies that text,
+links to it, and hands its address to ChatGPT or Claude.
+
+- `src/pages/[type]/[slug].md.ts` and `src/pages/sa-medium/[slug].md.ts`: the endpoints.
+- `src/lib/page-markdown.ts`: rewrites the embed components (`<YouTube>`, `<Vimeo>`, `<WpEmbed>`, `<XTweet>`)
+  as Markdown. A new embed component needs a rewrite here; `npm test` fails when one is left behind.
+- The addresses are built from `site` in `astro.config.mjs`, which must be the address the site is served from.
+
 ## Developing Locally
 
 1. Install dependencies:
@@ -34,6 +45,14 @@ npm run build
 ```
 
 This will generate the static site in the `dist/` directory.
+
+## Testing
+
+```bash
+npm test
+```
+
+Runs the tests in `src/lib` with Node's own test runner (Node 22.18 or later).
 
 ## Cloudflare Pages Deployment
 
