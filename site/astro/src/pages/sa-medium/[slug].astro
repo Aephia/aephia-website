@@ -1,16 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import PostMeta from '../../components/PostMeta.astro';
 import MarkdownControl from '../../components/MarkdownControl.astro';
+import { postMarkdown, saMediumPaths } from '../../lib/posts';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('sa-medium');
-  return posts.map((post) => ({
-    params: { slug: post.data.slug || post.slug || post.id.replace(/\.mdx?$/, '') },
-    props: { post },
-  }));
-}
+export const getStaticPaths = saMediumPaths;
 
 const { post } = Astro.props;
 const { title, description, date, author, source } = post.data;
@@ -28,7 +22,7 @@ const { Content } = await post.render();
       <div class="header-meta-row">
         <h1 class="post-title">{title}</h1>
         <div class="markdown-control-container">
-          <MarkdownControl markdown={post.body} />
+          <MarkdownControl markdown={postMarkdown(post, Astro.site)} />
         </div>
       </div>
       <PostMeta date={date} author={author} />

@@ -1,0 +1,44 @@
+---
+/**
+ * Without this page Cloudflare Pages treats the site as a single-page app and
+ * answers every unknown address with the home page and a 200.
+ */
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Page not found - Aephia Industries" description="This page does not exist on Aephia Industries.">
+  <div class="container not-found">
+    <p class="status">Error 404</p>
+    <h1>Page not found</h1>
+    <p>Nothing lives at this address. It may have moved, or the link may be mistyped.</p>
+    <p>
+      Browse the <a href="/newsletters/">newsletters</a>, the <a href="/guides/">guides</a> or the
+      <a href="/news/">other news</a>, or start from the <a href="/">latest posts</a>.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .not-found {
+    max-width: 800px;
+    padding-top: 2rem;
+  }
+
+  .status {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 0.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+</style>

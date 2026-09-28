@@ -7,6 +7,7 @@
     "build": "astro build && pagefind --site dist",
     "postbuild": "cp -r dist/pagefind/ public/pagefind/",
     "preview": "astro preview",
+    "test": "node --test src/lib/*.test.ts",
     "astro": "astro"
   },
   "dependencies": {

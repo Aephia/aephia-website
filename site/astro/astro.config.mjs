@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://posts.aephia.com', // Placeholder domain, can be updated
+  site: 'https://intel.aephia.com',
   integrations: [mdx(), sitemap()],
   output: 'static',
   output: 'static',
