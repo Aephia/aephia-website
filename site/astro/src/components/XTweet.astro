@@ -9,6 +9,7 @@ interface Props {
 
 const { id, url, authorName, authorHandle, date } = Astro.props;
 const tweetUrl = url || `https://twitter.com/i/web/status/${id}`;
+const handle = authorHandle?.trim().replace(/^@/, ''); // Content passes the handle with its @
 ---
 
 <div class="tweet-embed">
@@ -16,7 +17,7 @@ const tweetUrl = url || `https://twitter.com/i/web/status/${id}`;
     <p lang="en" dir="ltr">
       <slot /> {/* The tweet text usually passed as children from MDX */}
     </p>
-    &mdash; {authorName} (@{authorHandle}) <a href={tweetUrl}>{date}</a>
+    &mdash; {authorName} {handle && `(@${handle})`} <a href={tweetUrl}>{date}</a>
   </blockquote>
   
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
