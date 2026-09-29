@@ -7,6 +7,8 @@
  * and links are made absolute so that they still lead somewhere once the text
  * has been pasted elsewhere.
  */
+import { tweetAuthor } from './tweet.ts';
+
 export interface MarkdownPost {
   title: string;
   date: Date;
@@ -82,9 +84,7 @@ function rewriteEmbeds(body: string): string {
 function rewriteTweets(body: string): string {
   return body.replace(new RegExp(`<XTweet\\b${ATTRIBUTES}>([\\s\\S]*?)</XTweet>`, 'g'), (_, tag: string, text: string) => {
     const url = attribute(tag, 'url') ?? `https://twitter.com/i/web/status/${attribute(tag, 'id')}`;
-    const name = attribute(tag, 'authorName');
-    const handle = attribute(tag, 'authorHandle')?.replace(/^@/, '');
-    const author = [name, handle && `(@${handle})`].filter(Boolean).join(' ');
+    const author = tweetAuthor(attribute(tag, 'authorName'), attribute(tag, 'authorHandle'));
     const signature = [author, link(attribute(tag, 'date') ?? 'Tweet', url)].filter(Boolean).join(', ');
 
     return block(quote(`${text.trim()}\n\n— ${signature}`), tag);
