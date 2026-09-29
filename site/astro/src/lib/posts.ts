@@ -3,7 +3,7 @@
  * that the two cannot drift apart.
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { toPlainMarkdown } from './page-markdown';
+import { componentsLeft, toPlainMarkdown } from './page-markdown';
 
 type Post = CollectionEntry<'posts'> | CollectionEntry<'sa-medium'>;
 
@@ -40,11 +40,30 @@ export function requireSite(site: URL | undefined): URL {
   return site;
 }
 
+const warned = new Set<string>();
+
+/**
+ * A component that is not rewritten does not stop the build: the post is
+ * published, with the tag in its Markdown. It is said once for each post, on
+ * a line of its own between those with which the build reports its progress.
+ */
+function warnOfComponentsLeft(post: Post, markdown: string): void {
+  const left = componentsLeft(markdown);
+  const name = `${post.collection}/${post.id}`;
+  if (left.length === 0 || warned.has(name)) return;
+
+  warned.add(name);
+  console.warn(`\n[markdown] ${name}: ${left.map((component) => `<${component}>`).join(', ')} is not rewritten as Markdown. See src/lib/page-markdown.ts.`);
+}
+
 export function postMarkdown(post: Post, site: URL | undefined): string {
   const { title, date, author } = post.data;
   const source = 'source' in post.data ? post.data.source : undefined;
+  const markdown = toPlainMarkdown({ title, date, author: author?.name, source, body: post.body ?? '' }, requireSite(site));
 
-  return toPlainMarkdown({ title, date, author: author?.name, source, body: post.body ?? '' }, requireSite(site));
+  warnOfComponentsLeft(post, markdown);
+
+  return markdown;
 }
 
 export function markdownResponse(post: Post, site: URL | undefined): Response {
