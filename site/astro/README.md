@@ -25,6 +25,7 @@ links to it, and hands its address to ChatGPT or Claude.
   was typed: the build says so in a line that starts with `[markdown]`, and `npm test` fails.
 - `src/lib/tweet.ts`: how a tweet names its author, shared by `XTweet.astro` and the Markdown.
 - The addresses are built from `site` in `astro.config.mjs`, which must be the address the site is served from.
+- `public/_headers`: keeps the `.md` addresses out of search engines, which should list the page instead.
 
 ## Developing Locally
 

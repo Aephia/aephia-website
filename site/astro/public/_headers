@@ -1,0 +1,3 @@
+# The Markdown of a post repeats its page. Search engines should list the page.
+/*.md
+  X-Robots-Tag: noindex
