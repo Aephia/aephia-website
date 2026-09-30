@@ -1,0 +1,40 @@
+# The posts are pushed to main by a bot and built without review. These tests
+# run every post through the conversion to Markdown, so a post that it does not
+# understand shows up here.
+name: Test
+
+on:
+  pull_request:
+    paths:
+      - 'site/astro/**'
+      - 'content/**'
+      - 'staratlas/**'
+      - '.github/workflows/test.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/astro/**'
+      - 'content/**'
+      - 'staratlas/**'
+      - '.github/workflows/test.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site/astro
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      # The tests need Node alone: nothing is installed.
+      - run: npm test

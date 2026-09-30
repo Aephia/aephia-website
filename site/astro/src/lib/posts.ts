@@ -3,7 +3,7 @@
  * that the two cannot drift apart.
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { toPlainMarkdown } from './page-markdown';
+import { asTyped, componentsLeft, toPlainMarkdown, type MarkdownPost } from './page-markdown';
 
 type Post = CollectionEntry<'posts'> | CollectionEntry<'sa-medium'>;
 
@@ -40,11 +40,40 @@ export function requireSite(site: URL | undefined): URL {
   return site;
 }
 
+const warned = new Set<string>();
+
+/** Once for each post, on a line of its own between those with which the build reports its progress. */
+function warn(post: Post, message: string): void {
+  const name = `${post.collection}/${post.id}`;
+  if (warned.has(name)) return;
+
+  warned.add(name);
+  console.warn(`\n[markdown] ${name}: ${message} See src/lib/page-markdown.ts.`);
+}
+
+/**
+ * The Markdown of a post does not stop the build: the post is published, as
+ * it was typed where it could not be rewritten.
+ */
+function rewritten(post: Post, written: MarkdownPost, site: URL): string {
+  try {
+    const markdown = toPlainMarkdown(written, site);
+    const left = componentsLeft(markdown);
+    if (left.length > 0) warn(post, `${left.map((component) => `<${component}>`).join(', ')} is not rewritten as Markdown.`);
+
+    return markdown;
+  } catch (error) {
+    warn(post, `could not be rewritten as Markdown (${error instanceof Error ? error.message : error}).`);
+
+    return asTyped(written);
+  }
+}
+
 export function postMarkdown(post: Post, site: URL | undefined): string {
   const { title, date, author } = post.data;
   const source = 'source' in post.data ? post.data.source : undefined;
 
-  return toPlainMarkdown({ title, date, author: author?.name, source, body: post.body ?? '' }, requireSite(site));
+  return rewritten(post, { title, date, author: author?.name, source, body: post.body ?? '' }, requireSite(site));
 }
 
 export function markdownResponse(post: Post, site: URL | undefined): Response {
