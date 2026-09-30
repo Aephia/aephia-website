@@ -57,8 +57,9 @@ npm test
 
 Runs the tests in `src/lib` with Node's own test runner (Node 22.18 or later). They need nothing installed.
 
-GitHub runs them on every pull request and on every push to `main`, the bot's included
-(`.github/workflows/test.yml`). They do not stand in the way of the build on Cloudflare Pages.
+GitHub runs them on every pull request and on every push to `main`, the bot's included, that changes
+the site or a post (`.github/workflows/test.yml`). They do not stand in the way of the build on
+Cloudflare Pages.
 
 ## Cloudflare Pages Deployment
 
