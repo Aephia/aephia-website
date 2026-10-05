@@ -1,0 +1,127 @@
+---
+title: "Weekly Star Atlas Newsletter #250"
+date: "2026-10-05T19:04:39"
+modified: "2026-10-05T19:04:39"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-250"
+description: "Last week gave us a clearer picture of how SAGE C4 may transition from testing into a live economy. The team is expanding the Nemesis Engine, reworking Council Rank progression, and weighing the risks and rewards of Claim Stakes. Beyond C4, Chris published his farewell to Star Atlas, UE5 development is moving forward on version 5.8, and PIP-36 passed after a remarkable late reversal in support."
+image: "https://assets.aephia.com/wp-assets/64d4f3fac2005d1f7a9664f373e4486c94718ec12a4828a00c198ef4770bebbf.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18916
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 250th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Last week gave us a clearer picture of how SAGE C4 may transition from testing into a live economy. The team is expanding the Nemesis Engine, reworking Council Rank progression, and weighing the risks and rewards of Claim Stakes. Beyond C4, Chris published his farewell to Star Atlas, UE5 development is moving forward on version 5.8, and PIP-36 passed after a remarkable late reversal in support.
+
+_Let’s dive in!_
+
+## SAGE C4
+
+### Moving the Economy into C4
+
+Michael (CEO) outlined a possible path for activating the C4 economy during last week’s [Atlas Brew #224](https://youtu.be/iT7KLxTYZ-s?t=3552). The idea is still under discussion, but it gives us the clearest picture so far of what **Phase 4** could look like.
+
+Once the C4 client is stable and close to a release candidate, the team is considering removing the free starter bundles and allowing players to use the assets they own on mainnet. Part of the existing SAGE emissions could then move from Starbased into C4 before the final mainnet launch.
+P
+One option would move roughly **25% of emissions** into C4 first, followed by **another 25% later**. That would leave Starbased and C4 each distributing half of the current emissions before Starbased is eventually shut down. Michael stressed that these percentages and stages are not final. This would not create new emissions either; C4 rewards would come from the existing SAGE pool.
+
+There is still a technical problem to solve. A single snapshot would become outdated as soon as someone bought or sold an asset. The team is therefore considering an escrow or refresh system that would add newly purchased assets to C4 and remove assets after they are sold.
+
+If this model goes ahead, players could start earning through C4 while the team finishes polishing the release candidate. It would also give Phase 4 a much clearer purpose than another test with temporary assets.
+
+### The Nemesis Engine
+
+John (Product Manager) shared the next planned expansion of the **Nemesis Engine**. Jorvik pirates already hold three regions, replenish defeated garrisons, reclaim lost Starbases, and push into neighboring territory. The next step is to give the merchant factions their own functioning regions and economies.
+
+The current plan adds **three merchant regions**, one beside each faction’s safe zone. Each should have a controlling merchant faction, while the other merchant factions maintain Starbases in the same region. Their NPCs are intended to:
+
+* Mine their own resources
+* Craft ship upgrades
+* Transport materials between Starbases
+* List goods on their marketplaces
+* Defend their territory against hostile or low-reputation players
+
+Reputation should determine whether players can dock, buy goods, and accept missions to hunt Jorvik pirates. John would also like players to be able to side with the Jorvik by attacking merchants, although doing so could remove some of the productivity those NPC economies bring to the galaxy.
+
+The merchant factions are already in John’s development branch, but their marketplaces still need to be configured. The tougher Starbase hit-point model and related protections are planned for after the reset. The wider merchant system may arrive in pieces and could extend into Phase 4.
+
+### Council Rank and Combat
+
+For the next Council Rank iteration, the team plans to hide most unfinished paths and show only the working nodes plus a smaller group of selected nodes it intends to complete. We already knew the unfinished branches would disappear for mainnet; this now applies to the next phase as well.
+
+The Combat tree is also set to gain hit-chance improvements and weapon or countermeasure unlocks. In the work-in-progress design shown last week, weapon types create effects rather than simple elemental damage bonuses. One example was a kinetic ability called **Concussive Barrage**, which reduced the target’s hit chance by **15%**. Effects should eventually have their own durations and cooldowns and interact with further Council Rank nodes and Crew, but the values are not final.
+
+John also clarified how misses are calculated. Combat first rolls hit chance and then dodge, which means a successful hit roll can still turn into a miss if the target dodges afterward.
+
+The team is also revising every license XP curve, XP reward, and rolling 24-hour soft cap. The cap works like a continuously refilling allowance, and any XP earned beyond what remains available is lost. We covered the broader 6-12 month progression target [last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-249/), but several practical details are now clearer.
+
+Existing **SAGE: Starbased XP** will not transfer one-to-one. Instead, it should convert proportionally against a maximum C4 allocation. Michael used roughly **36 million Starbased XP** as the example for receiving 100% of that allowance, while 18 million would receive 50%. The points would be divided among the four relevant licenses, with one Council Rank point currently awarded for every six license points. The final C4 allowance has not been set, and the initial maximum may be lower if fewer license nodes are available at launch.
+
+Larger ships may also earn more XP per event. That increase will not follow the much steeper difference in ship prices, however. Michael used a possible 10× reward for a Commander-class activity instead of something closer to an 80× price multiple, but this was only an example under consideration.
+
+Players with multiple Starbased profiles should expect each one to migrate separately. Their C4 XP cannot be merged into a single profile. That differs from z.ink, where linked accounts can already contribute zXP to one zProfile.
+
+### Claim Stakes
+
+The team [confirmed last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-249/) that a Tier 1 Claim Stake should be available from day one. The new information is what those Claim Stakes may produce and what players may risk by placing them.
+
+Claim Stakes and Crafting Habs are being rebalanced so they can generate a positive yield and contribute to Council Rank progression. With a comparable asset value, Claim Stakes and ships should progress through their respective licenses at roughly the same pace. Ships are still expected to generate most resources overall because players collectively own far more value in ships, while Claim Stakes should be more productive per comparable asset and operate as a more passive mining and crafting loop.
+
+Under the current balancing, most ships mine at **5% of their Starbased rate**. New configurations may raise non-Armstrong mining specialists to an effective **9%**, while Armstrong mining ships retain their full rate. These values are still being worked on.
+
+That passive loop will not necessarily be safe. Michael currently favors a design where an enemy capture of the controlling Starbase destroys the buildings and structures on nearby Claim Stakes. The Claim Stake asset itself would return to the Central Space Station, but the player would lose the operation and access to that system.
+
+John had previously resisted that idea, but is becoming more open to it as the setup process gets simpler. Expanded safe zones and slower Starbase capture should give players time to react, while a Claim Stake on the frontier near a rare resource would require much more active defense. This is still design work, not a finalized destruction rule.
+
+## UE5
+
+The upgrade to **Unreal Engine 5.8 has meanwhile been completed**. Its native Model Context Protocol (MCP) support allows the team to use development agents more efficiently for bug fixes and gameplay programming.
+
+That matters because Star Atlas already has a large library of high-fidelity assets. The harder part is turning those assets into more gameplay, and the team believes the new tooling can speed up that work. Planning for the next UE5 gameplay loop has already started, though Michael said it was too early to reveal what it is.
+
+## Chris Says Goodbye
+
+Last week, we shared the news that [Chris had left ATMTA](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-249/). Chris has now published [his own farewell to Star Atlas](https://chriseconomics.substack.com/p/good-bye-star-atlas), while announcing that he has joined **Zynga as Principal Game Economist**.
+
+His goodbye focuses less on his work and more on the community around it. He recalls meeting players at Breakpoint in Amsterdam and Singapore, the honest conversations that followed, and the reason he started hosting the **Star Atlas Economic Forum** in 2023: players wanted to be heard, and often brought ideas that were better developed than his own.
+
+Chris credits the community as a major reason Star Atlas outlasted its competitors and closes by thanking both the team and the players. _We wish him every success at Zynga._
+
+## DAO Updates
+
+**PIP-36 passed** with roughly **73.6 million PVP committed**. That was quite the turnaround: support stood at only 14.1% when [newsletter #248](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-248/) was published and was still at 45.9% in [last week’s newsletter](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-249/).
+
+The proposal authorizes up to **13,992,734 ATLAS** for a public Star Atlas DAO Dashboard. The DAO Council will publish a competitive Request for Proposal, set the requirements, and select a developer. The finished dashboard is meant to bring financial, governance, PIP, and Council information together in one place.
+
+### PIP-36: [Star Atlas DAO Dashboard](https://govern.staratlas.com/proposals/c00de055-1942-486f-a64d-dd4ee360500f)
+
+> This proposal authorizes the creation of a public Star Atlas DAO Dashboard and a competitive Request for Proposal (RFP) process to select a DEVELOPER to build the Dashboard. The Dashboard will consolidate important DAO financial, governance, PIP, and Council information into a single publicly accessible resource. The maximum amount authorized under this PIP is 13,992,734 ATLAS (the current 5% Ecosystem Fund limit). Following approval, the DAO Council will publish an RFP listing Dashboard requirements and the process for selecting a DEVELOPER.
+
+Structure:
+
+* **Requested funding:** 13,992,734 ATLAS
+* **Structure**: 1-off PIP
+* **Author**: SAC-3
+* **Voting Opened**: Friday, September 18th
+* **Voting Closes**: Friday, October 2nd (end-of-day UTC)
+
+Final results (\~73.6M PVP committed):
+
+* **For**: 57.9%
+* **Against**: 41.5%
+* **Abstain**: 0.6%
+
+## Iris’ Blessing
+
+To wrap up this week’s issue, here is one more tidbit on the Iris’ Blessing raffles:
+
+**Iris’ Blessing** Drawings are moving from monthly to **quarterly**, with the next one scheduled for **December 18th**. Daily check-ins, streak bonuses, event tickets, automatic entry, and existing registrations remain unchanged. Each drawing will retain the same rewards, but drawings will occur less often. Players can [set a wallet or enter event codes](https://discord.com/channels/789226204980707409/1426187684442804235), complete the [daily check-in](https://discord.com/channels/789226204980707409/1426807230073929778), and view [drawing rewards and results](https://discord.com/channels/789226204980707409/1438946183677612054) in the Star Atlas Discord.
+
+_That is it for this week! Thanks for reading, and until the next!_
