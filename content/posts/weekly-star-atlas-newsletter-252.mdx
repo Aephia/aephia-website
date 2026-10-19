@@ -1,0 +1,88 @@
+---
+title: "Weekly Star Atlas Newsletter #252"
+date: "2026-10-19T17:00:45"
+modified: "2026-10-19T17:00:45"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-252"
+description: "Last week gave us our first proper look at multicrew combat in UE5, with a pilot and two gunners working together aboard the same ship. The experimental Dogfight update is already live, so players can try it for themselves! Meanwhile, SAGE C4 is getting closer to its next reset, dubbed Phase 3.2, though several more rounds of testing may be needed before/during Phase 4. Lastly, ATMTA refreshed its Open Market Operations listings, adjusting prices and quantities after several batches sold out."
+image: "https://assets.aephia.com/wp-assets/c427add33191c056a1b8e1d877636133188fdd9e669d40c1f1833e3560825493.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18939
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 252nd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Last week gave us our first proper look at multicrew combat in UE5, with a pilot and two gunners working together aboard the same ship. The experimental Dogfight update is already live, so players can try it for themselves! Meanwhile, SAGE C4 is getting closer to its next reset, dubbed Phase 3.2, though several more rounds of testing may be needed before/during Phase 4\. Lastly, ATMTA refreshed its Open Market Operations listings, adjusting prices and quantities after several batches sold out.
+
+_Let’s dive in!_
+
+## UE5
+
+Multicrew combat was the main feature of last week’s [Atlas Brew](https://youtu.be/KjWsZrqdxs8). The demonstration by Brad (UE5 Wizard) had one player flying a ship while others moved around inside it and operated separate turrets. Both the Pearce F4 and Calico Compakt Hero had two usable turrets, with the pilot retaining control of the ship’s own weapons.
+
+The turrets keep their aim while the ship turns, but each has a limited firing arc. The pilot has to position the hull so the gunners can track their targets. Ship weapons also have more range than the smaller turrets, so the crew generally has to close the distance before everyone can fire.
+
+The co-pilot seat has no combat function yet. Shield and power management came up as one possible use, but that remains an idea for now.
+
+There is one catch: this build uses the server-authoritative arcade flight model instead of the physics-based model players normally experience. Brad explained that the latter runs locally, which makes secure multiplayer replication difficult because a server cannot simply trust movement reported by a player’s client. The plan is to make arcade flight feel closer to the physics-based model.
+
+Multicrew does not mean Galia multiplayer is around the corner. Galia’s planets are not replicated on the network yet, which would cause players to see slightly different terrain when approaching the surface. The team has put Galia multiplayer on hold until that technology is ready.
+
+This new, experimental Dogfight update was pushed live during the Brew, so you can go and jump in right now.
+
+## SAGE C4
+
+Michael Wagner (CEO) said the team is getting close to the next C4 reset, now named **Phase 3.2**. It remains focused on game and economic balance, along with further bug fixing. No date was given.
+
+> “We’re getting close to a reset/wipe that we’re calling 3.2.”
+
+Phase 4 depends on how that reset goes. Before or around the transition, the team would also like to include most of the major UI and UX work by Danny Floyd (CPO), as well as an unspecified combat update.
+
+We covered the broader [Phase 4 idea in issue #250](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-250/), including the possibility of moving part of the existing SAGE emissions into C4\. The exact snapshot method, incentives, and update scope are still tentative. The team plans to set a joint go-to-market window for SAGE and z.ink only after Phase 4 produces a sufficiently tuned release candidate.
+
+## Council Rank UI Overhaul
+
+In the background, Danny (CPO) has been working on improving the UI and UX of SAGE C4\. Last week on Discord, he shared a short video showcasing a direction he was experimenting with for Council Rank and License progression. See for yourself if this is an improvement or not:
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://youtu.be/ALdoO93trZQ
+</div></figure> 
+
+## Open Market Operations
+
+ATMTA refreshed prices and quantities for its [Open Market Operation listings](https://play.staratlas.com/market/) last week after several batches sold out. This continues the model introduced in December, under which the team releases limited batches and reviews the price after inventory sells.
+
+Most of the changed listings went up by 10% to 15%. The Armstrong IMP rose to **$1,677.94**, with three units in the new batch, while the VZUS ballad reached **$1,069.88**, with two units. Two assets moved in the other direction: the Calico ATS Enforcer fell by about 9.9% and the Ogrika Mik by about 11%.
+
+The full set of changed listings is below. Quantities refer to the refreshed batch announced by Michael.
+
+| Asset                | New price | New quantity | Change  |
+| -------------------- | --------- | ------------ | ------- |
+| Armstrong IMP        | $1,677.94 | 3            | +12.5%  |
+| Armstrong IMP Tap    | $200.64   | 12           | +12.5%  |
+| Armstrong IMP Tip    | $54.99    | 24           | +12.5%  |
+| Busan Thrill of Life | $17.68    | 3            | +15.0%  |
+| Calico ATS Enforcer  | $105.25   | 7            | \-9.9%  |
+| Calico Flattop       | $3,202.50 | 1            | +5.0%   |
+| Calico Medtech       | $30.14    | 4            | +12.5%  |
+| Calico Shipit        | $74.72    | 2            | +12.5%  |
+| Claim Stake Tier 1   | $7.88     | 71           | +5.1%   |
+| Claim Stake Tier 2   | $38.80    | 13           | +12.5%  |
+| Claim Stake Tier 3   | $195.36   | 1            | +10.0%  |
+| Claim Stake Tier 4   | $469.35   | 3            | +12.5%  |
+| Fimbul Mamba         | $50.28    | 5            | +12.5%  |
+| Ogrika Mik           | $15.02    | 11           | \-11.0% |
+| Ogrika Tursic        | $154.22   | 1            | +10.0%  |
+| Opal Bitboat         | $286.12   | 1            | +12.5%  |
+| Opal Rayfam          | $58.73    | 3            | +12.5%  |
+| VZUS ballad          | $1,069.88 | 2            | +15.0%  |
+
+Thirteen other listings kept the same price while their available quantities were refreshed or reduced.
+
+_That is it for this week! Thanks for reading, and until the next!_
