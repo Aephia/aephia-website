@@ -1,0 +1,102 @@
+---
+title: "Weekly Star Atlas Newsletter #253"
+date: "2026-10-26T20:19:58"
+modified: "2026-10-26T20:19:58"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-253"
+description: "Last week, we learned just how extensive the upcoming SAGE C4 Phase 3.2 reset has become. What started as a Council Rank update has grown into a much broader overhaul of progression, mining, resource distribution, Claim Stakes, and travel. The team is now preparing the build for internal testing ahead of its release. Beyond C4, we have several community projects to cover, including the launch of the AtlasKit SDK, the playable alpha of Clash of Iris, and some unfortunate news from the Atom team."
+image: "https://assets.aephia.com/wp-assets/515be28dbd933a69474a9e57cb738da6e947fad111940b53e4cdafd5afa86737.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18950
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 253rd newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Last week, we learned just how extensive the upcoming SAGE C4 Phase 3.2 reset has become. What started as a Council Rank update has grown into a much broader overhaul of progression, mining, resource distribution, Claim Stakes, and travel. The team is now preparing the build for internal testing ahead of its release. Beyond C4, we have several community projects to cover, including the launch of the AtlasKit SDK, the playable alpha of Clash of Iris, and some unfortunate news from the Atom team.
+
+_Let’s dive in!_
+
+## SAGE C4
+
+Last week’s Atlas Brew turned **Phase 3.2** from a reset into something much larger. Michael Wagner (CEO) said the build now contains roughly **72 additional pull requests**, with changes touching most of the game’s progression and economy. This is the same reset we [covered last week](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-252/), but its scope is now considerably clearer.
+
+### Council Rank
+
+In phase 3.2, the Council Rank system will be fully revised. Its node structure, unlocks, gating, and XP curves are all changing, while nodes that only blocked access without providing a benefit have been removed.
+
+Players should also get into the core gameplay loops sooner. A Tier 1 Claim Stake can be placed from the start, and the upgrade requirements that previously blocked extra-small and small ships have been removed. The new XP curve should award the first few license levels within several hours, then become progressively steeper at higher levels.
+
+One global daily XP cap will replace the separate cap for each license. Players can focus on a chosen career, but a single license can consume no more than **65%** of the daily total. Michael said that limit is a starting point, meant to prevent activities such as a large fuel-crafting run from using every bit of XP available that day.
+
+### Economy and Resources
+
+A mining formula bug had left most ships far below their intended rates. Michael used Titans as the most extreme example: some were mining at roughly **0.15%** of their old Starbased rate instead of the intended **5%**. Around **80% of ships** should therefore mine faster after the reset. Armstrong mining ships were unaffected and remain at 100% of their Starbased rate without consuming ammunition while mining.
+
+Ship configurations will also be rebalanced, producing roughly 3,000 new configuration parameters across available ships and fleets. The team has also replaced placeholder quantities in the intermediate crafting recipes with their intended values.
+
+The resource map is becoming much less forgiving. Each region will contain only two of the four R4 resources, either hydrogen and biomass or copper and iron, and those two resources will appear on no more than **40% of the region’s planets**. Maintaining a complete R4 supply will require travel between complementary regions.
+
+The broader resource catalog will be divided into five geographic zones. Higher-zone materials appear farther from the Central Space Station, while clustering means that no single region should contain more than 60% of the resources assigned to its zone. The goal is to end the current situation in which most operations can remain self-sufficient in one area. We first covered that resource-scarcity direction in [issue #246](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-246/); these are the first precise placement rules.
+
+### Claim Stakes and Travel
+
+Claim Stakes will receive both planetary and system-wide limits. Under the current Phase 3.2 balance, only one Tier 5 Claim Stake can be placed on a planet, and only one can exist anywhere in the wider system around a Starbase. Michael called that starting point deliberately restrictive and said it may be loosened after testing.
+
+Cultivation Claims are also being corrected. They now exclusively harvest the organic materials used for stim production, while regular Claim Stakes handle the other resources. The buildings available on a plot will depend on the resources found there, so players will no longer see structures that cannot use anything at that location.
+
+Warp lanes will stop awarding XP and will charge an ATLAS fee based on a fleet’s point value and the distance traveled. They remain faster than ordinary movement and consume no fuel, but the fee is intended to keep them as an expensive shortcut rather than the default way to cross the map. The maximum fleet size in this calculation is **312 points**.
+
+The long-delayed **Democracy Module** is also expected to make it into Phase 3.2\. It was originally planned for Phase 2 and will let players vote on regional fees and other local decisions.
+
+The team expects at least several of Danny Floyd’s (CPO) roughly dozen to fifteen UI improvements to arrive with the reset. These include the revised Council Rank nodes, planetary Claim Stake selection, and the new player utility bar. An official [preview of the visual update](https://x.com/staratlas/status/2113028036912382460) (see below) showed the new territory map, fleet panels, route presentation, and planet screens.
+
+<YouTube id="7fdNw69ox3Y" title="Star Atlas - SAGE C4 - UI Improvements [WIP]" caption="SAGE C4 – Showing off a few of the key UI upgrades Danny worked on that are coming to C4" />
+ 
+
+There is still no release date. Production updates to the current build were frozen last week while the team merged the outstanding work. Once the conflicts are resolved, the plan is to run a short internal test and then roll out the reset.
+
+### Automation
+
+Michael shared that they are working on native integration for Swift’s **HoloCore** C4 automation project, though he did not provide a timeline or explain what that integration will include. It won’t be phase 3.2; that much is sure. 
+Swift is well known for taking over the maintainership of the SLY Assistant, and he has been working on an open-source (eventually) automation solution for SAGE C4 called HoloCore for a while now.
+
+### Survey Data Units (SDUs)
+
+In SAGE C4, SDUs no longer exist. Michael shared that the current plan is to convert these into Data Cubes, a new asset type introduced with C4\. He added that these will be part of a “pretty funny game loop”.
+
+## Community Projects
+
+Lastly, a brief overview of the Community projects showcased at the Atlas Brew, plus some sad news that was shared by the team behind Atom this week.
+
+### Aephia Ship Overview
+
+After nearly 5 years, we overhauled our website and launched [V2](https://aephia.com/). We took the opportunity to improve our live [ship listings page](https://aephia.com/star-atlas-ships/) as well, which now includes, in addition to current best buy and sell prices, recent sales, charts, brand-new ship (configuration) pages, and comparisons within each ship’s size class.
+
+### AtlasKit
+
+During the Atlas Brew, we introduced [AtlasKit](https://atlaskit.dev/), a community-built TypeScript SDK for SAGE C4\. It sits on top of the team’s generated bindings and lets developers work with fleets, cargo, recipes, Starbases, movement, and Claim Stakes instead of decoding the underlying blockchain accounts themselves.
+
+The first release can read characters, fleets, inventories, mining state, and movement timers. Developers can also prepare an unsigned set of actions, inspect every step, and leave the final approval to the user’s wallet. Tested examples and AI-readable documentation cover the same interface.
+
+AtlasKit is available through **npm** as `**@aephia/atlas-kit**`, although its interfaces may still break while the C4 programs continue to change. We have been using it for internal projects and plan to open source the library once C4 stabilizes, most likely shortly after Phase 4 of the SAGE C4 PTR went live.
+
+### Clash of Iris
+
+Community developer Neo showed [Clash of Iris](https://clashofiris.com/), a free browser MMO built with officially authorized Star Atlas ships, factions, and lore. Its alpha has been open since October 1st and runs in a desktop browser without a download.
+
+The game currently spans twenty regions plus the Subspace, with fourteen playable hulls from the official roster and eleven supported languages. Combat includes ammunition choices, missiles, boarding, bosses, PvP, and territory fights, while corporations can manage treasuries, declare wars, and make diplomatic agreements. Three-month sub-seasons feed into a year-long season and prize pool.
+
+The alpha is [playable now](https://clashofiris.com/jogo/) for anyone aged eighteen or older, or twenty-one where local adulthood laws require it. An email, Google, or Apple account is required. Alpha progress may be reset without notice.
+
+### Atom
+
+On the flipside of all this positive community news, the Atom team announced that they are sunsetting their cloud services at the end of this month, on October 31st. Due to waning interest in their Starbased automation running in the Cloud, they are unable to keep up with their costs. 
+Note that Atom Core remains available; it is their open-source offering that players can host on their own machines.
+
+_That is it for this week! Thanks for reading, and until the next!_
