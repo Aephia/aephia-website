@@ -1,0 +1,92 @@
+---
+title: "Weekly Star Atlas Newsletter #254"
+date: "2026-11-02T20:46:19"
+modified: "2026-11-02T20:46:19"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-254"
+description: "Last week gave us our clearest look yet at how regional governance will work in SAGE C4. The Democracy Module will allow players to use their delegated POLIS Voting Power to influence local fees and earn a share of Starbase revenue. Beyond that, we learned more about the upcoming Phase 3.2 progression and ship-balance changes, while another nine Open Market Operations listings sold out and returned at higher prices."
+image: "https://assets.aephia.com/wp-assets/36217ab876b665667d96ea26028536dc8b93d36b9f74216f85519d4d1cf1b12d.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18957
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 254th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+Last week gave us our clearest look yet at how regional governance will work in SAGE C4\. The Democracy Module will allow players to use their delegated POLIS Voting Power to influence local fees and earn a share of Starbase revenue. Beyond that, we learned more about the upcoming Phase 3.2 progression and ship-balance changes, while another nine Open Market Operations listings sold out and returned at higher prices.
+
+_Let’s dive in!_
+
+## SAGE C4
+
+### Democracy Module
+
+Michael Wagner (CEO) walked through the Democracy Module during last week’s [Atlas Brew #228](https://youtu.be/GYKWTN38DSc?t=2822). We already knew players would govern local fees and share in Starbase revenue. Last week’s demonstration filled in the practical rules for voting, payouts, and where the module can operate.
+
+Players have a single global PVP balance that they can allocate across one or more Starbases. Both voting influence and the share of local revenue scale with a player’s delegated PVP relative to the total at that Starbase.
+
+The DAO’s existing revenue share will _remain_ in place. Instead, each Starbase adds a premium to the base fee, and that premium enters its local revenue pool. Players will vote on three settings:
+
+* the crafting-fee premium
+* the marketplace-fee premium
+* the percentage of the local pool distributed each day
+
+Votes reset every Sunday at midnight UTC, while revenue distributions settle daily at midnight UTC. Each setting is decided by the option that attracts the most PVP rather than an average of everyone’s chosen value. Voters can leave their choices in place for later weekly epochs.
+
+Under the current design, the crafting premium can reach 50% above the base fee. The marketplace premium can also reach 50% above its 6% base fee, while ATLAS Locker discounts apply to both the base marketplace fee and the locally added premium.
+
+Delegation requires Crew and housing provided by CSS land claims. The Crew requirement grows linearly up to 1 million delegated PVP at a Starbase, then increases more steeply above that threshold. Michael showed several higher Crew requirements during the demonstration, but questioned those numbers himself. They should not be treated as final.
+
+The module will _not_ be available in the five permanent faction-safe regions. For the PTR, it can currently appear on contested Tier 2 or higher Starbases and may initially be available more broadly. The longer-term plan is likely to require a Tier 5 Starbase and a collective construction project. The interface shown last week was temporary and will receive another UI pass before release.
+
+The ATLAS and POLIS Lockers are also expected to remain on Solana rather than move to z.ink. Multiple Solana wallets would link to one zProfile, which would then connect to a SAGE profile. C4 could use the combined locker balance for governance and other benefits.
+
+### Phase 3.2 Progression and Ship Balance
+
+Last week’s [issue #253](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-253/) covered the broad Phase 3.2 overhaul. During the Brew, Michael gave us more precise numbers for several balance changes.
+
+Council Rank nodes will no longer all cost a single point. Deeper nodes can cost between two and five points, so players will have to specialize more carefully. License XP will also scale with the assets relevant to an activity, such as fleet size, ship class, or Crew assigned to crafting, but diminishing returns will limit how much ownership alone can speed up progression.
+
+XP earned per unit of time has been normalized across the licenses. Larger ship classes should retain a slight advantage, but the new scaling is meant to stop fleets of hundreds of extra-extra-small ships from becoming the most efficient route. For the shortened PTR test, the team is currently aiming for maximum progression in roughly **30 to 60 days**. The mainnet target remains **six to twelve months**.
+
+Ship-configuration perks are also coming down sharply. Some combinations previously produced perks as high as 1,000%. The current target is closer to a 30% average total perk at lower tiers and up to 80% at Tier 5\. That was already known; the new bit is that lower-tier configurations affect fewer stats, while top-tier configurations may alter roughly twelve to fifteen stats and include negative modifiers alongside the benefits.
+
+Kinetic damage is now the fallback damage type, and every available damage type now has a matching countermeasure. A bug that could make a configured fleet deal less damage than the same hull without a configuration has also been fixed.
+
+### Achievements
+
+José (Lore & Community) has been given the go-ahead to design and build a native C4 achievement system for Phase 4 and beyond. It is not part of the immediate Phase 3.2 reset. Holosim had a similar system, and that worked quite well, so José is now looking to bring it to C4.
+
+The planned system will record achievements on-chain, show what percentage of players earned each one, and feed an achievement leaderboard. Combat, mining, and ship or component collecting are among the categories being considered. The complete system will not be there on day one, and there is no release date yet.
+
+## Open Market Operations
+
+Another nine [Open Market Operations listings](https://play.staratlas.com/market/) sold out last week. Michael shared replacement batches under the momentum-based method introduced earlier this month, with every sold-out asset returning at a higher price.
+
+| Asset               | New price | New quantity | Change |
+| ------------------- | --------- | ------------ | ------ |
+| Armstrong IMP       | $1,929.63 | 2            | +15.0% |
+| Calico ATS Enforcer | $121.04   | 4            | +15.0% |
+| Claim Stake Tier 2  | $43.65    | 7            | +12.5% |
+| Claim Stake Tier 3  | $224.66   | 1            | +15.0% |
+| Fimbul Lowbie       | $2.44     | 32           | +12.4% |
+| Fimbul Sledbarge    | $1,526.91 | 2            | +12.5% |
+| Opal Bitboat        | $321.89   | 1            | +12.5% |
+| Opal Rayfam         | $67.54    | 2            | +15.0% |
+| VZUS ballad         | $1,230.36 | 1            | +15.0% |
+
+Six existing listings also showed a combined reduction of 53 units without a price change, including 31 Claim Stake Tier 1s and 17 Armstrong IMP Tips.
+
+## News Bits
+
+And finally, two more smaller items to wrap up the news from last week:
+
+* **UE5 racing** – An internal testing build combines a more physical multiplayer flight model with working racing weapons and bots. The team also wants ranked gunplay matches to start with bots and replace them as players join, but none of these changes have been announced as a public release yet.
+* **Blockchain Outage** – On Monday (the date of publication of this issue), Michael shared that the team had been dealing with a “third-party infra service failure since late last night (US time zones)”. This affected blockchain reads across all Solana-based products, such as UE5, SAGE: Starbased, and the Marketplace. The team has been working to restore services ever since, and they expect to have everything back in working order in a couple of hours. At the moment of publication, this outage was still ongoing.
+
+_That is it for this week! Thanks for reading, and until the next!_
