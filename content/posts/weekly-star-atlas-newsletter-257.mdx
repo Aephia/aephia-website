@@ -1,0 +1,163 @@
+---
+title: "Weekly Star Atlas Newsletter #257"
+date: "2026-11-23T21:05:35"
+modified: "2026-11-23T21:05:35"
+type: "newsletter"
+slug: "weekly-star-atlas-newsletter-257"
+description: "SAGE C4 PTR Phase 3.2 is finally live! With 390 pull requests, this is the largest update to the PTR so far, bringing regional governance, built-in fleet automation, and a substantial overhaul of progression and game balance. This also marks the final testing phase in which players will receive artificial starter assets, with Phase 4 set to introduce players’ own mainnet assets and ATLAS earnings. Beyond C4, we learned more about the upcoming free Prestige Pass for UE5, improvements to Racing and Gunplay bots, and a familiar face from the community joining the UE5 development effort."
+image: "https://assets.aephia.com/wp-assets/96cadc302735ad9a2b085741d18cb2b49ef0ca2f41d8e7f2248700711bee798d.png"
+author:
+  id: 1
+  name: "Funcracker"
+wp:
+  id: 18983
+categories: ["news","Newsletter"]
+---
+
+_Welcome to our 257th newsletter on Star Atlas! This weekly newsletter, published by Aephia Industries, focuses entirely on the development of this ambitious game. Here, we attempt to aggregate all the newsworthy tidbits revealed, primarily by the team, throughout the past week._
+
+---
+
+SAGE C4 PTR **Phase 3.2 is finally live**! With 390 pull requests, this is the largest update to the PTR so far, bringing regional governance, built-in fleet **automation**, and a substantial overhaul of progression and game balance. This also marks the final testing phase in which players will receive artificial starter assets, with Phase 4 set to introduce players’ own mainnet assets and ATLAS earnings. Beyond C4, we learned more about the upcoming free **Prestige Pass** for UE5, improvements to Racing and Gunplay **bots**, and a familiar face from the community joining the UE5 development effort.
+
+_Let’s dive in!_
+
+## SAGE C4
+
+[SAGE C4 PTR 3.2 officially went live](https://x.com/staratlas/status/2124617668447605111) last week after a rollout that took well over 36 hours. This is (roughly) the same build that [entered internal testing the week before](https://aephia.com/star-atlas/weekly-star-atlas-newsletter-256/), only much larger than its version number might suggest. The [release review and patch notes](https://x.com/staratlas/status/2123948950369755553) covered **390 pull requests**, making this the biggest update to the browser game so far.
+
+As a result of this major release, **all previous PTR progress has been reset**, and you will need to recreate your account.
+
+> Michael Wagner (CEO) also pointed players toward the new account settings, particularly anyone experiencing performance problems. The updated 3D interface, VFX, and Region Shapes can now be disabled independently, including an option to use the clean system layout without region boundaries.
+
+> The team is still asking players to submit bug and feature reports during this PTR phase. Michael said development now moves toward **phase 4**, which will use a snapshot of real Solana mainnet assets and introduce **ATLAS emissions**. He did not give a release date.
+
+The team published this short clip alongside their release announcement on [X](https://x.com/staratlas/status/2124617668447605111?a=enXBmpO3ixQeex_QPj4&s=20):
+
+<YouTube id="odoGrHGPb1Y" title="Star Atlas - SAGE C4 - PTR Phase 3.2 launch"  />
+ 
+
+### Official Patch Notes
+
+The patch notes supplied by the team are:
+
+#### Council Rank & Research
+
+* Your profile card now matches the Council screen and updates as you earn license points. Each point fills three of 18 segments; six points earn one Renown.
+* Research is grouped by purpose, with clearer requirements and effects. Fleet Size research increases formation capacity; combat size is tracked separately.
+* Mining, Scanning, and Building have separate regional licenses. Advanced asteroid resources, buildings, and crafting recipes have their own unlocks. Asteroid Crystal Prospecting I unlocks Diamond, Arco, and Rochinol.
+
+#### XP & Career Progression
+
+* Simple XP updates the Pilot, Data Runner, Mining, Crafting, Combat, and Building curves. The career screen shows individual and shared XP allowances and their refill timing.
+* Complete a career’s finite progression and research, then continue toward Mastery. Council Legacy adds upgrades tied to career Mastery.
+* Collect finished items while the rest of a crafting batch continues. Canceling returns unused inputs and fees for the unfinished portion.
+* Building XP comes from paid operating time.
+
+#### Starbase Governance
+
+* Install Governance Modules at eligible Tier 2+ PTR starbases. The Modules tab shows required components and tracks contributions. Contributors earn Loyalty Points for their major-faction alignment.
+* Delegate voting power with Crew and Housing backing. Weekly votes determine crafting premiums, local market premiums, and daily payout rates. Eligible participants can claim funded daily rewards.
+* When PTR enrollment opens, eligible new Profiles can enroll during onboarding with a wallet signature. Each wallet and Profile can receive the shared PVP grant only once.
+
+#### Claim Stakes & Cultivation Claims
+
+* Cultivation Claims harvest organic resources; standard Claim Stakes harvest non-organic resources. Planetary deposits determine what you can place.
+* Both claim types share tiered plot limits and Building progression. Limits apply by tier at both planet and star-system level. Lower-tier claims no longer occupy higher-tier slots.
+* Placement fees and rent vary by deed tier and Resource Zone. Placement reviews show the actual fee.
+* Layout previews show expected output, fuel runway, and separate fuel and harvested-resource storage. Additional warehouses and tanks expand capacity.
+
+#### Resources, R4 & Crafting
+
+* Deposits are more concentrated by region. Late-tier resources have been redistributed across faction fronts, keeping mining location and hauling important for advanced production.
+* Every faction’s CSS system has all four R4 resources across its planets. Elsewhere, R4 deposits appear in complementary pairs. Asteroid belts follow their system’s planetary resource mix.
+* Fuel, Food, Ammunition, and Repair Kit recipes—and their crafted inputs—have no research prerequisites.
+* Missing intermediary recipes have been added, and selected finished recipes use fewer inputs.
+* Materials for Min, Tier 1, and Tier 2 fits can be sourced within each faction’s starting Safe Zone. Alternate material recipes are available to any faction with the necessary ingredients and research.
+
+#### Ship Configs & Mining
+
+* Default and fitted configurations have been rebalanced, including mining rates, supply consumption, and role bonuses. Higher-tier fits use physical drone components that apply their fitted bonuses.
+* Mining exit Fuel costs scale with extraction. Extract nothing, pay no exit Fuel charge.
+* Docked fleet editing prioritizes changed stats and lists missing components inline.
+
+#### Scanning & Data Running
+
+* No-contact scans grant Data Runner XP when they resolve.
+* If a scan finds a contact, recover the signal to earn its XP and collect any recovered resources.
+
+#### Travel, Combat & Starbases
+
+* Warp Lane base fares scale with distance and fleet formation capacity. Warp Lanes no longer award Pilot XP; ordinary Warp and Subwarp still earn XP under the travel rules.
+* Weapons without another damage type default to Kinetic. Combat supports fractional stats and structural EMP effects. Ships without offensive capability deal no damage.
+* Selected critical-hit and stealth stimulants are unavailable on newly reset worlds.
+* Defeating a capturable territorial starbase changes its control and returns it directly to Tier 0\. Recovery options account for affected fleets, claims, and Crafting Habs.
+* ATLAS gameplay fees—including Warp Lane tolls, new crafting fees, and rent on Claims and Crafting Habs—credit the DAO’s in-game balance.
+
+#### Planned Starbase Upgrade Recipes
+
+New standard Starbase upgrade recipes are planned for the C4 reset. Total components per upgrade:
+
+* Tier 1: 4.8 million
+* Tier 2: 8.8 million
+* Tier 3: 38 million
+* Tier 4: 61.2 million
+* Tier 5: 109.6 million
+
+Each tier requires its own component mix.
+
+#### Nemesis & NPC Fleets
+
+* NPC fleet inspection shows faction, your faction standing, and bounty status. Map cards show bounty eligibility; the Reputation panel estimates potential Combat XP.
+* Nemesis wolf-pack spawning and patrol changes are being tested on Sage Dev. Wolf packs, expanded merchant convoys, and faction markets have a separate public PTR rollout.
+
+#### Port of Entry & Local Markets
+
+* Wallet balances refresh when Port of Entry opens or you return to the game.
+* Large cargo manifests are split into batches that fit before signing.
+* Local Marketplace B adds faction-filtered starbase browsing and shares the starbase detail view used by the other local layout.
+
+#### Fleet Command, Map & Onboarding
+
+* Updated command panels bring rosters, movement planning, and cargo transfers closer to fleet and claim selection. Scans and many Hangar actions refresh only the affected fleets.
+* System close-ups feature sharper ship and station visuals, animated portraits, and updated mining and combat effects.
+* Galaxy labels show region IDs. System labels identify King, Core, and Sector systems. Some region names and survey-code prefixes have been realigned with their Starbased positions.
+* First Flight automatically credits confirmed Broad Spectrum scans—even those that find nothing. The claim step follows the current research tree, and the pinned Goals tracker leaves room for game controls.
+
+### Basic Automation
+
+The team also added basic automation to the game as part of this rollout. You can find it under **Assignments** in the utility bar when you select one of your undocked fleets.
+
+![SAGE C4 - Built-in automation! Check the panel under "Assignments" in your fleet's utility bar.](https://assets.aephia.com/wp-assets/8f0d252d238db5227e7d50fbc135ff7de66d5ce2a6af505afa46ec40106bbd36.png)
+
+SAGE C4 – Built-in automation! Check the panel under “Assignments” in your fleet’s utility bar.
+
+The automation options available should look very familiar to anyone who ever played Holosim. You can instruct a fleet to run the following loops:
+
+* mining
+* transporting
+* patrol
+
+![SAGE C4 - Built-in automation! Holosim automation options have made their way to C4!](https://assets.aephia.com/wp-assets/f70d41d235ea100e7de70dded689536892832bbfa0271ed6fe891939d301ce85.png)
+
+SAGE C4 – Built-in automation! Holosim automation options have made their way to C4!
+
+### Merchant NPC rollout
+
+Beyond the launch list itself, [last week’s Atlas Brew](https://youtu.be/vvgjOQCU8CU) added more context to the merchant NPC rollout mentioned in the patch notes. John (Product Manager) described sanctuary Starbases in neutral regions next to the three faction Safe Zones. These protected merchant bases are intended to move resources, establish Claims and buildings, produce Starbase upgrades, and list goods locally while Jorvik pirates attack their supply routes. José (Lore & Community) clarified that Phase 3.2 supplies the foundation and visible NPC presence. Reputation, missions, docking and trading access, Nemesis wolf packs, larger merchant convoys, and functioning faction markets are reserved for later PTR updates.
+
+![Star Atlas - Declassifications, continued... ](https://assets.aephia.com/wp-assets/cc2a78674585fa54454d250ff30c46f469da138976f38ab652e8d4bb3f168db9.png)
+
+Star Atlas – Declassifications, continued… \[[Source](https://x.com/staratlas/status/2122464737086546121?s=20)\]
+
+## UE5
+
+Community member **Jindo has officially joined the UE5 development effort**. During the [Atlas Brew](https://youtu.be/vvgjOQCU8CU?t=756) last week, he said he is helping the team and developing in Unreal Engine for Star Atlas, though he stopped short of calling himself a Star Atlas developer. His first detailed update covered the [Prestige Pass](https://x.com/staratlas/status/2123571429040062886) and the addition of bots to Racing and Gunplay.
+
+The first Prestige Pass will be free, tied to the player’s Epic Games account, and visible before a wallet is connected. Each planned season runs for 90 days, with 30 levels and a mix of daily, weekly, and monthly objectives. Those can require a particular map, ship, Crew type, or match combination. Players may skip 15 daily challenges and still finish the pass, but they will need to complete its weekly and monthly challenges. 
+
+The test pass will award **200,000 UE5 Crew XP** rather than items with direct monetary value. By Jindo’s estimate, that is enough to take one character from level 0 to Prestige 2\. Rewards are claimed level by level and applied to the Crew member selected at the time, while that XP still advances the normal Crew levels and their existing rewards. Testing has already reached successful weekly completions and reward claims, although no release date has been announced.
+
+Death Race bots now race and fight more effectively, with selectable difficulty in hosted matches. Bots are also running in Arena development builds and are expected to be included in the next live version. They will award reduced Crew XP (2 XP instead of 20 XP), and bot kills and headshots will not count toward Prestige Pass objectives, which remain tied to player eliminations in ranked matches.
+
+_That is it for this week! Thanks for reading, and until the next!_
